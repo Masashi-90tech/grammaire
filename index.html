@@ -410,7 +410,7 @@ let state = load();
 seedDefaultVocab();
 let session = null;
 
-function defaultState(){ return {progress:{}, items:{}, log:{}, vocabDecks:{}, vocabCards:{}, vocabProgress:{}, vocabSeeded:false,
+function defaultState(){ return {progress:{}, items:{}, log:{}, vocabLog:{}, vocabReviewLog:{}, vocabDecks:{}, vocabCards:{}, vocabProgress:{}, vocabSeeded:false,
   vocabFav:{}, vocabNotes:{}, conjug:{stats:{}, tenses:["present","passe_compose"], group:"all", best:0},
   readingSets:{}, readingSaved:{}, phraseFav:{}, phraseText:{}, phraseCustom:{}}; }
 // 単語の見出し語（fr）からアクセントを落として作る安定id。配列インデックスではなく
@@ -496,6 +496,8 @@ function load(){
       if(!Array.isArray(s.conjug.tenses) || !s.conjug.tenses.length) s.conjug.tenses = ["present","passe_compose"];
       if(!s.vocabFav) s.vocabFav = {};
       if(!s.vocabNotes) s.vocabNotes = {};
+      if(!s.vocabLog) s.vocabLog = {};
+      if(!s.vocabReviewLog) s.vocabReviewLog = {};
       if(!s.readingSets) s.readingSets = {};
       if(!s.readingSaved) s.readingSaved = {};
       if(!s.phraseFav) s.phraseFav = {};
@@ -1297,7 +1299,7 @@ function vocabProg(id){
 // 「簡単」と同じ速度で長期間隔に逃げてしまい、実質もう復習に出てこなくなる
 // （＝「普通以下がちゃんと復習数に入らない」）。「難しい」「普通」はまだ定着していない
 // 語として短いサイクルで頻繁に「今日の復習」へ戻し、「簡単」だけ長く間隔を空ける。
-const MAX_VOCAB_INTERVAL_DAYS = 180; // 「簡単」の上限（日）
+const MAX_VOCAB_INTERVAL_DAYS = 90; // 「簡単」の上限（日）
 const MAX_INTERVAL_BY_QUALITY = {3: 14, 4: 60, 5: MAX_VOCAB_INTERVAL_DAYS}; // 難しい/普通/簡単
 function gradeVocab(id, quality){
   const p = vocabProg(id);
@@ -1317,8 +1319,16 @@ function gradeVocab(id, quality){
   p.lastAt = Date.now();
   const day = todayStamp();
   state.log[day] = (state.log[day]||0) + 1;
+  // 文法ドリルと混ざるstate.logとは別に、単語カードでの活動を2種類に分けて数える。
+  // ・学習量＝評価の種類を問わず押した回数（簡単も含む＝今日どれだけ手を動かしたか）
+  // ・復習＝簡単「以外」（もう一度／難しい／普通）＝まだ定着し切っていない語に触れた回数。
+  //   簡単は「もう知っている」の表明で、これは復習というより確認なのでここには含めない。
+  state.vocabLog[day] = (state.vocabLog[day]||0) + 1;
+  if(quality < 5) state.vocabReviewLog[day] = (state.vocabReviewLog[day]||0) + 1;
   save();
 }
+function vocabTodayCount(){ return state.vocabLog[todayStamp()] || 0; }
+function vocabTodayReviewCount(){ return state.vocabReviewLog[todayStamp()] || 0; }
 // 「未着手（新規）」と「復習待ち（一度は見たがdueが来た）」を分けて数える。
 // 以前は未着手カードも即due扱いにしていたため、5000語同梱後は初回セッションで
 // 理論上全件が出題対象になってしまっていた。これを解消する。
@@ -2126,17 +2136,22 @@ function openVocabHomeInner(){
   const totalNew = vocabNewCount();
   const totalCards = vocabTotalCount();
   const totalLearned = vocabLearnedCount();
+  const todayStudy = vocabTodayCount();
+  const todayReview = vocabTodayReviewCount();
 
-  let h = `<div class="grid3" style="margin-bottom:14px">
-    <div class="stat"><b>${totalDue}</b><span>今日の復習</span></div>
+  let h = `<div class="grid2" style="margin-bottom:10px">
+    <div class="stat"><b>${todayStudy}</b><span>今日の学習量</span></div>
+    <div class="stat"><b>${todayReview}</b><span>今日の復習</span></div>
+  </div>
+  <div class="grid2" style="margin-bottom:14px">
     <div class="stat"><b>${totalLearned}</b><span>学習済み（通算）</span></div>
     <div class="stat"><b>${totalCards}</b><span>総カード数</span></div>
   </div>
-  <p class="small muted" style="margin:-8px 0 14px">「簡単」で答えた語も学習済みに数える。次のdueが先になるだけで、記録は消えない。</p>`;
+  <p class="small muted" style="margin:-8px 0 14px">学習量＝押した回数すべて（簡単も含む）。復習＝そのうち「簡単」以外（もう一度・難しい・普通）。学習済みは一度でも採点した語の通算数で、簡単も含む。</p>`;
 
   if(totalDue > 0 || totalNew > 0){
     h += `<div class="card">`;
-    if(totalDue > 0) h += `<button class="btn primary" style="width:100%;margin-bottom:8px" onclick="startVocabStudy(null,'due')">今日の復習をまとめて（${totalDue}枚）</button>`;
+    if(totalDue > 0) h += `<button class="btn primary" style="width:100%;margin-bottom:8px" onclick="startVocabStudy(null,'due')">復習待ちをまとめて（${totalDue}枚）</button>`;
     if(totalNew > 0) h += `<button class="btn" style="width:100%" onclick="startVocabStudy(null,'new')">新しい単語から始める（残り${totalNew}枚 ・ 1回${NEW_CARDS_PER_SESSION}枚まで）</button>`;
     h += `</div>`;
   }
