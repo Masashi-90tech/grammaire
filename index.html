@@ -379,6 +379,33 @@ const EMA_INIT = 0.5;         // 未着手トピックの初期値
 const MIN_WEIGHT = 0.1;       // 正答率100%でも残す最低出題重み
 const NEW_CARDS_PER_SESSION = 20; // 1回の「新しい単語」セッションで出す上限
 
+// 画面上部に赤帯でエラーを表示する。console.errorだけだとスマホ実機で
+// 何が起きているか本人にもこちらにも分からないため、致命的でないエラーも
+// 極力ここに出して「何が起きたか」をスクショで共有できるようにする。
+function showErrorBanner(msg){
+  try{
+    let b = document.getElementById("errBanner");
+    if(!b){
+      b = document.createElement("div");
+      b.id = "errBanner";
+      b.style.cssText = "position:fixed;left:0;right:0;top:0;z-index:9999;background:#a43d33;color:#fff;"
+        + "padding:10px 40px 10px 14px;font-size:13px;line-height:1.4;box-shadow:0 2px 8px rgba(0,0,0,.25)";
+      const closeBtn = document.createElement("button");
+      closeBtn.textContent = "✕";
+      closeBtn.setAttribute("aria-label", "閉じる");
+      closeBtn.style.cssText = "position:absolute;right:8px;top:6px;background:none;border:none;color:#fff;"
+        + "font-size:18px;line-height:1;cursor:pointer;padding:4px 6px";
+      closeBtn.onclick = () => b.remove();
+      b.appendChild(closeBtn);
+      const span = document.createElement("span");
+      span.id = "errBannerText";
+      b.appendChild(span);
+      document.body.appendChild(b);
+    }
+    document.getElementById("errBannerText").textContent = msg;
+  }catch(e){ /* バナー表示自体が失敗しても本体機能は止めない */ }
+}
+
 let state = load();
 seedDefaultVocab();
 let session = null;
@@ -546,7 +573,10 @@ function load(){
 }
 function save(){
   try{ localStorage.setItem(LS_KEY, JSON.stringify(state)); }
-  catch(e){ console.warn("localStorage 保存失敗", e); }
+  catch(e){
+    console.warn("localStorage 保存失敗", e);
+    showErrorBanner("進捗を保存できませんでした（" + (e && e.name || "エラー") + "）。プライベートブラウズ中か、ストレージの空き容量が無い可能性があります。");
+  }
 }
 function prog(tid){
   if(!state.progress[tid]) state.progress[tid] = {ema:EMA_INIT, attempts:0, correct:0, lastAt:null};
@@ -3323,7 +3353,15 @@ function renderSavedReadingResult(){
 }
 
 /* ---------- 起動 ---------- */
-window.addEventListener("error", e=>console.error("app error:", e.message));
+window.addEventListener("error", e=>{
+  console.error("app error:", e.message);
+  showErrorBanner("エラーが発生しました： " + e.message + "（この帯の内容をスクショで送ってもらえると原因が分かります）");
+});
+window.addEventListener("unhandledrejection", e=>{
+  const m = (e.reason && e.reason.message) ? e.reason.message : String(e.reason);
+  console.error("app promise error:", m);
+  showErrorBanner("エラーが発生しました(非同期)： " + m + "（この帯の内容をスクショで送ってもらえると原因が分かります）");
+});
 renderHome();
 
 if ("serviceWorker" in navigator) {
