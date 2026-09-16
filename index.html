@@ -411,7 +411,7 @@ seedDefaultVocab();
 let session = null;
 
 function defaultState(){ return {progress:{}, items:{}, log:{}, vocabLog:{}, vocabReviewLog:{}, vocabDecks:{}, vocabCards:{}, vocabProgress:{}, vocabSeeded:false,
-  vocabFav:{}, vocabNotes:{}, conjug:{stats:{}, tenses:["present","passe_compose"], group:"all", best:0},
+  vocabFav:{}, vocabNotes:{}, exampleFav:{}, conjug:{stats:{}, tenses:["present","passe_compose"], group:"all", best:0},
   readingSets:{}, readingSaved:{}, phraseFav:{}, phraseText:{}, phraseCustom:{}}; }
 // 単語の見出し語（fr）からアクセントを落として作る安定id。配列インデックスではなく
 // 語そのものから作るため、後からgen/*.txtにファイルを追加して行の並びが変わっても
@@ -498,6 +498,7 @@ function load(){
       if(!s.vocabNotes) s.vocabNotes = {};
       if(!s.vocabLog) s.vocabLog = {};
       if(!s.vocabReviewLog) s.vocabReviewLog = {};
+      if(!s.exampleFav) s.exampleFav = {};
       if(!s.readingSets) s.readingSets = {};
       if(!s.readingSaved) s.readingSaved = {};
       if(!s.phraseFav) s.phraseFav = {};
@@ -825,8 +826,15 @@ function openTopic(tid){
     <div class="expl">${esc(t.explanation_jp)}</div>
   </div>`;
   h += `<div class="card"><h2>例文</h2>`;
-  (t.examples||[]).forEach(e=>{
-    h += `<div class="ex"><div class="f">${wrapTapWords(e.fr)}</div><div class="j">${esc(e.jp)}</div></div>`;
+  (t.examples||[]).forEach((e,idx)=>{
+    const texId = "topex_" + t.id + "_" + idx;
+    h += `<div class="ex">
+      <div class="spread">
+        <div class="f">${wrapTapWords(e.fr)}</div>
+        <button class="fav-btn ${state.exampleFav[texId]?"on":""}" onclick="toggleTopicExampleFav('${t.id}',${idx})" title="構文・例文を保存">${state.exampleFav[texId]?"★":"☆"}</button>
+      </div>
+      <div class="j">${esc(e.jp)}</div>
+    </div>`;
   });
   h += `</div>`;
   h += `<div class="card"><h2>ドリル（全${n}問）</h2>
@@ -1223,7 +1231,98 @@ function renderResult(){
   window.scrollTo(0,0);
 }
 
-/* ---------- 進捗の書き出し・読み込み ---------- */
+/* ---------- 進捗の書き出し・読み込み ----------
+   端末をまたいで（iPadとデスクトップ等）別々に学習すると記録が分かれてしまうため、
+   書き出したJSONを読み込むときは単純な上書きではなく「賢いマージ」を行う。
+   上書きだと、今読み込む側の端末だけで進んだ分がインポートしたファイルの内容で
+   消えてしまい、単語が「曖昧」なまま揃わない原因になる。
+   レコードの種類によってマージ方法を変える：
+   ・SRSの状態そのもの（due/interval/repsのひとかたまり）は分割できないので、
+     lastAtが新しい方を丸ごと採用する（progress・vocabProgress）。
+   ・純粋な累計カウンター（出題回数・正答数など）は両端末で別々に積まれた分と
+     みなして合算する（items・conjug.stats・log・vocabLog・vocabReviewLog）。
+   ・お気に入りは片方でONならON（論理和）。
+   ・自由記述のメモ・自分用文面は、片方が空ならもう片方を採用。両方に違う内容が
+     あれば、どちらも消さずに連結する。
+   ・自作デッキ・保存した読解問題・自作文例はidで突き合わせ、無い方を追加する
+     （idが衝突した場合はこの端末側を優先）。
+   ・活用ドリルの出題時制・グループなどの「設定」は同期対象にせず、この端末の
+     選択をそのまま残す。 */
+function mergeState(local, imported){
+  function mergeByIdLastAtWins(a, b){
+    const out = Object.assign({}, a);
+    Object.keys(b||{}).forEach(id=>{
+      const bi = b[id], ai = out[id];
+      if(!ai){ out[id] = bi; return; }
+      if((bi && bi.lastAt||0) > (ai.lastAt||0)) out[id] = bi;
+    });
+    return out;
+  }
+  function mergeCountersSum(a, b, fields){
+    const out = {};
+    Object.keys(a||{}).forEach(k=> out[k] = Object.assign({}, a[k]));
+    Object.keys(b||{}).forEach(k=>{
+      if(!out[k]){ out[k] = Object.assign({}, b[k]); return; }
+      fields.forEach(f=>{ out[k][f] = (out[k][f]||0) + (b[k][f]||0); });
+      if((b[k].lastAt||0) > (out[k].lastAt||0)) out[k].lastAt = b[k].lastAt;
+    });
+    return out;
+  }
+  function mergeDayCounts(a, b){
+    const out = Object.assign({}, a);
+    Object.keys(b||{}).forEach(day=>{ out[day] = (out[day]||0) + (b[day]||0); });
+    return out;
+  }
+  function mergeBoolFlags(a, b){
+    const out = Object.assign({}, a);
+    Object.keys(b||{}).forEach(k=>{ if(b[k]) out[k] = true; });
+    return out;
+  }
+  function mergeTimestampFlags(a, b){ // 存在すれば残す。両方あれば古い方（最初に付けた時刻）を残す
+    const out = Object.assign({}, a);
+    Object.keys(b||{}).forEach(k=>{
+      if(out[k] === undefined) out[k] = b[k];
+      else if(typeof out[k] === "number" && typeof b[k] === "number") out[k] = Math.min(out[k], b[k]);
+    });
+    return out;
+  }
+  function mergeText(a, b){
+    const out = Object.assign({}, a);
+    Object.keys(b||{}).forEach(k=>{
+      const av = (out[k]||"").trim(), bv = (b[k]||"").trim();
+      if(!av) out[k] = b[k];
+      else if(bv && bv !== av) out[k] = av + "\n---\n" + bv;
+    });
+    return out;
+  }
+  function mergeByIdPreferLocal(a, b){ return Object.assign({}, b||{}, a||{}); }
+
+  const out = Object.assign({}, local);
+  out.progress = mergeByIdLastAtWins(local.progress, imported.progress);
+  out.vocabProgress = mergeByIdLastAtWins(local.vocabProgress, imported.vocabProgress);
+  out.items = mergeCountersSum(local.items, imported.items, ["seen","correct"]);
+  out.log = mergeDayCounts(local.log, imported.log);
+  out.vocabLog = mergeDayCounts(local.vocabLog, imported.vocabLog);
+  out.vocabReviewLog = mergeDayCounts(local.vocabReviewLog, imported.vocabReviewLog);
+  out.vocabFav = mergeBoolFlags(local.vocabFav, imported.vocabFav);
+  out.vocabNotes = mergeText(local.vocabNotes, imported.vocabNotes);
+  out.phraseFav = mergeTimestampFlags(local.phraseFav, imported.phraseFav);
+  out.phraseText = mergeText(local.phraseText, imported.phraseText);
+  out.phraseCustom = mergeByIdPreferLocal(local.phraseCustom, imported.phraseCustom);
+  out.exampleFav = mergeByIdPreferLocal(local.exampleFav, imported.exampleFav);
+  out.vocabDecks = mergeByIdPreferLocal(local.vocabDecks, imported.vocabDecks);
+  out.vocabCards = mergeByIdPreferLocal(local.vocabCards, imported.vocabCards);
+  out.readingSets = mergeByIdPreferLocal(local.readingSets, imported.readingSets);
+  out.readingSaved = mergeByIdPreferLocal(local.readingSaved, imported.readingSaved);
+  out.vocabSeeded = !!(local.vocabSeeded || imported.vocabSeeded);
+  const lc = local.conjug || {stats:{}, tenses:["present","passe_compose"], group:"all", best:0};
+  const ic = imported.conjug || {stats:{}};
+  out.conjug = Object.assign({}, lc, {
+    stats: mergeCountersSum(lc.stats, ic.stats, ["n","ok"]),
+    best: Math.max(lc.best||0, ic.best||0)
+  });
+  return out;
+}
 function exportProgress(){
   const blob = new Blob([JSON.stringify(state,null,2)], {type:"application/json"});
   const a = document.createElement("a");
@@ -1240,10 +1339,11 @@ function importProgress(input){
     try{
       const obj = JSON.parse(rd.result);
       if(!obj || typeof obj!=="object" || !obj.progress) throw new Error("形式が違う");
-      state = Object.assign(defaultState(), obj);
-      _frIndex = null; // vocabCardsが差し替わるのでタップ単語の索引も作り直す
+      const imported = Object.assign(defaultState(), obj);
+      state = mergeState(state, imported);
+      _frIndex = null; // vocabCardsが増減する場合があるのでタップ単語の索引も作り直す
       save(); renderHome();
-      alert("進捗を読み込んだ。");
+      alert("読み込んで、この端末の記録とマージした（片方だけの分も両方とも残る）。");
     }catch(e){ alert("読み込めなかった: " + e.message); }
   };
   rd.readAsText(f);
@@ -1463,6 +1563,73 @@ function saveNote(id, v){
   if(t) state.vocabNotes[id] = t; else delete state.vocabNotes[id];
   save();
 }
+/* ---------- 構文・例文の保存（単語カードの裏に出る構文＋例文／文法トピックの例文）
+   単語自体の☆（vocabFav＝この語をSRSで復習したい）とは別物。こちらは「この言い回し・
+   この構文パターンを後で見返したい」を保存する。呼び出しやすいよう専用の一覧画面にする。 */
+function toggleExampleFav(id, payload){
+  if(state.exampleFav[id]) delete state.exampleFav[id];
+  else state.exampleFav[id] = Object.assign({}, payload, {id, savedAt: Date.now(), note:""});
+  save();
+}
+function toggleVocabExampleFav(cardId){
+  const c = getCard(cardId);
+  if(!c || !c.exFr) return;
+  const id = "vocex_" + cardId;
+  toggleExampleFav(id, {kind:"vocab", label: c.constr || c.gram || "", fr: c.exFr, jp: c.exJa, en: c.exEn||"", refWord: c.front});
+  if(vocabSession) renderVocabCard();
+  const l = document.getElementById("exampleFavList");
+  if(l) renderExampleFavList();
+}
+function toggleTopicExampleFav(topicId, idx){
+  const t = DATA.topics.find(x=>x.id===topicId);
+  const e = t && t.examples && t.examples[idx];
+  if(!t || !e) return;
+  const id = "topex_" + topicId + "_" + idx;
+  toggleExampleFav(id, {kind:"topic", label: t.name_jp, fr: e.fr, jp: e.jp, en:"", refTopicId: topicId});
+  openTopic(topicId);
+}
+function saveExampleNote(id, v){
+  if(!state.exampleFav[id]) return;
+  state.exampleFav[id].note = (v||"").trim();
+  save();
+}
+function openExampleFavList(){
+  titleEl.textContent = "保存した構文・例文";
+  setBack(renderHome, "ホーム");
+  renderExampleFavList();
+}
+function renderExampleFavList(){
+  const ids = Object.keys(state.exampleFav).sort((a,b)=>state.exampleFav[b].savedAt - state.exampleFav[a].savedAt);
+  let h = `<p class="small muted" style="margin:0 0 12px">単語カードの裏や文法トピックの「例文」に出る☆で保存したもの。単語自体の復習リストとは別。</p>`;
+  if(!ids.length){
+    h += `<div class="card"><p class="small muted" style="margin:0">まだ保存した構文・例文がない。単語カードを裏返したときや、文法トピックの例文の横にある☆から保存できる。</p></div>`;
+  } else {
+    h += `<div id="exampleFavList">` + ids.map(id=>{
+      const it = state.exampleFav[id];
+      return `<div class="card" style="padding:12px 14px">
+        <div class="spread" style="margin-bottom:6px">
+          <span class="small muted">${esc(it.label || (it.kind==="vocab"?"単語の構文":"文法トピック"))}${it.refWord?`（${esc(it.refWord)}）`:""}</span>
+          <button class="fav-btn on" onclick="toggleExampleFavAndRefresh('${id}')" title="削除">★</button>
+        </div>
+        <div class="ex" style="margin:0">
+          <div class="f">${wrapTapWords(it.fr)}
+            <button class="btn small" onclick="speakFr('${esc(it.fr).replace(/'/g,"\\'")}')" title="発音を聞く">🔊</button>
+          </div>
+          <div class="j">${esc(it.jp)}</div>
+          ${it.en ? `<div class="j small muted">${esc(it.en)}</div>` : ""}
+        </div>
+        <textarea class="note-box" style="margin-top:8px" placeholder="自分用メモ" onchange="saveExampleNote('${id}', this.value)" onblur="saveExampleNote('${id}', this.value)">${esc(it.note||"")}</textarea>
+      </div>`;
+    }).join("") + `</div>`;
+  }
+  el.innerHTML = h;
+  window.scrollTo(0,0);
+}
+function toggleExampleFavAndRefresh(id){
+  delete state.exampleFav[id];
+  save();
+  renderExampleFavList();
+}
 function openFavList(){
   titleEl.textContent = "お気に入り・メモ";
   setBack(openVocabHome, "単語");
@@ -1513,6 +1680,7 @@ const DRAWER_SECTIONS = [
     {ic:"🏠", label:"ホーム", fn:"renderHome"},
     {ic:"🗂", label:"単語", sub:"品詞別デッキ・レベル別", fn:"openVocabHome"},
     {ic:"★", label:"お気に入り・メモ", fn:"openFavList"},
+    {ic:"📎", label:"保存した構文・例文", sub:"単語カード裏／文法トピックの例文から☆で保存", fn:"openExampleFavList"},
     {ic:"⚡", label:"動詞活用ドリル", sub:"不定詞＋時制＋人称 → 活用形", fn:"openConjugHome"},
   ]},
   {title:"読み物・文例", items:[
@@ -2316,13 +2484,17 @@ function renderVocabCardInner(){
       </div>`;
     } else if(c.ja !== undefined){
       // 構造化カード（同梱の5000語デッキ）
+      const vexId = "vocex_" + id;
       h += `<div class="flip-back" style="text-align:left">
         <div class="small muted">${esc(c.gram||"")}</div>
         <div style="margin:4px 0"><b>${esc(c.ja)}</b>　/　${esc(c.en)}</div>
         ${c.constr ? `<div class="small muted" style="margin:4px 0">構文: ${esc(c.constr)}</div>` : ""}
         <div class="ex" style="margin-top:10px">
-          <div class="f">${wrapTapWords(c.exFr)}
-            <button class="btn small" onclick="speakFr('${esc(c.exFr).replace(/'/g,"\\'")}')" title="例文を聞く">🔊</button>
+          <div class="spread">
+            <div class="f">${wrapTapWords(c.exFr)}
+              <button class="btn small" onclick="speakFr('${esc(c.exFr).replace(/'/g,"\\'")}')" title="例文を聞く">🔊</button>
+            </div>
+            <button class="fav-btn ${state.exampleFav[vexId]?"on":""}" onclick="toggleVocabExampleFav('${id}')" title="構文・例文を保存">${state.exampleFav[vexId]?"★":"☆"}</button>
           </div>
           <div class="j">${esc(c.exJa)}</div>
           ${c.exEn ? `<div class="j small muted">${esc(c.exEn)}</div>` : ""}
