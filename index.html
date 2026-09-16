@@ -2102,6 +2102,10 @@ function deleteDeck(id){
 
 /* ---------- 単語ホーム ---------- */
 function openVocabHome(){
+  try{ openVocabHomeInner(); }
+  catch(e){ showErrorBanner("単語ホーム表示でエラー： " + e.message + (e.stack ? " / " + String(e.stack).split("\n")[0] : "")); }
+}
+function openVocabHomeInner(){
   titleEl.textContent = "単語";
   setBack(renderHome, "ホーム");
   const decks = Object.values(state.vocabDecks);
@@ -2220,6 +2224,10 @@ function speakFr(text){
   }catch(e){ console.warn('読み上げ失敗', e); }
 }
 function startVocabStudy(deckId, mode, titleOverride){
+  try{ startVocabStudyInner(deckId, mode, titleOverride); }
+  catch(e){ showErrorBanner("単語セッション開始でエラー： " + e.message + (e.stack ? " / " + String(e.stack).split("\n")[0] : "")); }
+}
+function startVocabStudyInner(deckId, mode, titleOverride){
   // deckId は既存デッキのid文字列／idの配列（レベル別など仮想グルーピング用）／null(全件) のいずれでも良い。
   mode = mode || 'due';
   let ids;
@@ -2250,6 +2258,10 @@ function startVocabStudyDeckLevel(deckId, level, mode){
   startVocabStudy(ids, mode, `${name} / ${level}（${ids.length}語）`);
 }
 function renderVocabCard(){
+  try{ renderVocabCardInner(); }
+  catch(e){ showErrorBanner("単語カード表示でエラー： " + e.message + (e.stack ? " / " + String(e.stack).split("\n")[0] : "")); }
+}
+function renderVocabCardInner(){
   if(vocabSession.idx >= vocabSession.ids.length) return renderVocabResult();
   const id = vocabSession.ids[vocabSession.idx];
   const c = getCard(id);
@@ -2308,18 +2320,23 @@ function renderVocabCard(){
   el.innerHTML = h;
   window.scrollTo(0,0);
 }
-function revealVocab(){ vocabSession.revealed = true; renderVocabCard(); }
+function revealVocab(){
+  try{ vocabSession.revealed = true; renderVocabCard(); }
+  catch(e){ showErrorBanner("カードを開く際にエラー： " + e.message); }
+}
 function gradeVocabCard(q){
-  const id = vocabSession.ids[vocabSession.idx];
-  gradeVocab(id, q);
-  vocabSession.results.push({id, q});
-  if(q === 1){
-    const insertAt = Math.min(vocabSession.ids.length, vocabSession.idx + 4);
-    vocabSession.ids.splice(insertAt, 0, id);
-  }
-  vocabSession.idx++;
-  vocabSession.revealed = false;
-  renderVocabCard();
+  try{
+    const id = vocabSession.ids[vocabSession.idx];
+    gradeVocab(id, q);
+    vocabSession.results.push({id, q});
+    if(q === 1){
+      const insertAt = Math.min(vocabSession.ids.length, vocabSession.idx + 4);
+      vocabSession.ids.splice(insertAt, 0, id);
+    }
+    vocabSession.idx++;
+    vocabSession.revealed = false;
+    renderVocabCard();
+  }catch(e){ showErrorBanner("採点処理でエラー： " + e.message + (e.stack ? " / " + String(e.stack).split("\n")[0] : "")); }
 }
 function renderVocabResult(){
   titleEl.textContent = "結果";
