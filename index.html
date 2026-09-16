@@ -1295,23 +1295,20 @@ function vocabProg(id){
   return state.vocabProgress[id];
 }
 // quality: 1=もう一度 3=難しい 4=普通 5=簡単（古典的SM-2への簡易マッピング）
-// 間隔の上限は評価の自信度で変える。全部同じease倍率で伸ばすと「普通」止まりの語まで
-// 「簡単」と同じ速度で長期間隔に逃げてしまい、実質もう復習に出てこなくなる
-// （＝「普通以下がちゃんと復習数に入らない」）。「難しい」「普通」はまだ定着していない
-// 語として短いサイクルで頻繁に「今日の復習」へ戻し、「簡単」だけ長く間隔を空ける。
-const MAX_VOCAB_INTERVAL_DAYS = 90; // 「簡単」の上限（日）
-const MAX_INTERVAL_BY_QUALITY = {3: 14, 4: 60, 5: MAX_VOCAB_INTERVAL_DAYS}; // 難しい/普通/簡単
+// 「簡単」だけが間隔を空ける対象。もう一度・難しい・普通は、頻度がどうであろうと
+// 「今日の復習（＝復習待ちプール）」に居続けさせる（due=today固定）。「簡単」と
+// 評価されるまでこのプールから抜けない＝いつまでも復習対象に含まれ続ける。
+const MAX_VOCAB_INTERVAL_DAYS = 90; // 「簡単」の間隔上限（日）
 function gradeVocab(id, quality){
   const p = vocabProg(id);
-  if(quality < 3){
+  if(quality < 5){
     p.reps = 0;
     p.interval = 0;
     p.due = todayStamp();
   } else {
-    const cap = MAX_INTERVAL_BY_QUALITY[quality] || MAX_VOCAB_INTERVAL_DAYS;
     if(p.reps === 0) p.interval = 1;
-    else if(p.reps === 1) p.interval = Math.min(cap, quality === 3 ? 3 : 6);
-    else p.interval = Math.min(cap, Math.max(1, Math.round(p.interval * p.ease)));
+    else if(p.reps === 1) p.interval = 6;
+    else p.interval = Math.min(MAX_VOCAB_INTERVAL_DAYS, Math.max(1, Math.round(p.interval * p.ease)));
     p.reps++;
     p.due = addDays(todayStamp(), p.interval);
   }
