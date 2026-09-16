@@ -2,7 +2,7 @@
 // CACHE_VERSION is injected by build.py at build time (content hash) so that
 // every rebuild automatically busts old caches for users who are online,
 // while users who are offline keep using whatever they already have cached.
-const CACHE_VERSION = "b8f167dd1e9c";
+const CACHE_VERSION = "00ab44160d05";
 const CACHE_NAME = "grammaire-" + CACHE_VERSION;
 const CORE_ASSETS = [
   "./",
