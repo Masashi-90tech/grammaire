@@ -15,42 +15,91 @@
 
 <style>
 :root{
-  --bg:#faf9f7; --card:#ffffff; --fg:#1c1b19; --muted:#6b6862; --line:#e3e0da;
-  --accent:#2f6f57; --accent-weak:#e8f1ec;
-  --bad:#a43d33; --bad-weak:#fbeae8;
-  --warn:#8a6d1f;
-  --bar:#2f6f57; --bar-bg:#eceae5;
-  --shadow:0 1px 2px rgba(0,0,0,.05),0 2px 8px rgba(0,0,0,.04);
+  --bg:#f1eefb; --card:#ffffff; --fg:#211d38; --muted:#7c7699; --line:#e6e1f5;
+  --accent:#6c5ce7; --accent-weak:#efecfd;
+  --bad:#e2554f; --bad-weak:#fdeceb;
+  --warn:#c98a1f;
+  --bar:#6c5ce7; --bar-bg:#efecf6;
+  --shadow:0 2px 4px rgba(76,60,150,.06),0 10px 28px rgba(76,60,150,.10);
+  --bg-grad:linear-gradient(150deg,#eef0fc 0%,#f3ecf9 45%,#fdf0ef 100%);
 }
+/* 「旧」配色（元々のGrammaireの色合い。看板＝紫のラベンダー系に対して、こちらは
+   PWAアイコンのブランド色である緑 #2f6f57 を基調にした、落ち着いた元の見た目）。
+   [data-theme-mode="classic"] を <html> に付けると全画面（単語ホームのレーン表示も含む）に
+   波及する、アプリ全体のテーマ切り替え。 */
+:root[data-theme-mode="classic"]{
+  --bg:#f5f6f2; --card:#ffffff; --fg:#1d211d; --muted:#69726a; --line:#dfe3da;
+  --accent:#2f6f57; --accent-weak:#e3efe9;
+  --bad:#c0392b; --bad-weak:#fbe9e7;
+  --warn:#b9862a;
+  --bar:#2f6f57; --bar-bg:#eef1ec;
+  --shadow:0 1px 3px rgba(0,0,0,.05),0 6px 18px rgba(0,0,0,.07);
+  --bg-grad:none;
+}
+/* ダークモード。既定は「自動」＝端末のprefers-color-schemeに追従するが、[data-color-mode]を
+   <html>に付けると端末設定にかかわらずライト／ダークを固定できる（配色・レイアウト画面の
+   スイッチから）。:not([data-color-mode="light"]) を挟むことで、端末がダークでも
+   「ライト固定」を選んでいればこのブロックが一切マッチしないようにしている。 */
 @media (prefers-color-scheme:dark){
-  :root{
-    --bg:#17181a; --card:#202225; --fg:#e9e7e3; --muted:#9b9891; --line:#33363a;
-    --accent:#6fbf9a; --accent-weak:#1f2f29;
-    --bad:#e08b80; --bad-weak:#2e2220;
-    --warn:#d4b25c;
-    --bar:#6fbf9a; --bar-bg:#2b2e31;
+  :root:not([data-color-mode="light"]):not([data-theme-mode="classic"]){
+    --bg:#161329; --card:#211d36; --fg:#ece9f8; --muted:#a39cc7; --line:#342d54;
+    --accent:#9a8cf5; --accent-weak:#2b2550;
+    --bad:#f0908c; --bad-weak:#3a2624;
+    --warn:#e0c069;
+    --bar:#9a8cf5; --bar-bg:#2b2750;
     --shadow:none;
+    --bg-grad:none;
   }
+  :root[data-theme-mode="classic"]:not([data-color-mode="light"]){
+    --bg:#13160f; --card:#1b201a; --fg:#e9ede9; --muted:#9aa89e; --line:#2a3129;
+    --accent:#5fb98f; --accent-weak:#1f3128;
+    --bad:#e2867f; --bad-weak:#3a2420;
+    --warn:#d9b25c;
+    --bar:#5fb98f; --bar-bg:#20291f;
+    --shadow:none;
+    --bg-grad:none;
+  }
+}
+/* [data-color-mode="dark"] ＝端末設定に関係なく常にダーク（メディアクエリなし＝
+   端末がライトのままでもこの見た目になる）。 */
+:root[data-color-mode="dark"]:not([data-theme-mode="classic"]){
+  --bg:#161329; --card:#211d36; --fg:#ece9f8; --muted:#a39cc7; --line:#342d54;
+  --accent:#9a8cf5; --accent-weak:#2b2550;
+  --bad:#f0908c; --bad-weak:#3a2624;
+  --warn:#e0c069;
+  --bar:#9a8cf5; --bar-bg:#2b2750;
+  --shadow:none;
+  --bg-grad:none;
+}
+:root[data-color-mode="dark"][data-theme-mode="classic"]{
+  --bg:#13160f; --card:#1b201a; --fg:#e9ede9; --muted:#9aa89e; --line:#2a3129;
+  --accent:#5fb98f; --accent-weak:#1f3128;
+  --bad:#e2867f; --bad-weak:#3a2420;
+  --warn:#d9b25c;
+  --bar:#5fb98f; --bar-bg:#20291f;
+  --shadow:none;
+  --bg-grad:none;
 }
 *{box-sizing:border-box}
 html,body{margin:0;padding:0}
 body{
-  background:var(--bg); color:var(--fg);
+  background:var(--bg) var(--bg-grad, none); background-attachment:fixed; color:var(--fg);
   font-family:-apple-system,BlinkMacSystemFont,"Hiragino Sans","Noto Sans JP","Segoe UI",sans-serif;
   font-size:16px; line-height:1.7;
   -webkit-text-size-adjust:100%;
 }
 .wrap{max-width:720px;margin:0 auto;padding:16px 16px 96px}
 header.top{
-  position:sticky;top:0;z-index:20;background:var(--bg);
+  position:sticky;top:0;z-index:20;background:var(--card);
   border-bottom:1px solid var(--line);
   padding:12px 16px;margin:-16px -16px 16px;
   display:flex;align-items:center;gap:12px;
+  box-shadow:0 1px 0 rgba(76,60,150,.04);
 }
 header.top h1{font-size:17px;margin:0;font-weight:600;letter-spacing:.02em;flex:1}
 .btn{
   font:inherit;font-size:15px;border:1px solid var(--line);background:var(--card);color:var(--fg);
-  padding:9px 14px;border-radius:9px;cursor:pointer;line-height:1.4;
+  padding:9px 14px;border-radius:10px;cursor:pointer;line-height:1.4;
   white-space:nowrap;   /* 「開く」が「開」「く」に折り返されるのを防ぐ */
 }
 .btn:hover{border-color:var(--accent)}
@@ -58,7 +107,7 @@ header.top h1{font-size:17px;margin:0;font-weight:600;letter-spacing:.02em;flex:
 .btn.primary:hover{filter:brightness(1.08)}
 .btn.small{font-size:13px;padding:6px 10px}
 .btn:disabled{opacity:.45;cursor:default}
-.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px;margin-bottom:14px;box-shadow:var(--shadow)}
+.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:16px;margin-bottom:14px;box-shadow:var(--shadow)}
 .muted{color:var(--muted)}
 .small{font-size:13px}
 .row{display:flex;align-items:center;gap:10px}
@@ -166,8 +215,45 @@ pre.copybox{
 .lv-n{font-size:12.5px;color:var(--muted);font-variant-numeric:tabular-nums;flex:1}
 .lv-btns{display:flex;gap:6px;flex-wrap:wrap;justify-content:flex-end}
 
+/* 単語ホーム：ツールバー（検索・絞り込み）／カンバン風レーン／詳細パネル／バッジ */
+.vh-toolbar{display:flex;gap:8px;align-items:center;margin-bottom:12px}
+.vh-toolbar input[type=text]{flex:1 1 auto;min-width:0;padding:9px 12px;font-size:15px}
+.vh-chips{display:flex;gap:6px;flex:0 0 auto}
+.vh-chip{font:inherit;font-size:12.5px;padding:7px 12px;border-radius:20px;border:1px solid var(--line);background:var(--card);color:var(--muted);cursor:pointer;white-space:nowrap}
+.vh-chip.on{background:var(--accent);border-color:var(--accent);color:#fff;font-weight:600}
+.vh-layout{display:block;margin-bottom:14px}
+.vh-lane{margin-bottom:16px}
+.vh-lane h3{font-size:12.5px;color:var(--muted);margin:0 0 8px;font-weight:700;letter-spacing:.03em}
+.vh-lane-row{display:flex;gap:10px;overflow-x:auto;padding:2px 2px 10px;scroll-snap-type:x proximity;-webkit-overflow-scrolling:touch}
+.vh-lane-card{position:relative;flex:0 0 auto;width:150px;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:12px 12px 10px;cursor:pointer;scroll-snap-align:start;transition:border-color .15s}
+.vh-lane-card:hover,.vh-lane-card.sel{border-color:var(--accent)}
+.vh-lane-card .vh-name{font-size:13.5px;font-weight:600;line-height:1.35;display:block;margin-bottom:4px;padding-right:22px}
+.vh-lane-card .vh-sub{font-size:11.5px;color:var(--muted)}
+.vh-badges{position:absolute;top:8px;right:8px;display:flex;flex-direction:column;gap:3px;align-items:flex-end}
+.vh-badge{min-width:19px;height:19px;padding:0 5px;border-radius:10px;font-size:10.5px;font-weight:700;display:flex;align-items:center;justify-content:center;line-height:1;font-variant-numeric:tabular-nums}
+.vh-badge.due{background:var(--accent);color:#fff}
+.vh-badge.new{background:var(--bar-bg);color:var(--muted)}
+.vh-detail{display:none}
+.vh-detail.open{display:block}
+.vh-detail-inner{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:16px}
+.vh-detail-close{float:right;font:inherit;font-size:13px;background:none;border:1px solid var(--line);border-radius:20px;color:var(--muted);cursor:pointer;padding:4px 10px}
+.vh-detail-empty{color:var(--muted);font-size:13px;margin:0}
+.vh-detail-scrim{display:none;position:fixed;inset:0;background:rgba(0,0,0,.28);z-index:55}
+.vh-detail-scrim.open{display:block}
+@media (max-width:899px){
+  .vh-detail{position:fixed;left:0;right:0;bottom:0;z-index:60;transform:translateY(100%);transition:transform .22s ease;max-height:78vh;overflow:auto;padding:0 12px calc(12px + env(safe-area-inset-bottom))}
+  .vh-detail.open{display:block;transform:translateY(0)}
+  .vh-detail-inner{border-radius:16px 16px 0 0;box-shadow:0 -8px 28px rgba(0,0,0,.2)}
+}
+@media (min-width:900px){
+  .vh-detail-scrim{display:none!important}
+  .vh-layout{display:grid;grid-template-columns:280px 1fr;gap:18px;align-items:start}
+  .vh-detail{display:block;position:sticky;top:14px}
+  .vh-detail-inner{min-height:140px}
+}
+
 /* ハンバーガーメニュー */
-.menu-btn{font:inherit;font-size:18px;line-height:1;background:none;border:1px solid var(--line);border-radius:9px;color:var(--fg);cursor:pointer;padding:7px 11px}
+.menu-btn{font:inherit;font-size:18px;line-height:1;background:none;border:1px solid var(--line);border-radius:10px;color:var(--fg);cursor:pointer;padding:7px 11px}
 .menu-btn:hover{border-color:var(--accent)}
 .drawer-back{position:fixed;inset:0;background:rgba(0,0,0,.35);z-index:40;opacity:0;transition:opacity .18s}
 .drawer-back.show{opacity:1}
@@ -272,7 +358,7 @@ pre.copybox{
 .cj-input{text-align:center;font-size:21px}
 .cj-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:14px}
 .cj-tense-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:4px}
-.cj-chip{font:inherit;font-size:13.5px;text-align:left;padding:9px 11px;border-radius:9px;border:1px solid var(--line);background:var(--card);color:var(--fg);cursor:pointer}
+.cj-chip{font:inherit;font-size:13.5px;text-align:left;padding:9px 11px;border-radius:10px;border:1px solid var(--line);background:var(--card);color:var(--fg);cursor:pointer}
 .cj-chip.on{border-color:var(--accent);background:var(--accent-weak);color:var(--accent);font-weight:600}
 .cj-table{width:100%;border-collapse:collapse;font-size:14px;margin-top:8px}
 .cj-table td{padding:5px 6px;border-bottom:1px solid var(--line)}
@@ -412,7 +498,7 @@ let session = null;
 
 function defaultState(){ return {progress:{}, items:{}, log:{}, vocabLog:{}, vocabReviewLog:{}, vocabDecks:{}, vocabCards:{}, vocabProgress:{}, vocabSeeded:false,
   vocabFav:{}, vocabNotes:{}, exampleFav:{}, conjug:{stats:{}, tenses:["present","passe_compose"], group:"all", best:0},
-  readingSets:{}, readingSaved:{}, phraseFav:{}, phraseText:{}, phraseCustom:{}}; }
+  readingSets:{}, readingSaved:{}, phraseFav:{}, phraseText:{}, phraseCustom:{}, uiTheme:"kanban", uiColorMode:"auto", essays:{}}; }
 // 単語の見出し語（fr）からアクセントを落として作る安定id。配列インデックスではなく
 // 語そのものから作るため、後からgen/*.txtにファイルを追加して行の並びが変わっても
 // 既存語のidはずれない（旧方式はdeckId+"_"+配列内インデックスで、途中にファイルを
@@ -504,6 +590,12 @@ function load(){
       if(!s.phraseFav) s.phraseFav = {};
       if(!s.phraseText) s.phraseText = {};
       if(!s.phraseCustom) s.phraseCustom = {};
+      // uiVocabHome（単語ホームだけの表示切り替え）は uiTheme（アプリ全体のテーマ切り替え）に統合した。
+      // 旧キーが残っていれば一度だけ引き継ぐ。
+      if(!s.uiTheme) s.uiTheme = s.uiVocabHome || "kanban";
+      delete s.uiVocabHome;
+      if(!s.uiColorMode) s.uiColorMode = "auto";
+      if(!s.essays) s.essays = {};
       // 旧バージョンが複製保存した同梱5,002語のカード実体をlocalStorageから除去する
       // （getCard()がVOCAB_DEFAULTから組み立てるので不要。1回だけ効く一方向の掃除）。
       // この時点ではまだ save() が使うグローバルstateが未確定なので直接setItemする。
@@ -1314,7 +1406,9 @@ function mergeState(local, imported){
   out.vocabCards = mergeByIdPreferLocal(local.vocabCards, imported.vocabCards);
   out.readingSets = mergeByIdPreferLocal(local.readingSets, imported.readingSets);
   out.readingSaved = mergeByIdPreferLocal(local.readingSaved, imported.readingSaved);
+  out.essays = mergeByIdLastAtWins(local.essays, imported.essays);
   out.vocabSeeded = !!(local.vocabSeeded || imported.vocabSeeded);
+  // uiTheme（看板／旧）・uiColorMode（自動／ライト／ダーク）は端末ごとの好みなので同期しない。ローカルの選択を維持する。
   const lc = local.conjug || {stats:{}, tenses:["present","passe_compose"], group:"all", best:0};
   const ic = imported.conjug || {stats:{}};
   out.conjug = Object.assign({}, lc, {
@@ -1615,7 +1709,7 @@ function renderExampleFavList(){
           <div class="f">${wrapTapWords(it.fr)}
             <button class="btn small" onclick="speakFr('${esc(it.fr).replace(/'/g,"\\'")}')" title="発音を聞く">🔊</button>
           </div>
-          <div class="j">${esc(it.jp)}</div>
+          ${it.jp ? `<div class="j">${esc(it.jp)}</div>` : ""}
           ${it.en ? `<div class="j small muted">${esc(it.en)}</div>` : ""}
         </div>
         <textarea class="note-box" style="margin-top:8px" placeholder="自分用メモ" onchange="saveExampleNote('${id}', this.value)" onblur="saveExampleNote('${id}', this.value)">${esc(it.note||"")}</textarea>
@@ -1672,15 +1766,236 @@ function renderFavList(){
   el.innerHTML = h;
 }
 
+/* ---------- 自由作文（外部AIへの添削依頼プロンプト作成 → 添削結果の貼り付け・表示） ----------
+   このアプリ自体はオフライン単体HTMLなのでAI機能は持たない。かわりに、書いた作文を
+   埋め込んだ添削依頼プロンプトを組み立ててコピーし、好きなAI（ChatGPT・Claude等）に
+   貼り付けてもらった返答を、このアプリにそのまま貼り戻すと見出し（[語彙の修正]等）で
+   自動的に項目別へ振り分けて表示する。見出しが見つからない場合は、貼った内容をそのまま表示する
+   （フォールバック）。気に入った行は既存の「保存した構文・例文」（exampleFav）にそのまま合流させる。 */
+function buildEssayCorrectionPrompt(text){
+  const L = [];
+  L.push("あなたはフランス語の添削者です。以下の学習者が書いたフランス語の作文を添削してください。");
+  L.push("");
+  L.push("【学習者の作文】");
+  L.push(text || "（空欄）");
+  L.push("");
+  L.push("【回答形式】必ず次の見出し（角括弧つき、この表記のまま）を、この順番で使って答えてください。見出し以外の飾り（Markdownの太字や番号など）は付けないでください。");
+  L.push("");
+  L.push("[修正後の全文]");
+  L.push("（原文の意図はできるだけ保ちつつ、自然なフランス語に直した全文）");
+  L.push("");
+  L.push("[語彙の修正]");
+  L.push("（語彙・単語選びの誤りや、より自然な言い換えを1行1項目で。「誤り → 修正案（理由）」の形。無ければ「特になし」とだけ書く）");
+  L.push("");
+  L.push("[構文の修正]");
+  L.push("（時制・前置詞・語順・性数一致などの文法・構文の誤りを1行1項目で。無ければ「特になし」とだけ書く）");
+  L.push("");
+  L.push("[改善点]");
+  L.push("（誤りではないが、より自然・的確にするための言い回しの提案を1行1項目で。無ければ「特になし」とだけ書く）");
+  L.push("");
+  L.push("[解説]");
+  L.push("（全体を通して学習者が意識すべきポイントの解説。日本語でよい）");
+  return L.join("\n");
+}
+// 貼り付けられた添削結果を [見出し] ごとに切り分ける。AIやチャットUIによっては
+// 見出しにMarkdownの太字（**[...]**）が付くことがあるので、その分だけ緩く許容する。
+// 見出しが1つも見つからない場合は ok:false とし、呼び出し側は生テキストをそのまま出す。
+function parseEssayCorrection(raw){
+  const text = (raw||"").replace(/\r\n/g,"\n");
+  const re = /^[ \t]*\**\s*\[(.+?)\]\s*\**[ \t]*$/gm;
+  const marks = [];
+  let m;
+  while((m = re.exec(text))){ marks.push({heading: m[1].trim(), start: m.index, contentStart: m.index + m[0].length}); }
+  if(!marks.length) return {ok:false, raw: text.trim(), sections:{}};
+  const sections = {};
+  marks.forEach((mk, i)=>{
+    const end = (i+1 < marks.length) ? marks[i+1].start : text.length;
+    sections[mk.heading] = text.slice(mk.contentStart, end).trim();
+  });
+  return {ok:true, raw: text.trim(), sections};
+}
+function newEssayId(){ return "essay_" + Date.now() + "_" + Math.random().toString(36).slice(2,7); }
+function openEssayHome(){
+  titleEl.textContent = "自由作文";
+  setBack(renderHome, "ホーム");
+  renderEssayHome();
+}
+function renderEssayHome(){
+  const ids = Object.keys(state.essays).sort((a,b)=> (state.essays[b].lastAt||0) - (state.essays[a].lastAt||0));
+  let h = `<div class="card"><button class="btn primary" style="width:100%" onclick="openEssayEditor(null)">＋ 新しい作文を書く</button></div>`;
+  h += `<p class="small muted" style="margin:0 0 12px">書いた作文から添削用のプロンプトを作ってコピーし、ChatGPTやClaudeなど好きなAIに貼り付ける。返ってきた返答をこのアプリに貼り戻すと、語彙・構文の修正や改善点を項目別に表示する。</p>`;
+  if(!ids.length){
+    h += `<div class="card"><p class="small muted" style="margin:0">まだ作文がない。上のボタンから書き始められる。</p></div>`;
+  } else {
+    h += `<div class="card">` + ids.map(id=>{
+      const e = state.essays[id];
+      const preview = (e.text||"").replace(/\s+/g," ").trim().slice(0,60);
+      const d = e.updatedAt ? new Date(e.updatedAt) : null;
+      const dateStr = d ? `${d.getFullYear()}/${d.getMonth()+1}/${d.getDate()}` : "";
+      return `<div class="spread" style="padding:10px 0;border-bottom:1px solid var(--line);cursor:pointer" onclick="openEssayEditor('${id}')">
+        <div style="min-width:0">
+          <div style="font-weight:600">${esc(e.title || "無題の作文")}</div>
+          <div class="small muted">${esc(dateStr)}${e.correctedFull ? " ・ 添削済み" : ""} ・ ${esc(preview)}${preview.length>=60?"…":""}</div>
+        </div>
+        <button class="btn small" onclick="event.stopPropagation();deleteEssay('${id}')">削除</button>
+      </div>`;
+    }).join("") + `</div>`;
+  }
+  el.innerHTML = h;
+  window.scrollTo(0,0);
+}
+function deleteEssay(id){
+  if(!confirm("この作文を削除する？元に戻せない。")) return;
+  delete state.essays[id];
+  save();
+  renderEssayHome();
+}
+let essayDraft = null;
+function openEssayEditor(id){
+  if(id && state.essays[id]) essayDraft = Object.assign({}, state.essays[id]);
+  else essayDraft = {id:newEssayId(), title:"", text:"", correctedFull:"", vocabNotes:"", structNotes:"", improvements:"", commentary:"", rawCorrection:"", parsedOk:false, createdAt:Date.now(), updatedAt:Date.now(), lastAt:Date.now()};
+  titleEl.textContent = "作文";
+  setBack(openEssayHome, "作文一覧");
+  renderEssayEditor();
+}
+function renderEssayEditor(){
+  const e = essayDraft;
+  let h = `<div class="card">
+    <input type="text" id="essayTitle" placeholder="タイトル（任意）" value="${esc(e.title)}" onchange="essayDraft.title=this.value" style="margin-bottom:10px">
+    <textarea id="essayText" placeholder="ここにフランス語で作文を書く" style="min-height:160px" onchange="essayDraft.text=this.value">${esc(e.text)}</textarea>
+    <div class="actions">
+      <button class="btn primary" onclick="saveEssayDraft()">保存</button>
+      <button class="btn" onclick="essayDraft.text=document.getElementById('essayText').value; showEssayPrompt()">添削用プロンプトを出力</button>
+    </div>
+  </div>`;
+  h += `<div id="essayPromptBox"></div>`;
+  h += `<div class="card">
+    <h2 style="margin-top:0">添削結果を貼り付け</h2>
+    <p class="small muted" style="margin:0 0 8px">AIからの返答をそのままここに貼り付けて「読み込む」を押す。見出し（[修正後の全文]など）が見つからない場合は、貼った内容をそのまま表示する。</p>
+    <textarea id="essayPaste" placeholder="AIの返答をここに貼り付け" style="min-height:120px"></textarea>
+    <div class="actions"><button class="btn primary" onclick="loadEssayCorrection()">読み込む</button></div>
+  </div>`;
+  h += `<div id="essayResultBox">${essayResultHtml()}</div>`;
+  el.innerHTML = h;
+  window.scrollTo(0,0);
+}
+function showEssayPrompt(){
+  const txt = buildEssayCorrectionPrompt(essayDraft.text || "");
+  const box = document.getElementById("essayPromptBox");
+  box.innerHTML = `<div class="card"><h2 style="margin-top:0">添削用プロンプト</h2>
+    <pre class="copybox" id="essayPtxt">${esc(txt)}</pre>
+    <div class="actions"><button class="btn small" onclick="copyText(document.getElementById('essayPtxt').textContent, this)">コピー</button></div>
+  </div>`;
+}
+function saveEssayDraft(){
+  const titleInp = document.getElementById("essayTitle");
+  const textInp = document.getElementById("essayText");
+  if(titleInp) essayDraft.title = titleInp.value;
+  if(textInp) essayDraft.text = textInp.value;
+  essayDraft.updatedAt = Date.now();
+  essayDraft.lastAt = essayDraft.updatedAt;
+  if(!essayDraft.createdAt) essayDraft.createdAt = essayDraft.updatedAt;
+  state.essays[essayDraft.id] = Object.assign({}, essayDraft);
+  save();
+  alert("保存した。");
+}
+function loadEssayCorrection(){
+  const raw = document.getElementById("essayPaste").value;
+  if(!raw || !raw.trim()){ alert("貼り付け欄が空。"); return; }
+  const parsed = parseEssayCorrection(raw);
+  essayDraft.rawCorrection = parsed.raw;
+  essayDraft.parsedOk = parsed.ok;
+  essayDraft.correctedFull = parsed.sections["修正後の全文"] || "";
+  essayDraft.vocabNotes = parsed.sections["語彙の修正"] || "";
+  essayDraft.structNotes = parsed.sections["構文の修正"] || "";
+  essayDraft.improvements = parsed.sections["改善点"] || "";
+  essayDraft.commentary = parsed.sections["解説"] || "";
+  essayDraft.updatedAt = Date.now();
+  essayDraft.lastAt = essayDraft.updatedAt;
+  if(!essayDraft.createdAt) essayDraft.createdAt = essayDraft.updatedAt;
+  if(!essayDraft.title) essayDraft.title = (essayDraft.text||"").trim().slice(0,20) || "無題の作文";
+  state.essays[essayDraft.id] = Object.assign({}, essayDraft);
+  save();
+  const titleInp = document.getElementById("essayTitle");
+  if(titleInp) titleInp.value = essayDraft.title;
+  const box = document.getElementById("essayResultBox");
+  box.innerHTML = essayResultHtml();
+  window.scrollTo(0, box.offsetTop - 60);
+}
+// 添削結果の中の1行を、既存の「保存した構文・例文」（exampleFav）に保存する。
+// 同じ行は同じidになる単純ハッシュなので、何度でもトグルできる。
+function essayLineFavId(line){
+  let h = 0;
+  const s = line || "";
+  for(let i=0;i<s.length;i++){ h = (h*31 + s.charCodeAt(i)) | 0; }
+  return "essayex_" + Math.abs(h);
+}
+function toggleEssayPhraseFav(line){
+  const text = (line||"").trim();
+  if(!text) return;
+  const id = essayLineFavId(text);
+  toggleExampleFav(id, {kind:"essay", label: essayDraft.title || "作文から", fr:text, jp:"", en:"", refEssayId: essayDraft.id});
+  const box = document.getElementById("essayResultBox");
+  if(box) box.innerHTML = essayResultHtml();
+}
+function essayLinesWithFav(text){
+  if(!text || !text.trim()) return `<p class="small muted" style="margin:0">（なし）</p>`;
+  const lines = text.split("\n").map(s=>s.trim()).filter(Boolean);
+  if(!lines.length) return `<p class="small muted" style="margin:0">（なし）</p>`;
+  return lines.map(line=>{
+    const id = essayLineFavId(line);
+    const on = !!state.exampleFav[id];
+    return `<div class="spread" style="padding:5px 0;align-items:flex-start;gap:8px">
+      <span class="small" style="flex:1">${esc(line)}</span>
+      <button class="fav-btn ${on?"on":""}" data-line="${esc(line)}" onclick="toggleEssayPhraseFav(this.getAttribute('data-line'))" title="このフレーズを保存">${on?"★":"☆"}</button>
+    </div>`;
+  }).join("");
+}
+function essayResultHtml(){
+  const e = essayDraft;
+  if(!e || !e.rawCorrection) return "";
+  let h = `<div class="card"><h2 style="margin-top:0">添削結果</h2>`;
+  if(!e.parsedOk){
+    h += `<p class="small muted" style="margin:0 0 8px">見出し（[修正後の全文]など）が見つからなかったので、貼り付けた内容をそのまま表示している。</p>
+      <div class="expl">${esc(e.rawCorrection)}</div>`;
+  } else {
+    const fullOk = (e.correctedFull||"").trim();
+    h += `<div style="margin-bottom:14px">
+      <div class="small muted" style="font-weight:600;margin-bottom:4px">修正後の全文</div>`;
+    if(fullOk){
+      const onFull = !!state.exampleFav[essayLineFavId(fullOk)];
+      h += `<div class="spread" style="align-items:flex-start;gap:8px">
+        <div class="f" style="font-family:Georgia,'Times New Roman',serif;font-size:16px;flex:1">${wrapTapWords(fullOk)}
+          <button class="btn small" onclick="speakFr('${esc(fullOk).replace(/'/g,"\\'")}')" title="発音を聞く">🔊</button>
+        </div>
+        <button class="fav-btn ${onFull?"on":""}" data-line="${esc(fullOk)}" onclick="toggleEssayPhraseFav(this.getAttribute('data-line'))" title="保存">${onFull?"★":"☆"}</button>
+      </div>`;
+    } else {
+      h += `<p class="small muted" style="margin:0">（見出しはあったが内容が空だった）</p>`;
+    }
+    h += `</div>`;
+    h += `<div style="margin-bottom:14px"><div class="small muted" style="font-weight:600;margin-bottom:4px">語彙の修正</div>${essayLinesWithFav(e.vocabNotes)}</div>`;
+    h += `<div style="margin-bottom:14px"><div class="small muted" style="font-weight:600;margin-bottom:4px">構文の修正</div>${essayLinesWithFav(e.structNotes)}</div>`;
+    h += `<div style="margin-bottom:14px"><div class="small muted" style="font-weight:600;margin-bottom:4px">改善点</div>${essayLinesWithFav(e.improvements)}</div>`;
+    h += `<div><div class="small muted" style="font-weight:600;margin-bottom:4px">解説</div><div class="expl">${esc(e.commentary || "（なし）")}</div></div>`;
+  }
+  h += `</div>`;
+  return h;
+}
+
 /* ---------- ハンバーガーメニュー ----------
    学習の本線（単語・文法・活用）と、読み物（早口言葉などの豆知識）を分けて置く。
    読み物系はホーム画面に並べるとドリルが埋もれるので、こちらに集約する。 */
 const DRAWER_SECTIONS = [
+  {title:"表示", items:[
+    {ic:"🎨", label:"配色・レイアウト", sub:"看板／旧・ダークモード（自動／固定）をアプリ全体で切り替え", fn:"openUiSettings"},
+  ]},
   {title:"学習", items:[
     {ic:"🏠", label:"ホーム", fn:"renderHome"},
     {ic:"🗂", label:"単語", sub:"品詞別デッキ・レベル別", fn:"openVocabHome"},
     {ic:"★", label:"お気に入り・メモ", fn:"openFavList"},
     {ic:"📎", label:"保存した構文・例文", sub:"単語カード裏／文法トピックの例文から☆で保存", fn:"openExampleFavList"},
+    {ic:"✏️", label:"自由作文", sub:"添削用プロンプトを出力→結果を貼り付けて表示", fn:"openEssayHome"},
     {ic:"⚡", label:"動詞活用ドリル", sub:"不定詞＋時制＋人称 → 活用形", fn:"openConjugHome"},
   ]},
   {title:"読み物・文例", items:[
@@ -2328,71 +2643,124 @@ function openVocabHomeInner(){
     <button class="btn" onclick="openFavList()">開く</button>
   </div></div>`;
 
-  // ビジネス表現（機能別）。まだ語が入っていない分類は出さない。
-  const bizRows = BIZ_SITU.map(b=>{
-    const ids = vocabIdsBySitu(b.situ);
-    if(!ids.length) return "";
-    const bdue = vocabDueCount(ids), bnw = vocabNewCount(ids);
-    return `<div class="lv-row">
-      <span class="lv-tag biz">${esc(b.situ)}</span>
-      <span class="lv-n">${ids.length}語 ・ ${esc(b.sub)}</span>
-      <span class="lv-btns">
-        ${bdue>0 ? `<button class="btn small" onclick="startVocabStudySitu('${b.situ}','due')">復習 ${bdue}</button>` : ""}
-        ${bnw>0 ? `<button class="btn small" onclick="startVocabStudySitu('${b.situ}','new')">新規 ${bnw}</button>` : ""}
-      </span>
-    </div>`;
-  }).join("");
-  if(bizRows){
-    h += `<div class="card"><h2>ビジネス表現（機能別）</h2>
-      <p class="small muted" style="margin:-4px 0 8px">仕事で使う言い回しを、品詞ではなく場面でまとめたもの。カードは品詞デッキと共通なので進捗は二重にならない。</p>
-      ${bizRows}</div>`;
-  }
+  const uiMode = state.uiTheme === "classic" ? "classic" : "kanban";
+  h += `<div class="spread" style="margin:0 0 10px">
+    <span class="small muted">表示：${uiMode==="kanban" ? "看板" : "旧"}（アプリ全体の設定）</span>
+    <button class="btn small" onclick="toggleVocabHomeUiMode()">${uiMode==="kanban" ? "☰ 旧にする" : "⊞ 看板にする"}</button>
+  </div>`;
 
-  const LEVELS_UI = ["A1","A2","B1","B2","C1","C2"];
-  h += `<div class="card"><h2>デッキ</h2>`;
-  if(!decks.length){
-    h += `<p class="muted small" style="margin:0">まだデッキがない。下からAnkiの.apkgかCSV/TSVを読み込める。</p>`;
-  } else {
-    decks.forEach(d=>{
+  if(uiMode === "kanban"){
+    // ビジネス表現（機能別）・品詞別デッキを、検索・絞り込みができるカンバン風レーンにまとめる。
+    // まだ語が入っていない分類は出さない。
+    const bizLane = BIZ_SITU.map(b=>{
+      const ids = vocabIdsBySitu(b.situ);
+      if(!ids.length) return "";
+      const bdue = vocabDueCount(ids), bnw = vocabNewCount(ids);
+      const searchKey = (b.situ + " " + b.sub).toLowerCase();
+      return `<div class="vh-lane-card" data-search="${esc(searchKey)}" data-due="${bdue}" data-new="${bnw}" onclick="vhSelect(this,'biz','${esc(b.situ)}')">
+        <div class="vh-badges">
+          ${bdue>0 ? `<span class="vh-badge due">${bdue}</span>` : ""}
+          ${bnw>0 ? `<span class="vh-badge new">${bnw}</span>` : ""}
+        </div>
+        <span class="vh-name">${esc(b.situ)}</span>
+        <span class="vh-sub">${ids.length}語 ・ ${esc(b.sub)}</span>
+      </div>`;
+    }).join("");
+
+    const deckLane = decks.map(d=>{
       const due = vocabDueCount(d.id);
       const nw = vocabNewCount(d.id);
       // 「単語帳: 名詞（2674語）」→ 見出しは品詞だけにして、語数は右に出す
       const shortName = d.name.replace(/^単語帳:\s*/, "").replace(/（[^）]*）$/, "");
-      h += `<div class="deck">
-        <div class="deck-head">
-          <span class="deck-name">${esc(shortName)}</span>
-          <span class="deck-total">計 ${d.cardIds.length}</span>
+      const searchKey = shortName.toLowerCase();
+      return `<div class="vh-lane-card" data-search="${esc(searchKey)}" data-due="${due}" data-new="${nw}" onclick="vhSelect(this,'deck','${d.id}')">
+        <div class="vh-badges">
+          ${due>0 ? `<span class="vh-badge due">${due}</span>` : ""}
+          ${nw>0 ? `<span class="vh-badge new">${nw}</span>` : ""}
         </div>
-        <div class="deck-actions">
-          ${due>0 ? `<button class="btn small" onclick="startVocabStudy('${d.id}','due')">復習（${due}）</button>` : ""}
-          ${nw>0 ? `<button class="btn small" onclick="startVocabStudy('${d.id}','new')">新規（${nw}）</button>` : ""}
-        </div>`;
-      // このデッキ内をレベル別に分解した行（品詞×レベルで絞って学習できるように）
-      const levelRows = LEVELS_UI.map(lv=>{
-        const ids = d.cardIds.filter(id=>{ const c = getCard(id); return c && c.level===lv; });
-        if(!ids.length) return "";
-        const ldue = vocabDueCount(ids);
-        const lnw = vocabNewCount(ids);
-        return `<div class="lv-row">
-          <span class="lv-tag">${lv}</span>
-          <span class="lv-n">${ids.length}語</span>
-          <span class="lv-btns">
-            ${ldue>0 ? `<button class="btn small" onclick="startVocabStudyDeckLevel('${d.id}','${lv}','due')">復習 ${ldue}</button>` : ""}
-            ${lnw>0 ? `<button class="btn small" onclick="startVocabStudyDeckLevel('${d.id}','${lv}','new')">新規 ${lnw}</button>` : ""}
-          </span>
-        </div>`;
-      }).join("");
-      if(levelRows) h += `<div class="lv-rows">${levelRows}</div>`;
-      h += `</div>`;
-    });
-  }
-  h += `</div>`;
+        <span class="vh-name">${esc(shortName)}</span>
+        <span class="vh-sub">計 ${d.cardIds.length}語</span>
+      </div>`;
+    }).join("");
 
-  h += `<div class="card"><h2>インポート</h2>
-    <p class="small muted" style="margin:0 0 12px">Ankiの .apkg、またはタブ区切り/CSVのテキストファイル。.apkgが新しい圧縮形式(zstd)で読めない場合は、Ankiで「ノートをプレーンテキストで書き出し」を使ってほしい。</p>
-    <button class="btn" onclick="document.getElementById('vocabFile').click()">ファイルを選ぶ</button>
-    <input type="file" id="vocabFile" accept=".apkg,.csv,.txt,.tsv" class="hidden" onchange="handleVocabFile(this)">
-  </div>`;
+    h += `<div class="vh-toolbar">
+      <input type="text" id="vhSearchInput" placeholder="デッキ・場面を検索" oninput="vhApplyFilters()">
+      <div class="vh-chips">
+        <button class="vh-chip on" id="vhChipAll" onclick="vhSetFilter('all')">すべて</button>
+        <button class="vh-chip" id="vhChipDue" onclick="vhSetFilter('due')">復習あり</button>
+        <button class="vh-chip" id="vhChipNew" onclick="vhSetFilter('new')">新規あり</button>
+      </div>
+    </div>`;
+
+    h += `<div class="vh-layout">
+      <div class="vh-detail">
+        <div class="vh-detail-inner" id="vhDetailInner"><p class="vh-detail-empty">カードをタップすると、復習・新規のボタンとレベル別の内訳がここに出る。</p></div>
+      </div>
+      <div class="vh-lanes">
+        ${bizLane ? `<div class="vh-lane"><h3>ビジネス表現（機能別）</h3><div class="vh-lane-row">${bizLane}</div></div>` : ""}
+        ${deckLane ? `<div class="vh-lane"><h3>品詞別デッキ</h3><div class="vh-lane-row">${deckLane}</div></div>` : (!decks.length ? `<p class="muted small">まだデッキがない。下からAnkiの.apkgかCSV/TSVを読み込める。</p>` : "")}
+      </div>
+    </div>
+    <div class="vh-detail-scrim" onclick="closeVhDetail()"></div>`;
+  } else {
+    // シンプル表示：以前の縦積みレイアウト（横スクロールが苦手／一覧性を優先したい人向け）
+    const LEVELS_UI = ["A1","A2","B1","B2","C1","C2"];
+    const bizRows = BIZ_SITU.map(b=>{
+      const ids = vocabIdsBySitu(b.situ);
+      if(!ids.length) return "";
+      const bdue = vocabDueCount(ids), bnw = vocabNewCount(ids);
+      return `<div class="lv-row">
+        <span class="lv-tag biz">${esc(b.situ)}</span>
+        <span class="lv-n">${ids.length}語 ・ ${esc(b.sub)}</span>
+        <span class="lv-btns">
+          ${bdue>0 ? `<button class="btn small" onclick="startVocabStudySitu('${b.situ}','due')">復習 ${bdue}</button>` : ""}
+          ${bnw>0 ? `<button class="btn small" onclick="startVocabStudySitu('${b.situ}','new')">新規 ${bnw}</button>` : ""}
+        </span>
+      </div>`;
+    }).join("");
+    if(bizRows){
+      h += `<div class="card"><h2>ビジネス表現（機能別）</h2>
+        <p class="small muted" style="margin:-4px 0 8px">仕事で使う言い回しを、品詞ではなく場面でまとめたもの。カードは品詞デッキと共通なので進捗は二重にならない。</p>
+        ${bizRows}</div>`;
+    }
+
+    h += `<div class="card"><h2>デッキ</h2>`;
+    if(!decks.length){
+      h += `<p class="muted small" style="margin:0">まだデッキがない。下からAnkiの.apkgかCSV/TSVを読み込める。</p>`;
+    } else {
+      decks.forEach(d=>{
+        const due = vocabDueCount(d.id);
+        const nw = vocabNewCount(d.id);
+        const shortName = d.name.replace(/^単語帳:\s*/, "").replace(/（[^）]*）$/, "");
+        h += `<div class="deck">
+          <div class="deck-head">
+            <span class="deck-name">${esc(shortName)}</span>
+            <span class="deck-total">計 ${d.cardIds.length}</span>
+          </div>
+          <div class="deck-actions">
+            ${due>0 ? `<button class="btn small" onclick="startVocabStudy('${d.id}','due')">復習（${due}）</button>` : ""}
+            ${nw>0 ? `<button class="btn small" onclick="startVocabStudy('${d.id}','new')">新規（${nw}）</button>` : ""}
+          </div>`;
+        const levelRows = LEVELS_UI.map(lv=>{
+          const ids = d.cardIds.filter(id=>{ const c = getCard(id); return c && c.level===lv; });
+          if(!ids.length) return "";
+          const ldue = vocabDueCount(ids);
+          const lnw = vocabNewCount(ids);
+          return `<div class="lv-row">
+            <span class="lv-tag">${lv}</span>
+            <span class="lv-n">${ids.length}語</span>
+            <span class="lv-btns">
+              ${ldue>0 ? `<button class="btn small" onclick="startVocabStudyDeckLevel('${d.id}','${lv}','due')">復習 ${ldue}</button>` : ""}
+              ${lnw>0 ? `<button class="btn small" onclick="startVocabStudyDeckLevel('${d.id}','${lv}','new')">新規 ${lnw}</button>` : ""}
+            </span>
+          </div>`;
+        }).join("");
+        if(levelRows) h += `<div class="lv-rows">${levelRows}</div>`;
+        h += `</div>`;
+      });
+    }
+    h += `</div>`;
+  }
 
   if(decks.length){
     h += `<div class="card"><h2>管理</h2>`;
@@ -2404,8 +2772,173 @@ function openVocabHomeInner(){
     });
     h += `</div>`;
   }
+
+  h += `<div class="card"><h2>インポート</h2>
+    <p class="small muted" style="margin:0 0 12px">Ankiの .apkg、またはタブ区切り/CSVのテキストファイル。.apkgが新しい圧縮形式(zstd)で読めない場合は、Ankiで「ノートをプレーンテキストで書き出し」を使ってほしい。</p>
+    <button class="btn" onclick="document.getElementById('vocabFile').click()">ファイルを選ぶ</button>
+    <input type="file" id="vocabFile" accept=".apkg,.csv,.txt,.tsv" class="hidden" onchange="handleVocabFile(this)">
+  </div>`;
+
   el.innerHTML = h;
   window.scrollTo(0,0);
+}
+
+/* 単語ホーム：検索・絞り込み・カード選択（詳細パネル）を扱う軽量な状態
+   ページ全体を作り直さず、既に描画済みのDOMをその場で更新することで、
+   検索欄の入力中にフォーカスが飛ばないようにしている。 */
+/* ---------- 表示テーマ（看板／旧）とダークモード（自動／ライト／ダーク）。
+   どちらもアプリ全体に効くグローバル設定。単語ホームのレーン表示⇄シンプル表示は
+   看板／旧に連動する。ダークモードは既定では端末設定（prefers-color-scheme）に自動追従するが、
+   [data-color-mode]属性で端末設定にかかわらずライト／ダーク固定にもできる（CSS側を参照）。 */
+function applyUiTheme(){
+  if(state.uiTheme === "classic") document.documentElement.setAttribute("data-theme-mode", "classic");
+  else document.documentElement.removeAttribute("data-theme-mode");
+  if(state.uiColorMode === "light" || state.uiColorMode === "dark") document.documentElement.setAttribute("data-color-mode", state.uiColorMode);
+  else document.documentElement.removeAttribute("data-color-mode");
+}
+function setGlobalUiTheme(mode){
+  state.uiTheme = (mode === "classic") ? "classic" : "kanban";
+  applyUiTheme();
+  save();
+  const settingsScreen = document.getElementById("uiThemeSettings");
+  if(settingsScreen) renderUiSettings();
+}
+function setGlobalColorMode(mode){
+  state.uiColorMode = (mode==="light"||mode==="dark") ? mode : "auto";
+  applyUiTheme();
+  save();
+  const settingsScreen = document.getElementById("uiThemeSettings");
+  if(settingsScreen) renderUiSettings();
+}
+function openUiSettings(){
+  titleEl.textContent = "配色・レイアウト";
+  setBack(renderHome, "ホーム");
+  renderUiSettings();
+}
+function renderUiSettings(){
+  const mode = state.uiTheme === "classic" ? "classic" : "kanban";
+  const cmode = (state.uiColorMode==="light"||state.uiColorMode==="dark") ? state.uiColorMode : "auto";
+  let h = `<div class="card" id="uiThemeSettings">
+    <h2 style="margin-top:0">配色・レイアウト</h2>
+    <p class="small muted" style="margin:0 0 12px">アプリ全体の色合いに反映される（単語ホームのカードの見せ方も、カンバン風のレーン⇄シンプルな縦並びでこれに連動する）。</p>
+    <div class="actions">
+      <button class="btn ${mode==="kanban"?"primary":""}" onclick="setGlobalUiTheme('kanban')">看板（新しい配色・レーン表示）</button>
+      <button class="btn ${mode==="classic"?"primary":""}" onclick="setGlobalUiTheme('classic')">旧（元の配色・シンプル表示）</button>
+    </div>
+    <h2 style="margin:18px 0 0">ダークモード</h2>
+    <p class="small muted" style="margin:4px 0 12px">「自動」は端末の設定に追従する。端末をダークにしていなくても、ここでダークに固定できる（逆に端末がダークでもライトに固定できる）。</p>
+    <div class="actions">
+      <button class="btn ${cmode==="auto"?"primary":""}" onclick="setGlobalColorMode('auto')">自動（端末に合わせる）</button>
+      <button class="btn ${cmode==="light"?"primary":""}" onclick="setGlobalColorMode('light')">ライト</button>
+      <button class="btn ${cmode==="dark"?"primary":""}" onclick="setGlobalColorMode('dark')">ダーク</button>
+    </div>
+  </div>`;
+  el.innerHTML = h;
+  window.scrollTo(0,0);
+}
+function toggleVocabHomeUiMode(){
+  setGlobalUiTheme(state.uiTheme === "classic" ? "kanban" : "classic");
+  openVocabHome();
+}
+let vhFilterMode = 'all';
+let vhSelection = null;
+function vhApplyFilters(){
+  const inputEl = document.getElementById('vhSearchInput');
+  const q = (inputEl ? inputEl.value : '').trim().toLowerCase();
+  document.querySelectorAll('.vh-lane-card').forEach(card=>{
+    const okSearch = !q || (card.getAttribute('data-search')||'').includes(q);
+    const due = +card.getAttribute('data-due') || 0;
+    const nw = +card.getAttribute('data-new') || 0;
+    let okFilter = true;
+    if(vhFilterMode === 'due') okFilter = due > 0;
+    else if(vhFilterMode === 'new') okFilter = nw > 0;
+    card.style.display = (okSearch && okFilter) ? '' : 'none';
+  });
+  document.querySelectorAll('.vh-lane').forEach(lane=>{
+    const anyVisible = Array.from(lane.querySelectorAll('.vh-lane-card')).some(c=>c.style.display !== 'none');
+    lane.style.display = anyVisible ? '' : 'none';
+  });
+}
+function vhSetFilter(mode){
+  vhFilterMode = mode;
+  ['vhChipAll','vhChipDue','vhChipNew'].forEach(id=>{
+    const b = document.getElementById(id);
+    if(b) b.classList.remove('on');
+  });
+  const chipId = mode === 'due' ? 'vhChipDue' : (mode === 'new' ? 'vhChipNew' : 'vhChipAll');
+  const chip = document.getElementById(chipId);
+  if(chip) chip.classList.add('on');
+  vhApplyFilters();
+}
+function vhSelect(elm, type, id){
+  vhSelection = {type, id};
+  document.querySelectorAll('.vh-lane-card').forEach(c=>c.classList.remove('sel'));
+  if(elm) elm.classList.add('sel');
+  renderVhDetail();
+  const panel = document.querySelector('.vh-detail');
+  const scrim = document.querySelector('.vh-detail-scrim');
+  if(panel) panel.classList.add('open');
+  if(scrim) scrim.classList.add('open');
+}
+function closeVhDetail(){
+  const panel = document.querySelector('.vh-detail');
+  const scrim = document.querySelector('.vh-detail-scrim');
+  if(panel) panel.classList.remove('open');
+  if(scrim) scrim.classList.remove('open');
+}
+function renderVhDetail(){
+  const inner = document.getElementById('vhDetailInner');
+  if(!inner) return;
+  inner.innerHTML = vhDetailHtml();
+}
+function vhDetailHtml(){
+  if(!vhSelection) return `<p class="vh-detail-empty">カードをタップすると、復習・新規のボタンとレベル別の内訳がここに出る。</p>`;
+  const LEVELS_UI = ["A1","A2","B1","B2","C1","C2"];
+  if(vhSelection.type === 'deck'){
+    const d = state.vocabDecks[vhSelection.id];
+    if(!d) return `<button class="vh-detail-close" onclick="closeVhDetail()">閉じる</button><p class="vh-detail-empty">このデッキは削除された。</p>`;
+    const due = vocabDueCount(d.id), nw = vocabNewCount(d.id);
+    const shortName = d.name.replace(/^単語帳:\s*/, "").replace(/（[^）]*）$/, "");
+    let h = `<button class="vh-detail-close" onclick="closeVhDetail()">閉じる</button>
+      <h2 style="margin:0 0 2px">${esc(shortName)}</h2>
+      <p class="small muted" style="margin:0 0 12px">計 ${d.cardIds.length}語</p>
+      <div class="deck-actions" style="margin-bottom:2px">
+        ${due>0 ? `<button class="btn small" onclick="startVocabStudy('${d.id}','due')">復習（${due}）</button>` : ""}
+        ${nw>0 ? `<button class="btn small" onclick="startVocabStudy('${d.id}','new')">新規（${nw}）</button>` : ""}
+        ${due===0 && nw===0 ? `<span class="small muted">今は復習も新規もなし</span>` : ""}
+      </div>`;
+    const levelRows = LEVELS_UI.map(lv=>{
+      const ids = d.cardIds.filter(id=>{ const c = getCard(id); return c && c.level===lv; });
+      if(!ids.length) return "";
+      const ldue = vocabDueCount(ids), lnw = vocabNewCount(ids);
+      return `<div class="lv-row">
+        <span class="lv-tag">${lv}</span>
+        <span class="lv-n">${ids.length}語</span>
+        <span class="lv-btns">
+          ${ldue>0 ? `<button class="btn small" onclick="startVocabStudyDeckLevel('${d.id}','${lv}','due')">復習 ${ldue}</button>` : ""}
+          ${lnw>0 ? `<button class="btn small" onclick="startVocabStudyDeckLevel('${d.id}','${lv}','new')">新規 ${lnw}</button>` : ""}
+        </span>
+      </div>`;
+    }).join("");
+    if(levelRows) h += `<div class="lv-rows">${levelRows}</div>`;
+    return h;
+  }
+  if(vhSelection.type === 'biz'){
+    const situ = vhSelection.id;
+    const b = BIZ_SITU.find(x=>x.situ===situ);
+    const ids = vocabIdsBySitu(situ);
+    const due = vocabDueCount(ids), nw = vocabNewCount(ids);
+    return `<button class="vh-detail-close" onclick="closeVhDetail()">閉じる</button>
+      <h2 style="margin:0 0 2px">${esc(situ)}</h2>
+      <p class="small muted" style="margin:0 0 12px">${b ? esc(b.sub)+" ・ " : ""}${ids.length}語</p>
+      <div class="deck-actions" style="margin-bottom:2px">
+        ${due>0 ? `<button class="btn small" onclick="startVocabStudySitu('${situ}','due')">復習（${due}）</button>` : ""}
+        ${nw>0 ? `<button class="btn small" onclick="startVocabStudySitu('${situ}','new')">新規（${nw}）</button>` : ""}
+        ${due===0 && nw===0 ? `<span class="small muted">今は復習も新規もなし</span>` : ""}
+      </div>
+      <p class="small muted" style="margin-top:10px">仕事で使う言い回しを、品詞ではなく場面でまとめたもの。カードは品詞デッキと共通なので進捗は二重にならない。</p>`;
+  }
+  return "";
 }
 
 /* ---------- 単語の学習セッション（フリップカード） ---------- */
@@ -3579,6 +4112,7 @@ window.addEventListener("unhandledrejection", e=>{
   console.error("app promise error:", m);
   showErrorBanner("エラーが発生しました(非同期)： " + m + "（この帯の内容をスクショで送ってもらえると原因が分かります）");
 });
+applyUiTheme();
 renderHome();
 
 if ("serviceWorker" in navigator) {
