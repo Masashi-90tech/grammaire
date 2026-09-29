@@ -1,61 +1,44 @@
-// Grammaire PWA service worker
-// CACHE_VERSION is injected by build.py at build time (content hash) so that
-// every rebuild automatically busts old caches for users who are online,
-// while users who are offline keep using whatever they already have cached.
-const CACHE_VERSION = "a2ca4219fe24";
-const CACHE_NAME = "grammaire-" + CACHE_VERSION;
-const CORE_ASSETS = [
-  "./",
-  "./index.html",
-  "./manifest.json",
-  "./icon-192.png",
-  "./icon-512.png",
-  "./icon-512-maskable.png"
-];
-
-self.addEventListener("install", (event) => {
-  event.waitUntil(
-    caches.open(CACHE_NAME).then((cache) => cache.addAll(CORE_ASSETS))
-  );
-  self.skipWaiting();
+const VERSION="7803064dae87";
+const PREFIX='grammaire-v2-'+encodeURIComponent(new URL(self.registration.scope).pathname)+'-';
+const CACHE=PREFIX+VERSION;
+const CORE=["./","./index.html","./manifest.json","./icon-180.png","./icon-192.png","./icon-512.png","./icon-512-maskable.png","assets/app-e0f844c55b02.css","assets/app-9ba647160925.js","assets/start-82514a13c4e7.js","assets/data-0cb2a7155183.json","assets/vocab_default-caca31e45770.json","assets/conjug-6c3fc31d0fd1.json","assets/phrases-28f22f9e5ed4.json","assets/soutenu-af19c9a2a2bd.json","assets/tone-c2f0bff34a9f.json","assets/comm-f2fb7d9ab7b5.json","assets/idioms-7d539f16b189.json","assets/dialogues-00949ca0a7c7.json","assets/verb_index-810f936e3f37.json"];
+self.addEventListener('install',event=>{
+  event.waitUntil(caches.open(CACHE).then(c=>c.addAll(CORE)));
 });
-
-self.addEventListener("activate", (event) => {
-  event.waitUntil(
-    caches.keys().then((names) =>
-      Promise.all(
-        names.filter((n) => n !== CACHE_NAME).map((n) => caches.delete(n))
-      )
-    )
-  );
-  self.clients.claim();
+self.addEventListener('activate',event=>{
+  event.waitUntil(caches.keys().then(names=>Promise.all(names.filter(n=>n.startsWith(PREFIX)&&n!==CACHE).map(n=>caches.delete(n)))).then(()=>self.clients.claim()));
 });
-
-self.addEventListener("fetch", (event) => {
-  if (event.request.method !== "GET") return;
-
-  event.respondWith(
-    (async () => {
-      const cache = await caches.open(CACHE_NAME);
-      try {
-        // network-first: when online, always prefer the latest build;
-        // this also refreshes the cache for the next offline session.
-        const fresh = await fetch(event.request);
-        if (fresh && fresh.ok) {
-          cache.put(event.request, fresh.clone());
-        }
-        return fresh;
-      } catch (err) {
-        // offline (or network error): fall back to whatever we have cached
-        const cached = await cache.match(event.request, { ignoreSearch: true });
-        if (cached) return cached;
-        // last resort for navigations: serve the shell
-        if (event.request.mode === "navigate") {
-          const shell = await cache.match("./index.html");
-          if (shell) return shell;
-        }
-        throw err;
+self.addEventListener('fetch',event=>{
+  const url=new URL(event.request.url),scope=new URL(self.registration.scope);
+  if(event.request.method!=='GET'||url.origin!==scope.origin||!url.pathname.startsWith(scope.pathname))return;
+  event.respondWith((async()=>{
+    const cache=await caches.open(CACHE);
+    const cached=await cache.match(event.request);
+    if(cached&&event.request.mode!=='navigate')return cached;
+    try{
+      const response=await fetch(event.request);
+      if(response.ok)await cache.put(event.request,response.clone()).catch(()=>{});
+      else if(cached)return cached;
+      return response;
+    }catch(e){
+      if(cached)return cached;
+      if(event.request.mode==='navigate'){
+        const shell=await cache.match('./index.html');if(shell)return shell;
       }
-    })()
-  );
+      return new Response('Offline: this resource has not been saved.',{status:503});
+    }
+  })());
+});
+self.addEventListener('message',event=>{
+  if(event.data?.type!=='dictionary-cache-status'||!event.ports[0])return;
+  event.waitUntil((async()=>{
+    const cache=await caches.open(CACHE),scope=new URL(self.registration.scope);
+    const urls=Array.isArray(event.data.urls)?event.data.urls.slice(0,100):[];
+    let saved=0;
+    for(const value of urls){
+      const url=new URL(value,scope);
+      if(url.origin===scope.origin&&url.pathname.startsWith(scope.pathname)&&await cache.match(url.href))saved++;
+    }
+    event.ports[0].postMessage({saved});
+  })());
 });
