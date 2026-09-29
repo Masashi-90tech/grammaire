@@ -1,13 +1,13 @@
 {
-  "name": "Grammaire — フランス語文法ドリル",
+  "name": "Grammaire — フランス語学習",
   "short_name": "Grammaire",
-  "description": "オフライン対応のフランス語学習アプリ（文法ドリル・単語帳・読解・文例集）",
+  "description": "フランス語の文法・単語・動詞辞書・会話を学ぶ、オフライン対応アプリ",
   "start_url": "./index.html",
   "scope": "./",
   "display": "standalone",
   "orientation": "portrait-primary",
   "background_color": "#faf9f7",
-  "theme_color": "#2f6f57",
+  "theme_color": "#2854e8",
   "lang": "ja",
   "icons": [
     { "src": "icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
