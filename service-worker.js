@@ -1,7 +1,7 @@
-const VERSION="d1f694a6c7cd";
+const VERSION="828f4eec73a3";
 const PREFIX='grammaire-v2-'+encodeURIComponent(new URL(self.registration.scope).pathname)+'-';
 const CACHE=PREFIX+VERSION;
-const CORE=["./","./index.html","./manifest.json","./icon-180.png","./icon-192.png","./icon-512.png","./icon-512-maskable.png","assets/app-19ae09f43b20.css","assets/app-44e00cba3dcc.js","assets/start-2f3802b4e77c.js","assets/data-0cb2a7155183.json","assets/vocab_default-caca31e45770.json","assets/conjug-6c3fc31d0fd1.json","assets/phrases-28f22f9e5ed4.json","assets/soutenu-af19c9a2a2bd.json","assets/tone-c2f0bff34a9f.json","assets/comm-f2fb7d9ab7b5.json","assets/idioms-7d539f16b189.json","assets/dialogues-00949ca0a7c7.json","assets/verb_index-3ce73b2ae0b1.json","assets/learning_pack-db5a85d6162b.json"];
+const CORE=["./","./index.html","./manifest.json","./icon-180.png","./icon-192.png","./icon-512.png","./icon-512-maskable.png","assets/app-ed11217e2e55.css","assets/app-e520cd692b41.js","assets/start-5e24856331f8.js","assets/data-0cb2a7155183.json","assets/vocab_default-caca31e45770.json","assets/conjug-6c3fc31d0fd1.json","assets/phrases-28f22f9e5ed4.json","assets/soutenu-af19c9a2a2bd.json","assets/tone-c2f0bff34a9f.json","assets/comm-f2fb7d9ab7b5.json","assets/idioms-7d539f16b189.json","assets/dialogues-00949ca0a7c7.json","assets/verb_index-3ce73b2ae0b1.json","assets/learning_pack-db5a85d6162b.json"];
 self.addEventListener('install',event=>{
   event.waitUntil(caches.open(CACHE).then(c=>c.addAll(CORE)));
 });
