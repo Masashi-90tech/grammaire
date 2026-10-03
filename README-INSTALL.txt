@@ -1,4 +1,4 @@
-Grammaire 辞書UI版 — 2026-10-03
+Grammaire 起動待ち改善版 — 2026-10-03
 
 GitHub Pages用: grammaire-github-pages.zip
 解凍した中身をすべて公開フォルダーへ配置します。index.html、assets、data、アイコン、service-worker.jsなどの構成を保ってください。ZIP自体はアップロードしません。
