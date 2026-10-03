@@ -1,9 +1,17 @@
-const VERSION="69f1bb3bfc54";
+const VERSION="7d4d510bd5cf";
 const PREFIX='grammaire-v2-'+encodeURIComponent(new URL(self.registration.scope).pathname)+'-';
 const CACHE=PREFIX+VERSION;
-const CORE=["./","./index.html","./manifest.json","./icon-180.png","./icon-192.png","./icon-512.png","./icon-512-maskable.png","assets/app-de7aed3a20b7.css","assets/app-56e0334f614c.js","assets/start-fdaa99ccdba3.js","assets/data-0cb2a7155183.json","assets/vocab_default-caca31e45770.json","assets/conjug-6c3fc31d0fd1.json","assets/phrases-28f22f9e5ed4.json","assets/soutenu-af19c9a2a2bd.json","assets/tone-c2f0bff34a9f.json","assets/comm-f2fb7d9ab7b5.json","assets/idioms-7d539f16b189.json","assets/dialogues-00949ca0a7c7.json","assets/verb_index-3ce73b2ae0b1.json","assets/learning_pack-33e88dbd6751.json"];
+const CORE=["./","./index.html","./manifest.json","./icon-180.png","./icon-192.png","./icon-512.png","./icon-512-maskable.png","assets/app-5e3cc8153a05.css","assets/app-4694095b05e9.js","assets/start-b2c6162a539a.js","assets/bootstrap-2f438ed557e6.json"];
+const PRESERVE=["assets/data-0cb2a7155183.json","assets/vocab_default-caca31e45770.json","assets/conjug-6c3fc31d0fd1.json","assets/phrases-28f22f9e5ed4.json","assets/soutenu-af19c9a2a2bd.json","assets/tone-c2f0bff34a9f.json","assets/comm-f2fb7d9ab7b5.json","assets/idioms-7d539f16b189.json","assets/dialogues-00949ca0a7c7.json","assets/verb_index-3ce73b2ae0b1.json","assets/learning_pack-33e88dbd6751.json","data/fd85b1796598/verbs-00.json","data/fd85b1796598/verbs-01.json","data/fd85b1796598/verbs-02.json","data/fd85b1796598/verbs-03.json","data/fd85b1796598/verbs-04.json","data/fd85b1796598/verbs-05.json","data/fd85b1796598/verbs-06.json","data/fd85b1796598/verbs-07.json","data/fd85b1796598/verbs-08.json","data/fd85b1796598/verbs-09.json","data/fd85b1796598/verbs-10.json","data/fd85b1796598/verbs-11.json","data/fd85b1796598/verbs-12.json","data/fd85b1796598/verbs-13.json","data/fd85b1796598/verbs-14.json","data/fd85b1796598/verbs-15.json","data/fd85b1796598/verbs-16.json","data/fd85b1796598/verbs-17.json","data/fd85b1796598/verbs-18.json","data/fd85b1796598/verbs-19.json","data/fd85b1796598/verbs-20.json","data/fd85b1796598/verbs-21.json","data/fd85b1796598/verbs-22.json","data/fd85b1796598/verbs-23.json","data/fd85b1796598/verbs-24.json","data/fd85b1796598/verbs-25.json","data/fd85b1796598/verbs-26.json","data/fd85b1796598/verbs-27.json","data/fd85b1796598/verbs-28.json","data/fd85b1796598/verbs-29.json","data/fd85b1796598/verbs-30.json","data/fd85b1796598/verbs-31.json","data/fd85b1796598/verbs-32.json","data/fd85b1796598/verbs-33.json"];
 self.addEventListener('install',event=>{
-  event.waitUntil(caches.open(CACHE).then(c=>c.addAll(CORE)));
+  event.waitUntil((async()=>{
+    const target=await caches.open(CACHE);await target.addAll(CORE);
+    for(const name of await caches.keys()){
+      if(!name.startsWith(PREFIX)||name===CACHE)continue;
+      const previous=await caches.open(name);
+      for(const url of PRESERVE){const saved=await previous.match(url);if(saved)await target.put(url,saved);}
+    }
+  })());
 });
 self.addEventListener('activate',event=>{
   event.waitUntil(caches.keys().then(names=>Promise.all(names.filter(n=>n.startsWith(PREFIX)&&n!==CACHE).map(n=>caches.delete(n)))).then(()=>self.clients.claim()));
