@@ -1,33 +1,4 @@
-<!DOCTYPE html>
-<html lang="ja">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Grammaire — フランス語学習</title>
-<link rel="manifest" href="manifest.json">
-<meta name="theme-color" content="#2854e8">
-<meta name="mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-status-bar-style" content="default">
-<meta name="apple-mobile-web-app-title" content="Grammaire">
-<link rel="apple-touch-icon" href="icon-180.png">
-<link rel="icon" href="icon-192.png">
-
-<style id="startupStyle">body{margin:0;background:#f5f5f0;color:#293b33;font:17px/1.7 system-ui,sans-serif}.hidden{display:none}.wrap{max-width:960px;margin:auto;padding:20px}header.top button{visibility:hidden}header.top{display:flex;align-items:center;justify-content:space-between}.startup{max-width:560px;margin:8vh auto;padding:28px;border:1px solid #d5ddd5;border-radius:18px;background:#fff}.startup-brand{font-size:13px;letter-spacing:.12em}.startup h2{font-size:23px}.startup button{font:inherit;padding:12px 18px;background:#315c48;color:#fff;border:0;border-radius:10px}</style><link id="appStyles" rel="stylesheet" href="assets/app-d85cc93e1d50.css" media="print" onload="this.media='all'">
-</head>
-<body>
-<div class="wrap">
-  <header class="top">
-    <button class="menu-btn" id="menuBtn" aria-label="メニュー" onclick="openDrawer()">☰</button>
-    <h1 id="title">Grammaire</h1>
-    <button class="btn small hidden" id="backBtn">戻る</button>
-  </header>
-  <div id="view"></div>
-</div>
-<div class="drawer-back hidden" id="drawerBack" onclick="closeDrawer()"></div>
-<nav class="drawer hidden" id="drawer" aria-label="メニュー"></nav>
-
-<script>"use strict";
+"use strict";
 (async()=>{
   const view=document.getElementById('view'),files={"DATA":"assets/data-0cb2a7155183.json","VOCAB_DEFAULT":"assets/vocab_default-caca31e45770.json","CONJUG":"assets/conjug-6c3fc31d0fd1.json","PHRASES":"assets/phrases-28f22f9e5ed4.json","SOUTENU":"assets/soutenu-af19c9a2a2bd.json","TONE":"assets/tone-c2f0bff34a9f.json","COMM":"assets/comm-f2fb7d9ab7b5.json","IDIOMS":"assets/idioms-7d539f16b189.json","DIALOGUES":"assets/dialogues-00949ca0a7c7.json","VERB_INDEX":"assets/verb_index-3ce73b2ae0b1.json","LEARNING_PACK":"assets/learning_pack-33e88dbd6751.json","LEARNING_TOOLS":"assets/learning_tools-a8d5893c5d63.json"},limit=15000;
   const paint=(message,retry=false)=>{
@@ -90,6 +61,3 @@
     document.getElementById('startupStyle')?.remove();
   }catch(e){console.error('Startup failed',e);paint('読み込みが進まないようです',true);}
 })();
-</script>
-</body>
-</html>
