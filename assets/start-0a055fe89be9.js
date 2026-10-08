@@ -1,46 +1,4 @@
-<!DOCTYPE html>
-<html lang="ja">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Grammaire — フランス語学習</title>
-<link rel="manifest" href="manifest.json">
-<meta name="theme-color" content="#2854e8">
-<meta name="mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-status-bar-style" content="default">
-<meta name="apple-mobile-web-app-title" content="Grammaire">
-<link rel="apple-touch-icon" href="icon-180.png">
-<link rel="icon" href="icon-192.png">
-
-<style id="startupStyle">body{margin:0;background:#f5f5f0;color:#293b33;font:17px/1.7 system-ui,sans-serif}.hidden{display:none!important}.wrap{max-width:720px;margin:auto;padding:16px;box-sizing:border-box}header.top{display:flex;align-items:center;justify-content:space-between}header.top h1{font-size:20px;flex:1;min-width:0;margin:0}body[data-starting=true] header.top button{visibility:hidden}.startup-home{margin:20px 0}.ui-eyebrow{font-size:13px;letter-spacing:.1em}.ui-greeting{font-size:26px;line-height:1.5}.startup-links{display:grid;gap:12px}.startup-links button{display:flex;align-items:center;justify-content:space-between;gap:12px;min-height:76px;width:100%;box-sizing:border-box;text-align:left;border:1px solid #d5ddd5;border-radius:16px;background:#fff;color:inherit;padding:16px 20px;font:inherit;touch-action:manipulation}.startup-links b,.startup-links small{display:block}.startup-links small,.startup-status{font-size:14px;color:#58655c}.startup-links button[aria-pressed=true]{border-color:#315c48;box-shadow:inset 0 0 0 2px #315c48}.startup-links button:focus-visible{outline:3px solid #315c48;outline-offset:3px}.startup{max-width:560px;margin:8vh auto;padding:28px;border:1px solid #d5ddd5;border-radius:18px;background:#fff}.startup-brand{font-size:13px;letter-spacing:.12em}.startup h2{font-size:23px}.startup button,.btn{font:inherit;padding:12px 18px;background:#315c48;color:#fff;border:0;border-radius:10px}.card{margin:14px 0;padding:20px;border:1px solid #d5ddd5;border-radius:16px;background:#fff}.ui-links button{display:block;width:100%;text-align:left;padding:16px;font:inherit}.small,.muted{font-size:14px;color:#58655c}@media(prefers-color-scheme:dark){body{background:#202823;color:#e5ece6}.startup,.card,.startup-links button{background:#2b352e;border-color:#56645a}.startup-links small,.startup-status,.muted{color:#bdc8c0}.startup-links button[aria-pressed=true]{border-color:#a5c9b5;box-shadow:inset 0 0 0 2px #a5c9b5}.startup-links button:focus-visible{outline-color:#a5c9b5}}
-</style><link rel="preload" as="script" href="assets/app-7e3dcc2e3b32.js"><link id="appStyles" rel="stylesheet" href="assets/app-70e4afe98ff2.css" media="print" onload="this.media='all'">
-</head>
-<body data-starting="true">
-<div class="wrap">
-  <header class="top">
-    <button class="menu-btn" id="menuBtn" aria-label="メニュー" onclick="openDrawer()">☰</button>
-    <h1 id="title">Grammaire</h1>
-    <button class="btn small hidden" id="backBtn">戻る</button>
-  </header>
-  <div id="view"><section class="startup-home" aria-label="ホーム">
-  <p class="ui-eyebrow">毎日のフランス語</p>
-  <h2 class="ui-greeting">今日は何を練習しますか？</h2>
-  <div class="startup-links">
-    <button type="button" data-start-route="grammar" aria-pressed="false" onclick="window.GRAMMAIRE_OPEN?.('grammar')"><span><b>文法を調べる</b><small>解説・例文・図解</small></span><span aria-hidden="true">›</span></button>
-    <button type="button" data-start-route="learn" aria-pressed="false" onclick="window.GRAMMAIRE_OPEN?.('learn')"><span><b>学習を選ぶ</b><small>単語・文法・活用・会話</small></span><span aria-hidden="true">›</span></button>
-    <button type="button" data-start-route="dict" aria-pressed="false" onclick="window.GRAMMAIRE_OPEN?.('dict')"><span><b>辞書で調べる</b><small>12,250件・品詞を選んで検索</small></span><span aria-hidden="true">›</span></button>
-    <button type="button" data-start-route="stories" aria-pressed="false" onclick="window.GRAMMAIRE_OPEN?.('stories')"><span><b>物語を読む</b><small>連作と長編小説・全48章（B1〜C2）</small></span><span aria-hidden="true">›</span></button>
-    <button type="button" data-start-route="more" aria-pressed="false" onclick="window.GRAMMAIRE_OPEN?.('more')"><span><b>設定・保存</b><small>配色・学習データ・オフライン</small></span><span aria-hidden="true">›</span></button>
-  </div>
-  <p id="startupStatus" class="startup-status" role="status">アプリを準備しています。使いたい項目を選べます。</p>
-</section>
-</div>
-</div>
-<div class="drawer-back hidden" id="drawerBack" onclick="closeDrawer()"></div>
-<nav class="drawer hidden" id="drawer" aria-label="メニュー"></nav>
-
-<script>"use strict";
+"use strict";
 (async()=>{
   const view=document.getElementById('view'),files={"DATA":"assets/data-1bc0fc08fffe.json","VOCAB_DEFAULT":"assets/vocab_default-2795694eac9d.json","CONJUG":"assets/conjug-6c3fc31d0fd1.json","PHRASES":"assets/phrases-28f22f9e5ed4.json","SOUTENU":"assets/soutenu-af19c9a2a2bd.json","TONE":"assets/tone-c2f0bff34a9f.json","COMM":"assets/comm-f2fb7d9ab7b5.json","IDIOMS":"assets/idioms-7d539f16b189.json","DIALOGUES":"assets/dialogues-00949ca0a7c7.json","VERB_INDEX":"assets/verb_index-3ce73b2ae0b1.json","LEARNING_PACK":"assets/learning_pack-e78f276e0242.json","LEARNING_TOOLS":"assets/learning_tools-4e339412a601.json","LEXICON_INDEX":"assets/lexicon_index-7a71f3c0de9e.json","GRAMMAR_TOPICS":"assets/grammar_topics-c916e819e70f.json","HOME_VERBS":"assets/home_verbs-f5894feae96e.json","STORY_LE_PASSAGE":"assets/story_le_passage-a3d11baffc5f.json","STORY_LES_BILLETS_OUBLIES":"assets/story_les_billets_oublies-4cd2daf4fa67.json","STORY_ADVANCED_LA_PLACE_DES_AUTRES":"assets/story_advanced_la_place_des_autres-5387b0cbc0ed.json","STORY_ADVANCED_UNE_BONNE_NOUVELLE":"assets/story_advanced_une_bonne_nouvelle-448f7bf616d0.json","STORY_ADVANCED_LA_SAISON_DES_AUTRES":"assets/story_advanced_la_saison_des_autres-3f00abc23ac3.json","STORY_ADVANCED_LE_BRUIT_DUNE_CHAISE":"assets/story_advanced_le_bruit_dune_chaise-0d1729b96e21.json","STORY_ADVANCED_LE_NOM_SUR_LENVELOPPE":"assets/story_advanced_le_nom_sur_lenveloppe-9cc09051ba98.json","STORY_ADVANCED_LA_MARGE_DES_LETTRES":"assets/story_advanced_la_marge_des_lettres-5a497637c0e7.json","STORY_NOVEL_CE_QUE_LA_NUIT_A_ENTENDU":"assets/story_novel_ce_que_la_nuit_a_entendu-04b301a13304.json"},limit=15000;
   const paint=(message,retry=false)=>{
@@ -123,6 +81,3 @@
     if(selected&&selected!=='home')window[routes[selected]]();
   }catch(e){console.error('Startup failed',e);paint('読み込みが進まないようです',true);}
 })();
-</script>
-</body>
-</html>
