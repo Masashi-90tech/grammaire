@@ -67,7 +67,13 @@ await page.screenshot({ path: path.join(outDir, '1-words.png'), fullPage: false 
 
 // ② 問題: 自分で書く問題を足す
 await page.click('#tabs [data-tab=sections]');
-for (const t of ['meaning', 'match', 'sentence', 'fill', 'order', 'free']) { await page.selectOption('#addType', t); await page.click('[data-act=sec-add]'); }
+// 問題の種類はチェックで複数選ぶ（外すと消える・入れ直すと決まった順の位置に戻る）
+for (const t of ['meaning', 'match', 'sentence', 'fill', 'order', 'free']) await page.check(`[data-type=${t}]`);
+await page.uncheck('[data-type=writing]');
+assert.ok(!(await page.evaluate(() => SHUKUDAI.hw().sections.some(s => s.type === 'writing'))));
+await page.check('[data-type=writing]');
+assert.deepEqual(await page.evaluate(() => SHUKUDAI.hw().sections.map(s => s.type)),
+  ['wordlist', 'reading', 'writing', 'meaning', 'match', 'conj', 'sentence', 'fill', 'order', 'free']);
 const secIds = await page.evaluate(() => SHUKUDAI.hw().sections.map(s => s.type + ':' + s.id));
 const sid = t => secIds.find(x => x.startsWith(t + ':')).split(':')[1];
 await page.fill(`[data-sid="${sid('fill')}"] textarea[data-sfield=text]`, '図書館で 本を [読みました]。\nあさ 6時に [{起|お}きます]。');
@@ -134,6 +140,32 @@ await page.waitForTimeout(100);
 const txt = await page.textContent('#printArea');
 assert.doesNotMatch(txt, /professeur/);
 assert.match(txt, /こたえ/);
+await noBanner();
+
+// ミックス: まぜられる問題が1つの番号にまとまり、1問ずつ種類のラベルが付く。単語リストと線で結ぶは別。
+await page.selectOption('[data-set=answers]', 'end');
+await page.click('#tabs [data-tab=sections]');
+await page.check('[data-mix]');
+assert.match(await page.textContent('#mixNote'), /合計\d+問/);
+const mix = await page.evaluate(() => {
+  const h = SHUKUDAI.hw(), MIX = ['reading', 'writing', 'meaning', 'translate', 'conj', 'sentence', 'fill', 'order', 'free'];
+  return h.sections.filter(s => MIX.includes(s.type)).reduce((n, s) => n + SHUKUDAI.sectionItems(s, h).items.length, 0);
+});
+await page.click('#tabs [data-tab=print]');
+await page.waitForSelector('.page-wrap');
+const mixInfo = await page.evaluate(() => {
+  const pages = [...document.querySelectorAll('#printArea .page')], q = pages.filter(p => !/こたえ/.test(p.querySelector('.ph-title').textContent));
+  return { tags: q.reduce((n, p) => n + p.querySelectorAll('.tag').length, 0), secs: new Set(q.flatMap(p => [...p.querySelectorAll('.sec-no')].map(x => x.textContent))).size };
+});
+assert.equal(mixInfo.tags, mix, 'ミックスの問題数');
+assert.equal(mixInfo.secs, 3, '単語リスト・線で結ぶ・ミックス の3つ');
+await check('mix');
+await page.screenshot({ path: path.join(outDir, '4b-print-mix.png'), fullPage: true });
+await page.emulateMedia({ media: 'print' });
+const pdfMix = await page.pdf({ preferCSSPageSize: true, printBackground: true });
+await page.emulateMedia({ media: 'screen' });
+fs.writeFileSync(path.join(outDir, 'mix.pdf'), pdfMix);
+await page.selectOption('[data-set=answers]', 'only');
 await noBanner();
 
 // 保存されていて、開き直しても残る

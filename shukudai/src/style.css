@@ -65,6 +65,13 @@ input[type=number] { width: 5.5em; }
 .used { display: inline-block; font-size: .72rem; border-radius: 6px; padding: 0 6px; background: var(--warn-weak); color: var(--warn); margin-left: 6px; }
 .edit-box { grid-column: 1 / -1; cursor: default; background: var(--bg); border-radius: 8px; padding: 10px; }
 
+/* ---- 問題の種類 ---- */
+.chip.check { display: inline-flex; align-items: center; gap: 5px; padding: 5px 12px; }
+.chip.check input { margin: 0; }
+.chip.small { font-size: .75rem; padding: 0 8px; vertical-align: middle; }
+.mix-toggle { display: flex; gap: 10px; align-items: center; padding: 10px 12px; border: 1px dashed var(--accent); border-radius: 10px; cursor: pointer; }
+.mix-toggle input { width: 18px; height: 18px; flex: none; }
+
 /* ---- まとまり ---- */
 .unit-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(290px, 1fr)); gap: 8px; }
 .unit-row { display: flex; justify-content: space-between; align-items: center; gap: 8px; border: 1px solid var(--line); border-radius: 10px; padding: 8px 10px; }
@@ -151,6 +158,9 @@ details summary { cursor: pointer; color: var(--muted); font-size: .88rem; }
 .qline { display: flex; gap: 2mm; align-items: baseline; flex-wrap: wrap; }
 .qbody { flex: 1; min-width: 0; }
 .answer-tag { color: var(--pans); font-weight: 700; }
+.tag { flex: none; align-self: baseline; border: 1px solid var(--pa); color: var(--pa); border-radius: 1.2mm; padding: 0 1.4mm; font-size: .72em; line-height: 1.6; white-space: nowrap; }
+.tag small { font-size: .85em; opacity: .85; }
+.tag ruby rt { font-size: .55em; }
 
 /* ---- モーダル ---- */
 .modal { position: fixed; inset: 0; z-index: 100; background: rgba(0,0,0,.45); display: grid; place-items: center; padding: 16px; }

@@ -24,6 +24,7 @@
     h.words = Array.isArray(h.words) ? h.words : [];
     h.sections = (Array.isArray(h.sections) ? h.sections : []).filter(s => TYPES[s.type]).map(s => Object.assign(newSection(s.type), s));
     h.seed = h.seed || 1;
+    h.mix = Object.assign({ on: false }, h.mix || {});
     return h;
   }
   function loadStore() {
@@ -50,19 +51,23 @@
 
   // ---------- 問題の種類 ----------
   const TYPES = {
-    wordlist: { label: '単語リスト', cols: 2, count: 0, ins: { ja: '{今日|きょう}の ことば', en: 'Vocabulary', fr: 'Vocabulaire' } },
-    reading: { label: '読み方を書く', cols: 2, count: 10, ins: { ja: '{読|よ}み{方|かた}を ひらがなで {書|か}いて ください。', en: 'Write the reading in hiragana.', fr: 'Écrivez la lecture en hiragana.' } },
-    writing: { label: '漢字で書く', cols: 2, count: 10, ins: { ja: '{漢字|かんじ}で {書|か}いて ください。', en: 'Write the underlined words in kanji.', fr: 'Écrivez les mots soulignés en kanji.' } },
-    meaning: { label: '意味を書く', cols: 2, count: 10, ins: { ja: '{意味|いみ}を {書|か}いて ください。', en: 'Write the meaning.', fr: 'Écrivez le sens.' } },
-    translate: { label: '日本語で書く', cols: 2, count: 10, ins: { ja: '{日本語|にほんご}で {書|か}いて ください。', en: 'Write the word in Japanese.', fr: 'Écrivez le mot en japonais.' } },
-    match: { label: '線で結ぶ', cols: 1, count: 6, ins: { ja: '{線|せん}で むすんで ください。', en: 'Draw lines to match.', fr: 'Reliez par un trait.' } },
-    conj: { label: '動詞の形を変える', cols: 1, count: 6, ins: { ja: '{動詞|どうし}の {形|かたち}を {変|か}えて ください。', en: 'Change the verb forms.', fr: 'Transformez les verbes.' } },
-    sentence: { label: '文を作る', cols: 1, count: 5, ins: { ja: 'ことばを {使|つか}って {文|ぶん}を {作|つく}って ください。', en: 'Make a sentence with each word.', fr: 'Faites une phrase avec chaque mot.' } },
-    fill: { label: '穴埋め（自分で書く）', cols: 1, custom: true, ins: { ja: '（　）に ことばを {入|い}れて ください。', en: 'Fill in the blanks.', fr: 'Complétez les phrases.' } },
-    order: { label: '並べ替え（自分で書く）', cols: 1, custom: true, ins: { ja: 'ならべかえて {文|ぶん}を {作|つく}って ください。', en: 'Put the words in the right order.', fr: 'Remettez les mots dans l’ordre.' } },
-    free: { label: '質問・自由問題（自分で書く）', cols: 1, custom: true, ins: { ja: '{質問|しつもん}に {答|こた}えて ください。', en: 'Answer the questions.', fr: 'Répondez aux questions.' } },
+    wordlist: { label: '単語リスト', short: '単語リスト', cols: 2, count: 0, ins: { ja: '{今日|きょう}の ことば', en: 'Vocabulary', fr: 'Vocabulaire' } },
+    reading: { label: '読み方を書く', short: '読み方', tag: { ja: 'よみかた', en: 'reading', fr: 'lecture' }, cols: 2, count: 10, ins: { ja: '{読|よ}み{方|かた}を ひらがなで {書|か}いて ください。', en: 'Write the reading in hiragana.', fr: 'Écrivez la lecture en hiragana.' } },
+    writing: { label: '漢字で書く', short: '漢字', tag: { ja: '{漢字|かんじ}で', en: 'in kanji', fr: 'en kanji' }, cols: 2, count: 10, ins: { ja: '{漢字|かんじ}で {書|か}いて ください。', en: 'Write the underlined words in kanji.', fr: 'Écrivez les mots soulignés en kanji.' } },
+    meaning: { label: '意味を書く', short: '意味', tag: { ja: '{意味|いみ}', en: 'meaning', fr: 'sens' }, cols: 2, count: 10, ins: { ja: '{意味|いみ}を {書|か}いて ください。', en: 'Write the meaning.', fr: 'Écrivez le sens.' } },
+    translate: { label: '日本語で書く', short: '日本語で', tag: { ja: '{日本語|にほんご}で', en: 'in Japanese', fr: 'en japonais' }, cols: 2, count: 10, ins: { ja: '{日本語|にほんご}で {書|か}いて ください。', en: 'Write the word in Japanese.', fr: 'Écrivez le mot en japonais.' } },
+    match: { label: '線で結ぶ', short: '線で結ぶ', cols: 1, count: 6, ins: { ja: '{線|せん}で むすんで ください。', en: 'Draw lines to match.', fr: 'Reliez par un trait.' } },
+    conj: { label: '動詞の形を変える', short: '動詞の形', cols: 1, count: 6, ins: { ja: '{動詞|どうし}の {形|かたち}を {変|か}えて ください。', en: 'Change the verb forms.', fr: 'Transformez les verbes.' } },
+    sentence: { label: '文を作る', short: '文作り', tag: { ja: '{文|ぶん}を {作|つく}る', en: 'sentence', fr: 'phrase' }, long: true, cols: 1, count: 5, ins: { ja: 'ことばを {使|つか}って {文|ぶん}を {作|つく}って ください。', en: 'Make a sentence with each word.', fr: 'Faites une phrase avec chaque mot.' } },
+    fill: { label: '穴埋め（自分で書く）', short: '穴埋め', tag: { ja: 'あなうめ', en: 'fill in', fr: 'à compléter' }, long: true, cols: 1, custom: true, ins: { ja: '（　）に ことばを {入|い}れて ください。', en: 'Fill in the blanks.', fr: 'Complétez les phrases.' } },
+    order: { label: '並べ替え（自分で書く）', short: '並べ替え', tag: { ja: 'ならべかえ', en: 'reorder', fr: 'remettre en ordre' }, long: true, cols: 1, custom: true, ins: { ja: 'ならべかえて {文|ぶん}を {作|つく}って ください。', en: 'Put the words in the right order.', fr: 'Remettez les mots dans l’ordre.' } },
+    free: { label: '質問・自由問題（自分で書く）', short: '質問', tag: { ja: '{質問|しつもん}', en: 'question', fr: 'question' }, long: true, cols: 1, custom: true, ins: { ja: '{質問|しつもん}に {答|こた}えて ください。', en: 'Answer the questions.', fr: 'Répondez aux questions.' } },
   };
   const TYPE_ORDER = ['wordlist', 'reading', 'writing', 'meaning', 'translate', 'match', 'conj', 'sentence', 'fill', 'order', 'free'];
+  const AUTO_TYPES = TYPE_ORDER.filter(t => !TYPES[t].custom), CUSTOM_TYPES = TYPE_ORDER.filter(t => TYPES[t].custom);
+  // ミックスでまぜられる問題（単語リストと線で結ぶは、まぜずに別に出す）
+  const MIXABLE = new Set(['reading', 'writing', 'meaning', 'translate', 'conj', 'sentence', 'fill', 'order', 'free']);
+  const MIX_INS = { ja: 'いろいろな もんだいです。', en: 'Mixed questions: follow the label on each one.', fr: 'Questions variées : suivez l’indication de chaque question.' };
   const POS_LIST = ['名詞', '五段動詞', '一段動詞', '不規則動詞', 'い形容詞', 'な形容詞', '副詞', '表現', 'その他'];
   const POS_GROUPS = ['名詞', '動詞', 'い形容詞', 'な形容詞', '副詞', '表現', 'その他'];
   const posGroup = p => /動詞/.test(p) ? '動詞' : p;
@@ -359,16 +364,36 @@
           <p class="small muted">N5・N4の字は、一般に出回っている JLPT 漢字リストを参考にした目安です（公式の基準ではありません）。</p></details>
       </div>
       ${h.words.length ? '' : '<div class="note warn">まだ単語を選んでいません。①単語で選ぶと問題ができます（自分で書く問題は単語なしでも作れます）。</div>'}
+      ${typesCard(h)}
       ${h.sections.map((s, i) => sectionCard(s, i, h)).join('')}
       <div class="card">
         <div class="inline">
-          <select id="addType">${TYPE_ORDER.map(t => `<option value="${t}">${TYPES[t].label}</option>`).join('')}</select>
-          <button class="btn" data-act="sec-add">＋ 問題を足す</button>
           <button class="btn" data-act="reseed">出す語と順番を入れ替える</button>
           <button class="btn primary" data-act="tab" data-v="print">③ 印刷へ</button>
         </div>
       </div>`;
   }
+  function typesCard(h) {
+    const has = new Set(h.sections.map(s => s.type));
+    const chip = t => `<label class="chip check ${has.has(t) ? 'on' : ''}"><input type="checkbox" data-type="${t}" ${has.has(t) ? 'checked' : ''}>${esc(TYPES[t].short)}</label>`;
+    return `<div class="card">
+      <h2>問題の種類（いくつでも選べます）</h2>
+      <div class="small muted">選んだ単語から自動で作る</div>
+      <div class="chips" style="margin:4px 0 10px">${AUTO_TYPES.map(chip).join('')}</div>
+      <div class="small muted">自分で書く</div>
+      <div class="chips" style="margin:4px 0 12px">${CUSTOM_TYPES.map(chip).join('')}</div>
+      <label class="mix-toggle"><input type="checkbox" data-mix ${h.mix.on ? 'checked' : ''}><span><b>ミックス</b> — 選んだ問題をまぜて、1つの問題として出す</span></label>
+      <div id="mixNote">${mixNote(h)}</div>
+    </div>`;
+  }
+  function mixNote(h) {
+    if (!h.mix.on) return '';
+    const parts = h.sections.filter(s => MIXABLE.has(s.type)).map(s => [TYPES[s.type].short, sectionItems(s, h).items.length]).filter(([, n]) => n);
+    const total = parts.reduce((a, [, n]) => a + n, 0);
+    const apart = h.sections.filter(s => !MIXABLE.has(s.type)).map(s => TYPES[s.type].short);
+    return `<div class="note ${parts.length > 1 ? 'ok' : 'warn'}">${parts.length ? `まぜる問題: ${esc(parts.map(([t, n]) => t + n).join('・'))} → 合計${total}問を、順番をまぜて1つにします。数はそれぞれの問題数で決まります。` : 'まぜる問題がまだありません。'}${parts.length === 1 ? '（2種類以上選ぶとミックスになります）' : ''}${apart.length ? `<br>${esc(apart.join('・'))} はまぜずに別に出ます。` : ''}</div>`;
+  }
+  const refreshMix = () => { const el = $('#mixNote'); if (el) el.innerHTML = mixNote(hw()); };
   function sectionCard(sec, i, h) {
     const t = TYPES[sec.type];
     let opts = '';
@@ -380,12 +405,14 @@
       opts += `<label class="small">のせる語 <select data-sfield="listMode"><option value="all" ${sec.listMode !== 'used' ? 'selected' : ''}>選んだ語をすべて</option><option value="used" ${sec.listMode === 'used' ? 'selected' : ''}>問題に出る語だけ</option></select></label>`;
     if (sec.type === 'match')
       opts += `<label class="small">結ぶもの <select data-sfield="mode"><option value="reading" ${sec.mode === 'reading' ? 'selected' : ''}>漢字 ↔ 読み</option><option value="meaning" ${sec.mode === 'meaning' ? 'selected' : ''}>ことば ↔ 意味</option></select></label>`;
+    if (sec.type === 'conj' && h.mix.on)
+      opts += '<span class="small muted">ミックスでは、選んだ形のどれか1つを1問ずつ出します。</span>';
     if (sec.type === 'conj')
       opts += `<div class="chips" style="margin-top:6px">${SL.FORMS.filter(f => f.key !== 'masu').map(f => `<button class="chip ${sec.forms.includes(f.key) ? 'on' : ''}" data-act="form" data-f="${f.key}">${SL.rubyHtml(f.ja, 'none', new Set())}</button>`).join('')}</div>`;
     if (t.custom) opts += customEditor(sec);
     const notes = sectionNote(sec, h).map(([k, m]) => `<div class="note ${k}">${esc(m)}</div>`).join('');
     return `<div class="card sec-card" data-sid="${sec.id}">
-      <div class="sec-title"><b>${i + 1}. ${esc(t.label)}</b>
+      <div class="sec-title"><b>${i + 1}. ${esc(t.label)}${h.mix.on && MIXABLE.has(sec.type) ? ' <span class="chip on small">ミックス</span>' : ''}</b>
         <div class="row-actions"><button class="btn sm" data-act="sec-up" ${i ? '' : 'disabled'}>↑</button><button class="btn sm" data-act="sec-down" ${i < h.sections.length - 1 ? '' : 'disabled'}>↓</button><button class="btn sm danger" data-act="sec-del">削除</button></div></div>
       <div class="inline" style="margin:6px 0">${opts}</div>
       <div id="notes-${sec.id}">${notes}</div>
@@ -446,25 +473,90 @@
   }
   const hasAnswers = (sec, items) => !['wordlist', 'sentence'].includes(sec.type) && (sec.type !== 'free' || items.some(q => q.answer));
 
+  // 1問ぶんの HTML（単語リスト・線で結ぶ・活用の表は別）。tag はミックスのときの問題の種類のラベル。
+  function itemCell(type, it, i, c, tag = '') {
+    const { S, allowed, ml, answer, sec } = c;
+    const P = v => wordParts(v, S, allowed), R = segs => SL.renderSegs(segs, S.policy, allowed);
+    const n = `<span class="n">${i + 1}.</span>${tag}`;
+    switch (type) {
+      case 'reading': { const p = P(it); return `<div class="item">${n}<span class="q">${p.ctx}<span class="u">${esc(p.c.w)}</span></span>${blankHtml(esc(SL.toHira(p.c.r)), answer)}</div>`; }
+      case 'writing': { const p = P(it); return `<div class="item">${n}<span class="q">${p.ctx}<span class="u">${esc(SL.toHira(p.c.r))}</span></span>${blankHtml(esc(p.c.w), answer)}</div>`; }
+      case 'meaning': { const p = P(it); return `<div class="item">${n}<span class="q">${p.ctx}${R(p.segs)}</span>${blankHtml(esc(it[ml] || '—'), answer)}</div>`; }
+      case 'translate': { const p = P(it); return `<div class="item">${n}<span class="q">${esc(it[ml])}</span>${blankHtml(`${p.ctx}${R(p.segs)}`, answer)}</div>`; }
+      case 'conj1': { const p = P(it.v); return `<div class="item">${n}<span class="q">${p.ctx}${R(p.segs)}</span>${blankHtml(R(SL.align(it.res.w, it.res.r).segs), answer)}</div>`; }
+      case 'sentence': { const p = P(it); return `<div class="item">${n}<div class="qbody"><span class="q">${p.ctx}${R(p.segs)}</span><div class="lines">${answer ? '<span class="a">—</span>' : '<i></i>'}</div></div></div>`; }
+      case 'fill': return `<div class="item">${n}<div class="qbody">${it.parts.map(x => x.blank ? parenBlank(x.blank, answer, S, allowed) : SL.rubyHtml(x.text, S.policy, allowed)).join('')}</div></div>`;
+      case 'order': {
+        let order = it.chunks.map((_, k) => k);
+        const rand = SL.rng(c.h.seed ^ hashStr(sec.id + it.answer));
+        for (let k = 0; k < 6 && order.every((x, j) => x === j) && order.length > 1; k++) order = SL.shuffle(order, rand);
+        if (order.every((x, j) => x === j) && order.length > 1) order.push(order.shift());
+        return `<div class="item">${n}<div class="qbody"><div class="order-chunks">${order.map(k => `<span>${SL.rubyHtml(it.chunks[k], S.policy, allowed)}</span>`).join('')}</div>
+          <div class="lines">${answer ? `<span class="a">${SL.rubyHtml(it.chunks.join(''), S.policy, allowed)}</span>` : '<i></i>'}</div></div></div>`;
+      }
+      case 'free': return `<div class="item">${n}<div class="qbody"><div>${SL.rubyHtml(it.text, S.policy, allowed)}</div>
+          <div class="lines">${answer ? `<span class="a">${it.answer ? SL.rubyHtml(it.answer, S.policy, allowed) : '—'}</span>` : '<i></i><i></i>'}</div></div></div>`;
+    }
+    return '';
+  }
+  function tagHtml(tag, S, allowed) {
+    const ja = SL.rubyHtml(tag.ja, S.policy, allowed);
+    return `<span class="tag">${{ ja, 'ja-en': `${ja} <small>${esc(tag.en)}</small>`, 'ja-fr': `${ja} <small>${esc(tag.fr)}</small>`, en: esc(tag.en), fr: esc(tag.fr) }[S.lang]}</span>`;
+  }
+  // ミックス: まぜられる問題の項目を全部集めて、順番をまぜる。活用は選んだ形のどれか1つ。
+  function mixItems(h) {
+    const out = [];
+    for (const sec of h.sections) {
+      if (!MIXABLE.has(sec.type)) continue;
+      const items = sectionItems(sec, h).items, rand = SL.rng(h.seed ^ hashStr(sec.id + 'form'));
+      const forms = sec.forms.length ? sec.forms : ['dict'];
+      for (const it of items) {
+        if (sec.type === 'conj') { const k = Math.floor(rand() * forms.length); out.push({ type: 'conj1', sec, it: { v: it, form: forms[k], res: it.forms[k] } }); }
+        else out.push({ type: sec.type, sec, it });
+      }
+    }
+    return SL.shuffle(out, SL.rng(h.seed ^ hashStr('mix')));
+  }
+  const toRows = (cells, ncol) => { const rows = []; for (let i = 0; i < cells.length; i += ncol) rows.push(`<div class="prow cols-${ncol}">${cells.slice(i, i + ncol).join('')}</div>`); return rows; };
+
   function buildBlocks(h, answer) {
     const S = settings(h), allowed = allowedOf(h), ml = meaningLang(S), blocks = [];
-    let num = 0;
+    const c = { S, allowed, ml, answer, h };
+    let num = 0, mixDone = false;
+    const headOf = (n, insHtml) => cont => `<div class="sec-head"><span class="sec-no">${n}</span><div class="sec-ins">${insHtml(cont ? `<span class="cont">${esc(label('cont', S.lang))}</span>` : '')}</div></div>`;
     for (const sec of h.sections) {
       const t = TYPES[sec.type]; if (!t) continue;
+      if (h.mix.on && MIXABLE.has(sec.type)) {
+        if (mixDone) continue;
+        mixDone = true;
+        const mixed = mixItems(h);
+        if (!mixed.length) continue;
+        num++;
+        const ja = SL.rubyHtml(MIX_INS.ja, S.policy, allowed);
+        const headFor = headOf(num, cont => ({ ja: ja + cont, 'ja-en': `${ja}${cont}<span class="tr">${esc(MIX_INS.en)}</span>`, 'ja-fr': `${ja}${cont}<span class="tr">${esc(MIX_INS.fr)}</span>`, en: esc(MIX_INS.en) + cont, fr: esc(MIX_INS.fr) + cont }[S.lang]));
+        // 短い問題は2列、文を書く問題は1行まるごと
+        const rows = []; let pair = [];
+        const flush = () => { if (pair.length) rows.push(`<div class="prow cols-2">${pair.join('')}</div>`); pair = []; };
+        mixed.forEach((m, i) => {
+          const tag = m.type === 'conj1' ? (f => ({ ja: f.ja + 'に', en: f.en, fr: f.fr }))(SL.FORMS.find(f => f.key === m.it.form)) : TYPES[m.type].tag;
+          const cell = itemCell(m.type, m.it, i, { ...c, sec: m.sec }, tagHtml(tag, S, allowed));
+          if (m.type !== 'conj1' && TYPES[m.type].long) { flush(); rows.push(`<div class="prow cols-1">${cell}</div>`); }
+          else { pair.push(cell); if (pair.length === 2) flush(); }
+        });
+        flush();
+        blocks.push({ head: [headFor(false)], cont: [headFor(true)], rows });
+        continue;
+      }
       const { items } = sectionItems(sec, h);
       if (!items.length || (answer && !hasAnswers(sec, items))) continue;
       num++;
-      const headFor = cont => `<div class="sec-head"><span class="sec-no">${num}</span><div class="sec-ins">${secInsHtml(sec, S, allowed, cont ? `<span class="cont">${esc(label('cont', S.lang))}</span>` : '')}</div></div>`;
+      const headFor = headOf(num, cont => secInsHtml(sec, S, allowed, cont));
       const head = [headFor(false)], cont = [headFor(true)];
-      let cells = [];
       const P = v => wordParts(v, S, allowed);
       const R = segs => SL.renderSegs(segs, S.policy, allowed);
+      let cells = [];
       switch (sec.type) {
         case 'wordlist': cells = items.map((v, i) => { const p = P(v); return `<div class="wl-item"><span class="n">${i + 1}.</span><span class="w">${p.ctx}${SL.renderSegs(p.segs, S.policy === 'none' ? 'none' : 'all', allowed)}</span>${ml ? `<span class="m">${esc(v[ml])}</span>` : ''}</div>`; }); break;
-        case 'reading': cells = items.map((v, i) => { const p = P(v); return `<div class="item"><span class="n">${i + 1}.</span><span class="q">${p.ctx}<span class="u">${esc(p.c.w)}</span></span>${blankHtml(esc(SL.toHira(p.c.r)), answer)}</div>`; }); break;
-        case 'writing': cells = items.map((v, i) => { const p = P(v); return `<div class="item"><span class="n">${i + 1}.</span><span class="q">${p.ctx}<span class="u">${esc(SL.toHira(p.c.r))}</span></span>${blankHtml(esc(p.c.w), answer)}</div>`; }); break;
-        case 'meaning': cells = items.map((v, i) => { const p = P(v); return `<div class="item"><span class="n">${i + 1}.</span><span class="q">${p.ctx}${R(p.segs)}</span>${blankHtml(esc(v[ml] || '—'), answer)}</div>`; }); break;
-        case 'translate': cells = items.map((v, i) => { const p = P(v); return `<div class="item"><span class="n">${i + 1}.</span><span class="q">${esc(v[ml])}</span>${blankHtml(`${p.ctx}${R(p.segs)}`, answer)}</div>`; }); break;
         case 'match': {
           const right = SL.shuffle(items.map((v, i) => i), SL.rng(h.seed ^ hashStr(sec.id + 'm')));
           const letters = 'abcdefgh';
@@ -486,22 +578,9 @@
           cells = items.map((v, i) => { const p = P(v); return `<div class="conj-row" style="${cols}"><div class="cell"><span><span class="n">${i + 1}.</span> ${p.ctx}${R(p.segs)}</span></div>${v.forms.map(x => `<div class="cell ${answer ? 'ans' : ''}"><span>${answer ? R(SL.align(x.w, x.r).segs) : ''}</span></div>`).join('')}</div>`; });
           break;
         }
-        case 'sentence': cells = items.map((v, i) => { const p = P(v); return `<div class="item"><span class="n">${i + 1}.</span><div class="qbody"><span class="q">${p.ctx}${R(p.segs)}</span><div class="lines"><i></i></div></div></div>`; }); break;
-        case 'fill': cells = items.map((q, i) => `<div class="item"><span class="n">${i + 1}.</span><div class="qbody">${q.parts.map(x => x.blank ? parenBlank(x.blank, answer, S, allowed) : SL.rubyHtml(x.text, S.policy, allowed)).join('')}</div></div>`); break;
-        case 'order': cells = items.map((q, i) => {
-          let order = q.chunks.map((_, k) => k);
-          const rand = SL.rng(h.seed ^ hashStr(sec.id + i));
-          for (let k = 0; k < 6 && order.every((x, j) => x === j) && order.length > 1; k++) order = SL.shuffle(order, rand);
-          if (order.every((x, j) => x === j) && order.length > 1) order.push(order.shift());
-          return `<div class="item"><span class="n">${i + 1}.</span><div class="qbody"><div class="order-chunks">${order.map(k => `<span>${SL.rubyHtml(q.chunks[k], S.policy, allowed)}</span>`).join('')}</div>
-            <div class="lines">${answer ? `<span class="a">${SL.rubyHtml(q.chunks.join(''), S.policy, allowed)}</span>` : '<i></i>'}</div></div></div>`;
-        }); break;
-        case 'free': cells = items.map((q, i) => `<div class="item"><span class="n">${i + 1}.</span><div class="qbody"><div>${SL.rubyHtml(q.text, S.policy, allowed)}</div>
-            <div class="lines">${answer ? `<span class="a">${q.answer ? SL.rubyHtml(q.answer, S.policy, allowed) : '—'}</span>` : '<i></i><i></i>'}</div></div></div>`); break;
+        default: cells = items.map((it, i) => itemCell(sec.type, it, i, { ...c, sec }));
       }
-      const ncol = t.cols, rows = [];
-      for (let i = 0; i < cells.length; i += ncol) rows.push(`<div class="prow cols-${ncol}">${cells.slice(i, i + ncol).join('')}</div>`);
-      blocks.push({ head, cont, rows });
+      blocks.push({ head, cont, rows: toRows(cells, t.cols) });
     }
     return blocks;
   }
@@ -777,7 +856,6 @@
       sec.forms.sort((a, b) => SL.FORMS.findIndex(x => x.key === a) - SL.FORMS.findIndex(x => x.key === b));
       touch(); renderSections();
     },
-    'sec-add': () => { hw().sections.push(newSection($('#addType').value)); touch(); renderSections(); },
     'sec-del': el => { const h = hw(), s = findSec(el); if (s.text && !confirm('書いた問題も消えます。削除しますか？')) return; h.sections = h.sections.filter(x => x !== s); touch(); renderSections(); },
     'sec-up': el => moveSec(findSec(el), -1),
     'sec-down': el => moveSec(findSec(el), 1),
@@ -847,7 +925,7 @@
       return h.sections.forEach(refreshNotes);
     }
     if (t.dataset.sins) { const s = findSec(t); s.ins[t.dataset.sins] = t.value; return touch(); }
-    if (t.dataset.sfield === 'text') { const s = findSec(t); s.text = t.value; touch(); return refreshNotes(s); }
+    if (t.dataset.sfield === 'text') { const s = findSec(t); s.text = t.value; touch(); refreshNotes(s); return refreshMix(); }
     if (t.id === 'aiCount' && modalCtx?.prompt) $('#aiPrompt').value = modalCtx.prompt(Math.max(1, Math.min(20, +t.value || 5)));
   }));
   document.addEventListener('change', guard('設定', e => {
@@ -865,6 +943,19 @@
         .catch(err => showErrorBanner('読み込めませんでした: ' + err.message));
       t.value = ''; return;
     }
+    // 問題の種類のチェック: 入れると決まった順の位置に足し、外すとその種類を消す
+    if (t.dataset.type) {
+      const type = t.dataset.type;
+      if (t.checked) {
+        const idx = TYPE_ORDER.indexOf(type), pos = h.sections.findIndex(x => TYPE_ORDER.indexOf(x.type) > idx);
+        h.sections.splice(pos < 0 ? h.sections.length : pos, 0, newSection(type));
+      } else {
+        if (h.sections.some(x => x.type === type && x.text.trim()) && !confirm('書いた問題も消えます。外しますか？')) { t.checked = true; return; }
+        h.sections = h.sections.filter(x => x.type !== type);
+      }
+      touch(); return renderSections();
+    }
+    if ('mix' in t.dataset) { h.mix.on = t.checked; touch(); return renderSections(); }
     if (t.dataset.set) {
       h.settings[t.dataset.set] = t.type === 'checkbox' ? t.checked : t.value; touch();
       return store.ui.tab === 'print' ? renderPreview() : renderSections();
@@ -872,7 +963,7 @@
     if (t.dataset.sfield && t.dataset.sfield !== 'text') {
       const s = findSec(t), f = t.dataset.sfield;
       s[f] = t.type === 'checkbox' ? t.checked : f === 'count' ? Math.max(1, +t.value || 1) : t.value;
-      touch(); return h.sections.forEach(refreshNotes);
+      touch(); h.sections.forEach(refreshNotes); return refreshMix();
     }
   }));
   let resizeTimer = null;
