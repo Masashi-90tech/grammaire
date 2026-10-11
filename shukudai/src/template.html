@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>宿題メーカー</title>
+<style id="pageSize"></style>
+<style>
+/*@@STYLE@@*/
+</style>
+</head>
+<body>
+<div id="app">
+  <header class="topbar">
+    <div class="brand">宿題メーカー <span class="muted small">JLPT N5・N4</span></div>
+    <div class="hw-name" id="hwName"></div>
+  </header>
+  <nav class="tabs" id="tabs">
+    <button data-tab="words">① 単語</button>
+    <button data-tab="sections">② 問題</button>
+    <button data-tab="print">③ 印刷</button>
+    <button data-tab="list">一覧</button>
+  </nav>
+  <main id="view"></main>
+</div>
+<div id="printArea" aria-hidden="true"></div>
+<div id="measure" aria-hidden="true"></div>
+<div id="modal" class="modal hidden" role="dialog" aria-modal="true"><div class="modal-box" id="modalBox"></div></div>
+<script>
+window.SHUKUDAI_VOCAB = /*@@VOCAB@@*/;
+window.SHUKUDAI_BUILD = "/*@@BUILD@@*/";
+</script>
+<script>
+/*@@LIB@@*/
+</script>
+<script>
+/*@@APP@@*/
+</script>
+</body>
+</html>
