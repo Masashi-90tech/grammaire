@@ -362,11 +362,12 @@
   function refreshNotes(sec) { const el = document.getElementById('notes-' + sec.id); if (el) el.innerHTML = sectionNote(sec, hw()).map(([k, m]) => `<div class="note ${k}">${esc(m)}</div>`).join(''); }
 
   // ---------- 宿題のページを組む ----------
-  function secInsHtml(sec, S, allowed) {
+  // cont は2ページ目以降に付ける「（つづき）」。訳の行より前、指示文のすぐ後ろに置く。
+  function secInsHtml(sec, S, allowed, cont = '') {
     const t = TYPES[sec.type], o = sec.ins || {};
     const ja = o.ja || t.ins.ja, en = o.en || t.ins.en, fr = o.fr || t.ins.fr;
-    const jaH = SL.rubyHtml(ja, S.policy, allowed);
-    return { ja: jaH, 'ja-en': `${jaH}<span class="tr">${esc(en)}</span>`, 'ja-fr': `${jaH}<span class="tr">${esc(fr)}</span>`, en: esc(en), fr: esc(fr) }[S.lang];
+    const jaH = SL.rubyHtml(ja, S.policy, allowed) + cont;
+    return { ja: jaH, 'ja-en': `${jaH}<span class="tr">${esc(en)}</span>`, 'ja-fr': `${jaH}<span class="tr">${esc(fr)}</span>`, en: esc(en) + cont, fr: esc(fr) + cont }[S.lang];
   }
   function formLabel(f, S, allowed) {
     const ja = SL.rubyHtml(f.ja, S.policy === 'none' ? 'none' : 'all', allowed);
@@ -396,7 +397,7 @@
       const { items } = sectionItems(sec, h);
       if (!items.length || (answer && !hasAnswers(sec, items))) continue;
       num++;
-      const headFor = cont => `<div class="sec-head"><span class="sec-no">${num}</span><div class="sec-ins">${secInsHtml(sec, S, allowed)}${cont ? `<span class="cont">${esc(label('cont', S.lang))}</span>` : ''}</div></div>`;
+      const headFor = cont => `<div class="sec-head"><span class="sec-no">${num}</span><div class="sec-ins">${secInsHtml(sec, S, allowed, cont ? `<span class="cont">${esc(label('cont', S.lang))}</span>` : '')}</div></div>`;
       const head = [headFor(false)], cont = [headFor(true)];
       let cells = [];
       const P = v => wordParts(v, S, allowed);
