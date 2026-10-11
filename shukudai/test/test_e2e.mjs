@@ -23,14 +23,29 @@ page.on('dialog', d => d.accept());
 await page.goto(dist.href);
 const noBanner = async () => assert.equal(await page.locator('#errBanner').count(), 0, await page.locator('#errBanner').textContent().catch(() => ''));
 
-// ① 単語: 番号で範囲選択＋検索してタップ
+// ① 単語: まとまりで選ぶ → はずす、まとまりの中をおまかせ、番号で範囲選択、検索してタップ
+const unitBtn = page.locator('.unit-row', { hasText: '食べる・飲む／食べ物' }).locator('[data-act=unit-pick]');
+await unitBtn.click();
+assert.equal(await page.evaluate(() => SHUKUDAI.hw().words.length), 52);
+await unitBtn.click();
+assert.equal(await page.evaluate(() => SHUKUDAI.hw().words.length), 0);
+await page.locator('.unit-row', { hasText: '食べる・飲む／食べ物' }).locator('[data-act=unit-view]').click();
+assert.match(await page.textContent('#autoScope'), /食べる・飲む／食べ物（52語）/);
+for (const [k, v] of [['v', '3'], ['n', '4'], ['a', '0'], ['o', '0']]) await page.fill(`[data-auto=${k}]`, v);
+await page.click('[data-act=auto-pick]');
+const auto = await page.evaluate(() => SHUKUDAI.hw().words.map(id => SHUKUDAI.word(id)));
+assert.equal(auto.length, 7);
+assert.equal(auto.filter(v => /動詞/.test(v.pos)).length, 3);
+assert.ok(auto.every(v => v.n >= 215 && v.n <= 266 && v.lv === 'N5'), 'おまかせはまとまりの中から');
+await page.click('[data-act=unit-clear]');
+await page.click('#listCard details summary');
 await page.fill('#from', '560'); await page.fill('#to', '575');
 await page.click('[data-act=pick-range]');
 await page.fill('#q', 'せんせい');
 await page.click('.wrow[data-id="N5-0028"]');
 await page.fill('#q', '');
 let words = await page.evaluate(() => SHUKUDAI.hw().words);
-assert.ok(words.length >= 15, 'range pick');
+assert.ok(words.length >= 22, 'range pick');
 assert.ok(words.includes('N5-0028'));
 // 意味を ✎ で入れる
 await page.fill('#q', 'せんせい');
@@ -61,6 +76,12 @@ const fillText = await page.evaluate(id => SHUKUDAI.hw().sections.find(s => s.id
 assert.match(fillText, /\{図書館\|としょかん\}/);
 await page.fill(`[data-sid="${sid('order')}"] textarea[data-sfield=text]`, 'わたしは / まいあさ / コーヒーを / {飲|の}みます。');
 await page.fill(`[data-sid="${sid('free')}"] textarea[data-sfield=text]`, 'しゅうまつは {何|なに}を しますか。 => テニスを します。');
+// 単語リストを「問題に出る語だけ」にすると、ほかの問題に出る語の数以下になる
+const wlSid = sid('wordlist');
+await page.selectOption(`[data-sid="${wlSid}"] [data-sfield=listMode]`, 'used');
+const wl = await page.evaluate(id => { const h = SHUKUDAI.hw(); return [SHUKUDAI.sectionItems(h.sections.find(s => s.id === id), h).items.length, h.words.length]; }, wlSid);
+assert.ok(wl[0] > 0 && wl[0] <= wl[1], JSON.stringify(wl));
+await page.selectOption(`[data-sid="${wlSid}"] [data-sfield=listMode]`, 'all');
 // 活用の形を足す（可能形）
 await page.click(`[data-sid="${sid('conj')}"] [data-act=form][data-f=pot]`);
 await noBanner();

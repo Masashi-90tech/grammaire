@@ -255,6 +255,32 @@ const SL = (() => {
     return { text: lines.join('\n'), unknown: [...unknown] };
   }
 
+  // ---------- まとまり（units.js）を語の id の一覧にする ----------
+  // どのまとまりにも入らない語は、級ごとに「そのほか」へ入れる。missing は見つからなかった表記。
+  function resolveUnits(units, words) {
+    const out = [], taken = new Set(), dup = [];
+    units.forEach((u, i) => {
+      const inLv = words.filter(v => v.lv === u.lv);
+      const ids = new Set(), missing = [];
+      if (u.from) for (const v of inLv) if (v.n >= u.from && v.n <= u.to) ids.add(v.id);
+      if (u.words) {
+        const [a, b] = u.in || [1, 1e9];
+        for (const w of u.words.split(/\s+/).filter(Boolean)) {
+          const hits = inLv.filter(v => v.w === w && v.n >= a && v.n <= b);
+          if (!hits.length) missing.push(w);
+          hits.forEach(v => ids.add(v.id));
+        }
+      }
+      for (const id of ids) { if (taken.has(id)) dup.push(id); taken.add(id); }
+      out.push({ id: `${u.lv}-u${String(i + 1).padStart(2, '0')}`, lv: u.lv, name: u.name, ids: [...ids], missing });
+    });
+    for (const lv of [...new Set(words.map(v => v.lv))]) {
+      const rest = words.filter(v => v.lv === lv && !taken.has(v.id)).map(v => v.id);
+      if (rest.length) out.push({ id: `${lv}-rest`, lv, name: 'そのほか', ids: rest, missing: [] });
+    }
+    return { units: out, dup };
+  }
+
   // ---------- 乱数（宿題ごとに同じ並びを再現する） ----------
   function rng(seed) {
     let a = (seed >>> 0) || 1;
@@ -318,7 +344,7 @@ const SL = (() => {
   return {
     KANJI_N5, KANJI_N4, FORMS, isKanji, hasKanji, toHira, esc, allowedSet, outside,
     align, parseRuby, segsText, segsReading, segsNotation, unannotated, renderSegs, rubyHtml, splitCtx,
-    conjugate, parseLine, checkLines, buildReadingMap, autoRuby, rng, shuffle,
+    conjugate, parseLine, checkLines, buildReadingMap, autoRuby, resolveUnits, rng, shuffle,
     meaningPrompt, parseMeaningReply, questionPrompt,
   };
 })();

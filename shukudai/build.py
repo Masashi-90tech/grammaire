@@ -27,7 +27,7 @@ def main():
     # JSON を <script> に埋め込むので </ を逃がす
     vocab_js = json.dumps(vocab, ensure_ascii=False, separators=(',', ':')).replace('</', '<\\/')
     build = datetime.datetime.now().strftime('%Y-%m-%d %H:%M')
-    for key, value in (('/*@@STYLE@@*/', read('src', 'style.css')), ('/*@@LIB@@*/', read('src', 'lib.js')),
+    for key, value in (('/*@@STYLE@@*/', read('src', 'style.css')), ('/*@@UNITS@@*/', read('src', 'units.js')), ('/*@@LIB@@*/', read('src', 'lib.js')),
                        ('/*@@APP@@*/', read('src', 'app.js')), ('/*@@VOCAB@@*/', vocab_js), ('/*@@BUILD@@*/', build)):
         assert html.count(key) == 1, key
         html = html.replace(key, value)

@@ -82,7 +82,7 @@
 
   function newSection(type) {
     const t = TYPES[type];
-    return { id: 's' + Math.random().toString(36).slice(2, 9), type, count: t.count, forms: ['dict', 'nai', 'te', 'ta'], mode: 'reading', inRangeOnly: type === 'writing', text: '', ins: { ja: '', en: '', fr: '' } };
+    return { id: 's' + Math.random().toString(36).slice(2, 9), type, count: t.count, forms: ['dict', 'nai', 'te', 'ta'], mode: 'reading', listMode: 'all', inRangeOnly: type === 'writing', text: '', ins: { ja: '', en: '', fr: '' } };
   }
   const todayStr = () => { const d = new Date(); return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`; };
   function newHomework() {
@@ -117,6 +117,8 @@
     return { ...b, w: o.w || b.w, r: o.r || b.r, pos: o.pos || b.pos, en: m.en || '', fr: m.fr || '', edited: !!store.overrides[id] };
   }
   const allWords = () => [...BASE.map(v => word(v.id)), ...Object.keys(store.custom).map(word)];
+  const UNITS = SL.resolveUnits(typeof SHUKUDAI_UNITS === 'undefined' ? [] : SHUKUDAI_UNITS, BASE).units;
+  const UNIT_BY_ID = new Map(UNITS.map(u => [u.id, u]));
   let readingMap = null;
   const getReadingMap = () => readingMap || (readingMap = SL.buildReadingMap(allWords()));
   function usedMap() {
@@ -131,7 +133,7 @@
 
   // ---------- 画面 ----------
   const view = $('#view');
-  const ps = { lv: 'N5', pos: '', q: '', from: '', to: '', hideUsed: false, limit: 60, editing: null, randomN: 10 };
+  const ps = { lv: 'N5', unit: '', pos: '', q: '', from: '', to: '', hideUsed: false, limit: 60, editing: null };
 
   function updateTopbar() {
     const h = hw();
@@ -148,26 +150,43 @@
   // ---------- ① 単語 ----------
   function renderWords() {
     const lvChip = (v, t) => `<button class="chip ${ps.lv === v ? 'on' : ''}" data-act="lv" data-v="${v}">${t}</button>`;
+    const A = autoPrefs();
+    const num = (k, t) => `<label class="small">${t} <input type="number" min="0" max="30" data-auto="${k}" value="${A[k]}"></label>`;
     view.innerHTML = `
       <div class="card picked" id="picked"></div>
       <div class="card">
-        <div class="chips" style="margin-bottom:10px">${lvChip('N5', 'N5')}${lvChip('N4', 'N4')}${lvChip('all', '全部')}${lvChip('custom', '追加した語')}</div>
+        <div class="chips">${lvChip('N5', 'N5')}${lvChip('N4', 'N4')}${lvChip('all', '全部')}${lvChip('custom', '追加した語')}</div>
+      </div>
+      <div class="card ${ps.lv === 'custom' ? 'hidden' : ''}">
+        <h2>まとまりで選ぶ</h2>
+        <p class="small muted" style="margin:0 0 8px">「選ぶ」でまとまりの語を全部選びます。問題はその中から②で決めた数だけ自動で出ます。「中を見る」で1語ずつ選んだり、おまかせで数を絞ったりできます。</p>
+        <div class="units" id="units"></div>
+      </div>
+      <div class="card" id="autoCard">
+        <h2>おまかせで選ぶ</h2>
+        <div class="small" style="margin-bottom:6px">対象: <b id="autoScope"></b></div>
+        <div class="inline" style="margin-bottom:6px">${num('v', '動詞')}${num('n', '名詞')}${num('a', '形容詞')}${num('o', 'そのほか')}</div>
+        <div class="inline">
+          <label class="small"><input type="checkbox" data-auto="avoid" ${A.avoid ? 'checked' : ''}> 前の宿題で使った語をさける</label>
+          <button class="btn primary" data-act="auto-pick">おまかせで選ぶ</button>
+        </div>
+        <div id="autoMsg"></div>
+      </div>
+      <div class="card" id="listCard">
+        <h2>1語ずつ選ぶ</h2>
+        <div id="unitFilter"></div>
         <div class="inline" style="margin-bottom:8px">
           <input type="search" id="q" placeholder="さがす（漢字・かな・意味）" value="${esc(ps.q)}" style="flex:1;min-width:180px">
           <select id="posSel"><option value="">品詞すべて</option>${POS_GROUPS.map(p => `<option ${ps.pos === p ? 'selected' : ''}>${p}</option>`).join('')}</select>
           <label class="small"><input type="checkbox" id="hideUsed" ${ps.hideUsed ? 'checked' : ''}> 使った語を隠す</label>
+          <span class="muted small" id="hitCount"></span>
         </div>
-        <div class="inline small ${ps.lv === 'N5' || ps.lv === 'N4' ? '' : 'hidden'}" style="margin-bottom:6px">
-          番号 <input type="number" id="from" min="1" value="${esc(ps.from)}"> 〜 <input type="number" id="to" min="1" value="${esc(ps.to)}">
-          <button class="btn sm" data-act="pick-range">この番号の語を選ぶ</button>
-        </div>
-        <div class="inline small">
-          <input type="number" id="randomN" min="1" max="50" value="${ps.randomN}"> 語を
-          <button class="btn sm" data-act="pick-random">ランダムに選ぶ（使っていない語から）</button>
-          <span class="muted" id="hitCount"></span>
-        </div>
+        <details class="${ps.lv === 'N5' || ps.lv === 'N4' ? '' : 'hidden'}" style="margin-bottom:6px"><summary>PDFの番号で選ぶ</summary>
+          <div class="inline small" style="margin-top:6px">番号 <input type="number" id="from" min="1" value="${esc(ps.from)}"> 〜 <input type="number" id="to" min="1" value="${esc(ps.to)}">
+          <button class="btn sm" data-act="pick-range">この番号の語を選ぶ</button></div>
+        </details>
+        <div class="wlist" id="wlist"></div><div id="more"></div>
       </div>
-      <div class="card"><div class="wlist" id="wlist"></div><div id="more"></div></div>
       <div class="card">
         <details><summary>リストにない語を追加する</summary>
           <div class="grid2" style="margin-top:10px">
@@ -180,7 +199,31 @@
           <button class="btn" data-act="add-custom">追加して選ぶ</button>
         </details>
       </div>`;
-    renderPicked(); renderWordList();
+    renderPicked(); renderUnits(); renderWordList();
+  }
+  // まとまりの一覧（選んだ数・前の宿題で使った数も出す）
+  function renderUnits() {
+    const el = $('#units'); if (!el) return;
+    const sel = new Set(hw().words), used = usedMap();
+    const levels = ps.lv === 'all' ? ['N5', 'N4'] : [ps.lv];
+    el.innerHTML = levels.map(lv => `${levels.length > 1 ? `<h3>${lv}</h3>` : ''}<div class="unit-grid">${UNITS.filter(u => u.lv === lv).map(u => {
+      const n = u.ids.length, s = u.ids.filter(id => sel.has(id)).length, us = u.ids.filter(id => used.has(id)).length;
+      return `<div class="unit-row ${s === n ? 'all' : s ? 'some' : ''} ${ps.unit === u.id ? 'viewing' : ''}">
+        <div class="u-name">${esc(u.name)}<div class="small muted">${n}語${s ? ` · 選択 ${s}` : ''}${us ? ` · 使った ${us}` : ''}</div></div>
+        <div class="row-actions"><button class="btn sm ${s === n ? '' : 'primary'}" data-act="unit-pick" data-u="${u.id}">${s === n ? 'はずす' : '選ぶ'}</button><button class="btn sm" data-act="unit-view" data-u="${u.id}">中を見る</button></div>
+      </div>`;
+    }).join('')}</div>`).join('');
+  }
+  function autoPrefs() { return (store.ui.auto = Object.assign({ v: 5, n: 5, a: 2, o: 0, avoid: true }, store.ui.auto || {})); }
+  // おまかせ・1語ずつ選ぶの対象（級と、見ているまとまり）
+  function scopeWords() {
+    const unit = ps.unit && UNIT_BY_ID.get(ps.unit);
+    if (unit) return unit.ids.map(word).filter(Boolean);
+    return allWords().filter(v => ps.lv === 'all' || (ps.lv === 'custom' ? v.id.startsWith('C-') : v.lv === ps.lv));
+  }
+  function scopeLabel() {
+    const unit = ps.unit && UNIT_BY_ID.get(ps.unit);
+    return unit ? `${unit.lv}・${unit.name}（${unit.ids.length}語）` : `${{ all: 'N5とN4', custom: '追加した語' }[ps.lv] || ps.lv + ' ぜんぶ'}（${scopeWords().length}語）`;
   }
   function renderPicked() {
     const h = hw(), el = $('#picked'); if (!el) return;
@@ -198,8 +241,7 @@
   }
   function filteredWords() {
     const q = SL.toHira(ps.q.trim()).toLowerCase(), used = usedMap();
-    return allWords().filter(v =>
-      (ps.lv === 'all' || (ps.lv === 'custom' ? v.id.startsWith('C-') : v.lv === ps.lv)) &&
+    return scopeWords().filter(v =>
       (!ps.pos || posGroup(v.pos) === ps.pos) &&
       (!ps.hideUsed || !used.has(v.id)) &&
       (!q || SL.toHira(v.w).toLowerCase().includes(q) || SL.toHira(v.r).includes(q) || v.en.toLowerCase().includes(q) || v.fr.toLowerCase().includes(q)));
@@ -208,6 +250,9 @@
     const el = $('#wlist'); if (!el) return;
     const list = filteredWords(), used = usedMap(), sel = new Set(hw().words);
     $('#hitCount').textContent = `該当 ${list.length}語`;
+    const unit = ps.unit && UNIT_BY_ID.get(ps.unit);
+    $('#unitFilter').innerHTML = unit ? `<div class="chips" style="margin-bottom:8px"><button class="chip on" data-act="unit-clear">まとまり: ${esc(unit.name)} ×</button></div>` : '';
+    const sc = $('#autoScope'); if (sc) sc.textContent = scopeLabel();
     el.innerHTML = list.slice(0, ps.limit).map(v => wordRow(v, sel.has(v.id), used.get(v.id))).join('') || '<p class="muted">該当する語がありません。</p>';
     $('#more').innerHTML = list.length > ps.limit ? `<button class="btn" data-act="more" style="width:100%;margin-top:8px">もっと見る（残り ${list.length - ps.limit}語）</button>` : '';
   }
@@ -248,7 +293,13 @@
     const t = TYPES[sec.type];
     if (t.custom) { const r = SL.checkLines(sec.text, sec.type, allowed); return { items: r.items, eligible: r.items.length, problems: r.problems }; }
     const ws = h.words.map(word).filter(Boolean);
-    if (sec.type === 'wordlist') return { items: ws, eligible: ws.length };
+    if (sec.type === 'wordlist') {
+      if (sec.listMode !== 'used') return { items: ws, eligible: ws.length };
+      // 問題に出る語だけ（選んだ順のまま）
+      const shown = new Set();
+      for (const o of h.sections) if (o !== sec && !TYPES[o.type].custom && o.type !== 'wordlist') sectionItems(o, h).items.forEach(v => shown.add(v.id));
+      return { items: ws.filter(v => shown.has(v.id)), eligible: ws.length };
+    }
     const core = v => SL.splitCtx(v.w, v.r);
     let pool = ws, skipped = [];
     switch (sec.type) {
@@ -280,7 +331,11 @@
     }
     if ((sec.type === 'meaning' || sec.type === 'translate' || (sec.type === 'match' && sec.mode === 'meaning')) && !ml)
       return [['warn', '③印刷の言語が「日本語のみ」なので、この問題は出ません。']];
-    if (sec.type === 'wordlist') return [[r.items.length ? 'ok' : 'warn', `${r.items.length}語${ml ? `（意味がない語 ${r.items.filter(v => !v[ml]).length}）` : ''}`]];
+    if (sec.type === 'wordlist') {
+      const out = [[r.items.length ? 'ok' : 'warn', `${r.items.length}語${ml ? `（意味がない語 ${r.items.filter(v => !v[ml]).length}）` : ''}`]];
+      if (sec.listMode !== 'used' && r.items.length > 24) out.push(['warn', '語が多いので、ページが増えます。「問題に出る語だけ」にもできます。']);
+      return out;
+    }
     notes.push([r.items.length ? 'ok' : 'warn', `${r.items.length}問（対象になる語 ${r.eligible}）`]);
     if (sec.type === 'translate' && ml && r.eligible < h.words.length) notes.push(['warn', `意味が入っていない語は出ません（${h.words.length - r.eligible}語）。①単語で意味を付けられます。`]);
     if (r.skipped?.length) notes.push(['warn', `選んだ形が作れないので外した動詞: ${r.skipped.join('、')}`]);
@@ -321,6 +376,8 @@
       opts += `<label class="small">問題数 <input type="number" min="1" max="${sec.type === 'match' ? 8 : 40}" data-sfield="count" value="${sec.count}"></label> `;
     if (sec.type === 'reading' || sec.type === 'writing')
       opts += `<label class="small"><input type="checkbox" data-sfield="inRangeOnly" ${sec.inRangeOnly ? 'checked' : ''}> 範囲内の漢字だけで書ける語にする</label>`;
+    if (sec.type === 'wordlist')
+      opts += `<label class="small">のせる語 <select data-sfield="listMode"><option value="all" ${sec.listMode !== 'used' ? 'selected' : ''}>選んだ語をすべて</option><option value="used" ${sec.listMode === 'used' ? 'selected' : ''}>問題に出る語だけ</option></select></label>`;
     if (sec.type === 'match')
       opts += `<label class="small">結ぶもの <select data-sfield="mode"><option value="reading" ${sec.mode === 'reading' ? 'selected' : ''}>漢字 ↔ 読み</option><option value="meaning" ${sec.mode === 'meaning' ? 'selected' : ''}>ことば ↔ 意味</option></select></label>`;
     if (sec.type === 'conj')
@@ -611,29 +668,53 @@
   // ---------- 操作 ----------
   const actions = {
     tab: el => setTab(el.dataset.v),
-    lv: el => { ps.lv = el.dataset.v; ps.limit = 60; renderWords(); },
+    lv: el => { ps.lv = el.dataset.v; ps.unit = ''; ps.limit = 60; renderWords(); },
+    'unit-pick': el => {
+      const h = hw(), u = UNIT_BY_ID.get(el.dataset.u), sel = new Set(h.words);
+      if (u.ids.every(id => sel.has(id))) h.words = h.words.filter(id => !u.ids.includes(id));
+      else h.words.push(...u.ids.filter(id => !sel.has(id)));
+      touch(); renderPicked(); renderUnits(); renderWordList();
+    },
+    'unit-view': el => {
+      ps.unit = el.dataset.u; ps.q = ''; ps.limit = 60;
+      const q = $('#q'); if (q) q.value = '';
+      renderUnits(); renderWordList();
+      $('#autoCard')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    },
+    'unit-clear': () => { ps.unit = ''; ps.limit = 60; renderUnits(); renderWordList(); },
+    'auto-pick': () => {
+      const A = autoPrefs(), h = hw(), have = new Set(h.words), used = usedMap(), rand = SL.rng(Date.now());
+      const buckets = [['v', '動詞', v => /動詞/.test(v.pos)], ['n', '名詞', v => v.pos === '名詞'], ['a', '形容詞', v => /形容詞/.test(v.pos)], ['o', 'そのほか', v => !/動詞|形容詞/.test(v.pos) && v.pos !== '名詞']];
+      const pool = scopeWords().filter(v => !have.has(v.id));
+      const got = [], short = [], usedFill = [];
+      for (const [k, name, test] of buckets) {
+        const want = Math.max(0, +A[k] || 0); if (!want) continue;
+        const cand = pool.filter(test);
+        const fresh = SL.shuffle(cand.filter(v => !used.has(v.id)), rand), old = SL.shuffle(cand.filter(v => used.has(v.id)), rand);
+        const pick = (A.avoid ? [...fresh, ...old] : SL.shuffle(cand, rand)).slice(0, want);
+        if (A.avoid && pick.length > fresh.length) usedFill.push(name);
+        if (pick.length < want) short.push(`${name}は${pick.length}語しかありません`);
+        got.push(`${name}${pick.length}`); h.words.push(...pick.map(v => v.id));
+      }
+      touch(); renderPicked(); renderUnits(); renderWordList();
+      const notes = [...short, ...(usedFill.length ? [`${usedFill.join('・')}は使っていない語が足りないので、使った語も入れました`] : [])];
+      $('#autoMsg').innerHTML = got.length ? `<div class="note ok">選びました: ${esc(got.join('・'))}（${esc(scopeLabel())}から）</div>${notes.map(n => `<div class="note warn">${esc(n)}</div>`).join('')}` : '<div class="note warn">数を入れてください。</div>';
+    },
     more: () => { ps.limit += 120; renderWordList(); },
     toggle: el => {
       const h = hw(), id = el.dataset.id, i = h.words.indexOf(id);
       if (i >= 0) h.words.splice(i, 1); else h.words.push(id);
-      touch(); renderPicked();
+      touch(); renderPicked(); renderUnits();
       el.classList.toggle('sel', i < 0); el.querySelector('.box').textContent = i < 0 ? '✓' : '';
     },
-    unpick: el => { const h = hw(); h.words = h.words.filter(x => x !== el.dataset.id); touch(); renderPicked(); renderWordList(); },
-    'clear-picked': () => { if (!confirm('選んだ単語を全部はずしますか？')) return; hw().words = []; touch(); renderPicked(); renderWordList(); },
+    unpick: el => { const h = hw(); h.words = h.words.filter(x => x !== el.dataset.id); touch(); renderPicked(); renderUnits(); renderWordList(); },
+    'clear-picked': () => { if (!confirm('選んだ単語を全部はずしますか？')) return; hw().words = []; touch(); renderPicked(); renderUnits(); renderWordList(); },
     'pick-range': () => {
       const a = +ps.from, b = +ps.to || a;
       if (!a) return alert('番号を入れてください。');
       const h = hw(), have = new Set(h.words);
       const add = filteredWords().filter(v => v.n >= Math.min(a, b) && v.n <= Math.max(a, b) && !have.has(v.id)).map(v => v.id);
-      h.words.push(...add); touch(); renderPicked(); renderWordList();
-    },
-    'pick-random': () => {
-      const n = Math.max(1, Math.min(50, +ps.randomN || 10)), h = hw(), have = new Set(h.words), used = usedMap();
-      const pool = filteredWords().filter(v => !have.has(v.id));
-      const rand = SL.rng(Date.now());
-      const pick = [...SL.shuffle(pool.filter(v => !used.has(v.id)), rand), ...SL.shuffle(pool.filter(v => used.has(v.id)), rand)].slice(0, n);
-      h.words.push(...pick.map(v => v.id)); touch(); renderPicked(); renderWordList();
+      h.words.push(...add); touch(); renderPicked(); renderUnits(); renderWordList();
     },
     edit: el => { ps.editing = ps.editing === el.dataset.id ? null : el.dataset.id; renderWordList(); },
     'edit-close': () => { ps.editing = null; renderWordList(); },
@@ -758,7 +839,7 @@
     if (t.id === 'q') { ps.q = t.value; ps.limit = 60; return renderWordList(); }
     if (t.id === 'from') return void (ps.from = t.value);
     if (t.id === 'to') return void (ps.to = t.value);
-    if (t.id === 'randomN') return void (ps.randomN = t.value);
+    if (t.dataset.auto && t.type === 'number') { autoPrefs()[t.dataset.auto] = Math.max(0, +t.value || 0); return save(); }
     if (t.dataset.hw) { h[t.dataset.hw] = t.value; return touch(); }
     if (t.dataset.set === 'extraKanji') {
       h.settings.extraKanji = t.value; touch();
@@ -773,6 +854,7 @@
     const t = e.target, h = hw();
     if (t.id === 'posSel') { ps.pos = t.value; ps.limit = 60; return renderWordList(); }
     if (t.id === 'hideUsed') { ps.hideUsed = t.checked; return renderWordList(); }
+    if (t.dataset.auto === 'avoid') { autoPrefs().avoid = t.checked; return save(); }
     if (t.id === 'onlyMissing') {
       modalCtx.onlyMissing = t.checked;
       $('#aiPrompt').value = SL.meaningPrompt(t.checked ? modalCtx.missing : modalCtx.all); return;
@@ -790,14 +872,14 @@
     if (t.dataset.sfield && t.dataset.sfield !== 'text') {
       const s = findSec(t), f = t.dataset.sfield;
       s[f] = t.type === 'checkbox' ? t.checked : f === 'count' ? Math.max(1, +t.value || 1) : t.value;
-      touch(); return refreshNotes(s);
+      touch(); return h.sections.forEach(refreshNotes);
     }
   }));
   let resizeTimer = null;
   window.addEventListener('resize', () => { clearTimeout(resizeTimer); resizeTimer = setTimeout(() => { if (store.ui.tab === 'print') renderPreview(); }, 200); });
 
   // テスト用の窓口
-  window.SHUKUDAI = { store: () => store, hw, layoutPages, buildBlocks, sectionItems, render, mergeBackup, actions };
+  window.SHUKUDAI = { store: () => store, hw, word, layoutPages, buildBlocks, sectionItems, render, mergeBackup, actions };
   render();
   if (document.fonts?.ready) document.fonts.ready.then(() => { if (store.ui.tab === 'print') renderPreview(); });
 })();

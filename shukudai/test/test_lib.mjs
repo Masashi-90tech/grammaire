@@ -113,6 +113,14 @@ if (fs.existsSync(dataPath)) {
     }
   }
   assert.deepEqual(fails, [], '活用できない動詞');
+  // まとまり: 表記の書き間違いがなく、どの語も1つのまとまりにだけ入る
+  const UNITS = require('../src/units.js');
+  const { units, dup } = SL.resolveUnits(UNITS, vocab);
+  assert.deepEqual(units.filter(u => u.missing.length).map(u => `${u.name}: ${u.missing.join(' ')}`), [], 'まとまりの語が見つからない');
+  assert.deepEqual(dup, [], '2つのまとまりに入っている語');
+  assert.ok(units.every(u => u.ids.length > 0));
+  const rest = units.filter(u => u.id.endsWith('-rest')).reduce((n, u) => n + u.ids.length, 0);
+  console.log(`まとまり ${units.length}（そのほか ${rest}語）`);
   const misaligned = vocab.filter(v => !SL.align(v.w, v.r).ok).map(v => `${v.id} ${v.w}/${v.r}`);
   console.log(`vocab ${vocab.length}語・動詞${verbs.length}語。ふりがなを語全体に付けた語: ${misaligned.length}`, misaligned.slice(0, 20));
 }
