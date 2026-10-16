@@ -8982,8 +8982,8 @@ const VC_DIRS={right:[4,'普通','vc-good'],up:[5,'簡単','vc-easy'],down:[3,'�
 const VC_HINT_KEY='grammaire.vcHintSeen';
 function vcHintCount(){try{return Number(localStorage.getItem(VC_HINT_KEY))||0;}catch(e){return 9;}}
 function vcHintHtml(){
-  if(state.uiGestures===false||vcHintCount()>=3)return '';
-  return `<div class="vc-dirs" aria-hidden="true"><span class="vc-d-up vc-easy">↑ 簡単</span><span class="vc-d-left vc-again">← もう一度</span><span class="vc-d-right vc-good">普通 →</span><span class="vc-d-down vc-hard">↓ 難しい</span></div>`;
+  if(state.uiGestures===false)return '';
+  return `<div class="vc-dirs" aria-hidden="true"><span class="vc-d-left vc-again">← もう一度</span><span class="vc-d-up vc-easy">↑ 簡単</span><span class="vc-d-down vc-hard">↓ 難しい</span><span class="vc-d-right vc-good">普通 →</span></div>`;
 }
 function vcStyle(){
   if(document.getElementById('vcStyle'))return;
@@ -9014,7 +9014,8 @@ body.vc-mode #view{padding-top:max(10px,env(safe-area-inset-top));padding-bottom
 .vc-open .vc-word{font-size:30px;margin:6px 0 10px}
 .vc-tap{font-size:13px;color:var(--muted);text-align:center;padding:0 0 18%}
 .vc-body{flex:1;min-height:0;overflow-y:auto;text-align:left;padding-top:4px;touch-action:pan-y;-webkit-overflow-scrolling:touch}
-.vc-open .vc-dirs{display:none}
+.vc-open .vc-dirs{position:relative;display:flex;justify-content:space-between;gap:6px;padding-top:8px;border-top:1px solid var(--line);margin-top:6px}
+.vc-open .vc-dirs span{position:static;font-size:12px}
 .vc-dirs span{position:absolute;font-size:13px;font-weight:700;pointer-events:none;opacity:.9}
 .vc-d-up{top:64px;left:0;right:0;text-align:center}.vc-d-down{bottom:12px;left:0;right:0;text-align:center}
 .vc-d-left{left:14px;top:50%}.vc-d-right{right:14px;top:50%}
