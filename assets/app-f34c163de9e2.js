@@ -1085,7 +1085,7 @@ function initUi(){
   let start=null;
   document.addEventListener('touchstart',e=>{
     start=null;if(state.uiGestures===false||e.touches.length!==1)return;
-    if(e.target.closest('input,textarea,select,button:not(.vb-row):not(.ui-link),a,[contenteditable],.vh-lanes,table,#vbAz'))return;
+    if(e.target.closest('input,textarea,select,button:not(.vb-row):not(.ui-link),a,[contenteditable],.vh-lanes,table,#vbAz,#vcCard'))return;
     const t=e.touches[0],w=window.innerWidth;
     if(!(t.clientX>=24&&t.clientX<=96))return;
     start={x:t.clientX,y:t.clientY,time:Date.now()};
@@ -6240,13 +6240,13 @@ function renderVocabCardInner(){
 
   const pct = Math.round(vocabSession.idx / vocabSession.ids.length * 100);
   let h = `<div class="bar-progress"><div style="width:${pct}%"></div></div>`;
-  h += `<div class="card" style="text-align:center;padding:32px 16px">
+  h += `<div class="card vc-card${vocabSession.revealed?' vc-open':''}" id="vcCard" style="text-align:center;padding:32px 16px"><div class="vc-head">
     <div class="small muted" style="margin-bottom:16px">${vocabSession.idx+1} / ${vocabSession.ids.length}</div>
 <div>${c.level ? `<span class="pill">${esc(c.level)}</span>` : ""}${c.posJa ? `<span class="pill">${esc(c.posJa)}</span>` : ""}${c.soutenu ? soutLvPill(c.lv) : ""}${c.comm ? `<span class="pill">${esc(c.roleTitle)}</span>` : ""}${c.idiom ? `<span class="pill">${esc(c.themeTitle)}</span>` : ""}</div>
     <div class="prompt-fr" style="font-size:24px;margin:8px 0 0">${nounWithArticleHtml(c)}
       <button class="btn small" style="margin-left:6px;vertical-align:middle" onclick="speakFr('${esc(nounSpeakText(c)).replace(/'/g,"\\'")}')" title="発音を聞く">🔊</button>
       <button class="fav-btn ${state.vocabFav[id]?"on":""}" id="favBtn_${id}" style="vertical-align:middle" onclick="toggleFav('${id}')" title="お気に入り">${state.vocabFav[id]?"★":"☆"}</button>
-    </div>`;
+    </div></div>${vcHintHtml()}`;
   if(c.soutenu) h += `<div class="small muted" style="margin-top:8px">${esc(c.ja)} ／ 上品に言うと？</div>`;
   if(c.comm) h += `<div class="small muted" style="margin-top:8px">${esc(c.ja)}</div>`;
   if(c.idiom) h += `<div class="small muted" style="margin-top:8px">意味は？</div>`;
@@ -6298,9 +6298,10 @@ function renderVocabCardInner(){
         <button class="btn grade-btn" onclick="gradeVocabCard(5)">簡単<small>次は${easyDays}日後</small></button>
       </div>`;
   }
-  h += `</div>`;
+  h += `<div class="vc-stamp" aria-hidden="true"><b></b></div></div>`;
   el.innerHTML = h;
   window.scrollTo(0,0);
+  vcWire();
 }
 function revealVocab(){
   try{ vocabSession.revealed = true; renderVocabCard(); }
@@ -8945,3 +8946,86 @@ async function saveAudioOffline(){
   }catch(e){say(e.message);}finally{if(button)button.disabled=false;refreshAudioOffline();}
 }
 function openDictee(){location.href='dictee.html';}
+
+/* Word-card swipe (self-contained; port as one block).
+   → 普通(4)  ↑ 簡単(5)  ↓ 難しい(3)  ← もう一度(1). Tap the card to flip.
+   Horizontal swipes work anywhere on the card; vertical ones start on the
+   card's top (word) area so a long back side still scrolls. Turned off by
+   the existing スワイプ setting (state.uiGestures===false). */
+const VC_DIRS={right:[4,'普通','vc-good'],up:[5,'簡単','vc-easy'],down:[3,'難しい','vc-hard'],left:[1,'もう一度','vc-again']};
+const VC_HINT_KEY='grammaire.vcHintSeen';
+function vcHintCount(){try{return Number(localStorage.getItem(VC_HINT_KEY))||0;}catch(e){return 9;}}
+function vcHintHtml(){
+  if(state.uiGestures===false||vcHintCount()>=3)return '';
+  return `<div class="vc-hint small muted" aria-hidden="true"><span>→普通</span> <span>↑簡単</span> <span>↓難しい</span> <span>←もう一度</span></div>`;
+}
+function vcStyle(){
+  if(document.getElementById('vcStyle'))return;
+  const st=document.createElement('style');st.id='vcStyle';
+  st.textContent=`.vc-card{position:relative;touch-action:pan-y;will-change:transform;transition:transform .32s cubic-bezier(.2,.8,.2,1),opacity .28s;user-select:none;-webkit-user-select:none}
+.vc-card:not(.vc-open){touch-action:none;cursor:pointer}
+.vc-card .vc-head{touch-action:none}
+.vc-card textarea,.vc-card .note-box{user-select:text;-webkit-user-select:text}
+.vc-card.vc-drag{transition:none}
+.vc-stamp{position:absolute;inset:0;border-radius:inherit;border:3px solid currentColor;opacity:0;pointer-events:none;display:flex;justify-content:center;align-items:flex-start;padding-top:18px}
+.vc-stamp b{font-size:22px;letter-spacing:.06em;padding:2px 14px;border-radius:10px;background:var(--card,#fff)}
+.vc-good{color:#1f9d6b}.vc-easy{color:#2f7fd8}.vc-hard{color:#c98a12}.vc-again{color:#d9534f}
+.vc-hint{margin-top:12px;font-size:12px;display:flex;justify-content:center;gap:10px;white-space:nowrap}
+.vc-card:not(.vc-open) .vc-tap{display:block}
+@keyframes vcWiggle{0%,100%{transform:none}25%{transform:translateX(-16px) rotate(-2deg)}55%{transform:translateX(16px) rotate(2deg)}80%{transform:translateY(-8px)}}
+.vc-wiggle{animation:vcWiggle 1s .4s ease-in-out}
+@media (prefers-reduced-motion:reduce){.vc-card,.vc-wiggle{transition:none;animation:none}}`;
+  document.head.appendChild(st);
+}
+function vcWire(){
+  const card=document.getElementById('vcCard');if(!card)return;
+  vcStyle();
+  const head=card.querySelector('.vc-head'),stamp=card.querySelector('.vc-stamp'),label=stamp?.firstChild;
+  const off=()=>state.uiGestures===false;
+  if(!off()&&vcHintCount()<3&&vocabSession.idx===0&&!vocabSession.revealed){card.classList.add('vc-wiggle');card.addEventListener('animationend',()=>card.classList.remove('vc-wiggle'),{once:true});}
+  let p=null;
+  const reset=()=>{card.classList.remove('vc-drag');card.style.transform='';if(stamp)stamp.style.opacity=0;};
+  card.addEventListener('pointerdown',e=>{
+    if(e.button>0||e.target.closest('a,input,textarea,select,summary,details,[contenteditable]'))return;
+    p={id:e.pointerId,x:e.clientX,y:e.clientY,t:performance.now(),dx:0,dy:0,moved:false,vert:!!(head&&head.contains(e.target))||!card.classList.contains('vc-open')};
+  });
+  card.addEventListener('pointermove',e=>{
+    if(!p||e.pointerId!==p.id)return;
+    p.dx=e.clientX-p.x;p.dy=e.clientY-p.y;
+    if(!p.moved){
+      if(Math.hypot(p.dx,p.dy)<10)return;
+      // a vertical move outside the head is a page scroll, not a card swipe
+      if(off()||(!p.vert&&Math.abs(p.dy)>Math.abs(p.dx))){p=null;return;}
+      p.moved=true;card.classList.add('vc-drag');try{card.setPointerCapture(e.pointerId);}catch(_){}
+    }
+    const dy=p.vert?p.dy:0;
+    card.style.transform=`translate(${p.dx}px,${dy}px) rotate(${Math.max(-10,Math.min(10,p.dx/20))}deg)`;
+    const d=VC_DIRS[vcDir(p.dx,dy)];
+    if(stamp&&d){stamp.className='vc-stamp '+d[2];label.textContent=d[1];stamp.style.opacity=Math.min(1,vcPower(card,p.dx,dy))*.95;}
+  });
+  const end=e=>{
+    if(!p||e.pointerId!==p.id)return;
+    const q=p;p=null;
+    if(q.moved){const stop=ev=>{ev.stopPropagation();ev.preventDefault();};card.addEventListener('click',stop,true);setTimeout(()=>card.removeEventListener('click',stop,true),350);}
+    if(!q.moved){
+      if(e.type==='pointerup'&&!card.classList.contains('vc-open')&&!e.target.closest('button,a,textarea'))revealVocab();
+      return;
+    }
+    const dy=q.vert?q.dy:0,dist=Math.hypot(q.dx,dy),v=dist/Math.max(1,performance.now()-q.t);
+    if(e.type==='pointerup'&&(vcPower(card,q.dx,dy)>=1||(v>.55&&dist>40)))vcCommit(card,vcDir(q.dx,dy));
+    else reset();
+  };
+  card.addEventListener('pointerup',end);card.addEventListener('pointercancel',end);
+}
+function vcDir(dx,dy){return Math.abs(dx)>=Math.abs(dy)?(dx>0?'right':'left'):(dy>0?'down':'up');}
+function vcPower(card,dx,dy){return Math.max(Math.abs(dx)/(card.clientWidth*.3),Math.abs(dy)/Math.min(card.clientHeight*.3,180));}
+function vcCommit(card,dir){
+  const d=VC_DIRS[dir];if(!d||card.dataset.gone)return;card.dataset.gone='1';
+  const W=window.innerWidth,H=window.innerHeight;
+  const to={right:[W*1.2,0,14],left:[-W*1.2,0,-14],up:[0,-H,0],down:[0,H,0]}[dir];
+  card.classList.remove('vc-drag');card.style.transition='transform .22s ease-in,opacity .22s';
+  card.style.transform=`translate(${to[0]}px,${to[1]}px) rotate(${to[2]}deg)`;card.style.opacity='0';
+  try{navigator.vibrate&&navigator.vibrate(dir==='left'?[8,40,8]:10);}catch(_){}
+  if(vocabSession.idx===0)try{localStorage.setItem(VC_HINT_KEY,String(vcHintCount()+1));}catch(_){}
+  setTimeout(()=>gradeVocabCard(d[0]),180);
+}
