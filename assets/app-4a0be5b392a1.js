@@ -952,7 +952,8 @@ function initFeatureLoading(){
     };
   }
 }
-function offlineSummaryHtml(){return '<section class="offline-summary" aria-label="オフラインの保存状態"><p id="offlineConnection"></p><p id="offlineCore" role="status">保存状態を確認しています…</p><p id="offlineLessons"></p><p id="offlineVerbs"></p><details><summary>教材ごとの保存状況</summary><div id="offlineDetails"></div></details><div class="actions"><button class="btn small" id="offlineSave" onclick="saveLearningOffline()">教材をまとめて保存</button><button class="btn small" onclick="refreshOfflineStatus()">状態を確認</button></div><p id="offlineSaveProgress" role="status"></p><div id="audioOffline" hidden><p id="audioOfflineStatus"></p><div class="actions"><button class="btn small" id="audioOfflineSave" onclick="saveAudioOffline()" hidden></button></div><p id="audioOfflineProgress" role="status"></p></div></section>';}
+function offlineSummaryHtml(){return '<section class="offline-summary" aria-label="オフラインの保存状態"><p id="offlineConnection"></p><p id="offlineCore" role="status">保存状態を確認しています…</p><p id="offlineLessons"></p><p id="offlineVerbs"></p><details><summary>教材ごとの保存状況</summary><div id="offlineDetails"></div></details><div class="actions"><button class="btn small" id="offlineSave" onclick="saveLearningOffline()">教材をまとめて保存</button><button class="btn small" onclick="refreshOfflineStatus()">状態を確認</button></div><p id="offlineSaveProgress" role="status"></p><div id="audioOffline" hidden><p id="audioOfflineStatus"></p><div class="actions"><button class="btn small" id="audioOfflineSave" onclick="saveAudioOffline()" hidden></button></div><p id="audioOfflineProgress" role="status"></p></div><p class="small muted">アプリの版：'+appBuildId()+'</p></section>';}
+function appBuildId(){const m=[...document.scripts].map(x=>x.src).join(' ').match(/app-([0-9a-f]{6})/);return m?m[1]:'不明';}
 async function scopedOfflineCaches(){
   if(!('caches' in window))return [];
   const prefix='grammaire-v2-'+encodeURIComponent(new URL('./',location.href).pathname)+'-';
@@ -8913,7 +8914,11 @@ if ("serviceWorker" in navigator) {
   const registerWorker = () => {
     if(location.protocol === "file:") return;
     navigator.serviceWorker.register("service-worker.js").then(reg => {
-      const offer = worker => { if(worker && navigator.serviceWorker.controller) showUpdateBanner(worker); };
+      // 起動直後（学習を始める前）に新しい版が見つかったら、確認なしでそのまま切り替える。
+      // 学習の途中で見つかったときだけ、これまでどおりバナーで聞く。
+      const offer = worker => { if(!worker || !navigator.serviceWorker.controller) return;
+        if(performance.now() < 8000 && !document.body.classList.contains('vc-mode')){ swUpdateRequested = true; worker.postMessage({type:"skip-waiting"}); }
+        else showUpdateBanner(worker); };
       if(reg.waiting) offer(reg.waiting);
       reg.addEventListener("updatefound", () => {
         const worker = reg.installing;
