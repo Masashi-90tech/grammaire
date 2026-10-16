@@ -6026,15 +6026,31 @@ function openVocabHomeInner(){
    どちらもアプリ全体に効くグローバル設定。単語ホームのレーン表示⇄シンプル表示は
    看板／旧に連動する。ダークモードは既定では端末設定（prefers-color-scheme）に自動追従するが、
    [data-color-mode]属性で端末設定にかかわらずライト／ダーク固定にもできる（CSS側を参照）。 */
+/* セージ・アイボリー（2026-10 追加）：文字のコントラストを優先した配色。本文・補助文字・ボタン文字とも
+   ライト／ダークでコントラスト比7以上。評価4色（--g-*）は全テーマ共通で、ライト6.5以上・ダーク8以上。 */
+function themeExtraStyle(){
+  if(document.getElementById('themeExtraStyle'))return;
+  const st=document.createElement('style');st.id='themeExtraStyle';
+  st.textContent=`:root{--g-again:#8f332d;--g-hard:#6e4d08;--g-good:#22603f;--g-easy:#244f86;}
+@media(prefers-color-scheme:dark){:root:not([data-color-mode="light"]){--g-again:#f4aaa3;--g-hard:#e8c985;--g-good:#9ad8b8;--g-easy:#a8cbf2;}}
+:root[data-color-mode="dark"]{--g-again:#f4aaa3;--g-hard:#e8c985;--g-good:#9ad8b8;--g-easy:#a8cbf2;}
+:root[data-theme-mode="sage"]{--bg:#f1f3ec;--card:#fdfdf9;--fg:#1b261e;--muted:#4a5547;--line:#cfd8c8;--accent:#2c5440;--accent-weak:#e0e9dd;--on-accent:#fdfdf9;--bar:var(--accent);--bar-bg:var(--accent-weak);--bg-grad:none;--shadow:0 2px 12px rgba(27,38,30,.06);--pop:#8f5c73;}
+@media(prefers-color-scheme:dark){:root[data-theme-mode="sage"]:not([data-color-mode="light"]){--bg:#121814;--card:#1c241f;--fg:#eef3ee;--muted:#bccabf;--line:#3a4a40;--accent:#b6dcc5;--accent-weak:#2a3a30;--on-accent:#0f2318;--bar:var(--accent);--bar-bg:var(--accent-weak);--bg-grad:none;--shadow:0 2px 12px rgba(0,0,0,.3);--pop:#e6bccb;}}
+:root[data-theme-mode="sage"][data-color-mode="dark"]{--bg:#121814;--card:#1c241f;--fg:#eef3ee;--muted:#bccabf;--line:#3a4a40;--accent:#b6dcc5;--accent-weak:#2a3a30;--on-accent:#0f2318;--bar:var(--accent);--bar-bg:var(--accent-weak);--bg-grad:none;--shadow:0 2px 12px rgba(0,0,0,.3);--pop:#e6bccb;}
+:root[data-theme-mode="sage"] .fav-btn.on{color:var(--pop)}
+:root[data-theme-mode="sage"] .small.muted,:root[data-theme-mode="sage"] .muted{color:var(--muted)}`;
+  document.head.appendChild(st);
+}
 function applyUiTheme(){
-  if(["classic","blue","green"].includes(state.uiTheme)) document.documentElement.setAttribute("data-theme-mode", state.uiTheme);
+  themeExtraStyle();
+  if(["classic","blue","green","sage"].includes(state.uiTheme)) document.documentElement.setAttribute("data-theme-mode", state.uiTheme);
   else document.documentElement.removeAttribute("data-theme-mode");
   if(state.uiColorMode === "light" || state.uiColorMode === "dark") document.documentElement.setAttribute("data-color-mode", state.uiColorMode);
   else document.documentElement.removeAttribute("data-color-mode");
 }
 function setGlobalUiTheme(mode){
   if(!state.uiLayout) state.uiLayout = state.uiTheme === "classic" ? "classic" : "kanban";
-  state.uiTheme = ["classic","blue","green"].includes(mode) ? mode : "kanban";
+  state.uiTheme = ["classic","blue","green","sage"].includes(mode) ? mode : "kanban";
   applyUiTheme();
   save();
   const settingsScreen = document.getElementById("uiThemeSettings");
@@ -6065,6 +6081,7 @@ function renderUiSettings(){
     <div class="actions">
       <button class="btn ${mode==="blue"?"primary":""}" onclick="setGlobalUiTheme('blue')">やわらかい青</button>
       <button class="btn ${mode==="green"?"primary":""}" onclick="setGlobalUiTheme('green')">落ち着いた緑</button>
+      <button class="btn ${mode==="sage"?"primary":""}" onclick="setGlobalUiTheme('sage')">セージ・アイボリー（見やすさ重視）</button>
     </div>
     ${uiReadingSettings()}
     <h2 style="margin:18px 0 0">ダークモード</h2>
@@ -8978,7 +8995,7 @@ function vcStyle(){
 .vc-card.vc-drag{transition:none}
 .vc-stamp{position:absolute;inset:0;border-radius:inherit;border:3px solid currentColor;opacity:0;pointer-events:none;display:flex;justify-content:center;align-items:flex-start;padding-top:18px}
 .vc-stamp b{font-size:22px;letter-spacing:.06em;padding:2px 14px;border-radius:10px;background:var(--card,#fff)}
-.vc-good{color:#1f9d6b}.vc-easy{color:#2f7fd8}.vc-hard{color:#c98a12}.vc-again{color:#d9534f}
+.vc-good{color:var(--g-good,#1f9d6b)}.vc-easy{color:var(--g-easy,#2f7fd8)}.vc-hard{color:var(--g-hard,#c98a12)}.vc-again{color:var(--g-again,#d9534f)}
 .vc-hint{margin-top:12px;font-size:12px;display:flex;justify-content:center;gap:10px;white-space:nowrap}
 body.vc-mode header.top{display:none}
 body.vc-mode #view{padding-top:max(10px,env(safe-area-inset-top));padding-bottom:0}
