@@ -1007,6 +1007,7 @@ function uiSetSection(key){
   document.querySelectorAll('#bottomNav button').forEach(b=>{const on=b.dataset.section===key;b.classList.toggle('active',on);if(on)b.setAttribute('aria-current','page');else b.removeAttribute('aria-current');});
 }
 function uiBeforeScreen(fn,label){
+  document.body.classList.remove('vc-mode');
   stopOral();essayFlush();
   const t=titleEl.textContent;
   if(verbActive!==null&&dictionaryEntry(verbActive)?.fr!==t)verbActive=null;
@@ -6249,23 +6250,26 @@ function renderVocabCardInner(){
   setBack(vocabSession.backTo || (()=>openVocabHome()), "ここまで");
 
   const pct = Math.round(vocabSession.idx / vocabSession.ids.length * 100);
-  let h = `<div class="bar-progress"><div style="width:${pct}%"></div></div>`;
-  h += `<div class="card vc-card${vocabSession.revealed?' vc-open':''}" id="vcCard" style="text-align:center;padding:32px 16px"><div class="vc-head">
-    <div class="small muted" style="margin-bottom:16px">${vocabSession.idx+1} / ${vocabSession.ids.length}</div>
-<div>${c.level ? `<span class="pill">${esc(c.level)}</span>` : ""}${c.posJa ? `<span class="pill">${esc(c.posJa)}</span>` : ""}${c.soutenu ? soutLvPill(c.lv) : ""}${c.comm ? `<span class="pill">${esc(c.roleTitle)}</span>` : ""}${c.idiom ? `<span class="pill">${esc(c.themeTitle)}</span>` : ""}</div>
-    <div class="prompt-fr" style="font-size:24px;margin:8px 0 0">${nounWithArticleHtml(c)}
-      <button class="btn small" style="margin-left:6px;vertical-align:middle" onclick="speakFr('${esc(nounSpeakText(c)).replace(/'/g,"\\'")}')" title="発音を聞く">🔊</button>
-      <button class="fav-btn ${state.vocabFav[id]?"on":""}" id="favBtn_${id}" style="vertical-align:middle" onclick="toggleFav('${id}')" title="お気に入り">${state.vocabFav[id]?"★":"☆"}</button>
-    </div></div>${vcHintHtml()}`;
+  const open = !!vocabSession.revealed;
+  document.body.classList.add('vc-mode');
+  const spk = esc(nounSpeakText(c)).replace(/'/g,"\\'");
+  let h = `<div class="vc-screen"><div class="vc-top"><button class="vc-x" onclick="vcExit()" aria-label="やめる">✕</button><div class="bar-progress"><div style="width:${pct}%"></div></div><span class="vc-count">${vocabSession.idx+1}/${vocabSession.ids.length}</span><button class="vc-x" onclick="vcLookup(true)" aria-label="辞書"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></svg></button></div>`;
+  h += `<div class="card vc-card${open?' vc-open':''}" id="vcCard"><div class="vc-head">
+    <div class="vc-bar"><button class="vc-ic" onclick="speakFr('${spk}')" aria-label="発音を聞く">🔊</button>
+      <div class="vc-pills">${c.level ? `<span class="pill">${esc(c.level)}</span>` : ""}${c.posJa ? `<span class="pill">${esc(c.posJa)}</span>` : ""}${c.soutenu ? soutLvPill(c.lv) : ""}${c.comm ? `<span class="pill">${esc(c.roleTitle)}</span>` : ""}${c.idiom ? `<span class="pill">${esc(c.themeTitle)}</span>` : ""}</div>
+      <button class="vc-ic fav-btn ${state.vocabFav[id]?"on":""}" id="favBtn_${id}" onclick="toggleFav('${id}')" aria-label="お気に入り">${state.vocabFav[id]?"★":"☆"}</button></div>
+    <div class="vc-word prompt-fr">${nounWithArticleHtml(c)}</div>`;
   if(c.soutenu) h += `<div class="small muted" style="margin-top:8px">${esc(c.ja)} ／ 上品に言うと？</div>`;
   if(c.comm) h += `<div class="small muted" style="margin-top:8px">${esc(c.ja)}</div>`;
   if(c.idiom) h += `<div class="small muted" style="margin-top:8px">意味は？</div>`;
   if(!vocabSession.revealed){
-    h += `<div class="actions" style="justify-content:center"><button class="btn primary" onclick="revealVocab()">裏を見る</button></div>`;
+    h += `<div class="vc-tap">タップで意味 ・ 長押しで辞書</div>`;
     if(vocabSession.mode === 'new' && c.ja !== undefined && !c.adhoc && !state.vocabProgress[id]){
-      h += `<div class="actions" style="justify-content:center;margin-top:4px"><button class="btn small" onclick="knowVocabCard()">知ってる（出題から外す）</button></div>`;
+      h += `<div style="text-align:center"><button class="btn small" onclick="knowVocabCard()">知ってる（出題から外す）</button></div>`;
     }
+    h += `</div>`;
   } else {
+    h += `</div><div class="vc-body">`;
     if(c.adhoc){
       // ドリル・例文中の語をタップして即席登録したブックマーク（訳・例文は持たない）
       h += `<div class="flip-back" style="text-align:left">
@@ -6299,16 +6303,11 @@ function renderVocabCardInner(){
       <div class="small muted">メモ</div>
       <textarea class="note-box" id="note_${id}" placeholder="調べた意味・間違えた理由など" onchange="saveNote('${id}', this.value)" onblur="saveNote('${id}', this.value)">${esc(state.vocabNotes[id]||"")}</textarea>
     </div>`;
-    // 各ボタンの下に「押すと次にいつ出るか」を出す（2026-09 レビュー提案）
-    const easyDays = vocabNextEasyInterval(id);
-    h += `<div class="gradebtns">
-        <button class="btn grade-btn" onclick="gradeVocabCard(1)">もう一度<small>この後すぐ再出題</small></button>
-        <button class="btn grade-btn" onclick="gradeVocabCard(3)">難しい<small>今日の復習に残す</small></button>
-        <button class="btn primary grade-btn" onclick="gradeVocabCard(4)">普通<small>今日の復習に残す</small></button>
-        <button class="btn grade-btn" onclick="gradeVocabCard(5)">簡単<small>次は${easyDays}日後</small></button>
-      </div>`;
+    h += `</div>`;
   }
+  h += vcHintHtml();
   h += `<div class="vc-stamp" aria-hidden="true"><b></b></div></div>`;
+  h += `<div class="vc-btns"><button class="vc-b vc-again" onclick="vcPick(1)">もう一度</button><button class="vc-b vc-hard" onclick="vcPick(3)">難しい</button><button class="vc-b vc-good" onclick="vcPick(4)">普通</button><button class="vc-b vc-easy" onclick="vcPick(5)">簡単</button></div></div>`;
   el.innerHTML = h;
   window.scrollTo(0,0);
   vcWire();
@@ -8967,7 +8966,7 @@ const VC_HINT_KEY='grammaire.vcHintSeen';
 function vcHintCount(){try{return Number(localStorage.getItem(VC_HINT_KEY))||0;}catch(e){return 9;}}
 function vcHintHtml(){
   if(state.uiGestures===false||vcHintCount()>=3)return '';
-  return `<div class="vc-hint small muted" aria-hidden="true"><span>→普通</span> <span>↑簡単</span> <span>↓難しい</span> <span>←もう一度</span></div>`;
+  return `<div class="vc-dirs" aria-hidden="true"><span class="vc-d-up vc-easy">↑ 簡単</span><span class="vc-d-left vc-again">← もう一度</span><span class="vc-d-right vc-good">普通 →</span><span class="vc-d-down vc-hard">↓ 難しい</span></div>`;
 }
 function vcStyle(){
   if(document.getElementById('vcStyle'))return;
@@ -8981,7 +8980,29 @@ function vcStyle(){
 .vc-stamp b{font-size:22px;letter-spacing:.06em;padding:2px 14px;border-radius:10px;background:var(--card,#fff)}
 .vc-good{color:#1f9d6b}.vc-easy{color:#2f7fd8}.vc-hard{color:#c98a12}.vc-again{color:#d9534f}
 .vc-hint{margin-top:12px;font-size:12px;display:flex;justify-content:center;gap:10px;white-space:nowrap}
-.vc-card:not(.vc-open) .vc-tap{display:block}
+body.vc-mode header.top{display:none}
+body.vc-mode #view{padding-top:max(10px,env(safe-area-inset-top));padding-bottom:0}
+.vc-screen{display:flex;flex-direction:column;height:calc(100dvh - max(10px,env(safe-area-inset-top)) - 8px);min-height:420px}
+.vc-top{display:flex;align-items:center;gap:12px;padding:2px 2px 12px}
+.vc-top .bar-progress{flex:1;margin:0}
+.vc-x{background:none;border:0;color:var(--muted);font-size:22px;line-height:1;width:40px;height:40px;display:grid;place-items:center;padding:0}
+.vc-count{font-size:14px;color:var(--muted);font-variant-numeric:tabular-nums}
+.vc-card{flex:1;min-height:0;display:flex;flex-direction:column;text-align:center;padding:16px 18px;border-radius:28px;margin:0}
+.vc-head{display:flex;flex-direction:column;align-items:stretch}
+.vc-card:not(.vc-open) .vc-head{flex:1}
+.vc-bar{display:flex;align-items:center;justify-content:space-between;gap:8px}
+.vc-ic{background:none;border:0;font-size:22px;color:var(--muted);width:44px;height:44px;display:grid;place-items:center;padding:0}
+.vc-pills{display:flex;gap:6px;flex-wrap:wrap;justify-content:center}
+.vc-word{font-size:clamp(34px,10vw,46px);margin:auto 0;padding:8px 0;line-height:1.2}
+.vc-open .vc-word{font-size:30px;margin:6px 0 10px}
+.vc-tap{font-size:13px;color:var(--muted);text-align:center;padding:0 0 18%}
+.vc-body{flex:1;min-height:0;overflow-y:auto;text-align:left;padding-top:4px;touch-action:pan-y;-webkit-overflow-scrolling:touch}
+.vc-open .vc-dirs{display:none}
+.vc-dirs span{position:absolute;font-size:13px;font-weight:700;pointer-events:none;opacity:.9}
+.vc-d-up{top:64px;left:0;right:0;text-align:center}.vc-d-down{bottom:12px;left:0;right:0;text-align:center}
+.vc-d-left{left:14px;top:50%}.vc-d-right{right:14px;top:50%}
+.vc-btns{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;padding:14px 0 calc(14px + env(safe-area-inset-bottom))}
+.vc-b{min-height:54px;border-radius:99px;background:var(--card);border:1px solid var(--line);font-size:15px;font-weight:700;box-shadow:0 2px 10px rgba(0,0,0,.05)}
 @keyframes vcWiggle{0%,100%{transform:none}25%{transform:translateX(-16px) rotate(-2deg)}55%{transform:translateX(16px) rotate(2deg)}80%{transform:translateY(-8px)}}
 .vc-wiggle{animation:vcWiggle 1s .4s ease-in-out}
 @media (prefers-reduced-motion:reduce){.vc-card,.vc-wiggle{transition:none;animation:none}}`;
@@ -9030,9 +9051,11 @@ function vcWire(){
   };
   card.addEventListener('pointerup',end);card.addEventListener('pointercancel',end);
 }
-function vcLookup(){
+function vcExit(){const b=document.getElementById('backBtn');if(b&&b.onclick)b.onclick();else openVocabHome();}
+function vcPick(q){const card=document.getElementById('vcCard');if(!card)return;vcCommit(card,{1:'left',3:'down',4:'right',5:'up'}[q]);}
+function vcLookup(force){
   try{const c=getCard(vocabSession.ids[vocabSession.idx]);const w=(c&&(c.fr||c.front)||'').replace(/^(le|la|les|l'|un|une)\s+/i,'').trim();
-  if(!w||c.idiom||c.comm||c.soutenu)return;navigator.vibrate&&navigator.vibrate(15);const sp=document.createElement('span');sp.textContent=w;lpOpenWord(sp);}catch(e){}
+  if(!w||c.idiom||c.comm||c.soutenu){if(force===true)vbNavDict();return;}navigator.vibrate&&navigator.vibrate(15);const sp=document.createElement('span');sp.textContent=w;lpOpenWord(sp);}catch(e){}
 }
 function vcDir(dx,dy){return Math.abs(dx)>=Math.abs(dy)?(dx>0?'right':'left'):(dy>0?'down':'up');}
 function vcPower(card,dx,dy){return Math.max(Math.abs(dx)/(card.clientWidth*.3),Math.abs(dy)/Math.min(card.clientHeight*.3,180));}
