@@ -1000,7 +1000,7 @@ async function saveLearningOffline(){
 
 /* UI additions share the existing storage key and leave study records untouched. */
 let uiSection='home', uiDrawerFocus=null,uiLastSwipe=0,uiGrammarParent=null;
-const UI_ICONS={home:'<path d="m3 10 9-7 9 7v10H3Z"/><path d="M9 20v-7h6v7"/>',learn:'<path d="M3 4h7l2 2 2-2h7v15h-7l-2 2-2-2H3Z"/><path d="M12 6v15"/>',dict:'<circle cx="10" cy="10" r="6"/><path d="m15 15 6 6"/>',saved:'<path d="M6 3h12v18l-6-4-6 4Z"/>',more:'<circle cx="5" cy="12" r="1"/><circle cx="12" cy="12" r="1"/><circle cx="19" cy="12" r="1"/>'};
+const UI_ICONS={home:'<path d="m3 10 9-7 9 7v10H3Z"/><path d="M9 20v-7h6v7"/>',learn:'<path d="M3 4h7l2 2 2-2h7v15h-7l-2 2-2-2H3Z"/><path d="M12 6v15"/>',dict:'<circle cx="10" cy="10" r="6"/><path d="m15 15 6 6"/>',saved:'<path d="M6 3h12v18l-6-4-6 4Z"/>',me:'<circle cx="12" cy="8" r="4"/><path d="M4 21c1.5-4 4.5-6 8-6s6.5 2 8 6"/>',more:'<circle cx="5" cy="12" r="1"/><circle cx="12" cy="12" r="1"/><circle cx="19" cy="12" r="1"/>'};
 function uiIcon(key){return `<svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true">${UI_ICONS[key]}</svg>`;}
 function uiSetSection(key){
   uiSection=key;
@@ -1015,6 +1015,17 @@ function uiBeforeScreen(fn,label){
   const busy=!!fn&&['中断','ここまで','やめる'].includes(label);
   document.getElementById('bottomNav')?.classList.toggle('hidden',busy);
   document.getElementById('settingsBtn')?.classList.toggle('hidden',busy);
+}
+function uiNavStyle(){
+  if(document.getElementById('uiNavStyle'))return;
+  const st=document.createElement('style');st.id='uiNavStyle';
+  st.textContent=`#bottomNav{display:flex;align-items:center;gap:10px;width:min(100%,720px);padding:0 16px calc(12px + env(safe-area-inset-bottom));background:none;border:0;box-shadow:none;border-radius:0;pointer-events:none}
+#bottomNav .nav-pill{pointer-events:auto;flex:1;min-width:0;display:grid;grid-template-columns:repeat(3,1fr);padding:6px;background:var(--card);border:1px solid var(--line);border-radius:99px;box-shadow:0 4px 22px rgba(0,0,0,.08)}
+#bottomNav .nav-pill button{min-height:48px;border-radius:99px}
+#bottomNav .nav-disc{pointer-events:auto;flex:none;width:60px;height:60px;min-height:60px;border-radius:50%;background:var(--card);border:1px solid var(--line);box-shadow:0 4px 22px rgba(0,0,0,.08);display:grid;place-items:center;color:var(--fg);padding:0}
+#bottomNav .nav-disc.active{color:var(--accent);background:var(--accent-weak)}
+#settingsBtn{display:none!important}`;
+  document.head.appendChild(st);
 }
 function uiNavigate(key){
   if(key==='dict'){vbNavDict();uiSetSection(key);return;}
@@ -1043,15 +1054,11 @@ function uiReadingSettings(){
 function uiLink(title,sub,action){return `<button class="ui-link" onclick="${action}"><span><b>${title}</b><span class="small muted">${sub}</span></span><span aria-hidden="true">›</span></button>`;}
 function renderHome(){
   titleEl.textContent='Grammaire';setBack(null);
-  const total=Object.values(state.log||{}).reduce((a,n)=>a+(+n||0),0);
-  el.innerHTML=`<p class="ui-eyebrow">毎日のフランス語</p><h2 class="ui-greeting">今日は何を練習しますか？</h2>
-  <div class="ui-quick" aria-label="すぐに調べる"><button class="btn" onclick="uiNavigate('dict')">${uiIcon('dict')} 辞書</button><button class="btn" onclick="uiOpenMaterial('grammar','home')">${uiIcon('learn')} 文法</button></div>
+  const d=new Date(),wd='日月火水木金土'[d.getDay()];
+  el.innerHTML=`<div class="ui-home-top"><span class="small muted">${d.getMonth()+1}月${d.getDate()}日 ${wd}曜</span><span class="pill">連続 ${currentStreak()}日</span></div>
   ${bkReminderHtml()}
-  ${uiHomeMaterialsHtml()}
   ${todayCardHtml()}
   ${(!['all','story'].includes(state.votdPool)&&HOME_VERBS.length)||(hasLearningData('VERB_INDEX')&&hasLearningData('CONJUG')&&(state.votdPool!=='story'||hasLearningData('LEARNING_PACK')))?votdHomeHtml():'<div class="card"><h2>今日の動詞</h2><button class="btn" onclick="openVotd()">今日の3語を見る</button></div>'}
-  <div class="grid3 ui-stats"><div class="stat"><b>${currentStreak()}</b><span>連続学習日数</span></div><div class="stat"><b>${state.log[todayStamp()]||0}</b><span>今日の回答数</span></div><div class="stat"><b>${total}</b><span>累計回答数</span></div></div>
-  <p class="small muted" id="homeConnection">${navigator.onLine===false?'現在オフラインです。':'保存済みの教材はオフラインでも使えます。'} 保存状況は右上の「設定」から確認できます。</p>
   <input type="file" id="impFile" accept="application/json" class="hidden" onchange="importProgress(this)">`;
   window.scrollTo(0,0);
 }
@@ -1062,7 +1069,7 @@ let uiGrammarTimer=null,uiGrammarComposing=false;
 function uiGrammarInput(value){clearTimeout(uiGrammarTimer);if(uiGrammarComposing)return;uiGrammarTimer=setTimeout(()=>{if(document.getElementById('grammarTopics'))renderGrammarTopics(value);},140);}
 function openGrammarLibrary(){
   clearTimeout(uiGrammarTimer);uiGrammarComposing=false;
-  if(titleEl.textContent==='Grammaire')uiGrammarParent=renderHome;else if(titleEl.textContent==='教材')uiGrammarParent=openLearningHub;
+  if(titleEl.textContent==='Grammaire')uiGrammarParent=renderHome;else if(titleEl.textContent==='学習'||titleEl.textContent==='教材')uiGrammarParent=openLearningHub;
   titleEl.textContent='文法';setBack(uiGrammarParent||openLearningHub,uiGrammarParent===renderHome?'ホーム':'教材');
   el.innerHTML=`<div class="card"><label for="grammarQuery">解説・トピックを探す</label><input type="search" id="grammarQuery" placeholder="例：代名詞 / B1 / conditionnel" oninput="uiGrammarInput(this.value)" oncompositionstart="uiGrammarComposing=true;clearTimeout(uiGrammarTimer)" oncompositionend="uiGrammarComposing=false;uiGrammarInput(this.value)"><p class="small muted">${DATA.topics.length}トピック・${grammarTotalCount()}問。分類を開くと解説と練習に進めます。</p></div><div id="grammarTopics"></div><div class="card"><h2>総合テスト</h2><p class="small muted">複数の文法項目を混ぜて練習します。</p><div class="actions"><button class="btn primary" onclick="startBilan(10)">10問</button><button class="btn" onclick="startBilan(20)">20問</button><button class="btn" onclick="startBilan(30)">30問</button></div></div>`;
   renderGrammarTopics('');window.scrollTo(0,0);
@@ -1081,7 +1088,7 @@ function uiSwipeAction(start,end,width){
 function initUi(){
   uiApplyReading();
   const nav=document.createElement('nav');nav.id='bottomNav';nav.setAttribute('aria-label','主な画面');
-  nav.innerHTML=[['home','ホーム'],['learn','教材'],['dict','辞書'],['saved','保存']].map(([k,t])=>`<button data-section="${k}" onclick="uiNavigate('${k}')">${uiIcon(k)}<span>${t}</span></button>`).join('');document.body.appendChild(nav);
+  nav.innerHTML='<div class="nav-pill">'+[['home','今日','home'],['learn','学習','learn'],['saved','自分','me']].map(([k,t,i])=>`<button data-section="${k}" onclick="uiNavigate('${k}')">${uiIcon(i)}<span>${t}</span></button>`).join('')+'</div><button class="nav-disc" data-section="dict" aria-label="辞書" onclick="uiNavigate(\'dict\')">'+uiIcon('dict')+'</button>';document.body.appendChild(nav);uiNavStyle();
   let start=null;
   document.addEventListener('touchstart',e=>{
     start=null;if(state.uiGestures===false||e.touches.length!==1)return;
@@ -1224,7 +1231,7 @@ function openListenChoice(){uiShowLibrary('listen-choice','');}
 function openSpeakingChoice(){uiShowLibrary('speaking-choice','');}
 function uiShowLibrary(id='',query=''){
  const category=uiCategory(id),collection=uiMaterial(id),kind=category?'category':collection?'collection':'root';
- titleEl.textContent=category?.[1]||collection?.[2]||'教材';
+ titleEl.textContent=category?.[1]||collection?.[2]||'学習';
  const parent=kind==='collection'?(uiMaterialParents[id]||{kind:'category',id:collection[1],query:'',section:'learn'}):null;
  setBack(kind==='root'?null:parent?()=>uiReturnLocation(parent):openLearningHub,kind==='root'?null:parent?'教材一覧':'教材');uiSetSection('learn');
  uiLibrary={kind,id,query,key:kind+':'+id+':'+query};
@@ -1235,9 +1242,9 @@ function uiLibraryResults(){
  if(!uiLibrary)return '';
  const q=uiNorm(uiLibrary.query);
  if(q){const words=q.split(' '),hits=UI_MATERIALS.filter(m=>words.every(w=>uiNorm([m[2],m[3],m[7],uiCategory(m[1])?.[1]].join(' ')).includes(w)));return hits.length?`<p class="small muted">${hits.length}件・すべての分類から検索</p><div class="card ui-links">${hits.map(m=>uiMaterialRow(m)).join('')}</div>`:'<div class="card"><p>一致する教材がありません。</p><p class="small muted">別の言葉で探すか、検索欄を空にすると分類へ戻れます。</p></div>';}
- if(uiLibrary.kind==='root')return `<div class="ui-category-grid">${UI_CATEGORIES.map(c=>`<button class="ui-category-card" onclick="openLibraryCategory('${c[0]}')"><span class="ui-category-number" aria-hidden="true">${c[3]}</span><b>${c[1]}</b><span>${c[2]}</span><span class="ui-category-arrow" aria-hidden="true">↗</span></button>`).join('')}</div>`;
+ if(uiLibrary.kind==='root')return `${uiHomeMaterialsHtml()}<div class="ui-category-grid">${UI_CATEGORIES.map(c=>`<button class="ui-category-card" onclick="openLibraryCategory('${c[0]}')"><span class="ui-category-number" aria-hidden="true">${c[3]}</span><b>${c[1]}</b><span>${c[2]}</span><span class="ui-category-arrow" aria-hidden="true">↗</span></button>`).join('')}</div>`;
  const rows=UI_MATERIALS.filter(m=>uiLibrary.kind==='collection'?m[6]===uiLibrary.id:m[1]===uiLibrary.id&&!m[6]);
- return `<p class="small muted">「固定」でホームに追加できます。</p><div class="card ui-links">${rows.map(m=>uiMaterialRow(m)).join('')}</div>`;
+ return `<p class="small muted">「固定」で「学習」の先頭に追加できます。</p><div class="card ui-links">${rows.map(m=>uiMaterialRow(m)).join('')}</div>`;
 }
 function uiSearchMaterials(query){
  if(!uiLibrary||document.getElementById('uiMaterialQuery')?.dataset.composing==='true')return;
@@ -1246,15 +1253,15 @@ function uiSearchMaterials(query){
  const status=document.getElementById('uiSearchCount');if(status)status.textContent=query?'分類を横断して検索しています。':'';
 }
 function openPinSettings(){
- titleEl.textContent='ホームに固定';setBack(renderHome,'ホーム');uiSetSection('home');
- el.innerHTML=`<p>よく使う教材を選んでください。固定した順にホームへ並びます。</p><p id="uiPinStatus" role="status" aria-live="polite"></p>${UI_CATEGORIES.map(c=>`<h2>${c[1]}</h2><div class="card ui-links">${UI_MATERIALS.filter(m=>m[1]===c[0]).map(m=>uiMaterialRow(m)).join('')}</div>`).join('')}`;window.scrollTo(0,0);
+ titleEl.textContent='よく使う教材';setBack(openLearningHub,'学習');uiSetSection('learn');
+ el.innerHTML=`<p>よく使う教材を選んでください。固定した順に「学習」の先頭へ並びます。</p><p id="uiPinStatus" role="status" aria-live="polite"></p>${UI_CATEGORIES.map(c=>`<h2>${c[1]}</h2><div class="card ui-links">${UI_MATERIALS.filter(m=>m[1]===c[0]).map(m=>uiMaterialRow(m)).join('')}</div>`).join('')}`;window.scrollTo(0,0);
 }
 function openSettings(){
- titleEl.textContent='設定';setBack(uiBackFromSettings,'戻る');
+ titleEl.textContent='設定';setBack(uiBackFromSettings,'自分');uiSetSection('saved');
  el.innerHTML=`<div class="card ui-links">${uiLink('配色・文字・操作','配色・文字サイズ・余白・スワイプ','openUiSettings()')}</div><h2>オフライン</h2>${offlineSummaryHtml()}<section class="card"><h2>バックアップ</h2><p class="small muted">お気に入り・回答・進捗はこのブラウザーに保存されます。別の端末に移すときは書き出してください。</p><p class="small" id="bkStatus" role="status"></p><div class="actions"><button class="btn" onclick="exportProgress()">データを書き出す</button><button class="btn" onclick="document.getElementById('impFile').click()">データを読み込む</button></div><input type="file" id="impFile" accept="application/json" class="hidden" onchange="importProgress(this)"><details><summary>進捗の管理</summary><button class="btn" onclick="resetProgress()">進捗をリセット</button></details></section><div class="card ui-links">${uiLink('アプリ全体を検索','本文を含む単語・文法・表現・会話を検索','openSearch()')}</div>`;
  window.scrollTo(0,0);refreshOfflineStatus();refreshAudioOffline();bkRefreshStatus();if(bkPersisted===null&&navigator.storage?.persist)bkRequestPersist();
 }
-function uiBackFromSettings(){const target=uiSettingsReturn;uiSettingsReturn=null;if(!target){renderHome();return;}if(target.library){uiReturnLocation(target.library);return;}const fn=window[target.route.name];if(typeof fn!=='function'){renderHome();return;}const done=()=>{uiSetSection(target.section);requestAnimationFrame(()=>window.scrollTo(0,target.y));};const result=fn(...target.route.args);if(result?.then)result.then(done);else done();}
+function uiBackFromSettings(){const target=uiSettingsReturn;uiSettingsReturn=null;if(!target){openSavedHome();return;}if(target.library){uiReturnLocation(target.library);return;}const fn=window[target.route.name];if(typeof fn!=='function'){renderHome();return;}const done=()=>{uiSetSection(target.section);requestAnimationFrame(()=>window.scrollTo(0,target.y));};const result=fn(...target.route.args);if(result?.then)result.then(done);else done();}
 function uiAnswerRows(){
  const rows=[];
  const add=(type,source,label,field)=>Object.entries(source||{}).forEach(([id,v])=>{if(!v||typeof v!=='object')return;const text=v[field]||'';if(!text&&!v.choice&&!v.oralDone&&!v.evidence)return;rows.push({type,id,label,text:String(text),evidence:v.evidence||'',lastAt:Number(v.lastAt)||0,...(type==='story'?{chapterId:v.chapterId}:{} )});});
@@ -1262,12 +1269,14 @@ function uiAnswerRows(){
  return rows.sort((a,b)=>b.lastAt-a.lastAt);
 }
 function openSavedHome(){
- uiSavedSelection=null;titleEl.textContent='保存';setBack(null);uiSetSection('saved');
- const count=uiAnswerRows().length;
- el.innerHTML=`<p class="ui-eyebrow">自分のストック</p><p>気になった言葉と、自分で書いた回答を見返せます。</p><div class="card ui-links">${uiLink('お気に入りの語・メモ','単語カードで保存した語とメモ','openFavList()')}${uiLink('保存した構文・例文','例文の星から保存した表現','openExampleFavList()')}${uiLink('自分の回答',`${count}件・作文・要約・場面練習など`,'openSavedAnswers()')}</div>`;window.scrollTo(0,0);
+ uiSavedSelection=null;titleEl.textContent='自分';setBack(null);uiSetSection('saved');
+ const count=uiAnswerRows().length,total=Object.values(state.log||{}).reduce((a,n)=>a+(+n||0),0);
+ el.innerHTML=`<div class="grid3 ui-stats"><div class="stat"><b>${currentStreak()}</b><span>連続学習日数</span></div><div class="stat"><b>${state.log[todayStamp()]||0}</b><span>今日の回答数</span></div><div class="stat"><b>${total}</b><span>累計回答数</span></div></div>
+ <div class="card ui-links">${uiLink('お気に入りの語・メモ','単語カードで保存した語とメモ','openFavList()')}${uiLink('保存した構文・例文','例文の星から保存した表現','openExampleFavList()')}${uiLink('自分の回答',`${count}件・作文・要約・場面練習など`,'openSavedAnswers()')}</div>
+ <div class="card ui-links">${uiLink('設定','配色・文字・スワイプ・オフライン・バックアップ','openSettings()')}</div>`;window.scrollTo(0,0);
 }
 function openSavedAnswers(){
- uiSavedSelection=null;uiSavedRows=uiAnswerRows();titleEl.textContent='自分の回答';setBack(openSavedHome,'保存');uiSetSection('saved');
+ uiSavedSelection=null;uiSavedRows=uiAnswerRows();titleEl.textContent='自分の回答';setBack(openSavedHome,'自分');uiSetSection('saved');
  el.innerHTML=`<p class="small muted">入力途中の回答も含みます。新しいものから表示しています。</p>${uiSavedRows.length?`<div class="card ui-links">${uiSavedRows.map((r,i)=>uiLink(esc(r.label),esc((r.text||r.evidence||'選択した回答・発話の記録').slice(0,90)),`openSavedAnswer(${i})`)).join('')}</div>`:'<div class="card"><p>まだ保存した回答がありません。</p><button class="btn" onclick="openLearningHub()">教材を選ぶ</button></div>'}`;window.scrollTo(0,0);
 }
 function openSavedAnswer(index){
@@ -3369,6 +3378,7 @@ function openTopic(tid){
       <div><span class="lvl">${esc(t.level)}</span> <b style="margin-left:6px">${esc(t.name_fr)}</b></div>
       ${p&&p.attempts?`<span class="small muted">正答率 ${fmtPct(p.ema)}</span>`:""}
     </div>
+    <div class="actions" style="margin:0 0 10px"><button class="btn primary" onclick="openTopicCards('${t.id}',0)">カードで読む</button></div>
     <div class="expl">${esc(t.explanation_jp)}</div>
     ${grammarDiagram(t.id)}
   </div>`;
@@ -8987,13 +8997,15 @@ function vcWire(){
   const reset=()=>{card.classList.remove('vc-drag');card.style.transform='';if(stamp)stamp.style.opacity=0;};
   card.addEventListener('pointerdown',e=>{
     if(e.button>0||e.target.closest('a,input,textarea,select,summary,details,[contenteditable]'))return;
-    p={id:e.pointerId,x:e.clientX,y:e.clientY,t:performance.now(),dx:0,dy:0,moved:false,vert:!!(head&&head.contains(e.target))||!card.classList.contains('vc-open')};
+    p={id:e.pointerId,x:e.clientX,y:e.clientY,t:performance.now(),dx:0,dy:0,moved:false,lp:false,vert:!!(head&&head.contains(e.target))||!card.classList.contains('vc-open')};
+    const me=p;me.timer=setTimeout(()=>{if(p===me&&!me.moved){me.lp=true;vcLookup();}},520);
   });
   card.addEventListener('pointermove',e=>{
     if(!p||e.pointerId!==p.id)return;
     p.dx=e.clientX-p.x;p.dy=e.clientY-p.y;
     if(!p.moved){
       if(Math.hypot(p.dx,p.dy)<10)return;
+      clearTimeout(p.timer);
       // a vertical move outside the head is a page scroll, not a card swipe
       if(off()||(!p.vert&&Math.abs(p.dy)>Math.abs(p.dx))){p=null;return;}
       p.moved=true;card.classList.add('vc-drag');try{card.setPointerCapture(e.pointerId);}catch(_){}
@@ -9005,7 +9017,8 @@ function vcWire(){
   });
   const end=e=>{
     if(!p||e.pointerId!==p.id)return;
-    const q=p;p=null;
+    const q=p;p=null;clearTimeout(q.timer);
+    if(q.lp){const stop=ev=>{ev.stopPropagation();ev.preventDefault();};card.addEventListener('click',stop,true);setTimeout(()=>card.removeEventListener('click',stop,true),350);return;}
     if(q.moved){const stop=ev=>{ev.stopPropagation();ev.preventDefault();};card.addEventListener('click',stop,true);setTimeout(()=>card.removeEventListener('click',stop,true),350);}
     if(!q.moved){
       if(e.type==='pointerup'&&!card.classList.contains('vc-open')&&!e.target.closest('button,a,textarea'))revealVocab();
@@ -9016,6 +9029,10 @@ function vcWire(){
     else reset();
   };
   card.addEventListener('pointerup',end);card.addEventListener('pointercancel',end);
+}
+function vcLookup(){
+  try{const c=getCard(vocabSession.ids[vocabSession.idx]);const w=(c&&(c.fr||c.front)||'').replace(/^(le|la|les|l'|un|une)\s+/i,'').trim();
+  if(!w||c.idiom||c.comm||c.soutenu)return;navigator.vibrate&&navigator.vibrate(15);const sp=document.createElement('span');sp.textContent=w;lpOpenWord(sp);}catch(e){}
 }
 function vcDir(dx,dy){return Math.abs(dx)>=Math.abs(dy)?(dx>0?'right':'left'):(dy>0?'down':'up');}
 function vcPower(card,dx,dy){return Math.max(Math.abs(dx)/(card.clientWidth*.3),Math.abs(dy)/Math.min(card.clientHeight*.3,180));}
@@ -9028,4 +9045,48 @@ function vcCommit(card,dir){
   try{navigator.vibrate&&navigator.vibrate(dir==='left'?[8,40,8]:10);}catch(_){}
   if(vocabSession.idx===0)try{localStorage.setItem(VC_HINT_KEY,String(vcHintCount()+1));}catch(_){}
   setTimeout(()=>gradeVocabCard(d[0]),180);
+}
+
+/* Grammar explanation as swipeable cards. Tap right/left side or swipe to turn;
+   the last card starts a 3-question check (same drill as the topic page). */
+function topicCardList(t){
+  const parts=String(t.explanation_jp||'').split(/\n\s*\n/).map(x=>x.trim()).filter(Boolean).map(x=>({k:'text',x}));
+  const ex=(t.examples||[]).slice(0,3).map(e=>({k:'ex',fr:e.fr,jp:e.jp}));
+  return parts.concat(ex,[{k:'end'}]);
+}
+function openTopicCards(tid,i){
+  const t=DATA.topics.find(x=>x.id===tid);if(!t)return;
+  const cards=topicCardList(t),n=cards.length;i=Math.max(0,Math.min(n-1,i|0));const c=cards[i];
+  titleEl.textContent=t.name_jp;setBack(()=>openTopic(tid),'解説');
+  const body=c.k==='text'?`<p class="tc-text">${esc(c.x)}</p>`:c.k==='ex'?`<div class="tc-ex" lang="fr">${wrapTapWords(c.fr)}<small>${esc(c.jp)}</small></div>`:`<p class="tc-text" style="font-weight:700;font-size:1.3em">確認問題 3問</p><p class="small muted">読んだところをすぐ解いて定着させます。</p><button class="btn primary" onclick="startDrill('${tid}',3)">始める</button>`;
+  el.innerHTML=`<div class="tc-segs" aria-hidden="true">${cards.map((_,k)=>`<i class="${k<=i?'on':''}"></i>`).join('')}</div>
+   <div class="tc-stage" id="tcStage" data-tid="${tid}" data-i="${i}" data-n="${n}"><span class="small muted">${esc(t.name_fr)} ・ ${esc(t.level)}　${i+1} / ${n}</span>${body}</div>
+   <div class="tc-nav"><button class="btn small" ${i?'':'disabled'} onclick="openTopicCards('${tid}',${i-1})">‹ 前へ</button><button class="btn small" ${i<n-1?'':'disabled'} onclick="openTopicCards('${tid}',${i+1})">次へ ›</button></div>`;
+  window.scrollTo(0,0);tcWire();
+}
+function tcStyle(){
+  if(document.getElementById('tcStyle'))return;
+  const st=document.createElement('style');st.id='tcStyle';
+  st.textContent=`.tc-segs{display:flex;gap:4px;padding:4px 0 14px}.tc-segs i{flex:1;height:3px;border-radius:2px;background:var(--line)}.tc-segs i.on{background:var(--accent)}
+.tc-stage{min-height:52vh;display:flex;flex-direction:column;justify-content:center;gap:16px;touch-action:pan-y}
+.tc-text{font-size:var(--reading-size,18px);line-height:1.85;margin:0;white-space:pre-wrap}
+.tc-ex{font-family:var(--fr,serif);font-size:1.2em;padding:16px 18px;border:1px solid var(--line);border-radius:18px;background:var(--card)}.tc-ex small{display:block;font:14px/1.6 system-ui,sans-serif;color:var(--muted);margin-top:6px}
+.tc-nav{display:flex;justify-content:space-between;padding-top:14px}
+@media (prefers-reduced-motion:no-preference){.tc-stage>*{animation:tcIn .25s}@keyframes tcIn{from{opacity:0;transform:translateY(10px)}}}`;
+  document.head.appendChild(st);
+}
+function tcWire(){
+  tcStyle();
+  const st=document.getElementById('tcStage');if(!st)return;
+  let a=null;
+  st.addEventListener('pointerdown',e=>{if(e.target.closest('button,a,.sw'))return;a={x:e.clientX,y:e.clientY};});
+  st.addEventListener('pointerup',e=>{
+    if(!a)return;const dx=e.clientX-a.x,dy=e.clientY-a.y;a=null;
+    const tid=st.dataset.tid,i=+st.dataset.i,n=+st.dataset.n;
+    if(Math.abs(dy)>40&&Math.abs(dy)>Math.abs(dx))return;
+    let k=0;
+    if(Math.abs(dx)>50&&state.uiGestures!==false)k=dx<0?1:-1;
+    else if(Math.abs(dx)<8)k=(e.clientX-st.getBoundingClientRect().left)>st.clientWidth*.33?1:-1;
+    if(k&&i+k>=0&&i+k<n)openTopicCards(tid,i+k);
+  });
 }
