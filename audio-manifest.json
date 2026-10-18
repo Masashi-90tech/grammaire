@@ -1574,6 +1574,2814 @@
       "text": "三人目は後ろ向きに入ってきた。チェロのケースを抱えていたからだ。夜行列車の通路で、チェロのケースは運ぶものではない。交渉するものである。ぶつかるまいと細心の注意を払ったあまり、かえって全員にぶつかり、そのたびに詫びた。四十がらみの男で、おろしたてのアノラックを着ていた。「こんばんは」を三回、一人に一回ずつ言い、念のためにもう一回言った。「こちらに置かせていただきます。あくまで暫定的な措置として、ですが。もちろん、どなたもご異存がなければの話です」誰も異を唱えなかった。男はケースを空いていた四十四番の寝台に置き、その隣に腰を下ろすと、片手をケースに載せた。逃げ出しかねない犬を押さえておくみたいに。「ティボー・モレルです。チェロ弾きです。フェスティバルに行くんです。ブリアンソンの。音楽の」澪は二つのことに気づいた。まず、寝台に触れたとき、ケースが立てたのは鈍く短い音で、響きというものがまるでなかった。言うべきことを何ひとつ持たないものの音だ。それから、ケースが小さすぎる。ほんのわずかだが、たしかに小さすぎる。ちょうど子ども用のチェロが収まるくらいの大きさだった。",
       "ja": "",
       "lessonTitle": "オステルリッツ駅、二十時五十二分 · 日本語 · 2/3"
+    },
+    {
+      "id": "nuit-01-p07-fr-ps",
+      "lessonId": "nuit-01-fr-ps-part3",
+      "kind": "reading",
+      "unitId": "nuit-01-p07-fr-ps",
+      "textHash": "f8e8f9ed374c9611ae520d61f31e67835b82a8f7dcaa59337e08d6b111f3c6a9",
+      "asset": "audio/nuit-01-p07-fr-ps-23d48a560d2d.m4a",
+      "audioHash": "23d48a560d2d72ed819e47fb8f74832b93c6051102822c86e586316dd42adfb6",
+      "durationMs": 55000,
+      "sourceHash": "7ce845919c05cdaba9c724e872b5a4fc98e74b646c0cac0483565db71856dfc4",
+      "encoding": "aac-mono-64k-v1",
+      "start": 0,
+      "end": 55.0,
+      "cuts": [],
+      "speedRegions": [],
+      "reviewedByUser": true,
+      "recognitionScore": 0.896,
+      "volumePercent": 100,
+      "appliedVolumePercent": 100,
+      "volumeLimited": false,
+      "volumeProcessing": "gain-peak-v1",
+      "speedProcessing": "av-timepitch-v1",
+      "wordSync": {
+        "version": 1,
+        "method": "whisperx-3.8.6-jiwer4-largev3-final-aac-v2",
+        "textHash": "f8e8f9ed374c9611ae520d61f31e67835b82a8f7dcaa59337e08d6b111f3c6a9",
+        "audioHash": "23d48a560d2d72ed819e47fb8f74832b93c6051102822c86e586316dd42adfb6",
+        "text": "Le dernier passager ne se pressa pas le moins du monde : il apparut à vingt heures quarante-neuf, trois minutes avant que le train ne partît. C'était un vieil homme de haute taille, un peu voûté, en manteau gris, qui portait une petite valise de cuir et des chaussures de ville si bien cirées qu'elles avaient l'air neuves, et malheureuses de l'être. Elles craquaient à chaque pas, comme des chaussures qui ne se seraient pas encore résignées à marcher. Il salua d'un signe de tête et voulut glisser sa valise sous la couchette 42 ; toute petite qu'elle était, elle résista, et Nour dut l'aider à la pousser. À peine eut-il pris place en face de Colette que celle-ci se mit à scruter la vitre avec une attention passionnée. Il n'y avait pourtant rien à voir qu'un quai et un panneau : « Interdit de traverser les voies ». Sans doute ce texte recelait-il des profondeurs qui échappaient au reste du compartiment. Thibault, lui, tira un carnet de sa poche et y consigna quelque chose.",
+        "language": "fr",
+        "duration": 55.0,
+        "totalWords": 170,
+        "reviewCount": 9,
+        "words": [
+          {
+            "index": 0,
+            "text": "Le",
+            "charStart": 0,
+            "charEnd": 2,
+            "start": 0.5,
+            "end": 0.84
+          },
+          {
+            "index": 1,
+            "text": "dernier",
+            "charStart": 3,
+            "charEnd": 10,
+            "start": 0.86,
+            "end": 1.14
+          },
+          {
+            "index": 2,
+            "text": "passager",
+            "charStart": 11,
+            "charEnd": 19,
+            "start": 1.18,
+            "end": 1.741
+          },
+          {
+            "index": 3,
+            "text": "ne",
+            "charStart": 20,
+            "charEnd": 22,
+            "start": 1.781,
+            "end": 1.901
+          },
+          {
+            "index": 4,
+            "text": "se",
+            "charStart": 23,
+            "charEnd": 25,
+            "start": 1.941,
+            "end": 2.021
+          },
+          {
+            "index": 5,
+            "text": "pressa",
+            "charStart": 26,
+            "charEnd": 32,
+            "start": 2.081,
+            "end": 2.481
+          },
+          {
+            "index": 6,
+            "text": "pas",
+            "charStart": 33,
+            "charEnd": 36,
+            "start": 2.501,
+            "end": 2.681
+          },
+          {
+            "index": 7,
+            "text": "le",
+            "charStart": 37,
+            "charEnd": 39,
+            "start": 2.721,
+            "end": 2.861
+          },
+          {
+            "index": 8,
+            "text": "moins",
+            "charStart": 40,
+            "charEnd": 45,
+            "start": 2.921,
+            "end": 3.101
+          },
+          {
+            "index": 9,
+            "text": "du",
+            "charStart": 46,
+            "charEnd": 48,
+            "start": 3.141,
+            "end": 3.241
+          },
+          {
+            "index": 10,
+            "text": "monde",
+            "charStart": 49,
+            "charEnd": 54,
+            "start": 3.281,
+            "end": 3.521
+          },
+          {
+            "index": 11,
+            "text": "il",
+            "charStart": 57,
+            "charEnd": 59,
+            "start": 4.242,
+            "end": 4.342
+          },
+          {
+            "index": 12,
+            "text": "apparut",
+            "charStart": 60,
+            "charEnd": 67,
+            "start": 4.382,
+            "end": 4.822
+          },
+          {
+            "index": 13,
+            "text": "à",
+            "charStart": 68,
+            "charEnd": 69,
+            "start": 4.862,
+            "end": 5.122
+          },
+          {
+            "index": 17,
+            "text": "trois",
+            "charStart": 98,
+            "charEnd": 103,
+            "start": 6.582,
+            "end": 6.742
+          },
+          {
+            "index": 18,
+            "text": "minutes",
+            "charStart": 104,
+            "charEnd": 111,
+            "start": 6.782,
+            "end": 7.023
+          },
+          {
+            "index": 19,
+            "text": "avant",
+            "charStart": 112,
+            "charEnd": 117,
+            "start": 7.083,
+            "end": 7.243
+          },
+          {
+            "index": 20,
+            "text": "que",
+            "charStart": 118,
+            "charEnd": 121,
+            "start": 7.283,
+            "end": 7.403
+          },
+          {
+            "index": 21,
+            "text": "le",
+            "charStart": 122,
+            "charEnd": 124,
+            "start": 7.423,
+            "end": 7.503
+          },
+          {
+            "index": 22,
+            "text": "train",
+            "charStart": 125,
+            "charEnd": 130,
+            "start": 7.543,
+            "end": 7.743
+          },
+          {
+            "index": 23,
+            "text": "ne",
+            "charStart": 131,
+            "charEnd": 133,
+            "start": 7.803,
+            "end": 7.863
+          },
+          {
+            "index": 25,
+            "text": "C'était",
+            "charStart": 142,
+            "charEnd": 149,
+            "start": 9.143,
+            "end": 9.443
+          },
+          {
+            "index": 26,
+            "text": "un",
+            "charStart": 150,
+            "charEnd": 152,
+            "start": 9.503,
+            "end": 9.563
+          },
+          {
+            "index": 27,
+            "text": "vieil",
+            "charStart": 153,
+            "charEnd": 158,
+            "start": 9.603,
+            "end": 9.824
+          },
+          {
+            "index": 28,
+            "text": "homme",
+            "charStart": 159,
+            "charEnd": 164,
+            "start": 9.844,
+            "end": 10.184
+          },
+          {
+            "index": 29,
+            "text": "de",
+            "charStart": 165,
+            "charEnd": 167,
+            "start": 10.204,
+            "end": 10.304
+          },
+          {
+            "index": 30,
+            "text": "haute",
+            "charStart": 168,
+            "charEnd": 173,
+            "start": 10.324,
+            "end": 10.524
+          },
+          {
+            "index": 31,
+            "text": "taille",
+            "charStart": 174,
+            "charEnd": 180,
+            "start": 10.584,
+            "end": 11.164
+          },
+          {
+            "index": 32,
+            "text": "un",
+            "charStart": 182,
+            "charEnd": 184,
+            "start": 11.224,
+            "end": 11.284
+          },
+          {
+            "index": 33,
+            "text": "peu",
+            "charStart": 185,
+            "charEnd": 188,
+            "start": 11.304,
+            "end": 11.424
+          },
+          {
+            "index": 34,
+            "text": "voûté",
+            "charStart": 189,
+            "charEnd": 194,
+            "start": 11.464,
+            "end": 12.084
+          },
+          {
+            "index": 35,
+            "text": "en",
+            "charStart": 196,
+            "charEnd": 198,
+            "start": 12.144,
+            "end": 12.224
+          },
+          {
+            "index": 36,
+            "text": "manteau",
+            "charStart": 199,
+            "charEnd": 206,
+            "start": 12.264,
+            "end": 12.525
+          },
+          {
+            "index": 37,
+            "text": "gris",
+            "charStart": 207,
+            "charEnd": 211,
+            "start": 12.565,
+            "end": 13.225
+          },
+          {
+            "index": 38,
+            "text": "qui",
+            "charStart": 213,
+            "charEnd": 216,
+            "start": 13.265,
+            "end": 13.365
+          },
+          {
+            "index": 39,
+            "text": "portait",
+            "charStart": 217,
+            "charEnd": 224,
+            "start": 13.405,
+            "end": 13.685
+          },
+          {
+            "index": 40,
+            "text": "une",
+            "charStart": 225,
+            "charEnd": 228,
+            "start": 13.725,
+            "end": 13.825
+          },
+          {
+            "index": 41,
+            "text": "petite",
+            "charStart": 229,
+            "charEnd": 235,
+            "start": 13.865,
+            "end": 14.105
+          },
+          {
+            "index": 42,
+            "text": "valise",
+            "charStart": 236,
+            "charEnd": 242,
+            "start": 14.145,
+            "end": 14.465
+          },
+          {
+            "index": 43,
+            "text": "de",
+            "charStart": 243,
+            "charEnd": 245,
+            "start": 14.505,
+            "end": 14.565
+          },
+          {
+            "index": 44,
+            "text": "cuir",
+            "charStart": 246,
+            "charEnd": 250,
+            "start": 14.625,
+            "end": 14.905
+          },
+          {
+            "index": 45,
+            "text": "et",
+            "charStart": 251,
+            "charEnd": 253,
+            "start": 14.945,
+            "end": 15.065
+          },
+          {
+            "index": 46,
+            "text": "des",
+            "charStart": 254,
+            "charEnd": 257,
+            "start": 15.105,
+            "end": 15.366
+          },
+          {
+            "index": 47,
+            "text": "chaussures",
+            "charStart": 258,
+            "charEnd": 268,
+            "start": 15.386,
+            "end": 15.826
+          },
+          {
+            "index": 48,
+            "text": "de",
+            "charStart": 269,
+            "charEnd": 271,
+            "start": 15.866,
+            "end": 15.926
+          },
+          {
+            "index": 49,
+            "text": "ville",
+            "charStart": 272,
+            "charEnd": 277,
+            "start": 15.966,
+            "end": 16.326
+          },
+          {
+            "index": 50,
+            "text": "si",
+            "charStart": 278,
+            "charEnd": 280,
+            "start": 16.346,
+            "end": 16.486
+          },
+          {
+            "index": 51,
+            "text": "bien",
+            "charStart": 281,
+            "charEnd": 285,
+            "start": 16.506,
+            "end": 16.726
+          },
+          {
+            "index": 52,
+            "text": "cirées",
+            "charStart": 286,
+            "charEnd": 292,
+            "start": 16.746,
+            "end": 17.006
+          },
+          {
+            "index": 53,
+            "text": "qu'elles",
+            "charStart": 293,
+            "charEnd": 301,
+            "start": 17.026,
+            "end": 17.246
+          },
+          {
+            "index": 54,
+            "text": "avaient",
+            "charStart": 302,
+            "charEnd": 309,
+            "start": 17.306,
+            "end": 17.506
+          },
+          {
+            "index": 56,
+            "text": "neuves",
+            "charStart": 316,
+            "charEnd": 322,
+            "start": 17.726,
+            "end": 18.507
+          },
+          {
+            "index": 57,
+            "text": "et",
+            "charStart": 324,
+            "charEnd": 326,
+            "start": 18.587,
+            "end": 18.787
+          },
+          {
+            "index": 58,
+            "text": "malheureuses",
+            "charStart": 327,
+            "charEnd": 339,
+            "start": 18.807,
+            "end": 19.167
+          },
+          {
+            "index": 59,
+            "text": "de",
+            "charStart": 340,
+            "charEnd": 342,
+            "start": 19.187,
+            "end": 19.267
+          },
+          {
+            "index": 60,
+            "text": "l'être",
+            "charStart": 343,
+            "charEnd": 349,
+            "start": 19.287,
+            "end": 19.567
+          },
+          {
+            "index": 61,
+            "text": "Elles",
+            "charStart": 351,
+            "charEnd": 356,
+            "start": 20.387,
+            "end": 20.587
+          },
+          {
+            "index": 62,
+            "text": "craquaient",
+            "charStart": 357,
+            "charEnd": 367,
+            "start": 20.628,
+            "end": 21.108
+          },
+          {
+            "index": 63,
+            "text": "à",
+            "charStart": 368,
+            "charEnd": 369,
+            "start": 21.148,
+            "end": 21.228
+          },
+          {
+            "index": 64,
+            "text": "chaque",
+            "charStart": 370,
+            "charEnd": 376,
+            "start": 21.268,
+            "end": 21.508
+          },
+          {
+            "index": 65,
+            "text": "pas",
+            "charStart": 377,
+            "charEnd": 380,
+            "start": 21.528,
+            "end": 21.628
+          },
+          {
+            "index": 66,
+            "text": "comme",
+            "charStart": 382,
+            "charEnd": 387,
+            "start": 22.148,
+            "end": 22.368
+          },
+          {
+            "index": 67,
+            "text": "des",
+            "charStart": 388,
+            "charEnd": 391,
+            "start": 22.388,
+            "end": 22.648
+          },
+          {
+            "index": 68,
+            "text": "chaussures",
+            "charStart": 392,
+            "charEnd": 402,
+            "start": 22.688,
+            "end": 23.068
+          },
+          {
+            "index": 69,
+            "text": "qui",
+            "charStart": 403,
+            "charEnd": 406,
+            "start": 23.108,
+            "end": 23.228
+          },
+          {
+            "index": 70,
+            "text": "ne",
+            "charStart": 407,
+            "charEnd": 409,
+            "start": 23.268,
+            "end": 23.328
+          },
+          {
+            "index": 71,
+            "text": "se",
+            "charStart": 410,
+            "charEnd": 412,
+            "start": 23.368,
+            "end": 23.429
+          },
+          {
+            "index": 72,
+            "text": "seraient",
+            "charStart": 413,
+            "charEnd": 421,
+            "start": 23.469,
+            "end": 23.709
+          },
+          {
+            "index": 73,
+            "text": "pas",
+            "charStart": 422,
+            "charEnd": 425,
+            "start": 23.729,
+            "end": 23.829
+          },
+          {
+            "index": 74,
+            "text": "encore",
+            "charStart": 426,
+            "charEnd": 432,
+            "start": 23.869,
+            "end": 24.109
+          },
+          {
+            "index": 75,
+            "text": "résignées",
+            "charStart": 433,
+            "charEnd": 442,
+            "start": 24.149,
+            "end": 24.549
+          },
+          {
+            "index": 76,
+            "text": "à",
+            "charStart": 443,
+            "charEnd": 444,
+            "start": 24.589,
+            "end": 24.649
+          },
+          {
+            "index": 77,
+            "text": "marcher",
+            "charStart": 445,
+            "charEnd": 452,
+            "start": 24.689,
+            "end": 25.869
+          },
+          {
+            "index": 78,
+            "text": "Il",
+            "charStart": 454,
+            "charEnd": 456,
+            "start": 25.949,
+            "end": 26.089
+          },
+          {
+            "index": 79,
+            "text": "salua",
+            "charStart": 457,
+            "charEnd": 462,
+            "start": 26.13,
+            "end": 26.53
+          },
+          {
+            "index": 80,
+            "text": "d'un",
+            "charStart": 463,
+            "charEnd": 467,
+            "start": 26.55,
+            "end": 26.65
+          },
+          {
+            "index": 81,
+            "text": "signe",
+            "charStart": 468,
+            "charEnd": 473,
+            "start": 26.69,
+            "end": 26.91
+          },
+          {
+            "index": 82,
+            "text": "de",
+            "charStart": 474,
+            "charEnd": 476,
+            "start": 26.93,
+            "end": 27.01
+          },
+          {
+            "index": 83,
+            "text": "tête",
+            "charStart": 477,
+            "charEnd": 481,
+            "start": 27.05,
+            "end": 27.63
+          },
+          {
+            "index": 84,
+            "text": "et",
+            "charStart": 482,
+            "charEnd": 484,
+            "start": 27.69,
+            "end": 27.79
+          },
+          {
+            "index": 85,
+            "text": "voulut",
+            "charStart": 485,
+            "charEnd": 491,
+            "start": 27.81,
+            "end": 28.07
+          },
+          {
+            "index": 86,
+            "text": "glisser",
+            "charStart": 492,
+            "charEnd": 499,
+            "start": 28.13,
+            "end": 28.47
+          },
+          {
+            "index": 87,
+            "text": "sa",
+            "charStart": 500,
+            "charEnd": 502,
+            "start": 28.51,
+            "end": 28.61
+          },
+          {
+            "index": 88,
+            "text": "valise",
+            "charStart": 503,
+            "charEnd": 509,
+            "start": 28.65,
+            "end": 28.991
+          },
+          {
+            "index": 89,
+            "text": "sous",
+            "charStart": 510,
+            "charEnd": 514,
+            "start": 29.011,
+            "end": 29.111
+          },
+          {
+            "index": 90,
+            "text": "la",
+            "charStart": 515,
+            "charEnd": 517,
+            "start": 29.151,
+            "end": 29.211
+          },
+          {
+            "index": 91,
+            "text": "couchette",
+            "charStart": 518,
+            "charEnd": 527,
+            "start": 29.251,
+            "end": 29.591
+          },
+          {
+            "index": 92,
+            "text": "42",
+            "charStart": 528,
+            "charEnd": 530,
+            "start": 29.791,
+            "end": 29.951
+          },
+          {
+            "index": 93,
+            "text": "toute",
+            "charStart": 533,
+            "charEnd": 538,
+            "start": 30.851,
+            "end": 31.031
+          },
+          {
+            "index": 94,
+            "text": "petite",
+            "charStart": 539,
+            "charEnd": 545,
+            "start": 31.051,
+            "end": 31.311
+          },
+          {
+            "index": 96,
+            "text": "était",
+            "charStart": 554,
+            "charEnd": 559,
+            "start": 31.531,
+            "end": 31.752
+          },
+          {
+            "index": 97,
+            "text": "elle",
+            "charStart": 561,
+            "charEnd": 565,
+            "start": 31.792,
+            "end": 31.952
+          },
+          {
+            "index": 98,
+            "text": "résista",
+            "charStart": 566,
+            "charEnd": 573,
+            "start": 31.992,
+            "end": 32.892
+          },
+          {
+            "index": 99,
+            "text": "et",
+            "charStart": 575,
+            "charEnd": 577,
+            "start": 32.952,
+            "end": 33.052
+          },
+          {
+            "index": 100,
+            "text": "Nour",
+            "charStart": 578,
+            "charEnd": 582,
+            "start": 33.112,
+            "end": 33.292
+          },
+          {
+            "index": 101,
+            "text": "dut",
+            "charStart": 583,
+            "charEnd": 586,
+            "start": 33.312,
+            "end": 33.392
+          },
+          {
+            "index": 102,
+            "text": "l'aider",
+            "charStart": 587,
+            "charEnd": 594,
+            "start": 33.412,
+            "end": 33.652
+          },
+          {
+            "index": 103,
+            "text": "à",
+            "charStart": 595,
+            "charEnd": 596,
+            "start": 33.672,
+            "end": 33.692
+          },
+          {
+            "index": 104,
+            "text": "la",
+            "charStart": 597,
+            "charEnd": 599,
+            "start": 33.752,
+            "end": 33.812
+          },
+          {
+            "index": 105,
+            "text": "pousser",
+            "charStart": 600,
+            "charEnd": 607,
+            "start": 33.852,
+            "end": 34.833
+          },
+          {
+            "index": 107,
+            "text": "peine",
+            "charStart": 611,
+            "charEnd": 616,
+            "start": 34.973,
+            "end": 35.253
+          },
+          {
+            "index": 108,
+            "text": "eut-il",
+            "charStart": 617,
+            "charEnd": 623,
+            "start": 35.293,
+            "end": 35.553
+          },
+          {
+            "index": 109,
+            "text": "pris",
+            "charStart": 624,
+            "charEnd": 628,
+            "start": 35.593,
+            "end": 35.753
+          },
+          {
+            "index": 110,
+            "text": "place",
+            "charStart": 629,
+            "charEnd": 634,
+            "start": 35.793,
+            "end": 36.093
+          },
+          {
+            "index": 111,
+            "text": "en",
+            "charStart": 635,
+            "charEnd": 637,
+            "start": 36.153,
+            "end": 36.273
+          },
+          {
+            "index": 112,
+            "text": "face",
+            "charStart": 638,
+            "charEnd": 642,
+            "start": 36.313,
+            "end": 36.553
+          },
+          {
+            "index": 113,
+            "text": "de",
+            "charStart": 643,
+            "charEnd": 645,
+            "start": 36.573,
+            "end": 36.653
+          },
+          {
+            "index": 114,
+            "text": "Colette",
+            "charStart": 646,
+            "charEnd": 653,
+            "start": 36.693,
+            "end": 37.093
+          },
+          {
+            "index": 115,
+            "text": "que",
+            "charStart": 654,
+            "charEnd": 657,
+            "start": 37.134,
+            "end": 37.294
+          },
+          {
+            "index": 116,
+            "text": "celle-ci",
+            "charStart": 658,
+            "charEnd": 666,
+            "start": 37.314,
+            "end": 37.694
+          },
+          {
+            "index": 117,
+            "text": "se",
+            "charStart": 667,
+            "charEnd": 669,
+            "start": 37.714,
+            "end": 37.814
+          },
+          {
+            "index": 118,
+            "text": "mit",
+            "charStart": 670,
+            "charEnd": 673,
+            "start": 37.834,
+            "end": 37.994
+          },
+          {
+            "index": 119,
+            "text": "à",
+            "charStart": 674,
+            "charEnd": 675,
+            "start": 38.034,
+            "end": 38.074
+          },
+          {
+            "index": 120,
+            "text": "scruter",
+            "charStart": 676,
+            "charEnd": 683,
+            "start": 38.094,
+            "end": 38.454
+          },
+          {
+            "index": 121,
+            "text": "la",
+            "charStart": 684,
+            "charEnd": 686,
+            "start": 38.494,
+            "end": 38.554
+          },
+          {
+            "index": 122,
+            "text": "vitre",
+            "charStart": 687,
+            "charEnd": 692,
+            "start": 38.594,
+            "end": 38.834
+          },
+          {
+            "index": 123,
+            "text": "avec",
+            "charStart": 693,
+            "charEnd": 697,
+            "start": 38.874,
+            "end": 39.094
+          },
+          {
+            "index": 124,
+            "text": "une",
+            "charStart": 698,
+            "charEnd": 701,
+            "start": 39.154,
+            "end": 39.374
+          },
+          {
+            "index": 125,
+            "text": "attention",
+            "charStart": 702,
+            "charEnd": 711,
+            "start": 39.414,
+            "end": 39.955
+          },
+          {
+            "index": 126,
+            "text": "passionnée",
+            "charStart": 712,
+            "charEnd": 722,
+            "start": 39.995,
+            "end": 40.395
+          },
+          {
+            "index": 127,
+            "text": "Il",
+            "charStart": 724,
+            "charEnd": 726,
+            "start": 41.395,
+            "end": 41.455
+          },
+          {
+            "index": 128,
+            "text": "n'y",
+            "charStart": 727,
+            "charEnd": 730,
+            "start": 41.475,
+            "end": 41.535
+          },
+          {
+            "index": 129,
+            "text": "avait",
+            "charStart": 731,
+            "charEnd": 736,
+            "start": 41.575,
+            "end": 41.755
+          },
+          {
+            "index": 130,
+            "text": "pourtant",
+            "charStart": 737,
+            "charEnd": 745,
+            "start": 41.795,
+            "end": 42.055
+          },
+          {
+            "index": 131,
+            "text": "rien",
+            "charStart": 746,
+            "charEnd": 750,
+            "start": 42.095,
+            "end": 42.255
+          },
+          {
+            "index": 132,
+            "text": "à",
+            "charStart": 751,
+            "charEnd": 752,
+            "start": 42.295,
+            "end": 42.335
+          },
+          {
+            "index": 133,
+            "text": "voir",
+            "charStart": 753,
+            "charEnd": 757,
+            "start": 42.395,
+            "end": 42.656
+          },
+          {
+            "index": 134,
+            "text": "qu'un",
+            "charStart": 758,
+            "charEnd": 763,
+            "start": 42.676,
+            "end": 42.876
+          },
+          {
+            "index": 136,
+            "text": "et",
+            "charStart": 769,
+            "charEnd": 771,
+            "start": 43.216,
+            "end": 43.356
+          },
+          {
+            "index": 137,
+            "text": "un",
+            "charStart": 772,
+            "charEnd": 774,
+            "start": 43.396,
+            "end": 43.476
+          },
+          {
+            "index": 138,
+            "text": "panneau",
+            "charStart": 775,
+            "charEnd": 782,
+            "start": 43.516,
+            "end": 43.776
+          },
+          {
+            "index": 139,
+            "text": "Interdit",
+            "charStart": 787,
+            "charEnd": 795,
+            "start": 44.276,
+            "end": 44.696
+          },
+          {
+            "index": 140,
+            "text": "de",
+            "charStart": 796,
+            "charEnd": 798,
+            "start": 44.716,
+            "end": 44.816
+          },
+          {
+            "index": 141,
+            "text": "traverser",
+            "charStart": 799,
+            "charEnd": 808,
+            "start": 44.836,
+            "end": 45.236
+          },
+          {
+            "index": 142,
+            "text": "les",
+            "charStart": 809,
+            "charEnd": 812,
+            "start": 45.276,
+            "end": 45.356
+          },
+          {
+            "index": 143,
+            "text": "voies",
+            "charStart": 813,
+            "charEnd": 818,
+            "start": 45.397,
+            "end": 45.537
+          },
+          {
+            "index": 144,
+            "text": "Sans",
+            "charStart": 822,
+            "charEnd": 826,
+            "start": 46.357,
+            "end": 46.477
+          },
+          {
+            "index": 145,
+            "text": "doute",
+            "charStart": 827,
+            "charEnd": 832,
+            "start": 46.517,
+            "end": 46.757
+          },
+          {
+            "index": 146,
+            "text": "ce",
+            "charStart": 833,
+            "charEnd": 835,
+            "start": 46.777,
+            "end": 46.877
+          },
+          {
+            "index": 147,
+            "text": "texte",
+            "charStart": 836,
+            "charEnd": 841,
+            "start": 46.917,
+            "end": 47.277
+          },
+          {
+            "index": 148,
+            "text": "recelait-il",
+            "charStart": 842,
+            "charEnd": 853,
+            "start": 47.317,
+            "end": 47.897
+          },
+          {
+            "index": 149,
+            "text": "des",
+            "charStart": 854,
+            "charEnd": 857,
+            "start": 47.937,
+            "end": 48.037
+          },
+          {
+            "index": 150,
+            "text": "profondeurs",
+            "charStart": 858,
+            "charEnd": 869,
+            "start": 48.077,
+            "end": 48.658
+          },
+          {
+            "index": 151,
+            "text": "qui",
+            "charStart": 870,
+            "charEnd": 873,
+            "start": 48.698,
+            "end": 48.818
+          },
+          {
+            "index": 152,
+            "text": "échappaient",
+            "charStart": 874,
+            "charEnd": 885,
+            "start": 48.878,
+            "end": 49.238
+          },
+          {
+            "index": 153,
+            "text": "au",
+            "charStart": 886,
+            "charEnd": 888,
+            "start": 49.258,
+            "end": 49.358
+          },
+          {
+            "index": 154,
+            "text": "reste",
+            "charStart": 889,
+            "charEnd": 894,
+            "start": 49.378,
+            "end": 49.658
+          },
+          {
+            "index": 155,
+            "text": "du",
+            "charStart": 895,
+            "charEnd": 897,
+            "start": 49.678,
+            "end": 49.778
+          },
+          {
+            "index": 156,
+            "text": "compartiment",
+            "charStart": 898,
+            "charEnd": 910,
+            "start": 49.798,
+            "end": 50.298
+          },
+          {
+            "index": 158,
+            "text": "lui",
+            "charStart": 922,
+            "charEnd": 925,
+            "start": 51.659,
+            "end": 51.739
+          },
+          {
+            "index": 159,
+            "text": "tira",
+            "charStart": 927,
+            "charEnd": 931,
+            "start": 52.239,
+            "end": 52.459
+          },
+          {
+            "index": 160,
+            "text": "un",
+            "charStart": 932,
+            "charEnd": 934,
+            "start": 52.539,
+            "end": 52.699
+          },
+          {
+            "index": 161,
+            "text": "carnet",
+            "charStart": 935,
+            "charEnd": 941,
+            "start": 52.739,
+            "end": 53.039
+          },
+          {
+            "index": 162,
+            "text": "de",
+            "charStart": 942,
+            "charEnd": 944,
+            "start": 53.059,
+            "end": 53.119
+          },
+          {
+            "index": 163,
+            "text": "sa",
+            "charStart": 945,
+            "charEnd": 947,
+            "start": 53.159,
+            "end": 53.259
+          },
+          {
+            "index": 164,
+            "text": "poche",
+            "charStart": 948,
+            "charEnd": 953,
+            "start": 53.319,
+            "end": 53.579
+          },
+          {
+            "index": 165,
+            "text": "et",
+            "charStart": 954,
+            "charEnd": 956,
+            "start": 53.64,
+            "end": 53.72
+          },
+          {
+            "index": 166,
+            "text": "y",
+            "charStart": 957,
+            "charEnd": 958,
+            "start": 53.78,
+            "end": 53.9
+          },
+          {
+            "index": 167,
+            "text": "consigna",
+            "charStart": 959,
+            "charEnd": 967,
+            "start": 53.92,
+            "end": 54.38
+          },
+          {
+            "index": 168,
+            "text": "quelque",
+            "charStart": 968,
+            "charEnd": 975,
+            "start": 54.42,
+            "end": 54.66
+          },
+          {
+            "index": 169,
+            "text": "chose",
+            "charStart": 976,
+            "charEnd": 981,
+            "start": 54.7,
+            "end": 54.86
+          }
+        ]
+      },
+      "language": "fr",
+      "variant": "fr-ps",
+      "chapterId": "nuit-01",
+      "paragraphId": "nuit-01-p07",
+      "novelId": "novel-ce-que-la-nuit-a-entendu",
+      "text": "Le dernier passager ne se pressa pas le moins du monde : il apparut à vingt heures quarante-neuf, trois minutes avant que le train ne partît. C'était un vieil homme de haute taille, un peu voûté, en manteau gris, qui portait une petite valise de cuir et des chaussures de ville si bien cirées qu'elles avaient l'air neuves, et malheureuses de l'être. Elles craquaient à chaque pas, comme des chaussures qui ne se seraient pas encore résignées à marcher. Il salua d'un signe de tête et voulut glisser sa valise sous la couchette 42 ; toute petite qu'elle était, elle résista, et Nour dut l'aider à la pousser. À peine eut-il pris place en face de Colette que celle-ci se mit à scruter la vitre avec une attention passionnée. Il n'y avait pourtant rien à voir qu'un quai et un panneau : « Interdit de traverser les voies ». Sans doute ce texte recelait-il des profondeurs qui échappaient au reste du compartiment. Thibault, lui, tira un carnet de sa poche et y consigna quelque chose.",
+      "ja": "最後の乗客は、少しも急ぐふうがなかった。姿を見せたのは二十時四十九分、列車が出るわずか三分前のことである。背の高い、少し背中の丸まった老人で、灰色のコートを着ていた。手には小さな革のトランク。街歩き用の靴はぴかぴかに磨きこまれていて、新品のように見えた。そして、新品であることを悲しんでいるようにも。一歩ごとに靴は軋んだ。歩くことに、まだ観念しきれていない靴のように。老人は会釈をひとつして、トランクを四十二番の寝台の下へ滑りこませようとした。小さなトランクなのに、それは頑として動かず、ヌールが押しこむのを手伝わなければならなかった。彼がコレットの向かいに腰を下ろすか下ろさないかのうちに、コレットは窓ガラスの向こうを食い入るように見つめはじめた。見えるものといえば、ホームと「線路横断禁止」の看板くらいしかなかったのだが。おそらくその文言には、ほかの誰にもうかがい知れない深淵が秘められていたのだろう。ティボーはといえば、ポケットから手帳を取り出し、何やら書きとめた。",
+      "lessonTitle": "オステルリッツ駅、二十時五十二分 · フランス語・単純過去版 · 3/3"
+    },
+    {
+      "id": "nuit-01-p08-fr-ps",
+      "lessonId": "nuit-01-fr-ps-part3",
+      "kind": "reading",
+      "unitId": "nuit-01-p08-fr-ps",
+      "textHash": "b128e8852888e85295c20ecb21afb52a8fee2b50454314856f2b0abd5ee374fc",
+      "asset": "audio/nuit-01-p08-fr-ps-f11f6608d8bb.m4a",
+      "audioHash": "f11f6608d8bbff37626a4f9d06ed24f25f61c65a4f2f3faddf3dddf349457d11",
+      "durationMs": 68620,
+      "sourceHash": "7ce845919c05cdaba9c724e872b5a4fc98e74b646c0cac0483565db71856dfc4",
+      "encoding": "aac-mono-64k-v1",
+      "start": 55.22,
+      "end": 123.84,
+      "cuts": [],
+      "speedRegions": [],
+      "reviewedByUser": true,
+      "recognitionScore": 0.811,
+      "volumePercent": 100,
+      "appliedVolumePercent": 100,
+      "volumeLimited": false,
+      "volumeProcessing": "gain-peak-v1",
+      "speedProcessing": "av-timepitch-v1",
+      "wordSync": {
+        "version": 1,
+        "method": "whisperx-3.8.6-jiwer4-largev3-final-aac-v2",
+        "textHash": "b128e8852888e85295c20ecb21afb52a8fee2b50454314856f2b0abd5ee374fc",
+        "audioHash": "f11f6608d8bbff37626a4f9d06ed24f25f61c65a4f2f3faddf3dddf349457d11",
+        "text": "À vingt heures cinquante-deux, le train s'ébranla dans un long soupir de freins relâchés ; un à-coup courut d'attelage en attelage, comme une rumeur, puis Paris commença à glisser derrière la vitre, par fragments éclairés. Gaspard passa contrôler les billets. Quand il en eut fini avec Thibault, qui le remercia deux fois plutôt qu'une, il se tourna vers le vieil homme. Celui-ci lui tendit le sien et, d'une voix si basse que Mio fut peut-être la seule à l'entendre, lui demanda : « Vous vous arrêtez toujours à Valcroze ? » Gaspard leva les yeux du billet. « Valcroze ? Plus personne n'y descend depuis 1989, monsieur. On y marque l'arrêt sept minutes, au petit matin, le temps du croisement avec le TER de Veynes : c'est de la voie unique, là-haut. Mais les portes restent fermées. » « Je sais », dit le vieil homme, et il sourit comme quelqu'un qui vient d'apprendre une bonne nouvelle. Gaspard garda un instant le billet entre ses doigts, comme on tient une note un temps de trop, puis le lui rendit sans un mot. Valcroze. Le nom ne disait rien à Mio ; dans la bouche du vieil homme, pourtant, il avait sonné comme sonnent les clés longtemps gardées au fond d'une poche. Sur sa couchette, Mio pressa le bouton rouge de son enregistreur. Elle ne sut jamais très bien pourquoi.",
+        "language": "fr",
+        "duration": 68.62,
+        "totalWords": 217,
+        "reviewCount": 38,
+        "words": [
+          {
+            "index": 7,
+            "text": "dans",
+            "charStart": 50,
+            "charEnd": 54,
+            "start": 2.781,
+            "end": 2.901
+          },
+          {
+            "index": 8,
+            "text": "un",
+            "charStart": 55,
+            "charEnd": 57,
+            "start": 2.961,
+            "end": 3.121
+          },
+          {
+            "index": 9,
+            "text": "long",
+            "charStart": 58,
+            "charEnd": 62,
+            "start": 3.181,
+            "end": 3.461
+          },
+          {
+            "index": 10,
+            "text": "soupir",
+            "charStart": 63,
+            "charEnd": 69,
+            "start": 3.481,
+            "end": 3.861
+          },
+          {
+            "index": 11,
+            "text": "de",
+            "charStart": 70,
+            "charEnd": 72,
+            "start": 3.901,
+            "end": 3.961
+          },
+          {
+            "index": 14,
+            "text": "un",
+            "charStart": 91,
+            "charEnd": 93,
+            "start": 5.642,
+            "end": 5.702
+          },
+          {
+            "index": 15,
+            "text": "à-coup",
+            "charStart": 94,
+            "charEnd": 100,
+            "start": 5.762,
+            "end": 5.982
+          },
+          {
+            "index": 16,
+            "text": "courut",
+            "charStart": 101,
+            "charEnd": 107,
+            "start": 6.022,
+            "end": 6.322
+          },
+          {
+            "index": 17,
+            "text": "d'attelage",
+            "charStart": 108,
+            "charEnd": 118,
+            "start": 6.342,
+            "end": 6.682
+          },
+          {
+            "index": 18,
+            "text": "en",
+            "charStart": 119,
+            "charEnd": 121,
+            "start": 6.742,
+            "end": 6.822
+          },
+          {
+            "index": 19,
+            "text": "attelage",
+            "charStart": 122,
+            "charEnd": 130,
+            "start": 6.862,
+            "end": 7.262
+          },
+          {
+            "index": 20,
+            "text": "comme",
+            "charStart": 132,
+            "charEnd": 137,
+            "start": 7.302,
+            "end": 7.462
+          },
+          {
+            "index": 21,
+            "text": "une",
+            "charStart": 138,
+            "charEnd": 141,
+            "start": 7.502,
+            "end": 7.622
+          },
+          {
+            "index": 22,
+            "text": "rumeur",
+            "charStart": 142,
+            "charEnd": 148,
+            "start": 7.662,
+            "end": 7.922
+          },
+          {
+            "index": 23,
+            "text": "puis",
+            "charStart": 150,
+            "charEnd": 154,
+            "start": 8.603,
+            "end": 8.783
+          },
+          {
+            "index": 24,
+            "text": "Paris",
+            "charStart": 155,
+            "charEnd": 160,
+            "start": 8.823,
+            "end": 9.063
+          },
+          {
+            "index": 25,
+            "text": "commença",
+            "charStart": 161,
+            "charEnd": 169,
+            "start": 9.083,
+            "end": 9.463
+          },
+          {
+            "index": 28,
+            "text": "derrière",
+            "charStart": 180,
+            "charEnd": 188,
+            "start": 9.923,
+            "end": 10.223
+          },
+          {
+            "index": 29,
+            "text": "la",
+            "charStart": 189,
+            "charEnd": 191,
+            "start": 10.263,
+            "end": 10.343
+          },
+          {
+            "index": 30,
+            "text": "vitre",
+            "charStart": 192,
+            "charEnd": 197,
+            "start": 10.383,
+            "end": 10.783
+          },
+          {
+            "index": 31,
+            "text": "par",
+            "charStart": 199,
+            "charEnd": 202,
+            "start": 10.823,
+            "end": 10.983
+          },
+          {
+            "index": 32,
+            "text": "fragments",
+            "charStart": 203,
+            "charEnd": 212,
+            "start": 11.003,
+            "end": 11.363
+          },
+          {
+            "index": 33,
+            "text": "éclairés",
+            "charStart": 213,
+            "charEnd": 221,
+            "start": 11.403,
+            "end": 11.803
+          },
+          {
+            "index": 34,
+            "text": "Gaspard",
+            "charStart": 223,
+            "charEnd": 230,
+            "start": 12.824,
+            "end": 13.184
+          },
+          {
+            "index": 35,
+            "text": "passa",
+            "charStart": 231,
+            "charEnd": 236,
+            "start": 13.204,
+            "end": 13.464
+          },
+          {
+            "index": 36,
+            "text": "contrôler",
+            "charStart": 237,
+            "charEnd": 246,
+            "start": 13.504,
+            "end": 13.864
+          },
+          {
+            "index": 37,
+            "text": "les",
+            "charStart": 247,
+            "charEnd": 250,
+            "start": 13.884,
+            "end": 13.964
+          },
+          {
+            "index": 38,
+            "text": "billets",
+            "charStart": 251,
+            "charEnd": 258,
+            "start": 13.984,
+            "end": 14.864
+          },
+          {
+            "index": 39,
+            "text": "Quand",
+            "charStart": 260,
+            "charEnd": 265,
+            "start": 14.904,
+            "end": 15.064
+          },
+          {
+            "index": 40,
+            "text": "il",
+            "charStart": 266,
+            "charEnd": 268,
+            "start": 15.104,
+            "end": 15.184
+          },
+          {
+            "index": 41,
+            "text": "en",
+            "charStart": 269,
+            "charEnd": 271,
+            "start": 15.224,
+            "end": 15.304
+          },
+          {
+            "index": 43,
+            "text": "fini",
+            "charStart": 276,
+            "charEnd": 280,
+            "start": 15.445,
+            "end": 15.645
+          },
+          {
+            "index": 44,
+            "text": "avec",
+            "charStart": 281,
+            "charEnd": 285,
+            "start": 15.685,
+            "end": 15.845
+          },
+          {
+            "index": 46,
+            "text": "qui",
+            "charStart": 296,
+            "charEnd": 299,
+            "start": 16.385,
+            "end": 16.545
+          },
+          {
+            "index": 47,
+            "text": "le",
+            "charStart": 300,
+            "charEnd": 302,
+            "start": 16.565,
+            "end": 16.645
+          },
+          {
+            "index": 48,
+            "text": "remercia",
+            "charStart": 303,
+            "charEnd": 311,
+            "start": 16.665,
+            "end": 17.165
+          },
+          {
+            "index": 49,
+            "text": "deux",
+            "charStart": 312,
+            "charEnd": 316,
+            "start": 17.205,
+            "end": 17.305
+          },
+          {
+            "index": 50,
+            "text": "fois",
+            "charStart": 317,
+            "charEnd": 321,
+            "start": 17.345,
+            "end": 17.485
+          },
+          {
+            "index": 53,
+            "text": "il",
+            "charStart": 337,
+            "charEnd": 339,
+            "start": 18.285,
+            "end": 18.425
+          },
+          {
+            "index": 54,
+            "text": "se",
+            "charStart": 340,
+            "charEnd": 342,
+            "start": 18.445,
+            "end": 18.565
+          },
+          {
+            "index": 55,
+            "text": "tourna",
+            "charStart": 343,
+            "charEnd": 349,
+            "start": 18.605,
+            "end": 18.865
+          },
+          {
+            "index": 56,
+            "text": "vers",
+            "charStart": 350,
+            "charEnd": 354,
+            "start": 18.906,
+            "end": 19.026
+          },
+          {
+            "index": 57,
+            "text": "le",
+            "charStart": 355,
+            "charEnd": 357,
+            "start": 19.046,
+            "end": 19.106
+          },
+          {
+            "index": 58,
+            "text": "vieil",
+            "charStart": 358,
+            "charEnd": 363,
+            "start": 19.126,
+            "end": 19.326
+          },
+          {
+            "index": 60,
+            "text": "Celui-ci",
+            "charStart": 371,
+            "charEnd": 379,
+            "start": 20.426,
+            "end": 20.746
+          },
+          {
+            "index": 61,
+            "text": "lui",
+            "charStart": 380,
+            "charEnd": 383,
+            "start": 20.786,
+            "end": 20.886
+          },
+          {
+            "index": 62,
+            "text": "tendit",
+            "charStart": 384,
+            "charEnd": 390,
+            "start": 20.906,
+            "end": 21.166
+          },
+          {
+            "index": 63,
+            "text": "le",
+            "charStart": 391,
+            "charEnd": 393,
+            "start": 21.186,
+            "end": 21.286
+          },
+          {
+            "index": 64,
+            "text": "sien",
+            "charStart": 394,
+            "charEnd": 398,
+            "start": 21.326,
+            "end": 22.006
+          },
+          {
+            "index": 65,
+            "text": "et",
+            "charStart": 399,
+            "charEnd": 401,
+            "start": 22.046,
+            "end": 22.146
+          },
+          {
+            "index": 66,
+            "text": "d'une",
+            "charStart": 403,
+            "charEnd": 408,
+            "start": 22.186,
+            "end": 22.367
+          },
+          {
+            "index": 67,
+            "text": "voix",
+            "charStart": 409,
+            "charEnd": 413,
+            "start": 22.407,
+            "end": 22.687
+          },
+          {
+            "index": 68,
+            "text": "si",
+            "charStart": 414,
+            "charEnd": 416,
+            "start": 22.747,
+            "end": 22.887
+          },
+          {
+            "index": 70,
+            "text": "que",
+            "charStart": 423,
+            "charEnd": 426,
+            "start": 23.227,
+            "end": 23.307
+          },
+          {
+            "index": 71,
+            "text": "Mio",
+            "charStart": 427,
+            "charEnd": 430,
+            "start": 23.327,
+            "end": 23.547
+          },
+          {
+            "index": 73,
+            "text": "peut-être",
+            "charStart": 435,
+            "charEnd": 444,
+            "start": 23.707,
+            "end": 23.987
+          },
+          {
+            "index": 74,
+            "text": "la",
+            "charStart": 445,
+            "charEnd": 447,
+            "start": 24.047,
+            "end": 24.127
+          },
+          {
+            "index": 75,
+            "text": "seule",
+            "charStart": 448,
+            "charEnd": 453,
+            "start": 24.207,
+            "end": 24.387
+          },
+          {
+            "index": 76,
+            "text": "à",
+            "charStart": 454,
+            "charEnd": 455,
+            "start": 24.407,
+            "end": 24.467
+          },
+          {
+            "index": 77,
+            "text": "l'entendre",
+            "charStart": 456,
+            "charEnd": 466,
+            "start": 24.507,
+            "end": 25.147
+          },
+          {
+            "index": 78,
+            "text": "lui",
+            "charStart": 468,
+            "charEnd": 471,
+            "start": 25.187,
+            "end": 25.287
+          },
+          {
+            "index": 79,
+            "text": "demanda",
+            "charStart": 472,
+            "charEnd": 479,
+            "start": 25.327,
+            "end": 25.627
+          },
+          {
+            "index": 80,
+            "text": "Vous",
+            "charStart": 484,
+            "charEnd": 488,
+            "start": 26.688,
+            "end": 26.928
+          },
+          {
+            "index": 81,
+            "text": "vous",
+            "charStart": 489,
+            "charEnd": 493,
+            "start": 26.948,
+            "end": 27.068
+          },
+          {
+            "index": 82,
+            "text": "arrêtez",
+            "charStart": 494,
+            "charEnd": 501,
+            "start": 27.128,
+            "end": 27.448
+          },
+          {
+            "index": 83,
+            "text": "toujours",
+            "charStart": 502,
+            "charEnd": 510,
+            "start": 27.488,
+            "end": 27.728
+          },
+          {
+            "index": 84,
+            "text": "à",
+            "charStart": 511,
+            "charEnd": 512,
+            "start": 27.788,
+            "end": 27.828
+          },
+          {
+            "index": 86,
+            "text": "Gaspard",
+            "charStart": 526,
+            "charEnd": 533,
+            "start": 29.649,
+            "end": 29.949
+          },
+          {
+            "index": 87,
+            "text": "leva",
+            "charStart": 534,
+            "charEnd": 538,
+            "start": 29.969,
+            "end": 30.129
+          },
+          {
+            "index": 88,
+            "text": "les",
+            "charStart": 539,
+            "charEnd": 542,
+            "start": 30.149,
+            "end": 30.249
+          },
+          {
+            "index": 89,
+            "text": "yeux",
+            "charStart": 543,
+            "charEnd": 547,
+            "start": 30.269,
+            "end": 30.369
+          },
+          {
+            "index": 90,
+            "text": "du",
+            "charStart": 548,
+            "charEnd": 550,
+            "start": 30.389,
+            "end": 30.449
+          },
+          {
+            "index": 91,
+            "text": "billet",
+            "charStart": 551,
+            "charEnd": 557,
+            "start": 30.489,
+            "end": 30.689
+          },
+          {
+            "index": 93,
+            "text": "Plus",
+            "charStart": 572,
+            "charEnd": 576,
+            "start": 32.449,
+            "end": 32.569
+          },
+          {
+            "index": 94,
+            "text": "personne",
+            "charStart": 577,
+            "charEnd": 585,
+            "start": 32.61,
+            "end": 32.85
+          },
+          {
+            "index": 96,
+            "text": "descend",
+            "charStart": 590,
+            "charEnd": 597,
+            "start": 32.99,
+            "end": 33.19
+          },
+          {
+            "index": 97,
+            "text": "depuis",
+            "charStart": 598,
+            "charEnd": 604,
+            "start": 33.21,
+            "end": 33.53
+          },
+          {
+            "index": 98,
+            "text": "1989",
+            "charStart": 605,
+            "charEnd": 609,
+            "start": 33.55,
+            "end": 33.63
+          },
+          {
+            "index": 102,
+            "text": "marque",
+            "charStart": 626,
+            "charEnd": 632,
+            "start": 34.35,
+            "end": 35.49
+          },
+          {
+            "index": 103,
+            "text": "l'arrêt",
+            "charStart": 633,
+            "charEnd": 640,
+            "start": 35.69,
+            "end": 35.95
+          },
+          {
+            "index": 105,
+            "text": "minutes",
+            "charStart": 646,
+            "charEnd": 653,
+            "start": 36.211,
+            "end": 36.671
+          },
+          {
+            "index": 106,
+            "text": "au",
+            "charStart": 655,
+            "charEnd": 657,
+            "start": 36.731,
+            "end": 36.791
+          },
+          {
+            "index": 107,
+            "text": "petit",
+            "charStart": 658,
+            "charEnd": 663,
+            "start": 36.831,
+            "end": 37.031
+          },
+          {
+            "index": 108,
+            "text": "matin",
+            "charStart": 664,
+            "charEnd": 669,
+            "start": 37.051,
+            "end": 37.251
+          },
+          {
+            "index": 109,
+            "text": "le",
+            "charStart": 671,
+            "charEnd": 673,
+            "start": 37.711,
+            "end": 37.771
+          },
+          {
+            "index": 110,
+            "text": "temps",
+            "charStart": 674,
+            "charEnd": 679,
+            "start": 37.811,
+            "end": 37.951
+          },
+          {
+            "index": 111,
+            "text": "du",
+            "charStart": 680,
+            "charEnd": 682,
+            "start": 37.971,
+            "end": 38.051
+          },
+          {
+            "index": 112,
+            "text": "croisement",
+            "charStart": 683,
+            "charEnd": 693,
+            "start": 38.091,
+            "end": 38.391
+          },
+          {
+            "index": 113,
+            "text": "avec",
+            "charStart": 694,
+            "charEnd": 698,
+            "start": 38.431,
+            "end": 38.611
+          },
+          {
+            "index": 114,
+            "text": "le",
+            "charStart": 699,
+            "charEnd": 701,
+            "start": 38.651,
+            "end": 38.711
+          },
+          {
+            "index": 115,
+            "text": "TER",
+            "charStart": 702,
+            "charEnd": 705,
+            "start": 38.731,
+            "end": 39.071
+          },
+          {
+            "index": 116,
+            "text": "de",
+            "charStart": 706,
+            "charEnd": 708,
+            "start": 39.091,
+            "end": 39.151
+          },
+          {
+            "index": 118,
+            "text": "c'est",
+            "charStart": 718,
+            "charEnd": 723,
+            "start": 39.732,
+            "end": 39.832
+          },
+          {
+            "index": 120,
+            "text": "la",
+            "charStart": 727,
+            "charEnd": 729,
+            "start": 39.912,
+            "end": 39.972
+          },
+          {
+            "index": 121,
+            "text": "voie",
+            "charStart": 730,
+            "charEnd": 734,
+            "start": 39.992,
+            "end": 40.132
+          },
+          {
+            "index": 122,
+            "text": "unique",
+            "charStart": 735,
+            "charEnd": 741,
+            "start": 40.172,
+            "end": 40.432
+          },
+          {
+            "index": 123,
+            "text": "là-haut",
+            "charStart": 743,
+            "charEnd": 750,
+            "start": 40.472,
+            "end": 41.272
+          },
+          {
+            "index": 124,
+            "text": "Mais",
+            "charStart": 752,
+            "charEnd": 756,
+            "start": 41.312,
+            "end": 41.452
+          },
+          {
+            "index": 125,
+            "text": "les",
+            "charStart": 757,
+            "charEnd": 760,
+            "start": 41.512,
+            "end": 41.592
+          },
+          {
+            "index": 126,
+            "text": "portes",
+            "charStart": 761,
+            "charEnd": 767,
+            "start": 41.612,
+            "end": 41.832
+          },
+          {
+            "index": 127,
+            "text": "restent",
+            "charStart": 768,
+            "charEnd": 775,
+            "start": 41.872,
+            "end": 42.072
+          },
+          {
+            "index": 128,
+            "text": "fermées",
+            "charStart": 776,
+            "charEnd": 783,
+            "start": 42.112,
+            "end": 42.372
+          },
+          {
+            "index": 129,
+            "text": "Je",
+            "charStart": 789,
+            "charEnd": 791,
+            "start": 43.313,
+            "end": 43.373
+          },
+          {
+            "index": 130,
+            "text": "sais",
+            "charStart": 792,
+            "charEnd": 796,
+            "start": 43.413,
+            "end": 43.573
+          },
+          {
+            "index": 131,
+            "text": "dit",
+            "charStart": 800,
+            "charEnd": 803,
+            "start": 44.133,
+            "end": 44.233
+          },
+          {
+            "index": 132,
+            "text": "le",
+            "charStart": 804,
+            "charEnd": 806,
+            "start": 44.253,
+            "end": 44.313
+          },
+          {
+            "index": 133,
+            "text": "vieil",
+            "charStart": 807,
+            "charEnd": 812,
+            "start": 44.333,
+            "end": 44.513
+          },
+          {
+            "index": 136,
+            "text": "il",
+            "charStart": 823,
+            "charEnd": 825,
+            "start": 45.213,
+            "end": 45.393
+          },
+          {
+            "index": 137,
+            "text": "sourit",
+            "charStart": 826,
+            "charEnd": 832,
+            "start": 45.433,
+            "end": 45.673
+          },
+          {
+            "index": 138,
+            "text": "comme",
+            "charStart": 833,
+            "charEnd": 838,
+            "start": 45.713,
+            "end": 45.873
+          },
+          {
+            "index": 139,
+            "text": "quelqu'un",
+            "charStart": 839,
+            "charEnd": 848,
+            "start": 45.893,
+            "end": 46.153
+          },
+          {
+            "index": 140,
+            "text": "qui",
+            "charStart": 849,
+            "charEnd": 852,
+            "start": 46.173,
+            "end": 46.253
+          },
+          {
+            "index": 141,
+            "text": "vient",
+            "charStart": 853,
+            "charEnd": 858,
+            "start": 46.293,
+            "end": 46.454
+          },
+          {
+            "index": 142,
+            "text": "d'apprendre",
+            "charStart": 859,
+            "charEnd": 870,
+            "start": 46.474,
+            "end": 46.834
+          },
+          {
+            "index": 143,
+            "text": "une",
+            "charStart": 871,
+            "charEnd": 874,
+            "start": 46.894,
+            "end": 46.954
+          },
+          {
+            "index": 144,
+            "text": "bonne",
+            "charStart": 875,
+            "charEnd": 880,
+            "start": 46.994,
+            "end": 47.154
+          },
+          {
+            "index": 145,
+            "text": "nouvelle",
+            "charStart": 881,
+            "charEnd": 889,
+            "start": 47.174,
+            "end": 47.414
+          },
+          {
+            "index": 146,
+            "text": "Gaspard",
+            "charStart": 891,
+            "charEnd": 898,
+            "start": 48.474,
+            "end": 48.854
+          },
+          {
+            "index": 147,
+            "text": "garda",
+            "charStart": 899,
+            "charEnd": 904,
+            "start": 48.874,
+            "end": 49.114
+          },
+          {
+            "index": 148,
+            "text": "un",
+            "charStart": 905,
+            "charEnd": 907,
+            "start": 49.174,
+            "end": 49.254
+          },
+          {
+            "index": 149,
+            "text": "instant",
+            "charStart": 908,
+            "charEnd": 915,
+            "start": 49.294,
+            "end": 49.534
+          },
+          {
+            "index": 150,
+            "text": "le",
+            "charStart": 916,
+            "charEnd": 918,
+            "start": 49.554,
+            "end": 49.614
+          },
+          {
+            "index": 151,
+            "text": "billet",
+            "charStart": 919,
+            "charEnd": 925,
+            "start": 49.634,
+            "end": 49.815
+          },
+          {
+            "index": 152,
+            "text": "entre",
+            "charStart": 926,
+            "charEnd": 931,
+            "start": 49.855,
+            "end": 50.035
+          },
+          {
+            "index": 153,
+            "text": "ses",
+            "charStart": 932,
+            "charEnd": 935,
+            "start": 50.075,
+            "end": 50.175
+          },
+          {
+            "index": 154,
+            "text": "doigts",
+            "charStart": 936,
+            "charEnd": 942,
+            "start": 50.215,
+            "end": 50.675
+          },
+          {
+            "index": 155,
+            "text": "comme",
+            "charStart": 944,
+            "charEnd": 949,
+            "start": 50.715,
+            "end": 50.855
+          },
+          {
+            "index": 156,
+            "text": "on",
+            "charStart": 950,
+            "charEnd": 952,
+            "start": 50.895,
+            "end": 50.955
+          },
+          {
+            "index": 157,
+            "text": "tient",
+            "charStart": 953,
+            "charEnd": 958,
+            "start": 50.975,
+            "end": 51.135
+          },
+          {
+            "index": 158,
+            "text": "une",
+            "charStart": 959,
+            "charEnd": 962,
+            "start": 51.175,
+            "end": 51.315
+          },
+          {
+            "index": 159,
+            "text": "note",
+            "charStart": 963,
+            "charEnd": 967,
+            "start": 51.335,
+            "end": 51.575
+          },
+          {
+            "index": 160,
+            "text": "un",
+            "charStart": 968,
+            "charEnd": 970,
+            "start": 51.615,
+            "end": 51.695
+          },
+          {
+            "index": 161,
+            "text": "temps",
+            "charStart": 971,
+            "charEnd": 976,
+            "start": 51.735,
+            "end": 51.895
+          },
+          {
+            "index": 162,
+            "text": "de",
+            "charStart": 977,
+            "charEnd": 979,
+            "start": 51.935,
+            "end": 52.015
+          },
+          {
+            "index": 163,
+            "text": "trop",
+            "charStart": 980,
+            "charEnd": 984,
+            "start": 52.035,
+            "end": 52.755
+          },
+          {
+            "index": 164,
+            "text": "puis",
+            "charStart": 986,
+            "charEnd": 990,
+            "start": 52.835,
+            "end": 52.975
+          },
+          {
+            "index": 165,
+            "text": "le",
+            "charStart": 991,
+            "charEnd": 993,
+            "start": 52.995,
+            "end": 53.075
+          },
+          {
+            "index": 166,
+            "text": "lui",
+            "charStart": 994,
+            "charEnd": 997,
+            "start": 53.095,
+            "end": 53.155
+          },
+          {
+            "index": 167,
+            "text": "rendit",
+            "charStart": 998,
+            "charEnd": 1004,
+            "start": 53.196,
+            "end": 53.456
+          },
+          {
+            "index": 168,
+            "text": "sans",
+            "charStart": 1005,
+            "charEnd": 1009,
+            "start": 53.476,
+            "end": 53.596
+          },
+          {
+            "index": 172,
+            "text": "Le",
+            "charStart": 1028,
+            "charEnd": 1030,
+            "start": 55.776,
+            "end": 55.856
+          },
+          {
+            "index": 173,
+            "text": "nom",
+            "charStart": 1031,
+            "charEnd": 1034,
+            "start": 55.896,
+            "end": 56.016
+          },
+          {
+            "index": 174,
+            "text": "ne",
+            "charStart": 1035,
+            "charEnd": 1037,
+            "start": 56.056,
+            "end": 56.156
+          },
+          {
+            "index": 175,
+            "text": "disait",
+            "charStart": 1038,
+            "charEnd": 1044,
+            "start": 56.196,
+            "end": 56.436
+          },
+          {
+            "index": 176,
+            "text": "rien",
+            "charStart": 1045,
+            "charEnd": 1049,
+            "start": 56.456,
+            "end": 56.677
+          },
+          {
+            "index": 178,
+            "text": "Mio",
+            "charStart": 1052,
+            "charEnd": 1055,
+            "start": 56.797,
+            "end": 57.017
+          },
+          {
+            "index": 179,
+            "text": "dans",
+            "charStart": 1058,
+            "charEnd": 1062,
+            "start": 57.477,
+            "end": 57.617
+          },
+          {
+            "index": 180,
+            "text": "la",
+            "charStart": 1063,
+            "charEnd": 1065,
+            "start": 57.657,
+            "end": 57.717
+          },
+          {
+            "index": 181,
+            "text": "bouche",
+            "charStart": 1066,
+            "charEnd": 1072,
+            "start": 57.757,
+            "end": 57.977
+          },
+          {
+            "index": 182,
+            "text": "du",
+            "charStart": 1073,
+            "charEnd": 1075,
+            "start": 57.997,
+            "end": 58.057
+          },
+          {
+            "index": 185,
+            "text": "pourtant",
+            "charStart": 1089,
+            "charEnd": 1097,
+            "start": 58.477,
+            "end": 58.757
+          },
+          {
+            "index": 186,
+            "text": "il",
+            "charStart": 1099,
+            "charEnd": 1101,
+            "start": 59.317,
+            "end": 59.417
+          },
+          {
+            "index": 187,
+            "text": "avait",
+            "charStart": 1102,
+            "charEnd": 1107,
+            "start": 59.457,
+            "end": 59.637
+          },
+          {
+            "index": 188,
+            "text": "sonné",
+            "charStart": 1108,
+            "charEnd": 1113,
+            "start": 59.677,
+            "end": 59.917
+          },
+          {
+            "index": 189,
+            "text": "comme",
+            "charStart": 1114,
+            "charEnd": 1119,
+            "start": 59.957,
+            "end": 60.218
+          },
+          {
+            "index": 191,
+            "text": "les",
+            "charStart": 1128,
+            "charEnd": 1131,
+            "start": 60.538,
+            "end": 60.658
+          },
+          {
+            "index": 192,
+            "text": "clés",
+            "charStart": 1132,
+            "charEnd": 1136,
+            "start": 60.698,
+            "end": 60.938
+          },
+          {
+            "index": 193,
+            "text": "longtemps",
+            "charStart": 1137,
+            "charEnd": 1146,
+            "start": 60.978,
+            "end": 61.278
+          },
+          {
+            "index": 194,
+            "text": "gardées",
+            "charStart": 1147,
+            "charEnd": 1154,
+            "start": 61.318,
+            "end": 61.578
+          },
+          {
+            "index": 195,
+            "text": "au",
+            "charStart": 1155,
+            "charEnd": 1157,
+            "start": 61.618,
+            "end": 61.698
+          },
+          {
+            "index": 196,
+            "text": "fond",
+            "charStart": 1158,
+            "charEnd": 1162,
+            "start": 61.738,
+            "end": 61.878
+          },
+          {
+            "index": 197,
+            "text": "d'une",
+            "charStart": 1163,
+            "charEnd": 1168,
+            "start": 61.898,
+            "end": 62.038
+          },
+          {
+            "index": 198,
+            "text": "poche",
+            "charStart": 1169,
+            "charEnd": 1174,
+            "start": 62.078,
+            "end": 62.258
+          },
+          {
+            "index": 199,
+            "text": "Sur",
+            "charStart": 1176,
+            "charEnd": 1179,
+            "start": 63.078,
+            "end": 63.198
+          },
+          {
+            "index": 200,
+            "text": "sa",
+            "charStart": 1180,
+            "charEnd": 1182,
+            "start": 63.218,
+            "end": 63.298
+          },
+          {
+            "index": 201,
+            "text": "couchette",
+            "charStart": 1183,
+            "charEnd": 1192,
+            "start": 63.338,
+            "end": 63.919
+          },
+          {
+            "index": 202,
+            "text": "Mio",
+            "charStart": 1194,
+            "charEnd": 1197,
+            "start": 63.959,
+            "end": 64.219
+          },
+          {
+            "index": 203,
+            "text": "pressa",
+            "charStart": 1198,
+            "charEnd": 1204,
+            "start": 64.239,
+            "end": 64.479
+          },
+          {
+            "index": 204,
+            "text": "le",
+            "charStart": 1205,
+            "charEnd": 1207,
+            "start": 64.499,
+            "end": 64.579
+          },
+          {
+            "index": 207,
+            "text": "de",
+            "charStart": 1221,
+            "charEnd": 1223,
+            "start": 65.119,
+            "end": 65.199
+          },
+          {
+            "index": 208,
+            "text": "son",
+            "charStart": 1224,
+            "charEnd": 1227,
+            "start": 65.219,
+            "end": 65.339
+          },
+          {
+            "index": 209,
+            "text": "enregistreur",
+            "charStart": 1228,
+            "charEnd": 1240,
+            "start": 65.379,
+            "end": 66.659
+          },
+          {
+            "index": 210,
+            "text": "Elle",
+            "charStart": 1242,
+            "charEnd": 1246,
+            "start": 66.739,
+            "end": 66.879
+          },
+          {
+            "index": 211,
+            "text": "ne",
+            "charStart": 1247,
+            "charEnd": 1249,
+            "start": 66.92,
+            "end": 67
+          },
+          {
+            "index": 212,
+            "text": "sut",
+            "charStart": 1250,
+            "charEnd": 1253,
+            "start": 67.04,
+            "end": 67.18
+          },
+          {
+            "index": 213,
+            "text": "jamais",
+            "charStart": 1254,
+            "charEnd": 1260,
+            "start": 67.2,
+            "end": 67.46
+          },
+          {
+            "index": 214,
+            "text": "très",
+            "charStart": 1261,
+            "charEnd": 1265,
+            "start": 67.5,
+            "end": 67.6
+          },
+          {
+            "index": 215,
+            "text": "bien",
+            "charStart": 1266,
+            "charEnd": 1270,
+            "start": 67.62,
+            "end": 67.76
+          },
+          {
+            "index": 216,
+            "text": "pourquoi",
+            "charStart": 1271,
+            "charEnd": 1279,
+            "start": 67.8,
+            "end": 68.04
+          }
+        ]
+      },
+      "language": "fr",
+      "variant": "fr-ps",
+      "chapterId": "nuit-01",
+      "paragraphId": "nuit-01-p08",
+      "novelId": "novel-ce-que-la-nuit-a-entendu",
+      "text": "À vingt heures cinquante-deux, le train s'ébranla dans un long soupir de freins relâchés ; un à-coup courut d'attelage en attelage, comme une rumeur, puis Paris commença à glisser derrière la vitre, par fragments éclairés. Gaspard passa contrôler les billets. Quand il en eut fini avec Thibault, qui le remercia deux fois plutôt qu'une, il se tourna vers le vieil homme. Celui-ci lui tendit le sien et, d'une voix si basse que Mio fut peut-être la seule à l'entendre, lui demanda : « Vous vous arrêtez toujours à Valcroze ? » Gaspard leva les yeux du billet. « Valcroze ? Plus personne n'y descend depuis 1989, monsieur. On y marque l'arrêt sept minutes, au petit matin, le temps du croisement avec le TER de Veynes : c'est de la voie unique, là-haut. Mais les portes restent fermées. » « Je sais », dit le vieil homme, et il sourit comme quelqu'un qui vient d'apprendre une bonne nouvelle. Gaspard garda un instant le billet entre ses doigts, comme on tient une note un temps de trop, puis le lui rendit sans un mot. Valcroze. Le nom ne disait rien à Mio ; dans la bouche du vieil homme, pourtant, il avait sonné comme sonnent les clés longtemps gardées au fond d'une poche. Sur sa couchette, Mio pressa le bouton rouge de son enregistreur. Elle ne sut jamais très bien pourquoi.",
+      "ja": "二十時五十二分、ブレーキがほどける長いため息とともに、列車は動き出した。がくんという揺れが噂のように連結器から連結器へと伝わっていき、やがて窓の向こうで、パリが明かりの灯った断片になって滑りはじめた。ガスパールが検札に回ってきた。ティボーの切符をあらため終え、一度ならず二度までも礼を言われてから、彼は老人のほうへ向き直った。老人は自分の切符を差し出し、ひどく低い声で尋ねた。聞きとれたのは、おそらく澪ひとりだったろう。「いまでも、ヴァルクローズで停まりますか」ガスパールは切符から目を上げた。「ヴァルクローズ？　一九八九年からこっち、あそこで降りる人はいませんよ。明け方に七分停まるだけです。ヴェーヌから来る普通列車との行き違いでね。あの辺は単線なもんで。でも、扉は閉めたままです」「知っています」と老人は言い、いい知らせを聞いたばかりの人のように微笑んだ。ガスパールは切符を指にはさんだまま、しばし動きを止めた。ひとつの音を、ひと拍だけ長く伸ばすように。それから黙って切符を返した。ヴァルクローズ。澪には聞き覚えのない地名だった。それなのに、老人の口から出たその名は、長いあいだポケットの底にしまわれていた鍵のような音を立てていた。寝台の上で、澪は録音機の赤いボタンを押した。なぜそうしたのか、自分でもとうとうよく分からなかった。",
+      "lessonTitle": "オステルリッツ駅、二十時五十二分 · フランス語・単純過去版 · 3/3"
     }
   ]
 }
