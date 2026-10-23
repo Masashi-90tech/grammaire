@@ -14784,6 +14784,2554 @@
       "text": "Colette n'avait pas fini de tendre le quatrième gobelet vers le vieil homme que celui-ci posa deux doigts sur sa poitrine, à gauche, et secoua la tête. Ce fut un geste minuscule, presque rien. Mais la main de Colette demeura en l'air une seconde de trop, et quand elle reboucha la Thermos, le bouchon grinça sur le pas de vis comme une porte qu'on referme tout doucement, pour ne réveiller personne. Mio consigna la scène comme elle consignait tout, sans le vouloir, dans ce recoin de la tête où les sons s'entassent en attendant qu'on leur trouve un usage.",
       "ja": "コレットが四つ目のカップを老人へ差し出しきらないうちに、彼は胸の左側に指を二本あて、首を横に振った。ほんの小さな仕草だった。ないに等しいほどの。けれどコレットの手は、一秒だけ長く宙にとどまった。そして魔法瓶に栓をし直すとき、栓はねじ山の上できしんだ。誰も起こさないように、そっと閉め直す扉のような音で。澪はその場面を書き留めた。いつもそうしているように、意識せずに。音たちが、使い道を見つけてもらえる日を待って積み重なっていく、頭の片隅に。",
       "lessonTitle": "コレットの菩提樹茶 · フランス語・単純過去版 · 1/3"
+    },
+    {
+      "id": "nuit-02-p01-fr-pc",
+      "lessonId": "nuit-02-fr-pc-part1",
+      "kind": "reading",
+      "unitId": "nuit-02-p01-fr-pc",
+      "textHash": "33ba05212dd602171f36fb85758b50868480380c90411b07c0d427670b7218f3",
+      "asset": "audio/nuit-02-p01-fr-pc-4825db3ba0cd.m4a",
+      "audioHash": "4825db3ba0cd2a0998dfe47b2e261b52be211207b69c0880a26b37ae72ffcb62",
+      "durationMs": 35400,
+      "sourceHash": "4a13bfca153ca0924a630cdc6a61733ccc8ad7255aade79549640867309f89b5",
+      "encoding": "aac-mono-64k-v1",
+      "start": 0.28,
+      "end": 35.68,
+      "cuts": [],
+      "speedRegions": [],
+      "reviewedByUser": true,
+      "recognitionScore": 0.873,
+      "volumePercent": 100,
+      "appliedVolumePercent": 100,
+      "volumeLimited": false,
+      "volumeProcessing": "gain-peak-v1",
+      "speedProcessing": "av-timepitch-v1",
+      "wordSync": {
+        "version": 1,
+        "method": "whisperx-3.8.6-jiwer4-largev3-final-aac-v2",
+        "textHash": "33ba05212dd602171f36fb85758b50868480380c90411b07c0d427670b7218f3",
+        "audioHash": "4825db3ba0cd2a0998dfe47b2e261b52be211207b69c0880a26b37ae72ffcb62",
+        "text": "Pendant la première heure, personne n'a vraiment parlé, et le compartiment s'est empli de ces bruits que font les inconnus lorsqu'ils s'appliquent à n'en faire aucun : un carnet qu'on ouvre, une toux étouffée dans un poing. Le train traversait la banlieue avec la politesse distraite des trains de nuit, saluant au passage des gares désertes où il ne s'arrêtait pas ; et chacun veillait sur son petit territoire : Nour sur ses carnets, Thibault sur son étui, le vieil homme sur un livre de poche dont Mio ne parvenait pas à déchiffrer le titre, et Colette sur tout le monde.",
+        "language": "fr",
+        "duration": 35.4,
+        "totalWords": 98,
+        "reviewCount": 5,
+        "words": [
+          {
+            "index": 0,
+            "text": "Pendant",
+            "charStart": 0,
+            "charEnd": 7,
+            "start": 0.22,
+            "end": 0.54
+          },
+          {
+            "index": 1,
+            "text": "la",
+            "charStart": 8,
+            "charEnd": 10,
+            "start": 0.56,
+            "end": 0.66
+          },
+          {
+            "index": 2,
+            "text": "première",
+            "charStart": 11,
+            "charEnd": 19,
+            "start": 0.7,
+            "end": 1.001
+          },
+          {
+            "index": 3,
+            "text": "heure",
+            "charStart": 20,
+            "charEnd": 25,
+            "start": 1.041,
+            "end": 1.821
+          },
+          {
+            "index": 4,
+            "text": "personne",
+            "charStart": 27,
+            "charEnd": 35,
+            "start": 1.881,
+            "end": 2.261
+          },
+          {
+            "index": 5,
+            "text": "n'a",
+            "charStart": 36,
+            "charEnd": 39,
+            "start": 2.281,
+            "end": 2.421
+          },
+          {
+            "index": 6,
+            "text": "vraiment",
+            "charStart": 40,
+            "charEnd": 48,
+            "start": 2.461,
+            "end": 2.722
+          },
+          {
+            "index": 7,
+            "text": "parlé",
+            "charStart": 49,
+            "charEnd": 54,
+            "start": 2.762,
+            "end": 3.982
+          },
+          {
+            "index": 8,
+            "text": "et",
+            "charStart": 56,
+            "charEnd": 58,
+            "start": 4.042,
+            "end": 4.262
+          },
+          {
+            "index": 9,
+            "text": "le",
+            "charStart": 59,
+            "charEnd": 61,
+            "start": 4.302,
+            "end": 4.382
+          },
+          {
+            "index": 10,
+            "text": "compartiment",
+            "charStart": 62,
+            "charEnd": 74,
+            "start": 4.422,
+            "end": 4.983
+          },
+          {
+            "index": 11,
+            "text": "s'est",
+            "charStart": 75,
+            "charEnd": 80,
+            "start": 5.003,
+            "end": 5.223
+          },
+          {
+            "index": 12,
+            "text": "empli",
+            "charStart": 81,
+            "charEnd": 86,
+            "start": 5.283,
+            "end": 5.683
+          },
+          {
+            "index": 13,
+            "text": "de",
+            "charStart": 87,
+            "charEnd": 89,
+            "start": 5.723,
+            "end": 5.843
+          },
+          {
+            "index": 14,
+            "text": "ces",
+            "charStart": 90,
+            "charEnd": 93,
+            "start": 5.883,
+            "end": 6.043
+          },
+          {
+            "index": 15,
+            "text": "bruits",
+            "charStart": 94,
+            "charEnd": 100,
+            "start": 6.083,
+            "end": 6.384
+          },
+          {
+            "index": 16,
+            "text": "que",
+            "charStart": 101,
+            "charEnd": 104,
+            "start": 6.424,
+            "end": 6.564
+          },
+          {
+            "index": 17,
+            "text": "font",
+            "charStart": 105,
+            "charEnd": 109,
+            "start": 6.604,
+            "end": 6.784
+          },
+          {
+            "index": 18,
+            "text": "les",
+            "charStart": 110,
+            "charEnd": 113,
+            "start": 6.824,
+            "end": 6.924
+          },
+          {
+            "index": 19,
+            "text": "inconnus",
+            "charStart": 114,
+            "charEnd": 122,
+            "start": 6.964,
+            "end": 7.464
+          },
+          {
+            "index": 20,
+            "text": "lorsqu'ils",
+            "charStart": 123,
+            "charEnd": 133,
+            "start": 7.504,
+            "end": 7.864
+          },
+          {
+            "index": 21,
+            "text": "s'appliquent",
+            "charStart": 134,
+            "charEnd": 146,
+            "start": 7.884,
+            "end": 8.225
+          },
+          {
+            "index": 23,
+            "text": "n'en",
+            "charStart": 149,
+            "charEnd": 153,
+            "start": 8.305,
+            "end": 8.425
+          },
+          {
+            "index": 24,
+            "text": "faire",
+            "charStart": 154,
+            "charEnd": 159,
+            "start": 8.465,
+            "end": 8.625
+          },
+          {
+            "index": 25,
+            "text": "aucun",
+            "charStart": 160,
+            "charEnd": 165,
+            "start": 8.665,
+            "end": 8.885
+          },
+          {
+            "index": 26,
+            "text": "un",
+            "charStart": 168,
+            "charEnd": 170,
+            "start": 9.906,
+            "end": 9.966
+          },
+          {
+            "index": 27,
+            "text": "carnet",
+            "charStart": 171,
+            "charEnd": 177,
+            "start": 10.006,
+            "end": 10.286
+          },
+          {
+            "index": 29,
+            "text": "ouvre",
+            "charStart": 184,
+            "charEnd": 189,
+            "start": 10.506,
+            "end": 11.527
+          },
+          {
+            "index": 30,
+            "text": "une",
+            "charStart": 191,
+            "charEnd": 194,
+            "start": 11.587,
+            "end": 11.747
+          },
+          {
+            "index": 31,
+            "text": "toux",
+            "charStart": 195,
+            "charEnd": 199,
+            "start": 11.787,
+            "end": 12.047
+          },
+          {
+            "index": 32,
+            "text": "étouffée",
+            "charStart": 200,
+            "charEnd": 208,
+            "start": 12.087,
+            "end": 12.507
+          },
+          {
+            "index": 33,
+            "text": "dans",
+            "charStart": 209,
+            "charEnd": 213,
+            "start": 12.527,
+            "end": 12.647
+          },
+          {
+            "index": 34,
+            "text": "un",
+            "charStart": 214,
+            "charEnd": 216,
+            "start": 12.707,
+            "end": 12.807
+          },
+          {
+            "index": 36,
+            "text": "Le",
+            "charStart": 224,
+            "charEnd": 226,
+            "start": 14.308,
+            "end": 14.408
+          },
+          {
+            "index": 37,
+            "text": "train",
+            "charStart": 227,
+            "charEnd": 232,
+            "start": 14.448,
+            "end": 14.728
+          },
+          {
+            "index": 38,
+            "text": "traversait",
+            "charStart": 233,
+            "charEnd": 243,
+            "start": 14.788,
+            "end": 15.269
+          },
+          {
+            "index": 39,
+            "text": "la",
+            "charStart": 244,
+            "charEnd": 246,
+            "start": 15.289,
+            "end": 15.369
+          },
+          {
+            "index": 40,
+            "text": "banlieue",
+            "charStart": 247,
+            "charEnd": 255,
+            "start": 15.389,
+            "end": 16.249
+          },
+          {
+            "index": 41,
+            "text": "avec",
+            "charStart": 256,
+            "charEnd": 260,
+            "start": 16.289,
+            "end": 16.509
+          },
+          {
+            "index": 42,
+            "text": "la",
+            "charStart": 261,
+            "charEnd": 263,
+            "start": 16.549,
+            "end": 16.629
+          },
+          {
+            "index": 43,
+            "text": "politesse",
+            "charStart": 264,
+            "charEnd": 273,
+            "start": 16.669,
+            "end": 17.09
+          },
+          {
+            "index": 44,
+            "text": "distraite",
+            "charStart": 274,
+            "charEnd": 283,
+            "start": 17.13,
+            "end": 17.59
+          },
+          {
+            "index": 45,
+            "text": "des",
+            "charStart": 284,
+            "charEnd": 287,
+            "start": 17.61,
+            "end": 17.71
+          },
+          {
+            "index": 46,
+            "text": "trains",
+            "charStart": 288,
+            "charEnd": 294,
+            "start": 17.73,
+            "end": 17.93
+          },
+          {
+            "index": 47,
+            "text": "de",
+            "charStart": 295,
+            "charEnd": 297,
+            "start": 17.95,
+            "end": 18.05
+          },
+          {
+            "index": 48,
+            "text": "nuit",
+            "charStart": 298,
+            "charEnd": 302,
+            "start": 18.09,
+            "end": 19.051
+          },
+          {
+            "index": 49,
+            "text": "saluant",
+            "charStart": 304,
+            "charEnd": 311,
+            "start": 19.111,
+            "end": 19.451
+          },
+          {
+            "index": 50,
+            "text": "au",
+            "charStart": 312,
+            "charEnd": 314,
+            "start": 19.471,
+            "end": 19.551
+          },
+          {
+            "index": 51,
+            "text": "passage",
+            "charStart": 315,
+            "charEnd": 322,
+            "start": 19.571,
+            "end": 19.971
+          },
+          {
+            "index": 52,
+            "text": "des",
+            "charStart": 323,
+            "charEnd": 326,
+            "start": 20.011,
+            "end": 20.131
+          },
+          {
+            "index": 53,
+            "text": "gares",
+            "charStart": 327,
+            "charEnd": 332,
+            "start": 20.171,
+            "end": 20.432
+          },
+          {
+            "index": 54,
+            "text": "désertes",
+            "charStart": 333,
+            "charEnd": 341,
+            "start": 20.452,
+            "end": 20.852
+          },
+          {
+            "index": 55,
+            "text": "où",
+            "charStart": 342,
+            "charEnd": 344,
+            "start": 20.872,
+            "end": 20.932
+          },
+          {
+            "index": 56,
+            "text": "il",
+            "charStart": 345,
+            "charEnd": 347,
+            "start": 20.972,
+            "end": 21.072
+          },
+          {
+            "index": 57,
+            "text": "ne",
+            "charStart": 348,
+            "charEnd": 350,
+            "start": 21.112,
+            "end": 21.172
+          },
+          {
+            "index": 58,
+            "text": "s'arrêtait",
+            "charStart": 351,
+            "charEnd": 361,
+            "start": 21.192,
+            "end": 21.592
+          },
+          {
+            "index": 59,
+            "text": "pas",
+            "charStart": 362,
+            "charEnd": 365,
+            "start": 21.612,
+            "end": 21.712
+          },
+          {
+            "index": 60,
+            "text": "et",
+            "charStart": 368,
+            "charEnd": 370,
+            "start": 22.573,
+            "end": 22.753
+          },
+          {
+            "index": 61,
+            "text": "chacun",
+            "charStart": 371,
+            "charEnd": 377,
+            "start": 22.793,
+            "end": 23.133
+          },
+          {
+            "index": 62,
+            "text": "veillait",
+            "charStart": 378,
+            "charEnd": 386,
+            "start": 23.193,
+            "end": 23.533
+          },
+          {
+            "index": 63,
+            "text": "sur",
+            "charStart": 387,
+            "charEnd": 390,
+            "start": 23.573,
+            "end": 23.693
+          },
+          {
+            "index": 64,
+            "text": "son",
+            "charStart": 391,
+            "charEnd": 394,
+            "start": 23.733,
+            "end": 23.873
+          },
+          {
+            "index": 65,
+            "text": "petit",
+            "charStart": 395,
+            "charEnd": 400,
+            "start": 23.914,
+            "end": 24.134
+          },
+          {
+            "index": 66,
+            "text": "territoire",
+            "charStart": 401,
+            "charEnd": 411,
+            "start": 24.174,
+            "end": 24.574
+          },
+          {
+            "index": 67,
+            "text": "Nour",
+            "charStart": 414,
+            "charEnd": 418,
+            "start": 25.554,
+            "end": 25.855
+          },
+          {
+            "index": 68,
+            "text": "sur",
+            "charStart": 419,
+            "charEnd": 422,
+            "start": 25.875,
+            "end": 25.995
+          },
+          {
+            "index": 69,
+            "text": "ses",
+            "charStart": 423,
+            "charEnd": 426,
+            "start": 26.035,
+            "end": 26.135
+          },
+          {
+            "index": 70,
+            "text": "carnets",
+            "charStart": 427,
+            "charEnd": 434,
+            "start": 26.175,
+            "end": 27.175
+          },
+          {
+            "index": 72,
+            "text": "sur",
+            "charStart": 445,
+            "charEnd": 448,
+            "start": 27.716,
+            "end": 27.856
+          },
+          {
+            "index": 73,
+            "text": "son",
+            "charStart": 449,
+            "charEnd": 452,
+            "start": 27.876,
+            "end": 28.016
+          },
+          {
+            "index": 74,
+            "text": "étui",
+            "charStart": 453,
+            "charEnd": 457,
+            "start": 28.076,
+            "end": 28.276
+          },
+          {
+            "index": 75,
+            "text": "le",
+            "charStart": 459,
+            "charEnd": 461,
+            "start": 29.217,
+            "end": 29.277
+          },
+          {
+            "index": 76,
+            "text": "vieil",
+            "charStart": 462,
+            "charEnd": 467,
+            "start": 29.317,
+            "end": 29.517
+          },
+          {
+            "index": 77,
+            "text": "homme",
+            "charStart": 468,
+            "charEnd": 473,
+            "start": 29.537,
+            "end": 29.777
+          },
+          {
+            "index": 78,
+            "text": "sur",
+            "charStart": 474,
+            "charEnd": 477,
+            "start": 29.817,
+            "end": 29.937
+          },
+          {
+            "index": 79,
+            "text": "un",
+            "charStart": 478,
+            "charEnd": 480,
+            "start": 29.977,
+            "end": 30.037
+          },
+          {
+            "index": 80,
+            "text": "livre",
+            "charStart": 481,
+            "charEnd": 486,
+            "start": 30.077,
+            "end": 30.297
+          },
+          {
+            "index": 81,
+            "text": "de",
+            "charStart": 487,
+            "charEnd": 489,
+            "start": 30.337,
+            "end": 30.417
+          },
+          {
+            "index": 82,
+            "text": "poche",
+            "charStart": 490,
+            "charEnd": 495,
+            "start": 30.477,
+            "end": 30.777
+          },
+          {
+            "index": 83,
+            "text": "dont",
+            "charStart": 496,
+            "charEnd": 500,
+            "start": 30.817,
+            "end": 30.957
+          },
+          {
+            "index": 84,
+            "text": "Mio",
+            "charStart": 501,
+            "charEnd": 504,
+            "start": 30.998,
+            "end": 31.258
+          },
+          {
+            "index": 85,
+            "text": "ne",
+            "charStart": 505,
+            "charEnd": 507,
+            "start": 31.298,
+            "end": 31.378
+          },
+          {
+            "index": 86,
+            "text": "parvenait",
+            "charStart": 508,
+            "charEnd": 517,
+            "start": 31.418,
+            "end": 31.798
+          },
+          {
+            "index": 87,
+            "text": "pas",
+            "charStart": 518,
+            "charEnd": 521,
+            "start": 31.838,
+            "end": 31.958
+          },
+          {
+            "index": 89,
+            "text": "déchiffrer",
+            "charStart": 524,
+            "charEnd": 534,
+            "start": 32.078,
+            "end": 32.458
+          },
+          {
+            "index": 90,
+            "text": "le",
+            "charStart": 535,
+            "charEnd": 537,
+            "start": 32.498,
+            "end": 32.558
+          },
+          {
+            "index": 91,
+            "text": "titre",
+            "charStart": 538,
+            "charEnd": 543,
+            "start": 32.598,
+            "end": 33.619
+          },
+          {
+            "index": 92,
+            "text": "et",
+            "charStart": 545,
+            "charEnd": 547,
+            "start": 33.699,
+            "end": 33.779
+          },
+          {
+            "index": 93,
+            "text": "Colette",
+            "charStart": 548,
+            "charEnd": 555,
+            "start": 33.839,
+            "end": 34.7
+          },
+          {
+            "index": 94,
+            "text": "sur",
+            "charStart": 556,
+            "charEnd": 559,
+            "start": 34.74,
+            "end": 34.86
+          },
+          {
+            "index": 95,
+            "text": "tout",
+            "charStart": 560,
+            "charEnd": 564,
+            "start": 34.9,
+            "end": 35.02
+          },
+          {
+            "index": 96,
+            "text": "le",
+            "charStart": 565,
+            "charEnd": 567,
+            "start": 35.06,
+            "end": 35.12
+          },
+          {
+            "index": 97,
+            "text": "monde",
+            "charStart": 568,
+            "charEnd": 573,
+            "start": 35.14,
+            "end": 35.28
+          }
+        ]
+      },
+      "language": "fr",
+      "variant": "fr-pc",
+      "chapterId": "nuit-02",
+      "paragraphId": "nuit-02-p01",
+      "novelId": "novel-ce-que-la-nuit-a-entendu",
+      "text": "Pendant la première heure, personne n'a vraiment parlé, et le compartiment s'est empli de ces bruits que font les inconnus lorsqu'ils s'appliquent à n'en faire aucun : un carnet qu'on ouvre, une toux étouffée dans un poing. Le train traversait la banlieue avec la politesse distraite des trains de nuit, saluant au passage des gares désertes où il ne s'arrêtait pas ; et chacun veillait sur son petit territoire : Nour sur ses carnets, Thibault sur son étui, le vieil homme sur un livre de poche dont Mio ne parvenait pas à déchiffrer le titre, et Colette sur tout le monde.",
+      "ja": "最初の一時間、誰もろくに口をきかなかった。コンパートメントを満たしたのは、見知らぬ者どうしが音を立てまいと努めるときにかぎって立ててしまう、あの種の音だった。手帳を開く音、こぶしのなかに押し殺された咳。列車は夜行列車らしい上の空の礼儀正しさで郊外を抜けていった。人けのない駅には停まりもせず、通りすがりに会釈だけしていくように。めいめいが自分の小さな領土を見張っていた。ヌールはノートを、ティボーはケースを、老人は澪には題名の読み取れない文庫本を。そしてコレットは、全員を。",
+      "lessonTitle": "コレットの菩提樹茶 · フランス語・複合過去版 · 1/3"
+    },
+    {
+      "id": "nuit-02-p02-fr-pc",
+      "lessonId": "nuit-02-fr-pc-part1",
+      "kind": "reading",
+      "unitId": "nuit-02-p02-fr-pc",
+      "textHash": "d8aed8dd469cf001c8c1997d95ba11cdc6d6e23dab6832a1e3e6805062443bb4",
+      "asset": "audio/nuit-02-p02-fr-pc-aee7d2e5bab1.m4a",
+      "audioHash": "aee7d2e5bab118b7a42352159b90c54ce7d28d014976d9dc4328593f34e3630f",
+      "durationMs": 46480,
+      "sourceHash": "4a13bfca153ca0924a630cdc6a61733ccc8ad7255aade79549640867309f89b5",
+      "encoding": "aac-mono-64k-v1",
+      "start": 36.46,
+      "end": 82.94,
+      "cuts": [],
+      "speedRegions": [],
+      "reviewedByUser": true,
+      "recognitionScore": 0.902,
+      "volumePercent": 100,
+      "appliedVolumePercent": 100,
+      "volumeLimited": false,
+      "volumeProcessing": "gain-peak-v1",
+      "speedProcessing": "av-timepitch-v1",
+      "wordSync": {
+        "version": 1,
+        "method": "whisperx-3.8.6-jiwer4-largev3-final-aac-v2",
+        "textHash": "d8aed8dd469cf001c8c1997d95ba11cdc6d6e23dab6832a1e3e6805062443bb4",
+        "audioHash": "aee7d2e5bab118b7a42352159b90c54ce7d28d014976d9dc4328593f34e3630f",
+        "text": "Vers vingt-deux heures, Colette a ouvert son carton à chapeau. Il n'en est pas sorti de chapeau, mais une Thermos de métal cabossé, quatre gobelets en plastique et un paquet de madeleines. « Du tilleul, a-t-elle annoncé. Pour dormir. Mon médecin y tient, et je suis une malade très obéissante. » Le tilleul sentait le cognac à un mètre. « Vingt pour cent d'infusion, au mieux, a diagnostiqué Nour. Le reste relève de la distillation. » Elle n'en a pas moins accepté un fond ; Thibault a décliné l'offre avec mille excuses, au nom de ses mains ; Mio, elle, a pris un gobelet par curiosité professionnelle. En tombant dans le plastique, le liquide a fait entendre un petit bruit doré, un gargouillis de source, qu'elle aurait voulu garder.",
+        "language": "fr",
+        "duration": 46.48,
+        "totalWords": 123,
+        "reviewCount": 11,
+        "words": [
+          {
+            "index": 0,
+            "text": "Vers",
+            "charStart": 0,
+            "charEnd": 4,
+            "start": 0.18,
+            "end": 0.32
+          },
+          {
+            "index": 3,
+            "text": "Colette",
+            "charStart": 24,
+            "charEnd": 31,
+            "start": 1.341,
+            "end": 1.661
+          },
+          {
+            "index": 4,
+            "text": "a",
+            "charStart": 32,
+            "charEnd": 33,
+            "start": 1.701,
+            "end": 1.761
+          },
+          {
+            "index": 5,
+            "text": "ouvert",
+            "charStart": 34,
+            "charEnd": 40,
+            "start": 1.781,
+            "end": 2.041
+          },
+          {
+            "index": 6,
+            "text": "son",
+            "charStart": 41,
+            "charEnd": 44,
+            "start": 2.081,
+            "end": 2.201
+          },
+          {
+            "index": 7,
+            "text": "carton",
+            "charStart": 45,
+            "charEnd": 51,
+            "start": 2.221,
+            "end": 2.481
+          },
+          {
+            "index": 9,
+            "text": "chapeau",
+            "charStart": 54,
+            "charEnd": 61,
+            "start": 2.601,
+            "end": 3.722
+          },
+          {
+            "index": 10,
+            "text": "Il",
+            "charStart": 63,
+            "charEnd": 65,
+            "start": 3.802,
+            "end": 3.902
+          },
+          {
+            "index": 11,
+            "text": "n'en",
+            "charStart": 66,
+            "charEnd": 70,
+            "start": 3.922,
+            "end": 4.042
+          },
+          {
+            "index": 12,
+            "text": "est",
+            "charStart": 71,
+            "charEnd": 74,
+            "start": 4.082,
+            "end": 4.182
+          },
+          {
+            "index": 13,
+            "text": "pas",
+            "charStart": 75,
+            "charEnd": 78,
+            "start": 4.202,
+            "end": 4.302
+          },
+          {
+            "index": 14,
+            "text": "sorti",
+            "charStart": 79,
+            "charEnd": 84,
+            "start": 4.362,
+            "end": 4.822
+          },
+          {
+            "index": 15,
+            "text": "de",
+            "charStart": 85,
+            "charEnd": 87,
+            "start": 4.862,
+            "end": 5.022
+          },
+          {
+            "index": 16,
+            "text": "chapeau",
+            "charStart": 88,
+            "charEnd": 95,
+            "start": 5.062,
+            "end": 5.843
+          },
+          {
+            "index": 17,
+            "text": "mais",
+            "charStart": 97,
+            "charEnd": 101,
+            "start": 5.883,
+            "end": 6.023
+          },
+          {
+            "index": 18,
+            "text": "une",
+            "charStart": 102,
+            "charEnd": 105,
+            "start": 6.083,
+            "end": 6.203
+          },
+          {
+            "index": 19,
+            "text": "Thermos",
+            "charStart": 106,
+            "charEnd": 113,
+            "start": 6.223,
+            "end": 6.623
+          },
+          {
+            "index": 20,
+            "text": "de",
+            "charStart": 114,
+            "charEnd": 116,
+            "start": 6.663,
+            "end": 6.723
+          },
+          {
+            "index": 21,
+            "text": "métal",
+            "charStart": 117,
+            "charEnd": 122,
+            "start": 6.763,
+            "end": 7.063
+          },
+          {
+            "index": 22,
+            "text": "cabossé",
+            "charStart": 123,
+            "charEnd": 130,
+            "start": 7.103,
+            "end": 8.224
+          },
+          {
+            "index": 23,
+            "text": "quatre",
+            "charStart": 132,
+            "charEnd": 138,
+            "start": 8.264,
+            "end": 8.524
+          },
+          {
+            "index": 24,
+            "text": "gobelets",
+            "charStart": 139,
+            "charEnd": 147,
+            "start": 8.564,
+            "end": 8.824
+          },
+          {
+            "index": 25,
+            "text": "en",
+            "charStart": 148,
+            "charEnd": 150,
+            "start": 8.844,
+            "end": 8.924
+          },
+          {
+            "index": 26,
+            "text": "plastique",
+            "charStart": 151,
+            "charEnd": 160,
+            "start": 8.944,
+            "end": 9.724
+          },
+          {
+            "index": 27,
+            "text": "et",
+            "charStart": 161,
+            "charEnd": 163,
+            "start": 9.764,
+            "end": 9.864
+          },
+          {
+            "index": 28,
+            "text": "un",
+            "charStart": 164,
+            "charEnd": 166,
+            "start": 9.924,
+            "end": 9.984
+          },
+          {
+            "index": 29,
+            "text": "paquet",
+            "charStart": 167,
+            "charEnd": 173,
+            "start": 10.004,
+            "end": 10.204
+          },
+          {
+            "index": 30,
+            "text": "de",
+            "charStart": 174,
+            "charEnd": 176,
+            "start": 10.244,
+            "end": 10.304
+          },
+          {
+            "index": 31,
+            "text": "madeleines",
+            "charStart": 177,
+            "charEnd": 187,
+            "start": 10.324,
+            "end": 10.645
+          },
+          {
+            "index": 32,
+            "text": "Du",
+            "charStart": 191,
+            "charEnd": 193,
+            "start": 11.685,
+            "end": 11.765
+          },
+          {
+            "index": 33,
+            "text": "tilleul",
+            "charStart": 194,
+            "charEnd": 201,
+            "start": 11.805,
+            "end": 12.565
+          },
+          {
+            "index": 34,
+            "text": "a-t-elle",
+            "charStart": 203,
+            "charEnd": 211,
+            "start": 12.625,
+            "end": 12.866
+          },
+          {
+            "index": 35,
+            "text": "annoncé",
+            "charStart": 212,
+            "charEnd": 219,
+            "start": 12.886,
+            "end": 13.746
+          },
+          {
+            "index": 36,
+            "text": "Pour",
+            "charStart": 221,
+            "charEnd": 225,
+            "start": 13.786,
+            "end": 13.906
+          },
+          {
+            "index": 37,
+            "text": "dormir",
+            "charStart": 226,
+            "charEnd": 232,
+            "start": 13.946,
+            "end": 14.266
+          },
+          {
+            "index": 38,
+            "text": "Mon",
+            "charStart": 234,
+            "charEnd": 237,
+            "start": 15.307,
+            "end": 15.427
+          },
+          {
+            "index": 39,
+            "text": "médecin",
+            "charStart": 238,
+            "charEnd": 245,
+            "start": 15.447,
+            "end": 15.767
+          },
+          {
+            "index": 40,
+            "text": "y",
+            "charStart": 246,
+            "charEnd": 247,
+            "start": 15.827,
+            "end": 15.887
+          },
+          {
+            "index": 41,
+            "text": "tient",
+            "charStart": 248,
+            "charEnd": 253,
+            "start": 15.907,
+            "end": 16.627
+          },
+          {
+            "index": 42,
+            "text": "et",
+            "charStart": 255,
+            "charEnd": 257,
+            "start": 16.687,
+            "end": 16.787
+          },
+          {
+            "index": 43,
+            "text": "je",
+            "charStart": 258,
+            "charEnd": 260,
+            "start": 16.827,
+            "end": 16.887
+          },
+          {
+            "index": 44,
+            "text": "suis",
+            "charStart": 261,
+            "charEnd": 265,
+            "start": 16.927,
+            "end": 17.087
+          },
+          {
+            "index": 45,
+            "text": "une",
+            "charStart": 266,
+            "charEnd": 269,
+            "start": 17.127,
+            "end": 17.227
+          },
+          {
+            "index": 46,
+            "text": "malade",
+            "charStart": 270,
+            "charEnd": 276,
+            "start": 17.267,
+            "end": 17.748
+          },
+          {
+            "index": 47,
+            "text": "très",
+            "charStart": 277,
+            "charEnd": 281,
+            "start": 17.808,
+            "end": 18.028
+          },
+          {
+            "index": 48,
+            "text": "obéissante",
+            "charStart": 282,
+            "charEnd": 292,
+            "start": 18.068,
+            "end": 18.588
+          },
+          {
+            "index": 49,
+            "text": "Le",
+            "charStart": 296,
+            "charEnd": 298,
+            "start": 19.909,
+            "end": 19.969
+          },
+          {
+            "index": 50,
+            "text": "tilleul",
+            "charStart": 299,
+            "charEnd": 306,
+            "start": 20.009,
+            "end": 20.429
+          },
+          {
+            "index": 51,
+            "text": "sentait",
+            "charStart": 307,
+            "charEnd": 314,
+            "start": 20.449,
+            "end": 20.729
+          },
+          {
+            "index": 52,
+            "text": "le",
+            "charStart": 315,
+            "charEnd": 317,
+            "start": 20.769,
+            "end": 20.829
+          },
+          {
+            "index": 53,
+            "text": "cognac",
+            "charStart": 318,
+            "charEnd": 324,
+            "start": 20.869,
+            "end": 21.369
+          },
+          {
+            "index": 56,
+            "text": "mètre",
+            "charStart": 330,
+            "charEnd": 335,
+            "start": 21.589,
+            "end": 21.829
+          },
+          {
+            "index": 60,
+            "text": "d'infusion",
+            "charStart": 355,
+            "charEnd": 365,
+            "start": 23.51,
+            "end": 24.07
+          },
+          {
+            "index": 61,
+            "text": "au",
+            "charStart": 367,
+            "charEnd": 369,
+            "start": 24.13,
+            "end": 24.21
+          },
+          {
+            "index": 62,
+            "text": "mieux",
+            "charStart": 370,
+            "charEnd": 375,
+            "start": 24.23,
+            "end": 24.35
+          },
+          {
+            "index": 63,
+            "text": "a",
+            "charStart": 377,
+            "charEnd": 378,
+            "start": 25.011,
+            "end": 25.071
+          },
+          {
+            "index": 64,
+            "text": "diagnostiqué",
+            "charStart": 379,
+            "charEnd": 391,
+            "start": 25.111,
+            "end": 25.651
+          },
+          {
+            "index": 65,
+            "text": "Nour",
+            "charStart": 392,
+            "charEnd": 396,
+            "start": 25.671,
+            "end": 26.491
+          },
+          {
+            "index": 66,
+            "text": "Le",
+            "charStart": 398,
+            "charEnd": 400,
+            "start": 26.551,
+            "end": 26.651
+          },
+          {
+            "index": 67,
+            "text": "reste",
+            "charStart": 401,
+            "charEnd": 406,
+            "start": 26.691,
+            "end": 26.912
+          },
+          {
+            "index": 68,
+            "text": "relève",
+            "charStart": 407,
+            "charEnd": 413,
+            "start": 26.952,
+            "end": 27.232
+          },
+          {
+            "index": 69,
+            "text": "de",
+            "charStart": 414,
+            "charEnd": 416,
+            "start": 27.272,
+            "end": 27.332
+          },
+          {
+            "index": 70,
+            "text": "la",
+            "charStart": 417,
+            "charEnd": 419,
+            "start": 27.372,
+            "end": 27.432
+          },
+          {
+            "index": 71,
+            "text": "distillation",
+            "charStart": 420,
+            "charEnd": 432,
+            "start": 27.472,
+            "end": 27.972
+          },
+          {
+            "index": 72,
+            "text": "Elle",
+            "charStart": 436,
+            "charEnd": 440,
+            "start": 29.073,
+            "end": 29.213
+          },
+          {
+            "index": 73,
+            "text": "n'en",
+            "charStart": 441,
+            "charEnd": 445,
+            "start": 29.233,
+            "end": 29.353
+          },
+          {
+            "index": 74,
+            "text": "a",
+            "charStart": 446,
+            "charEnd": 447,
+            "start": 29.393,
+            "end": 29.473
+          },
+          {
+            "index": 75,
+            "text": "pas",
+            "charStart": 448,
+            "charEnd": 451,
+            "start": 29.493,
+            "end": 29.573
+          },
+          {
+            "index": 76,
+            "text": "moins",
+            "charStart": 452,
+            "charEnd": 457,
+            "start": 29.613,
+            "end": 29.793
+          },
+          {
+            "index": 77,
+            "text": "accepté",
+            "charStart": 458,
+            "charEnd": 465,
+            "start": 29.813,
+            "end": 30.173
+          },
+          {
+            "index": 79,
+            "text": "fond",
+            "charStart": 469,
+            "charEnd": 473,
+            "start": 30.353,
+            "end": 30.473
+          },
+          {
+            "index": 81,
+            "text": "a",
+            "charStart": 485,
+            "charEnd": 486,
+            "start": 31.594,
+            "end": 31.654
+          },
+          {
+            "index": 82,
+            "text": "décliné",
+            "charStart": 487,
+            "charEnd": 494,
+            "start": 31.694,
+            "end": 32.054
+          },
+          {
+            "index": 83,
+            "text": "l'offre",
+            "charStart": 495,
+            "charEnd": 502,
+            "start": 32.074,
+            "end": 32.354
+          },
+          {
+            "index": 84,
+            "text": "avec",
+            "charStart": 503,
+            "charEnd": 507,
+            "start": 32.394,
+            "end": 32.694
+          },
+          {
+            "index": 86,
+            "text": "excuses",
+            "charStart": 514,
+            "charEnd": 521,
+            "start": 32.974,
+            "end": 33.815
+          },
+          {
+            "index": 87,
+            "text": "au",
+            "charStart": 523,
+            "charEnd": 525,
+            "start": 33.875,
+            "end": 33.955
+          },
+          {
+            "index": 88,
+            "text": "nom",
+            "charStart": 526,
+            "charEnd": 529,
+            "start": 33.995,
+            "end": 34.135
+          },
+          {
+            "index": 89,
+            "text": "de",
+            "charStart": 530,
+            "charEnd": 532,
+            "start": 34.175,
+            "end": 34.255
+          },
+          {
+            "index": 90,
+            "text": "ses",
+            "charStart": 533,
+            "charEnd": 536,
+            "start": 34.295,
+            "end": 34.415
+          },
+          {
+            "index": 91,
+            "text": "mains",
+            "charStart": 537,
+            "charEnd": 542,
+            "start": 34.435,
+            "end": 35.475
+          },
+          {
+            "index": 92,
+            "text": "Mio",
+            "charStart": 545,
+            "charEnd": 548,
+            "start": 35.535,
+            "end": 35.795
+          },
+          {
+            "index": 93,
+            "text": "elle",
+            "charStart": 550,
+            "charEnd": 554,
+            "start": 35.855,
+            "end": 36.456
+          },
+          {
+            "index": 94,
+            "text": "a",
+            "charStart": 556,
+            "charEnd": 557,
+            "start": 36.496,
+            "end": 36.536
+          },
+          {
+            "index": 95,
+            "text": "pris",
+            "charStart": 558,
+            "charEnd": 562,
+            "start": 36.596,
+            "end": 36.756
+          },
+          {
+            "index": 96,
+            "text": "un",
+            "charStart": 563,
+            "charEnd": 565,
+            "start": 36.796,
+            "end": 36.856
+          },
+          {
+            "index": 97,
+            "text": "gobelet",
+            "charStart": 566,
+            "charEnd": 573,
+            "start": 36.896,
+            "end": 37.196
+          },
+          {
+            "index": 98,
+            "text": "par",
+            "charStart": 574,
+            "charEnd": 577,
+            "start": 37.256,
+            "end": 37.376
+          },
+          {
+            "index": 99,
+            "text": "curiosité",
+            "charStart": 578,
+            "charEnd": 587,
+            "start": 37.416,
+            "end": 37.956
+          },
+          {
+            "index": 100,
+            "text": "professionnelle",
+            "charStart": 588,
+            "charEnd": 603,
+            "start": 38.016,
+            "end": 39.497
+          },
+          {
+            "index": 101,
+            "text": "En",
+            "charStart": 605,
+            "charEnd": 607,
+            "start": 39.537,
+            "end": 39.617
+          },
+          {
+            "index": 102,
+            "text": "tombant",
+            "charStart": 608,
+            "charEnd": 615,
+            "start": 39.637,
+            "end": 39.897
+          },
+          {
+            "index": 103,
+            "text": "dans",
+            "charStart": 616,
+            "charEnd": 620,
+            "start": 39.917,
+            "end": 40.037
+          },
+          {
+            "index": 104,
+            "text": "le",
+            "charStart": 621,
+            "charEnd": 623,
+            "start": 40.057,
+            "end": 40.117
+          },
+          {
+            "index": 105,
+            "text": "plastique",
+            "charStart": 624,
+            "charEnd": 633,
+            "start": 40.157,
+            "end": 41.078
+          },
+          {
+            "index": 106,
+            "text": "le",
+            "charStart": 635,
+            "charEnd": 637,
+            "start": 41.118,
+            "end": 41.198
+          },
+          {
+            "index": 107,
+            "text": "liquide",
+            "charStart": 638,
+            "charEnd": 645,
+            "start": 41.238,
+            "end": 41.518
+          },
+          {
+            "index": 108,
+            "text": "a",
+            "charStart": 646,
+            "charEnd": 647,
+            "start": 41.558,
+            "end": 41.578
+          },
+          {
+            "index": 109,
+            "text": "fait",
+            "charStart": 648,
+            "charEnd": 652,
+            "start": 41.638,
+            "end": 41.758
+          },
+          {
+            "index": 110,
+            "text": "entendre",
+            "charStart": 653,
+            "charEnd": 661,
+            "start": 41.798,
+            "end": 42.138
+          },
+          {
+            "index": 111,
+            "text": "un",
+            "charStart": 662,
+            "charEnd": 664,
+            "start": 42.218,
+            "end": 42.318
+          },
+          {
+            "index": 112,
+            "text": "petit",
+            "charStart": 665,
+            "charEnd": 670,
+            "start": 42.358,
+            "end": 42.618
+          },
+          {
+            "index": 113,
+            "text": "bruit",
+            "charStart": 671,
+            "charEnd": 676,
+            "start": 42.658,
+            "end": 42.938
+          },
+          {
+            "index": 114,
+            "text": "doré",
+            "charStart": 677,
+            "charEnd": 681,
+            "start": 42.978,
+            "end": 44.039
+          },
+          {
+            "index": 115,
+            "text": "un",
+            "charStart": 683,
+            "charEnd": 685,
+            "start": 44.119,
+            "end": 44.179
+          },
+          {
+            "index": 116,
+            "text": "gargouillis",
+            "charStart": 686,
+            "charEnd": 697,
+            "start": 44.219,
+            "end": 44.639
+          },
+          {
+            "index": 117,
+            "text": "de",
+            "charStart": 698,
+            "charEnd": 700,
+            "start": 44.659,
+            "end": 44.719
+          },
+          {
+            "index": 118,
+            "text": "source",
+            "charStart": 701,
+            "charEnd": 707,
+            "start": 44.779,
+            "end": 45.52
+          },
+          {
+            "index": 119,
+            "text": "qu'elle",
+            "charStart": 709,
+            "charEnd": 716,
+            "start": 45.56,
+            "end": 45.74
+          },
+          {
+            "index": 120,
+            "text": "aurait",
+            "charStart": 717,
+            "charEnd": 723,
+            "start": 45.76,
+            "end": 45.9
+          },
+          {
+            "index": 121,
+            "text": "voulu",
+            "charStart": 724,
+            "charEnd": 729,
+            "start": 45.94,
+            "end": 46.12
+          },
+          {
+            "index": 122,
+            "text": "garder",
+            "charStart": 730,
+            "charEnd": 736,
+            "start": 46.14,
+            "end": 46.36
+          }
+        ]
+      },
+      "language": "fr",
+      "variant": "fr-pc",
+      "chapterId": "nuit-02",
+      "paragraphId": "nuit-02-p02",
+      "novelId": "novel-ce-que-la-nuit-a-entendu",
+      "text": "Vers vingt-deux heures, Colette a ouvert son carton à chapeau. Il n'en est pas sorti de chapeau, mais une Thermos de métal cabossé, quatre gobelets en plastique et un paquet de madeleines. « Du tilleul, a-t-elle annoncé. Pour dormir. Mon médecin y tient, et je suis une malade très obéissante. » Le tilleul sentait le cognac à un mètre. « Vingt pour cent d'infusion, au mieux, a diagnostiqué Nour. Le reste relève de la distillation. » Elle n'en a pas moins accepté un fond ; Thibault a décliné l'offre avec mille excuses, au nom de ses mains ; Mio, elle, a pris un gobelet par curiosité professionnelle. En tombant dans le plastique, le liquide a fait entendre un petit bruit doré, un gargouillis de source, qu'elle aurait voulu garder.",
+      "ja": "二十二時ごろ、コレットが帽子箱を開けた。出てきたのは帽子ではなく、へこみだらけの金属の魔法瓶と、プラスチックのカップが四つ、それにマドレーヌがひと袋。「菩提樹のお茶よ」と彼女は宣言した。「よく眠れるように。お医者さまのお言いつけなの。わたし、とても従順な患者ですから」その菩提樹茶は、一メートル離れていてもコニャックの匂いがした。「お茶の成分は、よくて二割ですね」とヌールが診断を下した。「残りは蒸留の領分です」そう言いながらも、ヌールはほんのひと口ぶんを受け取った。ティボーは、手に障りますので、と詫びの言葉を山ほど並べて辞退した。澪のほうは、職業上の好奇心からカップをひとつもらった。液体はプラスチックの底に落ちて、湧き水のようにこぽこぽと、金色の小さな音を立てた。手もとにとっておきたい音だった。",
+      "lessonTitle": "コレットの菩提樹茶 · フランス語・複合過去版 · 1/3"
+    },
+    {
+      "id": "nuit-02-p03-fr-pc",
+      "lessonId": "nuit-02-fr-pc-part1",
+      "kind": "reading",
+      "unitId": "nuit-02-p03-fr-pc",
+      "textHash": "a4fe8da0dcf26d363e969f1684736d9f9fdeac131a2186e5b96ef10b8b3cd779",
+      "asset": "audio/nuit-02-p03-fr-pc-5994dbded0f1.m4a",
+      "audioHash": "5994dbded0f1d98e3eff242a8aedc517b9c3b433d7c4b4d57db7d2923e70f4a5",
+      "durationMs": 38960,
+      "sourceHash": "4a13bfca153ca0924a630cdc6a61733ccc8ad7255aade79549640867309f89b5",
+      "encoding": "aac-mono-64k-v1",
+      "start": 83.42,
+      "end": 122.38,
+      "cuts": [],
+      "speedRegions": [],
+      "reviewedByUser": true,
+      "recognitionScore": 0.973,
+      "volumePercent": 100,
+      "appliedVolumePercent": 100,
+      "volumeLimited": false,
+      "volumeProcessing": "gain-peak-v1",
+      "speedProcessing": "av-timepitch-v1",
+      "wordSync": {
+        "version": 1,
+        "method": "whisperx-3.8.6-jiwer4-largev3-final-aac-v2",
+        "textHash": "a4fe8da0dcf26d363e969f1684736d9f9fdeac131a2186e5b96ef10b8b3cd779",
+        "audioHash": "5994dbded0f1d98e3eff242a8aedc517b9c3b433d7c4b4d57db7d2923e70f4a5",
+        "text": "Colette n'avait pas fini de tendre le quatrième gobelet vers le vieil homme que celui-ci a posé deux doigts sur sa poitrine, à gauche, et a secoué la tête. Ça a été un geste minuscule, presque rien. Mais la main de Colette est demeurée en l'air une seconde de trop, et quand elle a rebouché la Thermos, le bouchon a grincé sur le pas de vis comme une porte qu'on referme tout doucement, pour ne réveiller personne. Mio a consigné la scène comme elle consignait tout, sans le vouloir, dans ce recoin de la tête où les sons s'entassent en attendant qu'on leur trouve un usage.",
+        "language": "fr",
+        "duration": 38.96,
+        "totalWords": 106,
+        "reviewCount": 9,
+        "words": [
+          {
+            "index": 4,
+            "text": "de",
+            "charStart": 25,
+            "charEnd": 27,
+            "start": 1.261,
+            "end": 1.361
+          },
+          {
+            "index": 5,
+            "text": "tendre",
+            "charStart": 28,
+            "charEnd": 34,
+            "start": 1.421,
+            "end": 2.041
+          },
+          {
+            "index": 6,
+            "text": "le",
+            "charStart": 35,
+            "charEnd": 37,
+            "start": 2.061,
+            "end": 2.141
+          },
+          {
+            "index": 7,
+            "text": "quatrième",
+            "charStart": 38,
+            "charEnd": 47,
+            "start": 2.181,
+            "end": 2.601
+          },
+          {
+            "index": 8,
+            "text": "gobelet",
+            "charStart": 48,
+            "charEnd": 55,
+            "start": 2.621,
+            "end": 3.042
+          },
+          {
+            "index": 9,
+            "text": "vers",
+            "charStart": 56,
+            "charEnd": 60,
+            "start": 3.062,
+            "end": 3.222
+          },
+          {
+            "index": 10,
+            "text": "le",
+            "charStart": 61,
+            "charEnd": 63,
+            "start": 3.262,
+            "end": 3.322
+          },
+          {
+            "index": 11,
+            "text": "vieil",
+            "charStart": 64,
+            "charEnd": 69,
+            "start": 3.362,
+            "end": 3.562
+          },
+          {
+            "index": 12,
+            "text": "homme",
+            "charStart": 70,
+            "charEnd": 75,
+            "start": 3.582,
+            "end": 4.802
+          },
+          {
+            "index": 14,
+            "text": "celui-ci",
+            "charStart": 80,
+            "charEnd": 88,
+            "start": 6.203,
+            "end": 6.703
+          },
+          {
+            "index": 15,
+            "text": "a",
+            "charStart": 89,
+            "charEnd": 90,
+            "start": 6.763,
+            "end": 7.004
+          },
+          {
+            "index": 16,
+            "text": "posé",
+            "charStart": 91,
+            "charEnd": 95,
+            "start": 7.064,
+            "end": 7.404
+          },
+          {
+            "index": 17,
+            "text": "deux",
+            "charStart": 96,
+            "charEnd": 100,
+            "start": 7.424,
+            "end": 7.544
+          },
+          {
+            "index": 18,
+            "text": "doigts",
+            "charStart": 101,
+            "charEnd": 107,
+            "start": 7.584,
+            "end": 7.844
+          },
+          {
+            "index": 19,
+            "text": "sur",
+            "charStart": 108,
+            "charEnd": 111,
+            "start": 7.864,
+            "end": 7.984
+          },
+          {
+            "index": 20,
+            "text": "sa",
+            "charStart": 112,
+            "charEnd": 114,
+            "start": 8.044,
+            "end": 8.124
+          },
+          {
+            "index": 21,
+            "text": "poitrine",
+            "charStart": 115,
+            "charEnd": 123,
+            "start": 8.164,
+            "end": 8.504
+          },
+          {
+            "index": 22,
+            "text": "à",
+            "charStart": 125,
+            "charEnd": 126,
+            "start": 9.025,
+            "end": 9.065
+          },
+          {
+            "index": 23,
+            "text": "gauche",
+            "charStart": 127,
+            "charEnd": 133,
+            "start": 9.125,
+            "end": 9.325
+          },
+          {
+            "index": 24,
+            "text": "et",
+            "charStart": 135,
+            "charEnd": 137,
+            "start": 9.925,
+            "end": 10.065
+          },
+          {
+            "index": 25,
+            "text": "a",
+            "charStart": 138,
+            "charEnd": 139,
+            "start": 10.125,
+            "end": 10.205
+          },
+          {
+            "index": 26,
+            "text": "secoué",
+            "charStart": 140,
+            "charEnd": 146,
+            "start": 10.245,
+            "end": 10.545
+          },
+          {
+            "index": 27,
+            "text": "la",
+            "charStart": 147,
+            "charEnd": 149,
+            "start": 10.585,
+            "end": 10.645
+          },
+          {
+            "index": 28,
+            "text": "tête",
+            "charStart": 150,
+            "charEnd": 154,
+            "start": 10.685,
+            "end": 10.906
+          },
+          {
+            "index": 31,
+            "text": "été",
+            "charStart": 161,
+            "charEnd": 164,
+            "start": 12.506,
+            "end": 12.707
+          },
+          {
+            "index": 32,
+            "text": "un",
+            "charStart": 165,
+            "charEnd": 167,
+            "start": 12.767,
+            "end": 12.847
+          },
+          {
+            "index": 33,
+            "text": "geste",
+            "charStart": 168,
+            "charEnd": 173,
+            "start": 12.887,
+            "end": 13.987
+          },
+          {
+            "index": 34,
+            "text": "minuscule",
+            "charStart": 174,
+            "charEnd": 183,
+            "start": 14.027,
+            "end": 15.128
+          },
+          {
+            "index": 35,
+            "text": "presque",
+            "charStart": 185,
+            "charEnd": 192,
+            "start": 15.168,
+            "end": 15.488
+          },
+          {
+            "index": 37,
+            "text": "Mais",
+            "charStart": 199,
+            "charEnd": 203,
+            "start": 16.809,
+            "end": 17.069
+          },
+          {
+            "index": 38,
+            "text": "la",
+            "charStart": 204,
+            "charEnd": 206,
+            "start": 17.109,
+            "end": 17.169
+          },
+          {
+            "index": 39,
+            "text": "main",
+            "charStart": 207,
+            "charEnd": 211,
+            "start": 17.209,
+            "end": 17.369
+          },
+          {
+            "index": 40,
+            "text": "de",
+            "charStart": 212,
+            "charEnd": 214,
+            "start": 17.409,
+            "end": 17.529
+          },
+          {
+            "index": 41,
+            "text": "Colette",
+            "charStart": 215,
+            "charEnd": 222,
+            "start": 17.569,
+            "end": 17.869
+          },
+          {
+            "index": 42,
+            "text": "est",
+            "charStart": 223,
+            "charEnd": 226,
+            "start": 17.909,
+            "end": 18.009
+          },
+          {
+            "index": 43,
+            "text": "demeurée",
+            "charStart": 227,
+            "charEnd": 235,
+            "start": 18.029,
+            "end": 18.369
+          },
+          {
+            "index": 44,
+            "text": "en",
+            "charStart": 236,
+            "charEnd": 238,
+            "start": 18.409,
+            "end": 18.489
+          },
+          {
+            "index": 45,
+            "text": "l'air",
+            "charStart": 239,
+            "charEnd": 244,
+            "start": 18.51,
+            "end": 18.83
+          },
+          {
+            "index": 46,
+            "text": "une",
+            "charStart": 245,
+            "charEnd": 248,
+            "start": 18.89,
+            "end": 19.03
+          },
+          {
+            "index": 47,
+            "text": "seconde",
+            "charStart": 249,
+            "charEnd": 256,
+            "start": 19.07,
+            "end": 19.35
+          },
+          {
+            "index": 48,
+            "text": "de",
+            "charStart": 257,
+            "charEnd": 259,
+            "start": 19.39,
+            "end": 19.45
+          },
+          {
+            "index": 49,
+            "text": "trop",
+            "charStart": 260,
+            "charEnd": 264,
+            "start": 19.49,
+            "end": 20.45
+          },
+          {
+            "index": 50,
+            "text": "et",
+            "charStart": 266,
+            "charEnd": 268,
+            "start": 20.531,
+            "end": 20.751
+          },
+          {
+            "index": 51,
+            "text": "quand",
+            "charStart": 269,
+            "charEnd": 274,
+            "start": 20.791,
+            "end": 20.951
+          },
+          {
+            "index": 52,
+            "text": "elle",
+            "charStart": 275,
+            "charEnd": 279,
+            "start": 20.971,
+            "end": 21.111
+          },
+          {
+            "index": 53,
+            "text": "a",
+            "charStart": 280,
+            "charEnd": 281,
+            "start": 21.151,
+            "end": 21.231
+          },
+          {
+            "index": 54,
+            "text": "rebouché",
+            "charStart": 282,
+            "charEnd": 290,
+            "start": 21.251,
+            "end": 21.571
+          },
+          {
+            "index": 55,
+            "text": "la",
+            "charStart": 291,
+            "charEnd": 293,
+            "start": 21.631,
+            "end": 21.671
+          },
+          {
+            "index": 56,
+            "text": "Thermos",
+            "charStart": 294,
+            "charEnd": 301,
+            "start": 21.711,
+            "end": 23.092
+          },
+          {
+            "index": 57,
+            "text": "le",
+            "charStart": 303,
+            "charEnd": 305,
+            "start": 23.132,
+            "end": 23.212
+          },
+          {
+            "index": 58,
+            "text": "bouchon",
+            "charStart": 306,
+            "charEnd": 313,
+            "start": 23.252,
+            "end": 23.572
+          },
+          {
+            "index": 60,
+            "text": "grincé",
+            "charStart": 316,
+            "charEnd": 322,
+            "start": 23.792,
+            "end": 24.252
+          },
+          {
+            "index": 61,
+            "text": "sur",
+            "charStart": 323,
+            "charEnd": 326,
+            "start": 24.292,
+            "end": 24.453
+          },
+          {
+            "index": 62,
+            "text": "le",
+            "charStart": 327,
+            "charEnd": 329,
+            "start": 24.493,
+            "end": 24.533
+          },
+          {
+            "index": 63,
+            "text": "pas",
+            "charStart": 330,
+            "charEnd": 333,
+            "start": 24.573,
+            "end": 24.673
+          },
+          {
+            "index": 64,
+            "text": "de",
+            "charStart": 334,
+            "charEnd": 336,
+            "start": 24.693,
+            "end": 24.753
+          },
+          {
+            "index": 65,
+            "text": "vis",
+            "charStart": 337,
+            "charEnd": 340,
+            "start": 24.773,
+            "end": 25.453
+          },
+          {
+            "index": 66,
+            "text": "comme",
+            "charStart": 341,
+            "charEnd": 346,
+            "start": 25.473,
+            "end": 26.213
+          },
+          {
+            "index": 67,
+            "text": "une",
+            "charStart": 347,
+            "charEnd": 350,
+            "start": 26.273,
+            "end": 26.374
+          },
+          {
+            "index": 68,
+            "text": "porte",
+            "charStart": 351,
+            "charEnd": 356,
+            "start": 26.434,
+            "end": 26.654
+          },
+          {
+            "index": 69,
+            "text": "qu'on",
+            "charStart": 357,
+            "charEnd": 362,
+            "start": 26.674,
+            "end": 26.914
+          },
+          {
+            "index": 70,
+            "text": "referme",
+            "charStart": 363,
+            "charEnd": 370,
+            "start": 26.934,
+            "end": 27.254
+          },
+          {
+            "index": 71,
+            "text": "tout",
+            "charStart": 371,
+            "charEnd": 375,
+            "start": 27.294,
+            "end": 27.394
+          },
+          {
+            "index": 72,
+            "text": "doucement",
+            "charStart": 376,
+            "charEnd": 385,
+            "start": 27.414,
+            "end": 28.435
+          },
+          {
+            "index": 73,
+            "text": "pour",
+            "charStart": 387,
+            "charEnd": 391,
+            "start": 28.475,
+            "end": 28.615
+          },
+          {
+            "index": 74,
+            "text": "ne",
+            "charStart": 392,
+            "charEnd": 394,
+            "start": 28.675,
+            "end": 28.755
+          },
+          {
+            "index": 75,
+            "text": "réveiller",
+            "charStart": 395,
+            "charEnd": 404,
+            "start": 28.775,
+            "end": 29.075
+          },
+          {
+            "index": 76,
+            "text": "personne",
+            "charStart": 405,
+            "charEnd": 413,
+            "start": 29.115,
+            "end": 29.415
+          },
+          {
+            "index": 77,
+            "text": "Mio",
+            "charStart": 415,
+            "charEnd": 418,
+            "start": 30.756,
+            "end": 31.016
+          },
+          {
+            "index": 78,
+            "text": "a",
+            "charStart": 419,
+            "charEnd": 420,
+            "start": 31.076,
+            "end": 31.136
+          },
+          {
+            "index": 79,
+            "text": "consigné",
+            "charStart": 421,
+            "charEnd": 429,
+            "start": 31.176,
+            "end": 31.576
+          },
+          {
+            "index": 80,
+            "text": "la",
+            "charStart": 430,
+            "charEnd": 432,
+            "start": 31.636,
+            "end": 31.696
+          },
+          {
+            "index": 81,
+            "text": "scène",
+            "charStart": 433,
+            "charEnd": 438,
+            "start": 31.736,
+            "end": 32.016
+          },
+          {
+            "index": 82,
+            "text": "comme",
+            "charStart": 439,
+            "charEnd": 444,
+            "start": 32.056,
+            "end": 32.497
+          },
+          {
+            "index": 83,
+            "text": "elle",
+            "charStart": 445,
+            "charEnd": 449,
+            "start": 32.537,
+            "end": 32.697
+          },
+          {
+            "index": 84,
+            "text": "consignait",
+            "charStart": 450,
+            "charEnd": 460,
+            "start": 32.737,
+            "end": 33.177
+          },
+          {
+            "index": 85,
+            "text": "tout",
+            "charStart": 461,
+            "charEnd": 465,
+            "start": 33.217,
+            "end": 34.037
+          },
+          {
+            "index": 86,
+            "text": "sans",
+            "charStart": 467,
+            "charEnd": 471,
+            "start": 34.077,
+            "end": 34.218
+          },
+          {
+            "index": 87,
+            "text": "le",
+            "charStart": 472,
+            "charEnd": 474,
+            "start": 34.238,
+            "end": 34.298
+          },
+          {
+            "index": 88,
+            "text": "vouloir",
+            "charStart": 475,
+            "charEnd": 482,
+            "start": 34.338,
+            "end": 34.778
+          },
+          {
+            "index": 89,
+            "text": "dans",
+            "charStart": 484,
+            "charEnd": 488,
+            "start": 34.818,
+            "end": 34.978
+          },
+          {
+            "index": 90,
+            "text": "ce",
+            "charStart": 489,
+            "charEnd": 491,
+            "start": 35.018,
+            "end": 35.198
+          },
+          {
+            "index": 91,
+            "text": "recoin",
+            "charStart": 492,
+            "charEnd": 498,
+            "start": 35.238,
+            "end": 35.638
+          },
+          {
+            "index": 92,
+            "text": "de",
+            "charStart": 499,
+            "charEnd": 501,
+            "start": 35.678,
+            "end": 35.778
+          },
+          {
+            "index": 93,
+            "text": "la",
+            "charStart": 502,
+            "charEnd": 504,
+            "start": 35.798,
+            "end": 35.858
+          },
+          {
+            "index": 94,
+            "text": "tête",
+            "charStart": 505,
+            "charEnd": 509,
+            "start": 35.918,
+            "end": 36.159
+          },
+          {
+            "index": 95,
+            "text": "où",
+            "charStart": 510,
+            "charEnd": 512,
+            "start": 36.219,
+            "end": 36.439
+          },
+          {
+            "index": 96,
+            "text": "les",
+            "charStart": 513,
+            "charEnd": 516,
+            "start": 36.479,
+            "end": 36.559
+          },
+          {
+            "index": 97,
+            "text": "sons",
+            "charStart": 517,
+            "charEnd": 521,
+            "start": 36.599,
+            "end": 36.819
+          },
+          {
+            "index": 98,
+            "text": "s'entassent",
+            "charStart": 522,
+            "charEnd": 533,
+            "start": 36.839,
+            "end": 37.379
+          },
+          {
+            "index": 99,
+            "text": "en",
+            "charStart": 534,
+            "charEnd": 536,
+            "start": 37.419,
+            "end": 37.499
+          },
+          {
+            "index": 100,
+            "text": "attendant",
+            "charStart": 537,
+            "charEnd": 546,
+            "start": 37.539,
+            "end": 37.859
+          },
+          {
+            "index": 101,
+            "text": "qu'on",
+            "charStart": 547,
+            "charEnd": 552,
+            "start": 37.879,
+            "end": 38.08
+          },
+          {
+            "index": 102,
+            "text": "leur",
+            "charStart": 553,
+            "charEnd": 557,
+            "start": 38.1,
+            "end": 38.22
+          },
+          {
+            "index": 103,
+            "text": "trouve",
+            "charStart": 558,
+            "charEnd": 564,
+            "start": 38.24,
+            "end": 38.42
+          },
+          {
+            "index": 104,
+            "text": "un",
+            "charStart": 565,
+            "charEnd": 567,
+            "start": 38.48,
+            "end": 38.54
+          },
+          {
+            "index": 105,
+            "text": "usage",
+            "charStart": 568,
+            "charEnd": 573,
+            "start": 38.58,
+            "end": 38.78
+          }
+        ]
+      },
+      "language": "fr",
+      "variant": "fr-pc",
+      "chapterId": "nuit-02",
+      "paragraphId": "nuit-02-p03",
+      "novelId": "novel-ce-que-la-nuit-a-entendu",
+      "text": "Colette n'avait pas fini de tendre le quatrième gobelet vers le vieil homme que celui-ci a posé deux doigts sur sa poitrine, à gauche, et a secoué la tête. Ça a été un geste minuscule, presque rien. Mais la main de Colette est demeurée en l'air une seconde de trop, et quand elle a rebouché la Thermos, le bouchon a grincé sur le pas de vis comme une porte qu'on referme tout doucement, pour ne réveiller personne. Mio a consigné la scène comme elle consignait tout, sans le vouloir, dans ce recoin de la tête où les sons s'entassent en attendant qu'on leur trouve un usage.",
+      "ja": "コレットが四つ目のカップを老人へ差し出しきらないうちに、彼は胸の左側に指を二本あて、首を横に振った。ほんの小さな仕草だった。ないに等しいほどの。けれどコレットの手は、一秒だけ長く宙にとどまった。そして魔法瓶に栓をし直すとき、栓はねじ山の上できしんだ。誰も起こさないように、そっと閉め直す扉のような音で。澪はその場面を書き留めた。いつもそうしているように、意識せずに。音たちが、使い道を見つけてもらえる日を待って積み重なっていく、頭の片隅に。",
+      "lessonTitle": "コレットの菩提樹茶 · フランス語・複合過去版 · 1/3"
     }
   ]
 }
