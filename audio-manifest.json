@@ -17332,6 +17332,4221 @@
       "text": "Colette n'avait pas fini de tendre le quatrième gobelet vers le vieil homme que celui-ci a posé deux doigts sur sa poitrine, à gauche, et a secoué la tête. Ça a été un geste minuscule, presque rien. Mais la main de Colette est demeurée en l'air une seconde de trop, et quand elle a rebouché la Thermos, le bouchon a grincé sur le pas de vis comme une porte qu'on referme tout doucement, pour ne réveiller personne. Mio a consigné la scène comme elle consignait tout, sans le vouloir, dans ce recoin de la tête où les sons s'entassent en attendant qu'on leur trouve un usage.",
       "ja": "コレットが四つ目のカップを老人へ差し出しきらないうちに、彼は胸の左側に指を二本あて、首を横に振った。ほんの小さな仕草だった。ないに等しいほどの。けれどコレットの手は、一秒だけ長く宙にとどまった。そして魔法瓶に栓をし直すとき、栓はねじ山の上できしんだ。誰も起こさないように、そっと閉め直す扉のような音で。澪はその場面を書き留めた。いつもそうしているように、意識せずに。音たちが、使い道を見つけてもらえる日を待って積み重なっていく、頭の片隅に。",
       "lessonTitle": "コレットの菩提樹茶 · フランス語・複合過去版 · 1/3"
+    },
+    {
+      "id": "nuit-02-p01-ja",
+      "lessonId": "nuit-02-ja-part1",
+      "kind": "reading",
+      "unitId": "nuit-02-p01-ja",
+      "textHash": "3259b1d3bf532447b1760ce65b43d006abbcf730035f8b37d9d5f149d9c90d86",
+      "asset": "audio/nuit-02-p01-ja-d70b759b0864.m4a",
+      "audioHash": "d70b759b086428ad2d0a03546e1cd22c99a96233a04fa02fb9fa291dcd9efc77",
+      "durationMs": 54360,
+      "sourceHash": "a586013fa852767330b69239eb0668b4110d030acc7d2d6ec36f37ebadba2a17",
+      "encoding": "aac-mono-64k-v1",
+      "start": 0.0,
+      "end": 54.36,
+      "cuts": [],
+      "speedRegions": [],
+      "reviewedByUser": true,
+      "recognitionScore": 0.805,
+      "volumePercent": 100,
+      "appliedVolumePercent": 100,
+      "volumeLimited": false,
+      "volumeProcessing": "gain-peak-v1",
+      "speedProcessing": "av-timepitch-v1",
+      "language": "ja",
+      "variant": "ja",
+      "chapterId": "nuit-02",
+      "paragraphId": "nuit-02-p01",
+      "novelId": "novel-ce-que-la-nuit-a-entendu",
+      "text": "最初の一時間、誰もろくに口をきかなかった。コンパートメントを満たしたのは、見知らぬ者どうしが音を立てまいと努めるときにかぎって立ててしまう、あの種の音だった。手帳を開く音、こぶしのなかに押し殺された咳。列車は夜行列車らしい上の空の礼儀正しさで郊外を抜けていった。人けのない駅には停まりもせず、通りすがりに会釈だけしていくように。めいめいが自分の小さな領土を見張っていた。ヌールはノートを、ティボーはケースを、老人は澪には題名の読み取れない文庫本を。そしてコレットは、全員を。",
+      "ja": "",
+      "lessonTitle": "コレットの菩提樹茶 · 日本語 · 1/3"
+    },
+    {
+      "id": "nuit-02-p02-ja",
+      "lessonId": "nuit-02-ja-part1",
+      "kind": "reading",
+      "unitId": "nuit-02-p02-ja",
+      "textHash": "fdd0aa3a459e3830a132b30a981922466041fd597446dfd41b3f44f8853d71df",
+      "asset": "audio/nuit-02-p02-ja-b57fc807c341.m4a",
+      "audioHash": "b57fc807c34103ab57f26b191e01f8fbce255d03f8195175669a17f1446cb1b4",
+      "durationMs": 61520,
+      "sourceHash": "a586013fa852767330b69239eb0668b4110d030acc7d2d6ec36f37ebadba2a17",
+      "encoding": "aac-mono-64k-v1",
+      "start": 54.76,
+      "end": 116.28,
+      "cuts": [],
+      "speedRegions": [],
+      "reviewedByUser": true,
+      "recognitionScore": 0.802,
+      "volumePercent": 100,
+      "appliedVolumePercent": 100,
+      "volumeLimited": false,
+      "volumeProcessing": "gain-peak-v1",
+      "speedProcessing": "av-timepitch-v1",
+      "wordSync": {
+        "version": 1,
+        "method": "whisperx-3.8.6-jiwer4-largev3-final-aac-v2",
+        "textHash": "fdd0aa3a459e3830a132b30a981922466041fd597446dfd41b3f44f8853d71df",
+        "audioHash": "b57fc807c34103ab57f26b191e01f8fbce255d03f8195175669a17f1446cb1b4",
+        "text": "二十二時ごろ、コレットが帽子箱を開けた。出てきたのは帽子ではなく、へこみだらけの金属の魔法瓶と、プラスチックのカップが四つ、それにマドレーヌがひと袋。「菩提樹のお茶よ」と彼女は宣言した。「よく眠れるように。お医者さまのお言いつけなの。わたし、とても従順な患者ですから」その菩提樹茶は、一メートル離れていてもコニャックの匂いがした。「お茶の成分は、よくて二割ですね」とヌールが診断を下した。「残りは蒸留の領分です」そう言いながらも、ヌールはほんのひと口ぶんを受け取った。ティボーは、手に障りますので、と詫びの言葉を山ほど並べて辞退した。澪のほうは、職業上の好奇心からカップをひとつもらった。液体はプラスチックの底に落ちて、湧き水のようにこぽこぽと、金色の小さな音を立てた。手もとにとっておきたい音だった。",
+        "language": "ja",
+        "duration": 61.52,
+        "totalWords": 318,
+        "reviewCount": 6,
+        "words": [
+          {
+            "index": 0,
+            "text": "二",
+            "charStart": 0,
+            "charEnd": 1,
+            "start": 0.12,
+            "end": 0.32
+          },
+          {
+            "index": 1,
+            "text": "十",
+            "charStart": 1,
+            "charEnd": 2,
+            "start": 0.32,
+            "end": 0.54
+          },
+          {
+            "index": 2,
+            "text": "二",
+            "charStart": 2,
+            "charEnd": 3,
+            "start": 0.54,
+            "end": 0.7
+          },
+          {
+            "index": 3,
+            "text": "時",
+            "charStart": 3,
+            "charEnd": 4,
+            "start": 0.7,
+            "end": 0.8
+          },
+          {
+            "index": 4,
+            "text": "ご",
+            "charStart": 4,
+            "charEnd": 5,
+            "start": 0.8,
+            "end": 0.88
+          },
+          {
+            "index": 6,
+            "text": "コ",
+            "charStart": 7,
+            "charEnd": 8,
+            "start": 1.46,
+            "end": 1.581
+          },
+          {
+            "index": 7,
+            "text": "レ",
+            "charStart": 8,
+            "charEnd": 9,
+            "start": 1.581,
+            "end": 1.761
+          },
+          {
+            "index": 8,
+            "text": "ッ",
+            "charStart": 9,
+            "charEnd": 10,
+            "start": 1.761,
+            "end": 1.801
+          },
+          {
+            "index": 9,
+            "text": "ト",
+            "charStart": 10,
+            "charEnd": 11,
+            "start": 1.801,
+            "end": 1.901
+          },
+          {
+            "index": 10,
+            "text": "が",
+            "charStart": 11,
+            "charEnd": 12,
+            "start": 1.901,
+            "end": 2.101
+          },
+          {
+            "index": 11,
+            "text": "帽",
+            "charStart": 12,
+            "charEnd": 13,
+            "start": 2.101,
+            "end": 2.341
+          },
+          {
+            "index": 12,
+            "text": "子",
+            "charStart": 13,
+            "charEnd": 14,
+            "start": 2.341,
+            "end": 2.461
+          },
+          {
+            "index": 13,
+            "text": "箱",
+            "charStart": 14,
+            "charEnd": 15,
+            "start": 2.461,
+            "end": 2.721
+          },
+          {
+            "index": 14,
+            "text": "を",
+            "charStart": 15,
+            "charEnd": 16,
+            "start": 2.721,
+            "end": 2.801
+          },
+          {
+            "index": 15,
+            "text": "開",
+            "charStart": 16,
+            "charEnd": 17,
+            "start": 2.801,
+            "end": 2.941
+          },
+          {
+            "index": 16,
+            "text": "け",
+            "charStart": 17,
+            "charEnd": 18,
+            "start": 2.941,
+            "end": 3.061
+          },
+          {
+            "index": 17,
+            "text": "た",
+            "charStart": 18,
+            "charEnd": 19,
+            "start": 3.061,
+            "end": 3.081
+          },
+          {
+            "index": 18,
+            "text": "出",
+            "charStart": 20,
+            "charEnd": 21,
+            "start": 3.981,
+            "end": 4.101
+          },
+          {
+            "index": 19,
+            "text": "て",
+            "charStart": 21,
+            "charEnd": 22,
+            "start": 4.101,
+            "end": 4.241
+          },
+          {
+            "index": 20,
+            "text": "き",
+            "charStart": 22,
+            "charEnd": 23,
+            "start": 4.241,
+            "end": 4.301
+          },
+          {
+            "index": 21,
+            "text": "た",
+            "charStart": 23,
+            "charEnd": 24,
+            "start": 4.301,
+            "end": 4.421
+          },
+          {
+            "index": 22,
+            "text": "の",
+            "charStart": 24,
+            "charEnd": 25,
+            "start": 4.421,
+            "end": 4.541
+          },
+          {
+            "index": 23,
+            "text": "は",
+            "charStart": 25,
+            "charEnd": 26,
+            "start": 4.541,
+            "end": 4.762
+          },
+          {
+            "index": 24,
+            "text": "帽",
+            "charStart": 26,
+            "charEnd": 27,
+            "start": 4.762,
+            "end": 4.982
+          },
+          {
+            "index": 25,
+            "text": "子",
+            "charStart": 27,
+            "charEnd": 28,
+            "start": 4.982,
+            "end": 5.102
+          },
+          {
+            "index": 26,
+            "text": "で",
+            "charStart": 28,
+            "charEnd": 29,
+            "start": 5.102,
+            "end": 5.202
+          },
+          {
+            "index": 27,
+            "text": "は",
+            "charStart": 29,
+            "charEnd": 30,
+            "start": 5.202,
+            "end": 5.302
+          },
+          {
+            "index": 28,
+            "text": "な",
+            "charStart": 30,
+            "charEnd": 31,
+            "start": 5.302,
+            "end": 5.422
+          },
+          {
+            "index": 29,
+            "text": "く",
+            "charStart": 31,
+            "charEnd": 32,
+            "start": 5.422,
+            "end": 5.442
+          },
+          {
+            "index": 30,
+            "text": "へ",
+            "charStart": 33,
+            "charEnd": 34,
+            "start": 6.002,
+            "end": 6.182
+          },
+          {
+            "index": 31,
+            "text": "こ",
+            "charStart": 34,
+            "charEnd": 35,
+            "start": 6.182,
+            "end": 6.322
+          },
+          {
+            "index": 32,
+            "text": "み",
+            "charStart": 35,
+            "charEnd": 36,
+            "start": 6.322,
+            "end": 6.442
+          },
+          {
+            "index": 33,
+            "text": "だ",
+            "charStart": 36,
+            "charEnd": 37,
+            "start": 6.442,
+            "end": 6.542
+          },
+          {
+            "index": 34,
+            "text": "ら",
+            "charStart": 37,
+            "charEnd": 38,
+            "start": 6.542,
+            "end": 6.662
+          },
+          {
+            "index": 35,
+            "text": "け",
+            "charStart": 38,
+            "charEnd": 39,
+            "start": 6.662,
+            "end": 6.782
+          },
+          {
+            "index": 36,
+            "text": "の",
+            "charStart": 39,
+            "charEnd": 40,
+            "start": 6.782,
+            "end": 6.982
+          },
+          {
+            "index": 37,
+            "text": "金",
+            "charStart": 40,
+            "charEnd": 41,
+            "start": 6.982,
+            "end": 7.202
+          },
+          {
+            "index": 38,
+            "text": "属",
+            "charStart": 41,
+            "charEnd": 42,
+            "start": 7.202,
+            "end": 7.422
+          },
+          {
+            "index": 39,
+            "text": "の",
+            "charStart": 42,
+            "charEnd": 43,
+            "start": 7.422,
+            "end": 7.562
+          },
+          {
+            "index": 40,
+            "text": "魔",
+            "charStart": 43,
+            "charEnd": 44,
+            "start": 7.562,
+            "end": 7.723
+          },
+          {
+            "index": 41,
+            "text": "法",
+            "charStart": 44,
+            "charEnd": 45,
+            "start": 7.723,
+            "end": 7.923
+          },
+          {
+            "index": 42,
+            "text": "瓶",
+            "charStart": 45,
+            "charEnd": 46,
+            "start": 7.923,
+            "end": 8.103
+          },
+          {
+            "index": 43,
+            "text": "と",
+            "charStart": 46,
+            "charEnd": 47,
+            "start": 8.103,
+            "end": 8.223
+          },
+          {
+            "index": 44,
+            "text": "プ",
+            "charStart": 48,
+            "charEnd": 49,
+            "start": 8.643,
+            "end": 8.743
+          },
+          {
+            "index": 45,
+            "text": "ラ",
+            "charStart": 49,
+            "charEnd": 50,
+            "start": 8.743,
+            "end": 8.883
+          },
+          {
+            "index": 46,
+            "text": "ス",
+            "charStart": 50,
+            "charEnd": 51,
+            "start": 8.883,
+            "end": 8.983
+          },
+          {
+            "index": 47,
+            "text": "チ",
+            "charStart": 51,
+            "charEnd": 52,
+            "start": 8.983,
+            "end": 9.143
+          },
+          {
+            "index": 48,
+            "text": "ッ",
+            "charStart": 52,
+            "charEnd": 53,
+            "start": 9.143,
+            "end": 9.183
+          },
+          {
+            "index": 49,
+            "text": "ク",
+            "charStart": 53,
+            "charEnd": 54,
+            "start": 9.183,
+            "end": 9.283
+          },
+          {
+            "index": 50,
+            "text": "の",
+            "charStart": 54,
+            "charEnd": 55,
+            "start": 9.283,
+            "end": 9.403
+          },
+          {
+            "index": 51,
+            "text": "カ",
+            "charStart": 55,
+            "charEnd": 56,
+            "start": 9.403,
+            "end": 9.563
+          },
+          {
+            "index": 52,
+            "text": "ッ",
+            "charStart": 56,
+            "charEnd": 57,
+            "start": 9.563,
+            "end": 9.603
+          },
+          {
+            "index": 53,
+            "text": "プ",
+            "charStart": 57,
+            "charEnd": 58,
+            "start": 9.603,
+            "end": 9.723
+          },
+          {
+            "index": 54,
+            "text": "が",
+            "charStart": 58,
+            "charEnd": 59,
+            "start": 9.723,
+            "end": 9.863
+          },
+          {
+            "index": 55,
+            "text": "四",
+            "charStart": 59,
+            "charEnd": 60,
+            "start": 9.863,
+            "end": 10.083
+          },
+          {
+            "index": 56,
+            "text": "つ",
+            "charStart": 60,
+            "charEnd": 61,
+            "start": 10.083,
+            "end": 10.763
+          },
+          {
+            "index": 57,
+            "text": "そ",
+            "charStart": 62,
+            "charEnd": 63,
+            "start": 10.784,
+            "end": 10.864
+          },
+          {
+            "index": 58,
+            "text": "れ",
+            "charStart": 63,
+            "charEnd": 64,
+            "start": 10.864,
+            "end": 10.984
+          },
+          {
+            "index": 59,
+            "text": "に",
+            "charStart": 64,
+            "charEnd": 65,
+            "start": 10.984,
+            "end": 11.184
+          },
+          {
+            "index": 60,
+            "text": "マ",
+            "charStart": 65,
+            "charEnd": 66,
+            "start": 11.184,
+            "end": 11.324
+          },
+          {
+            "index": 61,
+            "text": "ド",
+            "charStart": 66,
+            "charEnd": 67,
+            "start": 11.324,
+            "end": 11.444
+          },
+          {
+            "index": 62,
+            "text": "レ",
+            "charStart": 67,
+            "charEnd": 68,
+            "start": 11.444,
+            "end": 11.564
+          },
+          {
+            "index": 63,
+            "text": "ー",
+            "charStart": 68,
+            "charEnd": 69,
+            "start": 11.564,
+            "end": 11.644
+          },
+          {
+            "index": 64,
+            "text": "ヌ",
+            "charStart": 69,
+            "charEnd": 70,
+            "start": 11.644,
+            "end": 11.744
+          },
+          {
+            "index": 65,
+            "text": "が",
+            "charStart": 70,
+            "charEnd": 71,
+            "start": 11.744,
+            "end": 11.864
+          },
+          {
+            "index": 66,
+            "text": "ひ",
+            "charStart": 71,
+            "charEnd": 72,
+            "start": 11.864,
+            "end": 12.004
+          },
+          {
+            "index": 67,
+            "text": "と",
+            "charStart": 72,
+            "charEnd": 73,
+            "start": 12.004,
+            "end": 12.084
+          },
+          {
+            "index": 68,
+            "text": "袋",
+            "charStart": 73,
+            "charEnd": 74,
+            "start": 12.084,
+            "end": 12.184
+          },
+          {
+            "index": 69,
+            "text": "菩",
+            "charStart": 76,
+            "charEnd": 77,
+            "start": 13.284,
+            "end": 13.464
+          },
+          {
+            "index": 70,
+            "text": "提",
+            "charStart": 77,
+            "charEnd": 78,
+            "start": 13.464,
+            "end": 13.744
+          },
+          {
+            "index": 71,
+            "text": "樹",
+            "charStart": 78,
+            "charEnd": 79,
+            "start": 13.744,
+            "end": 13.845
+          },
+          {
+            "index": 72,
+            "text": "の",
+            "charStart": 79,
+            "charEnd": 80,
+            "start": 13.845,
+            "end": 13.965
+          },
+          {
+            "index": 73,
+            "text": "お",
+            "charStart": 80,
+            "charEnd": 81,
+            "start": 13.965,
+            "end": 14.105
+          },
+          {
+            "index": 74,
+            "text": "茶",
+            "charStart": 81,
+            "charEnd": 82,
+            "start": 14.105,
+            "end": 14.265
+          },
+          {
+            "index": 75,
+            "text": "よ",
+            "charStart": 82,
+            "charEnd": 83,
+            "start": 14.265,
+            "end": 14.365
+          },
+          {
+            "index": 76,
+            "text": "と",
+            "charStart": 84,
+            "charEnd": 85,
+            "start": 14.705,
+            "end": 14.845
+          },
+          {
+            "index": 77,
+            "text": "彼",
+            "charStart": 85,
+            "charEnd": 86,
+            "start": 14.845,
+            "end": 15.105
+          },
+          {
+            "index": 78,
+            "text": "女",
+            "charStart": 86,
+            "charEnd": 87,
+            "start": 15.105,
+            "end": 15.185
+          },
+          {
+            "index": 79,
+            "text": "は",
+            "charStart": 87,
+            "charEnd": 88,
+            "start": 15.185,
+            "end": 15.305
+          },
+          {
+            "index": 80,
+            "text": "宣",
+            "charStart": 88,
+            "charEnd": 89,
+            "start": 15.305,
+            "end": 15.505
+          },
+          {
+            "index": 81,
+            "text": "言",
+            "charStart": 89,
+            "charEnd": 90,
+            "start": 15.505,
+            "end": 15.685
+          },
+          {
+            "index": 82,
+            "text": "し",
+            "charStart": 90,
+            "charEnd": 91,
+            "start": 15.685,
+            "end": 15.705
+          },
+          {
+            "index": 83,
+            "text": "た",
+            "charStart": 91,
+            "charEnd": 92,
+            "start": 15.705,
+            "end": 15.765
+          },
+          {
+            "index": 84,
+            "text": "よ",
+            "charStart": 94,
+            "charEnd": 95,
+            "start": 16.625,
+            "end": 16.785
+          },
+          {
+            "index": 85,
+            "text": "く",
+            "charStart": 95,
+            "charEnd": 96,
+            "start": 16.785,
+            "end": 16.946
+          },
+          {
+            "index": 86,
+            "text": "眠",
+            "charStart": 96,
+            "charEnd": 97,
+            "start": 16.946,
+            "end": 17.186
+          },
+          {
+            "index": 87,
+            "text": "れ",
+            "charStart": 97,
+            "charEnd": 98,
+            "start": 17.186,
+            "end": 17.326
+          },
+          {
+            "index": 88,
+            "text": "る",
+            "charStart": 98,
+            "charEnd": 99,
+            "start": 17.326,
+            "end": 17.426
+          },
+          {
+            "index": 89,
+            "text": "よ",
+            "charStart": 99,
+            "charEnd": 100,
+            "start": 17.426,
+            "end": 17.506
+          },
+          {
+            "index": 90,
+            "text": "う",
+            "charStart": 100,
+            "charEnd": 101,
+            "start": 17.506,
+            "end": 17.586
+          },
+          {
+            "index": 91,
+            "text": "に",
+            "charStart": 101,
+            "charEnd": 102,
+            "start": 17.586,
+            "end": 18.366
+          },
+          {
+            "index": 92,
+            "text": "お",
+            "charStart": 103,
+            "charEnd": 104,
+            "start": 18.466,
+            "end": 18.546
+          },
+          {
+            "index": 93,
+            "text": "医",
+            "charStart": 104,
+            "charEnd": 105,
+            "start": 18.546,
+            "end": 18.626
+          },
+          {
+            "index": 94,
+            "text": "者",
+            "charStart": 105,
+            "charEnd": 106,
+            "start": 18.626,
+            "end": 18.746
+          },
+          {
+            "index": 95,
+            "text": "さ",
+            "charStart": 106,
+            "charEnd": 107,
+            "start": 18.746,
+            "end": 18.866
+          },
+          {
+            "index": 96,
+            "text": "ま",
+            "charStart": 107,
+            "charEnd": 108,
+            "start": 18.866,
+            "end": 18.986
+          },
+          {
+            "index": 97,
+            "text": "の",
+            "charStart": 108,
+            "charEnd": 109,
+            "start": 18.986,
+            "end": 19.106
+          },
+          {
+            "index": 98,
+            "text": "お",
+            "charStart": 109,
+            "charEnd": 110,
+            "start": 19.106,
+            "end": 19.266
+          },
+          {
+            "index": 99,
+            "text": "言",
+            "charStart": 110,
+            "charEnd": 111,
+            "start": 19.266,
+            "end": 19.326
+          },
+          {
+            "index": 100,
+            "text": "い",
+            "charStart": 111,
+            "charEnd": 112,
+            "start": 19.326,
+            "end": 19.426
+          },
+          {
+            "index": 101,
+            "text": "つ",
+            "charStart": 112,
+            "charEnd": 113,
+            "start": 19.426,
+            "end": 19.506
+          },
+          {
+            "index": 102,
+            "text": "け",
+            "charStart": 113,
+            "charEnd": 114,
+            "start": 19.506,
+            "end": 19.606
+          },
+          {
+            "index": 103,
+            "text": "な",
+            "charStart": 114,
+            "charEnd": 115,
+            "start": 19.606,
+            "end": 19.746
+          },
+          {
+            "index": 104,
+            "text": "の",
+            "charStart": 115,
+            "charEnd": 116,
+            "start": 19.746,
+            "end": 19.826
+          },
+          {
+            "index": 105,
+            "text": "わ",
+            "charStart": 117,
+            "charEnd": 118,
+            "start": 20.367,
+            "end": 20.487
+          },
+          {
+            "index": 106,
+            "text": "た",
+            "charStart": 118,
+            "charEnd": 119,
+            "start": 20.487,
+            "end": 20.647
+          },
+          {
+            "index": 108,
+            "text": "と",
+            "charStart": 121,
+            "charEnd": 122,
+            "start": 20.867,
+            "end": 21.027
+          },
+          {
+            "index": 109,
+            "text": "て",
+            "charStart": 122,
+            "charEnd": 123,
+            "start": 21.027,
+            "end": 21.167
+          },
+          {
+            "index": 110,
+            "text": "も",
+            "charStart": 123,
+            "charEnd": 124,
+            "start": 21.167,
+            "end": 21.327
+          },
+          {
+            "index": 111,
+            "text": "従",
+            "charStart": 124,
+            "charEnd": 125,
+            "start": 21.327,
+            "end": 21.547
+          },
+          {
+            "index": 112,
+            "text": "順",
+            "charStart": 125,
+            "charEnd": 126,
+            "start": 21.547,
+            "end": 21.707
+          },
+          {
+            "index": 113,
+            "text": "な",
+            "charStart": 126,
+            "charEnd": 127,
+            "start": 21.707,
+            "end": 21.827
+          },
+          {
+            "index": 114,
+            "text": "患",
+            "charStart": 127,
+            "charEnd": 128,
+            "start": 21.827,
+            "end": 22.027
+          },
+          {
+            "index": 115,
+            "text": "者",
+            "charStart": 128,
+            "charEnd": 129,
+            "start": 22.027,
+            "end": 22.127
+          },
+          {
+            "index": 116,
+            "text": "で",
+            "charStart": 129,
+            "charEnd": 130,
+            "start": 22.127,
+            "end": 22.227
+          },
+          {
+            "index": 117,
+            "text": "す",
+            "charStart": 130,
+            "charEnd": 131,
+            "start": 22.227,
+            "end": 22.307
+          },
+          {
+            "index": 118,
+            "text": "か",
+            "charStart": 131,
+            "charEnd": 132,
+            "start": 22.307,
+            "end": 22.407
+          },
+          {
+            "index": 119,
+            "text": "ら",
+            "charStart": 132,
+            "charEnd": 133,
+            "start": 22.407,
+            "end": 23.448
+          },
+          {
+            "index": 120,
+            "text": "そ",
+            "charStart": 134,
+            "charEnd": 135,
+            "start": 23.568,
+            "end": 23.708
+          },
+          {
+            "index": 121,
+            "text": "の",
+            "charStart": 135,
+            "charEnd": 136,
+            "start": 23.708,
+            "end": 23.828
+          },
+          {
+            "index": 122,
+            "text": "菩",
+            "charStart": 136,
+            "charEnd": 137,
+            "start": 23.828,
+            "end": 23.948
+          },
+          {
+            "index": 123,
+            "text": "提",
+            "charStart": 137,
+            "charEnd": 138,
+            "start": 23.948,
+            "end": 24.168
+          },
+          {
+            "index": 124,
+            "text": "樹",
+            "charStart": 138,
+            "charEnd": 139,
+            "start": 24.168,
+            "end": 24.288
+          },
+          {
+            "index": 125,
+            "text": "茶",
+            "charStart": 139,
+            "charEnd": 140,
+            "start": 24.288,
+            "end": 24.428
+          },
+          {
+            "index": 126,
+            "text": "は",
+            "charStart": 140,
+            "charEnd": 141,
+            "start": 24.428,
+            "end": 24.948
+          },
+          {
+            "index": 127,
+            "text": "一",
+            "charStart": 142,
+            "charEnd": 143,
+            "start": 24.968,
+            "end": 25.308
+          },
+          {
+            "index": 128,
+            "text": "メ",
+            "charStart": 143,
+            "charEnd": 144,
+            "start": 25.308,
+            "end": 25.408
+          },
+          {
+            "index": 129,
+            "text": "ー",
+            "charStart": 144,
+            "charEnd": 145,
+            "start": 25.408,
+            "end": 25.508
+          },
+          {
+            "index": 130,
+            "text": "ト",
+            "charStart": 145,
+            "charEnd": 146,
+            "start": 25.508,
+            "end": 25.608
+          },
+          {
+            "index": 131,
+            "text": "ル",
+            "charStart": 146,
+            "charEnd": 147,
+            "start": 25.608,
+            "end": 25.728
+          },
+          {
+            "index": 132,
+            "text": "離",
+            "charStart": 147,
+            "charEnd": 148,
+            "start": 25.728,
+            "end": 25.948
+          },
+          {
+            "index": 133,
+            "text": "れ",
+            "charStart": 148,
+            "charEnd": 149,
+            "start": 25.948,
+            "end": 26.048
+          },
+          {
+            "index": 134,
+            "text": "て",
+            "charStart": 149,
+            "charEnd": 150,
+            "start": 26.048,
+            "end": 26.149
+          },
+          {
+            "index": 135,
+            "text": "い",
+            "charStart": 150,
+            "charEnd": 151,
+            "start": 26.149,
+            "end": 26.229
+          },
+          {
+            "index": 136,
+            "text": "て",
+            "charStart": 151,
+            "charEnd": 152,
+            "start": 26.229,
+            "end": 26.349
+          },
+          {
+            "index": 137,
+            "text": "も",
+            "charStart": 152,
+            "charEnd": 153,
+            "start": 26.349,
+            "end": 26.609
+          },
+          {
+            "index": 138,
+            "text": "コ",
+            "charStart": 153,
+            "charEnd": 154,
+            "start": 26.609,
+            "end": 26.809
+          },
+          {
+            "index": 139,
+            "text": "ニ",
+            "charStart": 154,
+            "charEnd": 155,
+            "start": 26.809,
+            "end": 26.909
+          },
+          {
+            "index": 140,
+            "text": "ャ",
+            "charStart": 155,
+            "charEnd": 156,
+            "start": 26.909,
+            "end": 27.029
+          },
+          {
+            "index": 142,
+            "text": "ク",
+            "charStart": 157,
+            "charEnd": 158,
+            "start": 27.049,
+            "end": 27.149
+          },
+          {
+            "index": 143,
+            "text": "の",
+            "charStart": 158,
+            "charEnd": 159,
+            "start": 27.149,
+            "end": 27.269
+          },
+          {
+            "index": 144,
+            "text": "匂",
+            "charStart": 159,
+            "charEnd": 160,
+            "start": 27.269,
+            "end": 27.489
+          },
+          {
+            "index": 145,
+            "text": "い",
+            "charStart": 160,
+            "charEnd": 161,
+            "start": 27.489,
+            "end": 27.549
+          },
+          {
+            "index": 146,
+            "text": "が",
+            "charStart": 161,
+            "charEnd": 162,
+            "start": 27.549,
+            "end": 27.689
+          },
+          {
+            "index": 147,
+            "text": "し",
+            "charStart": 162,
+            "charEnd": 163,
+            "start": 27.689,
+            "end": 27.749
+          },
+          {
+            "index": 148,
+            "text": "た",
+            "charStart": 163,
+            "charEnd": 164,
+            "start": 27.749,
+            "end": 27.769
+          },
+          {
+            "index": 149,
+            "text": "お",
+            "charStart": 166,
+            "charEnd": 167,
+            "start": 28.989,
+            "end": 29.169
+          },
+          {
+            "index": 150,
+            "text": "茶",
+            "charStart": 167,
+            "charEnd": 168,
+            "start": 29.169,
+            "end": 29.29
+          },
+          {
+            "index": 151,
+            "text": "の",
+            "charStart": 168,
+            "charEnd": 169,
+            "start": 29.29,
+            "end": 29.45
+          },
+          {
+            "index": 152,
+            "text": "成",
+            "charStart": 169,
+            "charEnd": 170,
+            "start": 29.45,
+            "end": 29.67
+          },
+          {
+            "index": 153,
+            "text": "分",
+            "charStart": 170,
+            "charEnd": 171,
+            "start": 29.67,
+            "end": 29.87
+          },
+          {
+            "index": 154,
+            "text": "は",
+            "charStart": 171,
+            "charEnd": 172,
+            "start": 29.87,
+            "end": 29.89
+          },
+          {
+            "index": 155,
+            "text": "よ",
+            "charStart": 173,
+            "charEnd": 174,
+            "start": 30.39,
+            "end": 30.59
+          },
+          {
+            "index": 156,
+            "text": "く",
+            "charStart": 174,
+            "charEnd": 175,
+            "start": 30.59,
+            "end": 30.71
+          },
+          {
+            "index": 157,
+            "text": "て",
+            "charStart": 175,
+            "charEnd": 176,
+            "start": 30.71,
+            "end": 30.91
+          },
+          {
+            "index": 158,
+            "text": "二",
+            "charStart": 176,
+            "charEnd": 177,
+            "start": 30.91,
+            "end": 31.05
+          },
+          {
+            "index": 159,
+            "text": "割",
+            "charStart": 177,
+            "charEnd": 178,
+            "start": 31.05,
+            "end": 31.25
+          },
+          {
+            "index": 160,
+            "text": "で",
+            "charStart": 178,
+            "charEnd": 179,
+            "start": 31.25,
+            "end": 31.37
+          },
+          {
+            "index": 161,
+            "text": "す",
+            "charStart": 179,
+            "charEnd": 180,
+            "start": 31.37,
+            "end": 31.47
+          },
+          {
+            "index": 162,
+            "text": "ね",
+            "charStart": 180,
+            "charEnd": 181,
+            "start": 31.47,
+            "end": 31.61
+          },
+          {
+            "index": 163,
+            "text": "と",
+            "charStart": 182,
+            "charEnd": 183,
+            "start": 32.17,
+            "end": 32.371
+          },
+          {
+            "index": 164,
+            "text": "ヌ",
+            "charStart": 183,
+            "charEnd": 184,
+            "start": 32.371,
+            "end": 32.511
+          },
+          {
+            "index": 165,
+            "text": "ー",
+            "charStart": 184,
+            "charEnd": 185,
+            "start": 32.511,
+            "end": 32.571
+          },
+          {
+            "index": 166,
+            "text": "ル",
+            "charStart": 185,
+            "charEnd": 186,
+            "start": 32.571,
+            "end": 32.671
+          },
+          {
+            "index": 167,
+            "text": "が",
+            "charStart": 186,
+            "charEnd": 187,
+            "start": 32.671,
+            "end": 32.811
+          },
+          {
+            "index": 168,
+            "text": "診",
+            "charStart": 187,
+            "charEnd": 188,
+            "start": 32.811,
+            "end": 33.031
+          },
+          {
+            "index": 169,
+            "text": "断",
+            "charStart": 188,
+            "charEnd": 189,
+            "start": 33.031,
+            "end": 33.211
+          },
+          {
+            "index": 170,
+            "text": "を",
+            "charStart": 189,
+            "charEnd": 190,
+            "start": 33.211,
+            "end": 33.411
+          },
+          {
+            "index": 171,
+            "text": "下",
+            "charStart": 190,
+            "charEnd": 191,
+            "start": 33.411,
+            "end": 33.531
+          },
+          {
+            "index": 172,
+            "text": "し",
+            "charStart": 191,
+            "charEnd": 192,
+            "start": 33.531,
+            "end": 33.611
+          },
+          {
+            "index": 173,
+            "text": "た",
+            "charStart": 192,
+            "charEnd": 193,
+            "start": 33.611,
+            "end": 34.411
+          },
+          {
+            "index": 174,
+            "text": "残",
+            "charStart": 195,
+            "charEnd": 196,
+            "start": 34.611,
+            "end": 34.731
+          },
+          {
+            "index": 175,
+            "text": "り",
+            "charStart": 196,
+            "charEnd": 197,
+            "start": 34.731,
+            "end": 34.851
+          },
+          {
+            "index": 176,
+            "text": "は",
+            "charStart": 197,
+            "charEnd": 198,
+            "start": 34.851,
+            "end": 35.071
+          },
+          {
+            "index": 177,
+            "text": "蒸",
+            "charStart": 198,
+            "charEnd": 199,
+            "start": 35.071,
+            "end": 35.331
+          },
+          {
+            "index": 178,
+            "text": "留",
+            "charStart": 199,
+            "charEnd": 200,
+            "start": 35.331,
+            "end": 35.512
+          },
+          {
+            "index": 179,
+            "text": "の",
+            "charStart": 200,
+            "charEnd": 201,
+            "start": 35.512,
+            "end": 35.612
+          },
+          {
+            "index": 180,
+            "text": "領",
+            "charStart": 201,
+            "charEnd": 202,
+            "start": 35.612,
+            "end": 35.832
+          },
+          {
+            "index": 181,
+            "text": "分",
+            "charStart": 202,
+            "charEnd": 203,
+            "start": 35.832,
+            "end": 35.992
+          },
+          {
+            "index": 182,
+            "text": "で",
+            "charStart": 203,
+            "charEnd": 204,
+            "start": 35.992,
+            "end": 36.132
+          },
+          {
+            "index": 183,
+            "text": "す",
+            "charStart": 204,
+            "charEnd": 205,
+            "start": 36.132,
+            "end": 36.992
+          },
+          {
+            "index": 184,
+            "text": "そ",
+            "charStart": 206,
+            "charEnd": 207,
+            "start": 37.132,
+            "end": 37.272
+          },
+          {
+            "index": 185,
+            "text": "う",
+            "charStart": 207,
+            "charEnd": 208,
+            "start": 37.272,
+            "end": 37.392
+          },
+          {
+            "index": 186,
+            "text": "言",
+            "charStart": 208,
+            "charEnd": 209,
+            "start": 37.392,
+            "end": 37.472
+          },
+          {
+            "index": 187,
+            "text": "い",
+            "charStart": 209,
+            "charEnd": 210,
+            "start": 37.472,
+            "end": 37.552
+          },
+          {
+            "index": 188,
+            "text": "な",
+            "charStart": 210,
+            "charEnd": 211,
+            "start": 37.552,
+            "end": 37.672
+          },
+          {
+            "index": 189,
+            "text": "が",
+            "charStart": 211,
+            "charEnd": 212,
+            "start": 37.672,
+            "end": 37.752
+          },
+          {
+            "index": 190,
+            "text": "ら",
+            "charStart": 212,
+            "charEnd": 213,
+            "start": 37.752,
+            "end": 37.872
+          },
+          {
+            "index": 191,
+            "text": "も",
+            "charStart": 213,
+            "charEnd": 214,
+            "start": 37.872,
+            "end": 38.292
+          },
+          {
+            "index": 193,
+            "text": "ー",
+            "charStart": 216,
+            "charEnd": 217,
+            "start": 38.432,
+            "end": 38.513
+          },
+          {
+            "index": 194,
+            "text": "ル",
+            "charStart": 217,
+            "charEnd": 218,
+            "start": 38.513,
+            "end": 38.613
+          },
+          {
+            "index": 195,
+            "text": "は",
+            "charStart": 218,
+            "charEnd": 219,
+            "start": 38.613,
+            "end": 38.793
+          },
+          {
+            "index": 196,
+            "text": "ほ",
+            "charStart": 219,
+            "charEnd": 220,
+            "start": 38.793,
+            "end": 38.993
+          },
+          {
+            "index": 197,
+            "text": "ん",
+            "charStart": 220,
+            "charEnd": 221,
+            "start": 38.993,
+            "end": 39.053
+          },
+          {
+            "index": 198,
+            "text": "の",
+            "charStart": 221,
+            "charEnd": 222,
+            "start": 39.053,
+            "end": 39.173
+          },
+          {
+            "index": 199,
+            "text": "ひ",
+            "charStart": 222,
+            "charEnd": 223,
+            "start": 39.173,
+            "end": 39.253
+          },
+          {
+            "index": 200,
+            "text": "と",
+            "charStart": 223,
+            "charEnd": 224,
+            "start": 39.253,
+            "end": 39.353
+          },
+          {
+            "index": 201,
+            "text": "口",
+            "charStart": 224,
+            "charEnd": 225,
+            "start": 39.353,
+            "end": 39.573
+          },
+          {
+            "index": 202,
+            "text": "ぶ",
+            "charStart": 225,
+            "charEnd": 226,
+            "start": 39.573,
+            "end": 39.673
+          },
+          {
+            "index": 203,
+            "text": "ん",
+            "charStart": 226,
+            "charEnd": 227,
+            "start": 39.673,
+            "end": 39.753
+          },
+          {
+            "index": 204,
+            "text": "を",
+            "charStart": 227,
+            "charEnd": 228,
+            "start": 39.753,
+            "end": 39.853
+          },
+          {
+            "index": 205,
+            "text": "受",
+            "charStart": 228,
+            "charEnd": 229,
+            "start": 39.853,
+            "end": 39.973
+          },
+          {
+            "index": 206,
+            "text": "け",
+            "charStart": 229,
+            "charEnd": 230,
+            "start": 39.973,
+            "end": 40.073
+          },
+          {
+            "index": 207,
+            "text": "取",
+            "charStart": 230,
+            "charEnd": 231,
+            "start": 40.073,
+            "end": 40.233
+          },
+          {
+            "index": 209,
+            "text": "た",
+            "charStart": 232,
+            "charEnd": 233,
+            "start": 40.253,
+            "end": 40.273
+          },
+          {
+            "index": 210,
+            "text": "テ",
+            "charStart": 234,
+            "charEnd": 235,
+            "start": 41.193,
+            "end": 41.273
+          },
+          {
+            "index": 211,
+            "text": "ィ",
+            "charStart": 235,
+            "charEnd": 236,
+            "start": 41.273,
+            "end": 41.333
+          },
+          {
+            "index": 212,
+            "text": "ボ",
+            "charStart": 236,
+            "charEnd": 237,
+            "start": 41.333,
+            "end": 41.453
+          },
+          {
+            "index": 213,
+            "text": "ー",
+            "charStart": 237,
+            "charEnd": 238,
+            "start": 41.453,
+            "end": 41.534
+          },
+          {
+            "index": 214,
+            "text": "は",
+            "charStart": 238,
+            "charEnd": 239,
+            "start": 41.534,
+            "end": 42.174
+          },
+          {
+            "index": 215,
+            "text": "手",
+            "charStart": 240,
+            "charEnd": 241,
+            "start": 42.414,
+            "end": 42.614
+          },
+          {
+            "index": 216,
+            "text": "に",
+            "charStart": 241,
+            "charEnd": 242,
+            "start": 42.614,
+            "end": 42.814
+          },
+          {
+            "index": 217,
+            "text": "障",
+            "charStart": 242,
+            "charEnd": 243,
+            "start": 42.814,
+            "end": 43.034
+          },
+          {
+            "index": 218,
+            "text": "り",
+            "charStart": 243,
+            "charEnd": 244,
+            "start": 43.034,
+            "end": 43.134
+          },
+          {
+            "index": 219,
+            "text": "ま",
+            "charStart": 244,
+            "charEnd": 245,
+            "start": 43.134,
+            "end": 43.254
+          },
+          {
+            "index": 220,
+            "text": "す",
+            "charStart": 245,
+            "charEnd": 246,
+            "start": 43.254,
+            "end": 43.374
+          },
+          {
+            "index": 221,
+            "text": "の",
+            "charStart": 246,
+            "charEnd": 247,
+            "start": 43.374,
+            "end": 43.474
+          },
+          {
+            "index": 222,
+            "text": "で",
+            "charStart": 247,
+            "charEnd": 248,
+            "start": 43.474,
+            "end": 43.494
+          },
+          {
+            "index": 223,
+            "text": "と",
+            "charStart": 249,
+            "charEnd": 250,
+            "start": 44.034,
+            "end": 44.254
+          },
+          {
+            "index": 224,
+            "text": "詫",
+            "charStart": 250,
+            "charEnd": 251,
+            "start": 44.254,
+            "end": 44.374
+          },
+          {
+            "index": 225,
+            "text": "び",
+            "charStart": 251,
+            "charEnd": 252,
+            "start": 44.374,
+            "end": 44.474
+          },
+          {
+            "index": 226,
+            "text": "の",
+            "charStart": 252,
+            "charEnd": 253,
+            "start": 44.474,
+            "end": 44.615
+          },
+          {
+            "index": 227,
+            "text": "言",
+            "charStart": 253,
+            "charEnd": 254,
+            "start": 44.615,
+            "end": 44.815
+          },
+          {
+            "index": 228,
+            "text": "葉",
+            "charStart": 254,
+            "charEnd": 255,
+            "start": 44.815,
+            "end": 44.955
+          },
+          {
+            "index": 229,
+            "text": "を",
+            "charStart": 255,
+            "charEnd": 256,
+            "start": 44.955,
+            "end": 45.235
+          },
+          {
+            "index": 230,
+            "text": "山",
+            "charStart": 256,
+            "charEnd": 257,
+            "start": 45.235,
+            "end": 45.375
+          },
+          {
+            "index": 231,
+            "text": "ほ",
+            "charStart": 257,
+            "charEnd": 258,
+            "start": 45.375,
+            "end": 45.455
+          },
+          {
+            "index": 232,
+            "text": "ど",
+            "charStart": 258,
+            "charEnd": 259,
+            "start": 45.455,
+            "end": 45.575
+          },
+          {
+            "index": 233,
+            "text": "並",
+            "charStart": 259,
+            "charEnd": 260,
+            "start": 45.575,
+            "end": 45.755
+          },
+          {
+            "index": 234,
+            "text": "べ",
+            "charStart": 260,
+            "charEnd": 261,
+            "start": 45.755,
+            "end": 45.875
+          },
+          {
+            "index": 235,
+            "text": "て",
+            "charStart": 261,
+            "charEnd": 262,
+            "start": 45.875,
+            "end": 46.015
+          },
+          {
+            "index": 236,
+            "text": "辞",
+            "charStart": 262,
+            "charEnd": 263,
+            "start": 46.015,
+            "end": 46.115
+          },
+          {
+            "index": 237,
+            "text": "退",
+            "charStart": 263,
+            "charEnd": 264,
+            "start": 46.115,
+            "end": 46.315
+          },
+          {
+            "index": 238,
+            "text": "し",
+            "charStart": 264,
+            "charEnd": 265,
+            "start": 46.315,
+            "end": 46.395
+          },
+          {
+            "index": 239,
+            "text": "た",
+            "charStart": 265,
+            "charEnd": 266,
+            "start": 46.395,
+            "end": 47.375
+          },
+          {
+            "index": 240,
+            "text": "澪",
+            "charStart": 267,
+            "charEnd": 268,
+            "start": 47.515,
+            "end": 47.635
+          },
+          {
+            "index": 241,
+            "text": "の",
+            "charStart": 268,
+            "charEnd": 269,
+            "start": 47.635,
+            "end": 47.756
+          },
+          {
+            "index": 242,
+            "text": "ほ",
+            "charStart": 269,
+            "charEnd": 270,
+            "start": 47.756,
+            "end": 47.876
+          },
+          {
+            "index": 243,
+            "text": "う",
+            "charStart": 270,
+            "charEnd": 271,
+            "start": 47.876,
+            "end": 47.956
+          },
+          {
+            "index": 245,
+            "text": "職",
+            "charStart": 273,
+            "charEnd": 274,
+            "start": 48.516,
+            "end": 48.836
+          },
+          {
+            "index": 246,
+            "text": "業",
+            "charStart": 274,
+            "charEnd": 275,
+            "start": 48.836,
+            "end": 49.056
+          },
+          {
+            "index": 247,
+            "text": "上",
+            "charStart": 275,
+            "charEnd": 276,
+            "start": 49.056,
+            "end": 49.236
+          },
+          {
+            "index": 248,
+            "text": "の",
+            "charStart": 276,
+            "charEnd": 277,
+            "start": 49.236,
+            "end": 49.376
+          },
+          {
+            "index": 249,
+            "text": "好",
+            "charStart": 277,
+            "charEnd": 278,
+            "start": 49.376,
+            "end": 49.596
+          },
+          {
+            "index": 250,
+            "text": "奇",
+            "charStart": 278,
+            "charEnd": 279,
+            "start": 49.596,
+            "end": 49.696
+          },
+          {
+            "index": 251,
+            "text": "心",
+            "charStart": 279,
+            "charEnd": 280,
+            "start": 49.696,
+            "end": 49.876
+          },
+          {
+            "index": 252,
+            "text": "か",
+            "charStart": 280,
+            "charEnd": 281,
+            "start": 49.876,
+            "end": 49.976
+          },
+          {
+            "index": 253,
+            "text": "ら",
+            "charStart": 281,
+            "charEnd": 282,
+            "start": 49.976,
+            "end": 50.116
+          },
+          {
+            "index": 254,
+            "text": "カ",
+            "charStart": 282,
+            "charEnd": 283,
+            "start": 50.116,
+            "end": 50.336
+          },
+          {
+            "index": 255,
+            "text": "ッ",
+            "charStart": 283,
+            "charEnd": 284,
+            "start": 50.336,
+            "end": 50.376
+          },
+          {
+            "index": 256,
+            "text": "プ",
+            "charStart": 284,
+            "charEnd": 285,
+            "start": 50.376,
+            "end": 50.476
+          },
+          {
+            "index": 257,
+            "text": "を",
+            "charStart": 285,
+            "charEnd": 286,
+            "start": 50.476,
+            "end": 50.576
+          },
+          {
+            "index": 258,
+            "text": "ひ",
+            "charStart": 286,
+            "charEnd": 287,
+            "start": 50.576,
+            "end": 50.656
+          },
+          {
+            "index": 259,
+            "text": "と",
+            "charStart": 287,
+            "charEnd": 288,
+            "start": 50.656,
+            "end": 50.797
+          },
+          {
+            "index": 260,
+            "text": "つ",
+            "charStart": 288,
+            "charEnd": 289,
+            "start": 50.797,
+            "end": 50.897
+          },
+          {
+            "index": 261,
+            "text": "も",
+            "charStart": 289,
+            "charEnd": 290,
+            "start": 50.897,
+            "end": 50.977
+          },
+          {
+            "index": 262,
+            "text": "ら",
+            "charStart": 290,
+            "charEnd": 291,
+            "start": 50.977,
+            "end": 51.137
+          },
+          {
+            "index": 263,
+            "text": "っ",
+            "charStart": 291,
+            "charEnd": 292,
+            "start": 51.137,
+            "end": 51.177
+          },
+          {
+            "index": 264,
+            "text": "た",
+            "charStart": 292,
+            "charEnd": 293,
+            "start": 51.177,
+            "end": 51.197
+          },
+          {
+            "index": 265,
+            "text": "液",
+            "charStart": 294,
+            "charEnd": 295,
+            "start": 52.317,
+            "end": 52.437
+          },
+          {
+            "index": 266,
+            "text": "体",
+            "charStart": 295,
+            "charEnd": 296,
+            "start": 52.437,
+            "end": 52.657
+          },
+          {
+            "index": 267,
+            "text": "は",
+            "charStart": 296,
+            "charEnd": 297,
+            "start": 52.657,
+            "end": 52.837
+          },
+          {
+            "index": 268,
+            "text": "プ",
+            "charStart": 297,
+            "charEnd": 298,
+            "start": 52.837,
+            "end": 52.937
+          },
+          {
+            "index": 269,
+            "text": "ラ",
+            "charStart": 298,
+            "charEnd": 299,
+            "start": 52.937,
+            "end": 53.097
+          },
+          {
+            "index": 270,
+            "text": "ス",
+            "charStart": 299,
+            "charEnd": 300,
+            "start": 53.097,
+            "end": 53.177
+          },
+          {
+            "index": 271,
+            "text": "チ",
+            "charStart": 300,
+            "charEnd": 301,
+            "start": 53.177,
+            "end": 53.357
+          },
+          {
+            "index": 272,
+            "text": "ッ",
+            "charStart": 301,
+            "charEnd": 302,
+            "start": 53.357,
+            "end": 53.377
+          },
+          {
+            "index": 273,
+            "text": "ク",
+            "charStart": 302,
+            "charEnd": 303,
+            "start": 53.377,
+            "end": 53.457
+          },
+          {
+            "index": 274,
+            "text": "の",
+            "charStart": 303,
+            "charEnd": 304,
+            "start": 53.457,
+            "end": 53.577
+          },
+          {
+            "index": 275,
+            "text": "底",
+            "charStart": 304,
+            "charEnd": 305,
+            "start": 53.577,
+            "end": 53.817
+          },
+          {
+            "index": 276,
+            "text": "に",
+            "charStart": 305,
+            "charEnd": 306,
+            "start": 53.817,
+            "end": 53.938
+          },
+          {
+            "index": 277,
+            "text": "落",
+            "charStart": 306,
+            "charEnd": 307,
+            "start": 53.938,
+            "end": 54.058
+          },
+          {
+            "index": 278,
+            "text": "ち",
+            "charStart": 307,
+            "charEnd": 308,
+            "start": 54.058,
+            "end": 54.078
+          },
+          {
+            "index": 279,
+            "text": "て",
+            "charStart": 308,
+            "charEnd": 309,
+            "start": 54.078,
+            "end": 54.158
+          },
+          {
+            "index": 280,
+            "text": "湧",
+            "charStart": 310,
+            "charEnd": 311,
+            "start": 54.778,
+            "end": 54.938
+          },
+          {
+            "index": 281,
+            "text": "き",
+            "charStart": 311,
+            "charEnd": 312,
+            "start": 54.938,
+            "end": 55.078
+          },
+          {
+            "index": 282,
+            "text": "水",
+            "charStart": 312,
+            "charEnd": 313,
+            "start": 55.078,
+            "end": 55.298
+          },
+          {
+            "index": 283,
+            "text": "の",
+            "charStart": 313,
+            "charEnd": 314,
+            "start": 55.298,
+            "end": 55.438
+          },
+          {
+            "index": 284,
+            "text": "よ",
+            "charStart": 314,
+            "charEnd": 315,
+            "start": 55.438,
+            "end": 55.558
+          },
+          {
+            "index": 285,
+            "text": "う",
+            "charStart": 315,
+            "charEnd": 316,
+            "start": 55.558,
+            "end": 55.678
+          },
+          {
+            "index": 286,
+            "text": "に",
+            "charStart": 316,
+            "charEnd": 317,
+            "start": 55.678,
+            "end": 55.878
+          },
+          {
+            "index": 287,
+            "text": "こ",
+            "charStart": 317,
+            "charEnd": 318,
+            "start": 55.878,
+            "end": 56.018
+          },
+          {
+            "index": 288,
+            "text": "ぽ",
+            "charStart": 318,
+            "charEnd": 319,
+            "start": 56.018,
+            "end": 56.138
+          },
+          {
+            "index": 289,
+            "text": "こ",
+            "charStart": 319,
+            "charEnd": 320,
+            "start": 56.138,
+            "end": 56.258
+          },
+          {
+            "index": 290,
+            "text": "ぽ",
+            "charStart": 320,
+            "charEnd": 321,
+            "start": 56.258,
+            "end": 56.378
+          },
+          {
+            "index": 291,
+            "text": "と",
+            "charStart": 321,
+            "charEnd": 322,
+            "start": 56.378,
+            "end": 56.398
+          },
+          {
+            "index": 292,
+            "text": "金",
+            "charStart": 323,
+            "charEnd": 324,
+            "start": 56.999,
+            "end": 57.379
+          },
+          {
+            "index": 293,
+            "text": "色",
+            "charStart": 324,
+            "charEnd": 325,
+            "start": 57.379,
+            "end": 57.499
+          },
+          {
+            "index": 294,
+            "text": "の",
+            "charStart": 325,
+            "charEnd": 326,
+            "start": 57.499,
+            "end": 57.719
+          },
+          {
+            "index": 295,
+            "text": "小",
+            "charStart": 326,
+            "charEnd": 327,
+            "start": 57.719,
+            "end": 57.979
+          },
+          {
+            "index": 296,
+            "text": "さ",
+            "charStart": 327,
+            "charEnd": 328,
+            "start": 57.979,
+            "end": 58.099
+          },
+          {
+            "index": 297,
+            "text": "な",
+            "charStart": 328,
+            "charEnd": 329,
+            "start": 58.099,
+            "end": 58.219
+          },
+          {
+            "index": 298,
+            "text": "音",
+            "charStart": 329,
+            "charEnd": 330,
+            "start": 58.219,
+            "end": 58.419
+          },
+          {
+            "index": 299,
+            "text": "を",
+            "charStart": 330,
+            "charEnd": 331,
+            "start": 58.419,
+            "end": 58.539
+          },
+          {
+            "index": 300,
+            "text": "立",
+            "charStart": 331,
+            "charEnd": 332,
+            "start": 58.539,
+            "end": 58.639
+          },
+          {
+            "index": 301,
+            "text": "て",
+            "charStart": 332,
+            "charEnd": 333,
+            "start": 58.639,
+            "end": 58.759
+          },
+          {
+            "index": 302,
+            "text": "た",
+            "charStart": 333,
+            "charEnd": 334,
+            "start": 58.759,
+            "end": 59.639
+          },
+          {
+            "index": 303,
+            "text": "手",
+            "charStart": 335,
+            "charEnd": 336,
+            "start": 59.739,
+            "end": 59.879
+          },
+          {
+            "index": 304,
+            "text": "も",
+            "charStart": 336,
+            "charEnd": 337,
+            "start": 59.879,
+            "end": 60.02
+          },
+          {
+            "index": 305,
+            "text": "と",
+            "charStart": 337,
+            "charEnd": 338,
+            "start": 60.02,
+            "end": 60.14
+          },
+          {
+            "index": 306,
+            "text": "に",
+            "charStart": 338,
+            "charEnd": 339,
+            "start": 60.14,
+            "end": 60.26
+          },
+          {
+            "index": 307,
+            "text": "と",
+            "charStart": 339,
+            "charEnd": 340,
+            "start": 60.26,
+            "end": 60.42
+          },
+          {
+            "index": 308,
+            "text": "っ",
+            "charStart": 340,
+            "charEnd": 341,
+            "start": 60.42,
+            "end": 60.46
+          },
+          {
+            "index": 309,
+            "text": "て",
+            "charStart": 341,
+            "charEnd": 342,
+            "start": 60.46,
+            "end": 60.54
+          },
+          {
+            "index": 310,
+            "text": "お",
+            "charStart": 342,
+            "charEnd": 343,
+            "start": 60.54,
+            "end": 60.68
+          },
+          {
+            "index": 311,
+            "text": "き",
+            "charStart": 343,
+            "charEnd": 344,
+            "start": 60.68,
+            "end": 60.76
+          },
+          {
+            "index": 312,
+            "text": "た",
+            "charStart": 344,
+            "charEnd": 345,
+            "start": 60.76,
+            "end": 60.86
+          },
+          {
+            "index": 313,
+            "text": "い",
+            "charStart": 345,
+            "charEnd": 346,
+            "start": 60.86,
+            "end": 60.94
+          },
+          {
+            "index": 314,
+            "text": "音",
+            "charStart": 346,
+            "charEnd": 347,
+            "start": 60.94,
+            "end": 61.16
+          },
+          {
+            "index": 315,
+            "text": "だ",
+            "charStart": 347,
+            "charEnd": 348,
+            "start": 61.16,
+            "end": 61.3
+          },
+          {
+            "index": 316,
+            "text": "っ",
+            "charStart": 348,
+            "charEnd": 349,
+            "start": 61.3,
+            "end": 61.34
+          },
+          {
+            "index": 317,
+            "text": "た",
+            "charStart": 349,
+            "charEnd": 350,
+            "start": 61.34,
+            "end": 61.36
+          }
+        ]
+      },
+      "language": "ja",
+      "variant": "ja",
+      "chapterId": "nuit-02",
+      "paragraphId": "nuit-02-p02",
+      "novelId": "novel-ce-que-la-nuit-a-entendu",
+      "text": "二十二時ごろ、コレットが帽子箱を開けた。出てきたのは帽子ではなく、へこみだらけの金属の魔法瓶と、プラスチックのカップが四つ、それにマドレーヌがひと袋。「菩提樹のお茶よ」と彼女は宣言した。「よく眠れるように。お医者さまのお言いつけなの。わたし、とても従順な患者ですから」その菩提樹茶は、一メートル離れていてもコニャックの匂いがした。「お茶の成分は、よくて二割ですね」とヌールが診断を下した。「残りは蒸留の領分です」そう言いながらも、ヌールはほんのひと口ぶんを受け取った。ティボーは、手に障りますので、と詫びの言葉を山ほど並べて辞退した。澪のほうは、職業上の好奇心からカップをひとつもらった。液体はプラスチックの底に落ちて、湧き水のようにこぽこぽと、金色の小さな音を立てた。手もとにとっておきたい音だった。",
+      "ja": "",
+      "lessonTitle": "コレットの菩提樹茶 · 日本語 · 1/3"
+    },
+    {
+      "id": "nuit-02-p03-ja",
+      "lessonId": "nuit-02-ja-part1",
+      "kind": "reading",
+      "unitId": "nuit-02-p03-ja",
+      "textHash": "f6f2839a7fd126339286f9848a6587f685fb90986183567ecf92d78ae178a0b6",
+      "asset": "audio/nuit-02-p03-ja-02ede832a136.m4a",
+      "audioHash": "02ede832a13623a90d539740d5a341bc1294aaa9a039268b02c5c43147bc1e87",
+      "durationMs": 50100,
+      "sourceHash": "a586013fa852767330b69239eb0668b4110d030acc7d2d6ec36f37ebadba2a17",
+      "encoding": "aac-mono-64k-v1",
+      "start": 116.98,
+      "end": 167.08,
+      "cuts": [],
+      "speedRegions": [],
+      "reviewedByUser": true,
+      "recognitionScore": 0.892,
+      "volumePercent": 100,
+      "appliedVolumePercent": 100,
+      "volumeLimited": false,
+      "volumeProcessing": "gain-peak-v1",
+      "speedProcessing": "av-timepitch-v1",
+      "wordSync": {
+        "version": 1,
+        "method": "whisperx-3.8.6-jiwer4-largev3-final-aac-v2",
+        "textHash": "f6f2839a7fd126339286f9848a6587f685fb90986183567ecf92d78ae178a0b6",
+        "audioHash": "02ede832a13623a90d539740d5a341bc1294aaa9a039268b02c5c43147bc1e87",
+        "text": "コレットが四つ目のカップを老人へ差し出しきらないうちに、彼は胸の左側に指を二本あて、首を横に振った。ほんの小さな仕草だった。ないに等しいほどの。けれどコレットの手は、一秒だけ長く宙にとどまった。そして魔法瓶に栓をし直すとき、栓はねじ山の上できしんだ。誰も起こさないように、そっと閉め直す扉のような音で。澪はその場面を書き留めた。いつもそうしているように、意識せずに。音たちが、使い道を見つけてもらえる日を待って積み重なっていく、頭の片隅に。",
+        "language": "ja",
+        "duration": 50.1,
+        "totalWords": 203,
+        "reviewCount": 3,
+        "words": [
+          {
+            "index": 0,
+            "text": "コ",
+            "charStart": 0,
+            "charEnd": 1,
+            "start": 0.2,
+            "end": 0.34
+          },
+          {
+            "index": 1,
+            "text": "レ",
+            "charStart": 1,
+            "charEnd": 2,
+            "start": 0.34,
+            "end": 0.56
+          },
+          {
+            "index": 2,
+            "text": "ッ",
+            "charStart": 2,
+            "charEnd": 3,
+            "start": 0.56,
+            "end": 0.62
+          },
+          {
+            "index": 3,
+            "text": "ト",
+            "charStart": 3,
+            "charEnd": 4,
+            "start": 0.62,
+            "end": 0.76
+          },
+          {
+            "index": 4,
+            "text": "が",
+            "charStart": 4,
+            "charEnd": 5,
+            "start": 0.76,
+            "end": 1.921
+          },
+          {
+            "index": 5,
+            "text": "四",
+            "charStart": 5,
+            "charEnd": 6,
+            "start": 1.921,
+            "end": 2.261
+          },
+          {
+            "index": 6,
+            "text": "つ",
+            "charStart": 6,
+            "charEnd": 7,
+            "start": 2.261,
+            "end": 2.401
+          },
+          {
+            "index": 7,
+            "text": "目",
+            "charStart": 7,
+            "charEnd": 8,
+            "start": 2.401,
+            "end": 2.541
+          },
+          {
+            "index": 8,
+            "text": "の",
+            "charStart": 8,
+            "charEnd": 9,
+            "start": 2.541,
+            "end": 2.701
+          },
+          {
+            "index": 9,
+            "text": "カ",
+            "charStart": 9,
+            "charEnd": 10,
+            "start": 2.701,
+            "end": 2.901
+          },
+          {
+            "index": 10,
+            "text": "ッ",
+            "charStart": 10,
+            "charEnd": 11,
+            "start": 2.901,
+            "end": 2.941
+          },
+          {
+            "index": 11,
+            "text": "プ",
+            "charStart": 11,
+            "charEnd": 12,
+            "start": 2.941,
+            "end": 3.061
+          },
+          {
+            "index": 12,
+            "text": "を",
+            "charStart": 12,
+            "charEnd": 13,
+            "start": 3.061,
+            "end": 3.321
+          },
+          {
+            "index": 13,
+            "text": "老",
+            "charStart": 13,
+            "charEnd": 14,
+            "start": 3.321,
+            "end": 3.601
+          },
+          {
+            "index": 14,
+            "text": "人",
+            "charStart": 14,
+            "charEnd": 15,
+            "start": 3.601,
+            "end": 3.902
+          },
+          {
+            "index": 15,
+            "text": "へ",
+            "charStart": 15,
+            "charEnd": 16,
+            "start": 3.902,
+            "end": 4.162
+          },
+          {
+            "index": 16,
+            "text": "差",
+            "charStart": 16,
+            "charEnd": 17,
+            "start": 4.162,
+            "end": 4.322
+          },
+          {
+            "index": 17,
+            "text": "し",
+            "charStart": 17,
+            "charEnd": 18,
+            "start": 4.322,
+            "end": 4.442
+          },
+          {
+            "index": 18,
+            "text": "出",
+            "charStart": 18,
+            "charEnd": 19,
+            "start": 4.442,
+            "end": 4.602
+          },
+          {
+            "index": 19,
+            "text": "し",
+            "charStart": 19,
+            "charEnd": 20,
+            "start": 4.602,
+            "end": 4.742
+          },
+          {
+            "index": 20,
+            "text": "き",
+            "charStart": 20,
+            "charEnd": 21,
+            "start": 4.742,
+            "end": 4.842
+          },
+          {
+            "index": 21,
+            "text": "ら",
+            "charStart": 21,
+            "charEnd": 22,
+            "start": 4.842,
+            "end": 4.982
+          },
+          {
+            "index": 22,
+            "text": "な",
+            "charStart": 22,
+            "charEnd": 23,
+            "start": 4.982,
+            "end": 5.122
+          },
+          {
+            "index": 23,
+            "text": "い",
+            "charStart": 23,
+            "charEnd": 24,
+            "start": 5.122,
+            "end": 5.242
+          },
+          {
+            "index": 24,
+            "text": "う",
+            "charStart": 24,
+            "charEnd": 25,
+            "start": 5.242,
+            "end": 5.342
+          },
+          {
+            "index": 25,
+            "text": "ち",
+            "charStart": 25,
+            "charEnd": 26,
+            "start": 5.342,
+            "end": 5.502
+          },
+          {
+            "index": 27,
+            "text": "彼",
+            "charStart": 28,
+            "charEnd": 29,
+            "start": 6.783,
+            "end": 7.063
+          },
+          {
+            "index": 28,
+            "text": "は",
+            "charStart": 29,
+            "charEnd": 30,
+            "start": 7.063,
+            "end": 7.843
+          },
+          {
+            "index": 29,
+            "text": "胸",
+            "charStart": 30,
+            "charEnd": 31,
+            "start": 7.843,
+            "end": 8.143
+          },
+          {
+            "index": 30,
+            "text": "の",
+            "charStart": 31,
+            "charEnd": 32,
+            "start": 8.143,
+            "end": 8.463
+          },
+          {
+            "index": 31,
+            "text": "左",
+            "charStart": 32,
+            "charEnd": 33,
+            "start": 8.463,
+            "end": 8.683
+          },
+          {
+            "index": 32,
+            "text": "側",
+            "charStart": 33,
+            "charEnd": 34,
+            "start": 8.683,
+            "end": 8.984
+          },
+          {
+            "index": 33,
+            "text": "に",
+            "charStart": 34,
+            "charEnd": 35,
+            "start": 8.984,
+            "end": 9.184
+          },
+          {
+            "index": 34,
+            "text": "指",
+            "charStart": 35,
+            "charEnd": 36,
+            "start": 9.184,
+            "end": 9.484
+          },
+          {
+            "index": 35,
+            "text": "を",
+            "charStart": 36,
+            "charEnd": 37,
+            "start": 9.484,
+            "end": 9.644
+          },
+          {
+            "index": 36,
+            "text": "二",
+            "charStart": 37,
+            "charEnd": 38,
+            "start": 9.644,
+            "end": 9.804
+          },
+          {
+            "index": 37,
+            "text": "本",
+            "charStart": 38,
+            "charEnd": 39,
+            "start": 9.804,
+            "end": 10.124
+          },
+          {
+            "index": 38,
+            "text": "あ",
+            "charStart": 39,
+            "charEnd": 40,
+            "start": 10.124,
+            "end": 10.284
+          },
+          {
+            "index": 40,
+            "text": "首",
+            "charStart": 42,
+            "charEnd": 43,
+            "start": 11.064,
+            "end": 11.385
+          },
+          {
+            "index": 41,
+            "text": "を",
+            "charStart": 43,
+            "charEnd": 44,
+            "start": 11.385,
+            "end": 11.545
+          },
+          {
+            "index": 42,
+            "text": "横",
+            "charStart": 44,
+            "charEnd": 45,
+            "start": 11.545,
+            "end": 11.805
+          },
+          {
+            "index": 43,
+            "text": "に",
+            "charStart": 45,
+            "charEnd": 46,
+            "start": 11.805,
+            "end": 11.945
+          },
+          {
+            "index": 44,
+            "text": "振",
+            "charStart": 46,
+            "charEnd": 47,
+            "start": 11.945,
+            "end": 12.085
+          },
+          {
+            "index": 45,
+            "text": "っ",
+            "charStart": 47,
+            "charEnd": 48,
+            "start": 12.085,
+            "end": 12.165
+          },
+          {
+            "index": 46,
+            "text": "た",
+            "charStart": 48,
+            "charEnd": 49,
+            "start": 12.165,
+            "end": 12.185
+          },
+          {
+            "index": 47,
+            "text": "ほ",
+            "charStart": 50,
+            "charEnd": 51,
+            "start": 13.525,
+            "end": 13.685
+          },
+          {
+            "index": 48,
+            "text": "ん",
+            "charStart": 51,
+            "charEnd": 52,
+            "start": 13.685,
+            "end": 13.846
+          },
+          {
+            "index": 49,
+            "text": "の",
+            "charStart": 52,
+            "charEnd": 53,
+            "start": 13.846,
+            "end": 14.506
+          },
+          {
+            "index": 50,
+            "text": "小",
+            "charStart": 53,
+            "charEnd": 54,
+            "start": 14.506,
+            "end": 14.786
+          },
+          {
+            "index": 51,
+            "text": "さ",
+            "charStart": 54,
+            "charEnd": 55,
+            "start": 14.786,
+            "end": 14.946
+          },
+          {
+            "index": 52,
+            "text": "な",
+            "charStart": 55,
+            "charEnd": 56,
+            "start": 14.946,
+            "end": 15.106
+          },
+          {
+            "index": 53,
+            "text": "仕",
+            "charStart": 56,
+            "charEnd": 57,
+            "start": 15.106,
+            "end": 15.406
+          },
+          {
+            "index": 54,
+            "text": "草",
+            "charStart": 57,
+            "charEnd": 58,
+            "start": 15.406,
+            "end": 15.526
+          },
+          {
+            "index": 55,
+            "text": "だ",
+            "charStart": 58,
+            "charEnd": 59,
+            "start": 15.526,
+            "end": 15.686
+          },
+          {
+            "index": 56,
+            "text": "っ",
+            "charStart": 59,
+            "charEnd": 60,
+            "start": 15.686,
+            "end": 15.746
+          },
+          {
+            "index": 57,
+            "text": "た",
+            "charStart": 60,
+            "charEnd": 61,
+            "start": 15.746,
+            "end": 15.766
+          },
+          {
+            "index": 58,
+            "text": "な",
+            "charStart": 62,
+            "charEnd": 63,
+            "start": 16.847,
+            "end": 17.027
+          },
+          {
+            "index": 59,
+            "text": "い",
+            "charStart": 63,
+            "charEnd": 64,
+            "start": 17.027,
+            "end": 17.147
+          },
+          {
+            "index": 60,
+            "text": "に",
+            "charStart": 64,
+            "charEnd": 65,
+            "start": 17.147,
+            "end": 17.307
+          },
+          {
+            "index": 61,
+            "text": "等",
+            "charStart": 65,
+            "charEnd": 66,
+            "start": 17.307,
+            "end": 17.587
+          },
+          {
+            "index": 62,
+            "text": "し",
+            "charStart": 66,
+            "charEnd": 67,
+            "start": 17.587,
+            "end": 17.767
+          },
+          {
+            "index": 63,
+            "text": "い",
+            "charStart": 67,
+            "charEnd": 68,
+            "start": 17.767,
+            "end": 17.887
+          },
+          {
+            "index": 64,
+            "text": "ほ",
+            "charStart": 68,
+            "charEnd": 69,
+            "start": 17.887,
+            "end": 18.007
+          },
+          {
+            "index": 65,
+            "text": "ど",
+            "charStart": 69,
+            "charEnd": 70,
+            "start": 18.007,
+            "end": 18.047
+          },
+          {
+            "index": 66,
+            "text": "の",
+            "charStart": 70,
+            "charEnd": 71,
+            "start": 18.047,
+            "end": 18.167
+          },
+          {
+            "index": 67,
+            "text": "け",
+            "charStart": 72,
+            "charEnd": 73,
+            "start": 19.428,
+            "end": 19.528
+          },
+          {
+            "index": 68,
+            "text": "れ",
+            "charStart": 73,
+            "charEnd": 74,
+            "start": 19.528,
+            "end": 19.628
+          },
+          {
+            "index": 69,
+            "text": "ど",
+            "charStart": 74,
+            "charEnd": 75,
+            "start": 19.628,
+            "end": 19.908
+          },
+          {
+            "index": 70,
+            "text": "コ",
+            "charStart": 75,
+            "charEnd": 76,
+            "start": 19.908,
+            "end": 20.028
+          },
+          {
+            "index": 71,
+            "text": "レ",
+            "charStart": 76,
+            "charEnd": 77,
+            "start": 20.028,
+            "end": 20.168
+          },
+          {
+            "index": 72,
+            "text": "ッ",
+            "charStart": 77,
+            "charEnd": 78,
+            "start": 20.168,
+            "end": 20.208
+          },
+          {
+            "index": 73,
+            "text": "ト",
+            "charStart": 78,
+            "charEnd": 79,
+            "start": 20.208,
+            "end": 20.328
+          },
+          {
+            "index": 74,
+            "text": "の",
+            "charStart": 79,
+            "charEnd": 80,
+            "start": 20.328,
+            "end": 20.468
+          },
+          {
+            "index": 75,
+            "text": "手",
+            "charStart": 80,
+            "charEnd": 81,
+            "start": 20.468,
+            "end": 20.608
+          },
+          {
+            "index": 76,
+            "text": "は",
+            "charStart": 81,
+            "charEnd": 82,
+            "start": 20.608,
+            "end": 21.349
+          },
+          {
+            "index": 77,
+            "text": "一",
+            "charStart": 83,
+            "charEnd": 84,
+            "start": 21.369,
+            "end": 21.669
+          },
+          {
+            "index": 78,
+            "text": "秒",
+            "charStart": 84,
+            "charEnd": 85,
+            "start": 21.669,
+            "end": 21.889
+          },
+          {
+            "index": 79,
+            "text": "だ",
+            "charStart": 85,
+            "charEnd": 86,
+            "start": 21.889,
+            "end": 22.029
+          },
+          {
+            "index": 80,
+            "text": "け",
+            "charStart": 86,
+            "charEnd": 87,
+            "start": 22.029,
+            "end": 22.369
+          },
+          {
+            "index": 81,
+            "text": "長",
+            "charStart": 87,
+            "charEnd": 88,
+            "start": 22.369,
+            "end": 22.549
+          },
+          {
+            "index": 82,
+            "text": "く",
+            "charStart": 88,
+            "charEnd": 89,
+            "start": 22.549,
+            "end": 22.869
+          },
+          {
+            "index": 83,
+            "text": "宙",
+            "charStart": 89,
+            "charEnd": 90,
+            "start": 22.869,
+            "end": 23.129
+          },
+          {
+            "index": 84,
+            "text": "に",
+            "charStart": 90,
+            "charEnd": 91,
+            "start": 23.129,
+            "end": 23.289
+          },
+          {
+            "index": 85,
+            "text": "と",
+            "charStart": 91,
+            "charEnd": 92,
+            "start": 23.289,
+            "end": 23.389
+          },
+          {
+            "index": 86,
+            "text": "ど",
+            "charStart": 92,
+            "charEnd": 93,
+            "start": 23.389,
+            "end": 23.529
+          },
+          {
+            "index": 87,
+            "text": "ま",
+            "charStart": 93,
+            "charEnd": 94,
+            "start": 23.529,
+            "end": 23.689
+          },
+          {
+            "index": 88,
+            "text": "っ",
+            "charStart": 94,
+            "charEnd": 95,
+            "start": 23.689,
+            "end": 23.749
+          },
+          {
+            "index": 90,
+            "text": "そ",
+            "charStart": 97,
+            "charEnd": 98,
+            "start": 24.91,
+            "end": 25.05
+          },
+          {
+            "index": 91,
+            "text": "し",
+            "charStart": 98,
+            "charEnd": 99,
+            "start": 25.05,
+            "end": 25.13
+          },
+          {
+            "index": 92,
+            "text": "て",
+            "charStart": 99,
+            "charEnd": 100,
+            "start": 25.13,
+            "end": 25.33
+          },
+          {
+            "index": 93,
+            "text": "魔",
+            "charStart": 100,
+            "charEnd": 101,
+            "start": 25.33,
+            "end": 25.51
+          },
+          {
+            "index": 94,
+            "text": "法",
+            "charStart": 101,
+            "charEnd": 102,
+            "start": 25.51,
+            "end": 25.73
+          },
+          {
+            "index": 95,
+            "text": "瓶",
+            "charStart": 102,
+            "charEnd": 103,
+            "start": 25.73,
+            "end": 25.95
+          },
+          {
+            "index": 96,
+            "text": "に",
+            "charStart": 103,
+            "charEnd": 104,
+            "start": 25.95,
+            "end": 26.17
+          },
+          {
+            "index": 97,
+            "text": "栓",
+            "charStart": 104,
+            "charEnd": 105,
+            "start": 26.17,
+            "end": 26.431
+          },
+          {
+            "index": 98,
+            "text": "を",
+            "charStart": 105,
+            "charEnd": 106,
+            "start": 26.431,
+            "end": 26.591
+          },
+          {
+            "index": 99,
+            "text": "し",
+            "charStart": 106,
+            "charEnd": 107,
+            "start": 26.591,
+            "end": 26.731
+          },
+          {
+            "index": 100,
+            "text": "直",
+            "charStart": 107,
+            "charEnd": 108,
+            "start": 26.731,
+            "end": 26.951
+          },
+          {
+            "index": 101,
+            "text": "す",
+            "charStart": 108,
+            "charEnd": 109,
+            "start": 26.951,
+            "end": 27.051
+          },
+          {
+            "index": 102,
+            "text": "と",
+            "charStart": 109,
+            "charEnd": 110,
+            "start": 27.051,
+            "end": 27.211
+          },
+          {
+            "index": 103,
+            "text": "き",
+            "charStart": 110,
+            "charEnd": 111,
+            "start": 27.211,
+            "end": 27.291
+          },
+          {
+            "index": 104,
+            "text": "栓",
+            "charStart": 112,
+            "charEnd": 113,
+            "start": 28.191,
+            "end": 28.471
+          },
+          {
+            "index": 105,
+            "text": "は",
+            "charStart": 113,
+            "charEnd": 114,
+            "start": 28.471,
+            "end": 28.892
+          },
+          {
+            "index": 106,
+            "text": "ね",
+            "charStart": 114,
+            "charEnd": 115,
+            "start": 28.892,
+            "end": 29.032
+          },
+          {
+            "index": 107,
+            "text": "じ",
+            "charStart": 115,
+            "charEnd": 116,
+            "start": 29.032,
+            "end": 29.292
+          },
+          {
+            "index": 108,
+            "text": "山",
+            "charStart": 116,
+            "charEnd": 117,
+            "start": 29.292,
+            "end": 29.412
+          },
+          {
+            "index": 109,
+            "text": "の",
+            "charStart": 117,
+            "charEnd": 118,
+            "start": 29.412,
+            "end": 29.612
+          },
+          {
+            "index": 110,
+            "text": "上",
+            "charStart": 118,
+            "charEnd": 119,
+            "start": 29.612,
+            "end": 29.732
+          },
+          {
+            "index": 111,
+            "text": "で",
+            "charStart": 119,
+            "charEnd": 120,
+            "start": 29.732,
+            "end": 29.912
+          },
+          {
+            "index": 112,
+            "text": "き",
+            "charStart": 120,
+            "charEnd": 121,
+            "start": 29.912,
+            "end": 30.032
+          },
+          {
+            "index": 113,
+            "text": "し",
+            "charStart": 121,
+            "charEnd": 122,
+            "start": 30.032,
+            "end": 30.252
+          },
+          {
+            "index": 114,
+            "text": "ん",
+            "charStart": 122,
+            "charEnd": 123,
+            "start": 30.252,
+            "end": 30.332
+          },
+          {
+            "index": 115,
+            "text": "だ",
+            "charStart": 123,
+            "charEnd": 124,
+            "start": 30.332,
+            "end": 30.352
+          },
+          {
+            "index": 116,
+            "text": "誰",
+            "charStart": 125,
+            "charEnd": 126,
+            "start": 31.333,
+            "end": 31.593
+          },
+          {
+            "index": 117,
+            "text": "も",
+            "charStart": 126,
+            "charEnd": 127,
+            "start": 31.593,
+            "end": 31.713
+          },
+          {
+            "index": 118,
+            "text": "起",
+            "charStart": 127,
+            "charEnd": 128,
+            "start": 31.713,
+            "end": 31.853
+          },
+          {
+            "index": 119,
+            "text": "こ",
+            "charStart": 128,
+            "charEnd": 129,
+            "start": 31.853,
+            "end": 31.973
+          },
+          {
+            "index": 120,
+            "text": "さ",
+            "charStart": 129,
+            "charEnd": 130,
+            "start": 31.973,
+            "end": 32.133
+          },
+          {
+            "index": 121,
+            "text": "な",
+            "charStart": 130,
+            "charEnd": 131,
+            "start": 32.133,
+            "end": 32.273
+          },
+          {
+            "index": 122,
+            "text": "い",
+            "charStart": 131,
+            "charEnd": 132,
+            "start": 32.273,
+            "end": 32.393
+          },
+          {
+            "index": 123,
+            "text": "よ",
+            "charStart": 132,
+            "charEnd": 133,
+            "start": 32.393,
+            "end": 32.453
+          },
+          {
+            "index": 124,
+            "text": "う",
+            "charStart": 133,
+            "charEnd": 134,
+            "start": 32.453,
+            "end": 32.573
+          },
+          {
+            "index": 125,
+            "text": "に",
+            "charStart": 134,
+            "charEnd": 135,
+            "start": 32.573,
+            "end": 32.593
+          },
+          {
+            "index": 126,
+            "text": "そ",
+            "charStart": 136,
+            "charEnd": 137,
+            "start": 33.253,
+            "end": 33.413
+          },
+          {
+            "index": 127,
+            "text": "っ",
+            "charStart": 137,
+            "charEnd": 138,
+            "start": 33.413,
+            "end": 33.573
+          },
+          {
+            "index": 128,
+            "text": "と",
+            "charStart": 138,
+            "charEnd": 139,
+            "start": 33.573,
+            "end": 33.753
+          },
+          {
+            "index": 129,
+            "text": "閉",
+            "charStart": 139,
+            "charEnd": 140,
+            "start": 33.753,
+            "end": 33.894
+          },
+          {
+            "index": 130,
+            "text": "め",
+            "charStart": 140,
+            "charEnd": 141,
+            "start": 33.894,
+            "end": 34.014
+          },
+          {
+            "index": 131,
+            "text": "直",
+            "charStart": 141,
+            "charEnd": 142,
+            "start": 34.014,
+            "end": 34.294
+          },
+          {
+            "index": 132,
+            "text": "す",
+            "charStart": 142,
+            "charEnd": 143,
+            "start": 34.294,
+            "end": 34.634
+          },
+          {
+            "index": 133,
+            "text": "扉",
+            "charStart": 143,
+            "charEnd": 144,
+            "start": 34.634,
+            "end": 35.074
+          },
+          {
+            "index": 134,
+            "text": "の",
+            "charStart": 144,
+            "charEnd": 145,
+            "start": 35.074,
+            "end": 35.214
+          },
+          {
+            "index": 135,
+            "text": "よ",
+            "charStart": 145,
+            "charEnd": 146,
+            "start": 35.214,
+            "end": 35.294
+          },
+          {
+            "index": 136,
+            "text": "う",
+            "charStart": 146,
+            "charEnd": 147,
+            "start": 35.294,
+            "end": 35.394
+          },
+          {
+            "index": 137,
+            "text": "な",
+            "charStart": 147,
+            "charEnd": 148,
+            "start": 35.394,
+            "end": 35.534
+          },
+          {
+            "index": 138,
+            "text": "音",
+            "charStart": 148,
+            "charEnd": 149,
+            "start": 35.534,
+            "end": 35.794
+          },
+          {
+            "index": 139,
+            "text": "で",
+            "charStart": 149,
+            "charEnd": 150,
+            "start": 35.794,
+            "end": 36.775
+          },
+          {
+            "index": 140,
+            "text": "澪",
+            "charStart": 151,
+            "charEnd": 152,
+            "start": 36.935,
+            "end": 37.095
+          },
+          {
+            "index": 141,
+            "text": "は",
+            "charStart": 152,
+            "charEnd": 153,
+            "start": 37.095,
+            "end": 37.315
+          },
+          {
+            "index": 142,
+            "text": "そ",
+            "charStart": 153,
+            "charEnd": 154,
+            "start": 37.315,
+            "end": 37.455
+          },
+          {
+            "index": 143,
+            "text": "の",
+            "charStart": 154,
+            "charEnd": 155,
+            "start": 37.455,
+            "end": 37.575
+          },
+          {
+            "index": 144,
+            "text": "場",
+            "charStart": 155,
+            "charEnd": 156,
+            "start": 37.575,
+            "end": 37.715
+          },
+          {
+            "index": 145,
+            "text": "面",
+            "charStart": 156,
+            "charEnd": 157,
+            "start": 37.715,
+            "end": 37.935
+          },
+          {
+            "index": 146,
+            "text": "を",
+            "charStart": 157,
+            "charEnd": 158,
+            "start": 37.935,
+            "end": 38.095
+          },
+          {
+            "index": 147,
+            "text": "書",
+            "charStart": 158,
+            "charEnd": 159,
+            "start": 38.095,
+            "end": 38.255
+          },
+          {
+            "index": 148,
+            "text": "き",
+            "charStart": 159,
+            "charEnd": 160,
+            "start": 38.255,
+            "end": 38.355
+          },
+          {
+            "index": 149,
+            "text": "留",
+            "charStart": 160,
+            "charEnd": 161,
+            "start": 38.355,
+            "end": 38.475
+          },
+          {
+            "index": 150,
+            "text": "め",
+            "charStart": 161,
+            "charEnd": 162,
+            "start": 38.475,
+            "end": 38.595
+          },
+          {
+            "index": 151,
+            "text": "た",
+            "charStart": 162,
+            "charEnd": 163,
+            "start": 38.595,
+            "end": 38.615
+          },
+          {
+            "index": 152,
+            "text": "い",
+            "charStart": 164,
+            "charEnd": 165,
+            "start": 39.676,
+            "end": 39.816
+          },
+          {
+            "index": 153,
+            "text": "つ",
+            "charStart": 165,
+            "charEnd": 166,
+            "start": 39.816,
+            "end": 39.956
+          },
+          {
+            "index": 154,
+            "text": "も",
+            "charStart": 166,
+            "charEnd": 167,
+            "start": 39.956,
+            "end": 40.076
+          },
+          {
+            "index": 155,
+            "text": "そ",
+            "charStart": 167,
+            "charEnd": 168,
+            "start": 40.076,
+            "end": 40.176
+          },
+          {
+            "index": 156,
+            "text": "う",
+            "charStart": 168,
+            "charEnd": 169,
+            "start": 40.176,
+            "end": 40.296
+          },
+          {
+            "index": 157,
+            "text": "し",
+            "charStart": 169,
+            "charEnd": 170,
+            "start": 40.296,
+            "end": 40.376
+          },
+          {
+            "index": 158,
+            "text": "て",
+            "charStart": 170,
+            "charEnd": 171,
+            "start": 40.376,
+            "end": 40.476
+          },
+          {
+            "index": 159,
+            "text": "い",
+            "charStart": 171,
+            "charEnd": 172,
+            "start": 40.476,
+            "end": 40.536
+          },
+          {
+            "index": 160,
+            "text": "る",
+            "charStart": 172,
+            "charEnd": 173,
+            "start": 40.536,
+            "end": 40.676
+          },
+          {
+            "index": 161,
+            "text": "よ",
+            "charStart": 173,
+            "charEnd": 174,
+            "start": 40.676,
+            "end": 40.716
+          },
+          {
+            "index": 162,
+            "text": "う",
+            "charStart": 174,
+            "charEnd": 175,
+            "start": 40.716,
+            "end": 40.836
+          },
+          {
+            "index": 163,
+            "text": "に",
+            "charStart": 175,
+            "charEnd": 176,
+            "start": 40.836,
+            "end": 40.856
+          },
+          {
+            "index": 164,
+            "text": "意",
+            "charStart": 177,
+            "charEnd": 178,
+            "start": 41.316,
+            "end": 41.557
+          },
+          {
+            "index": 165,
+            "text": "識",
+            "charStart": 178,
+            "charEnd": 179,
+            "start": 41.557,
+            "end": 41.717
+          },
+          {
+            "index": 166,
+            "text": "せ",
+            "charStart": 179,
+            "charEnd": 180,
+            "start": 41.717,
+            "end": 41.877
+          },
+          {
+            "index": 167,
+            "text": "ず",
+            "charStart": 180,
+            "charEnd": 181,
+            "start": 41.877,
+            "end": 42.017
+          },
+          {
+            "index": 168,
+            "text": "に",
+            "charStart": 181,
+            "charEnd": 182,
+            "start": 42.017,
+            "end": 42.917
+          },
+          {
+            "index": 169,
+            "text": "音",
+            "charStart": 183,
+            "charEnd": 184,
+            "start": 43.057,
+            "end": 43.197
+          },
+          {
+            "index": 170,
+            "text": "た",
+            "charStart": 184,
+            "charEnd": 185,
+            "start": 43.197,
+            "end": 43.337
+          },
+          {
+            "index": 171,
+            "text": "ち",
+            "charStart": 185,
+            "charEnd": 186,
+            "start": 43.337,
+            "end": 43.477
+          },
+          {
+            "index": 172,
+            "text": "が",
+            "charStart": 186,
+            "charEnd": 187,
+            "start": 43.477,
+            "end": 44.118
+          },
+          {
+            "index": 173,
+            "text": "使",
+            "charStart": 188,
+            "charEnd": 189,
+            "start": 44.278,
+            "end": 44.418
+          },
+          {
+            "index": 174,
+            "text": "い",
+            "charStart": 189,
+            "charEnd": 190,
+            "start": 44.418,
+            "end": 44.538
+          },
+          {
+            "index": 175,
+            "text": "道",
+            "charStart": 190,
+            "charEnd": 191,
+            "start": 44.538,
+            "end": 44.838
+          },
+          {
+            "index": 176,
+            "text": "を",
+            "charStart": 191,
+            "charEnd": 192,
+            "start": 44.838,
+            "end": 44.978
+          },
+          {
+            "index": 177,
+            "text": "見",
+            "charStart": 192,
+            "charEnd": 193,
+            "start": 44.978,
+            "end": 45.118
+          },
+          {
+            "index": 178,
+            "text": "つ",
+            "charStart": 193,
+            "charEnd": 194,
+            "start": 45.118,
+            "end": 45.218
+          },
+          {
+            "index": 179,
+            "text": "け",
+            "charStart": 194,
+            "charEnd": 195,
+            "start": 45.218,
+            "end": 45.338
+          },
+          {
+            "index": 180,
+            "text": "て",
+            "charStart": 195,
+            "charEnd": 196,
+            "start": 45.338,
+            "end": 45.478
+          },
+          {
+            "index": 181,
+            "text": "も",
+            "charStart": 196,
+            "charEnd": 197,
+            "start": 45.478,
+            "end": 45.578
+          },
+          {
+            "index": 182,
+            "text": "ら",
+            "charStart": 197,
+            "charEnd": 198,
+            "start": 45.578,
+            "end": 45.738
+          },
+          {
+            "index": 183,
+            "text": "え",
+            "charStart": 198,
+            "charEnd": 199,
+            "start": 45.738,
+            "end": 45.798
+          },
+          {
+            "index": 184,
+            "text": "る",
+            "charStart": 199,
+            "charEnd": 200,
+            "start": 45.798,
+            "end": 45.938
+          },
+          {
+            "index": 185,
+            "text": "日",
+            "charStart": 200,
+            "charEnd": 201,
+            "start": 45.938,
+            "end": 46.098
+          },
+          {
+            "index": 186,
+            "text": "を",
+            "charStart": 201,
+            "charEnd": 202,
+            "start": 46.098,
+            "end": 46.258
+          },
+          {
+            "index": 187,
+            "text": "待",
+            "charStart": 202,
+            "charEnd": 203,
+            "start": 46.258,
+            "end": 46.439
+          },
+          {
+            "index": 188,
+            "text": "っ",
+            "charStart": 203,
+            "charEnd": 204,
+            "start": 46.439,
+            "end": 46.479
+          },
+          {
+            "index": 189,
+            "text": "て",
+            "charStart": 204,
+            "charEnd": 205,
+            "start": 46.479,
+            "end": 46.779
+          },
+          {
+            "index": 190,
+            "text": "積",
+            "charStart": 205,
+            "charEnd": 206,
+            "start": 46.779,
+            "end": 46.919
+          },
+          {
+            "index": 191,
+            "text": "み",
+            "charStart": 206,
+            "charEnd": 207,
+            "start": 46.919,
+            "end": 47.059
+          },
+          {
+            "index": 192,
+            "text": "重",
+            "charStart": 207,
+            "charEnd": 208,
+            "start": 47.059,
+            "end": 47.319
+          },
+          {
+            "index": 193,
+            "text": "な",
+            "charStart": 208,
+            "charEnd": 209,
+            "start": 47.319,
+            "end": 47.499
+          },
+          {
+            "index": 194,
+            "text": "っ",
+            "charStart": 209,
+            "charEnd": 210,
+            "start": 47.499,
+            "end": 47.539
+          },
+          {
+            "index": 195,
+            "text": "て",
+            "charStart": 210,
+            "charEnd": 211,
+            "start": 47.539,
+            "end": 47.619
+          },
+          {
+            "index": 196,
+            "text": "い",
+            "charStart": 211,
+            "charEnd": 212,
+            "start": 47.619,
+            "end": 47.759
+          },
+          {
+            "index": 197,
+            "text": "く",
+            "charStart": 212,
+            "charEnd": 213,
+            "start": 47.759,
+            "end": 47.779
+          },
+          {
+            "index": 198,
+            "text": "頭",
+            "charStart": 214,
+            "charEnd": 215,
+            "start": 48.96,
+            "end": 49.1
+          },
+          {
+            "index": 199,
+            "text": "の",
+            "charStart": 215,
+            "charEnd": 216,
+            "start": 49.1,
+            "end": 49.22
+          },
+          {
+            "index": 200,
+            "text": "片",
+            "charStart": 216,
+            "charEnd": 217,
+            "start": 49.22,
+            "end": 49.48
+          },
+          {
+            "index": 201,
+            "text": "隅",
+            "charStart": 217,
+            "charEnd": 218,
+            "start": 49.48,
+            "end": 49.74
+          },
+          {
+            "index": 202,
+            "text": "に",
+            "charStart": 218,
+            "charEnd": 219,
+            "start": 49.74,
+            "end": 50.0
+          }
+        ]
+      },
+      "language": "ja",
+      "variant": "ja",
+      "chapterId": "nuit-02",
+      "paragraphId": "nuit-02-p03",
+      "novelId": "novel-ce-que-la-nuit-a-entendu",
+      "text": "コレットが四つ目のカップを老人へ差し出しきらないうちに、彼は胸の左側に指を二本あて、首を横に振った。ほんの小さな仕草だった。ないに等しいほどの。けれどコレットの手は、一秒だけ長く宙にとどまった。そして魔法瓶に栓をし直すとき、栓はねじ山の上できしんだ。誰も起こさないように、そっと閉め直す扉のような音で。澪はその場面を書き留めた。いつもそうしているように、意識せずに。音たちが、使い道を見つけてもらえる日を待って積み重なっていく、頭の片隅に。",
+      "ja": "",
+      "lessonTitle": "コレットの菩提樹茶 · 日本語 · 1/3"
     }
   ]
 }
